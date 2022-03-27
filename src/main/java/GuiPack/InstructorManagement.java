@@ -1,6 +1,5 @@
-package Instructor;
+package GuiPack;
 
-import Manager.ManagerLogin;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
