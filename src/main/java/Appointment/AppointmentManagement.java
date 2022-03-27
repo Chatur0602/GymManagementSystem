@@ -1,17 +1,19 @@
-package GuiPack;
+package Appointment;
 
+import Manager.ManagerLogin;
+import Manager.ManagerLogin;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /* @author Nikhil */
-public class ReportGenerator extends javax.swing.JFrame {
+public class AppointmentManagement extends javax.swing.JFrame {
 
     /**
      * Creates new form FirstGui
      */
-    public ReportGenerator() {
+    public AppointmentManagement() {
         initComponents();
     }
 
@@ -29,6 +31,14 @@ public class ReportGenerator extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
+        crmLabel = new javax.swing.JLabel();
+        instructorLabel = new javax.swing.JLabel();
+        crmLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        crmLabel2 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -38,8 +48,8 @@ public class ReportGenerator extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Report Genarator");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 210, -1));
+        jLabel1.setText(" Appointment Management");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 310, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-exit-24.png"))); // NOI18N
@@ -48,7 +58,7 @@ public class ReportGenerator extends javax.swing.JFrame {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 30, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-back-24.png"))); // NOI18N
@@ -59,12 +69,46 @@ public class ReportGenerator extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        crmLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-view-64.png"))); // NOI18N
+        crmLabel.setText("  ");
+        jPanel3.add(crmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 70, 70));
+
+        instructorLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-add-64.png"))); // NOI18N
+        jPanel3.add(instructorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+
+        crmLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-delete-64.png"))); // NOI18N
+        jPanel3.add(crmLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setText("  Delete");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 60, 20));
+
+        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel9.setText("  Add");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 40, 20));
+
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel10.setText("Edit");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 30, 20));
+
+        crmLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-edit-file-64.png"))); // NOI18N
+        crmLabel2.setText("  ");
+        jPanel3.add(crmLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 60, -1));
+
+        jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel12.setText("Search & View");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 100, 20));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -122,14 +166,46 @@ public class ReportGenerator extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ReportGenerator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppointmentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ReportGenerator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppointmentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ReportGenerator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppointmentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ReportGenerator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppointmentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -166,7 +242,7 @@ public class ReportGenerator extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ReportGenerator().setVisible(true);
+                new AppointmentManagement().setVisible(true);
             }
         });
        
@@ -174,8 +250,16 @@ public class ReportGenerator extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backLabel;
+    private javax.swing.JLabel crmLabel;
+    private javax.swing.JLabel crmLabel1;
+    private javax.swing.JLabel crmLabel2;
     private javax.swing.JLabel exitLabel;
+    private javax.swing.JLabel instructorLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
