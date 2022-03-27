@@ -48,10 +48,10 @@ public class ManagerLogin extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Rage Italic", 1, 36)); // NOI18N
         jLabel4.setText("SlymGym");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png"))); // NOI18N
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-back-24.png")); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-back-24.png"))); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -123,10 +123,10 @@ public class ManagerLogin extends javax.swing.JFrame {
         jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 130, 10));
         jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 130, 10));
 
-        lockIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-lock-24.png")); // NOI18N
+        lockIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-lock-24.png"))); // NOI18N
         jPanel3.add(lockIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, 30));
 
-        userIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-user-24.png")); // NOI18N
+        userIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-user-24.png"))); // NOI18N
         jPanel3.add(userIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 30, 30));
 
         loginButton.setBackground(new java.awt.Color(204, 102, 0));
@@ -144,7 +144,7 @@ public class ManagerLogin extends javax.swing.JFrame {
         jPanel3.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 80, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-exit-24.png")); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-exit-24.png"))); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);

@@ -124,7 +124,7 @@
             <Component class="javax.swing.JLabel" name="crmLabel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-report-64.png"/>
+                  <Image iconType="3" name="/IconPack/icons8-report-64.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="  "/>
               </Properties>
@@ -137,7 +137,7 @@
             <Component class="javax.swing.JLabel" name="instructorLabel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-trainer-64.png"/>
+                  <Image iconType="3" name="/IconPack/icons8-trainer-64.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -165,7 +165,7 @@
             <Component class="javax.swing.JLabel" name="crmLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-customer-60.png"/>
+                  <Image iconType="3" name="/IconPack/icons8-customer-60.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -273,7 +273,7 @@
             <Component class="javax.swing.JLabel" name="crmLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-appointment-64.png"/>
+                  <Image iconType="3" name="/IconPack/icons8-appointment-64.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="  "/>
               </Properties>

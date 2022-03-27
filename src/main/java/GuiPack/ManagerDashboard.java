@@ -72,11 +72,11 @@ public class ManagerDashboard extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        crmLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-report-64.png")); // NOI18N
+        crmLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-report-64.png"))); // NOI18N
         crmLabel.setText("  ");
         jPanel3.add(crmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 70, 70));
 
-        instructorLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-trainer-64.png")); // NOI18N
+        instructorLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-trainer-64.png"))); // NOI18N
         jPanel3.add(instructorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -84,7 +84,7 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jLabel5.setText("  Management");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 100, 20));
 
-        crmLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-customer-60.png")); // NOI18N
+        crmLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-customer-60.png"))); // NOI18N
         jPanel3.add(crmLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -117,7 +117,7 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jLabel11.setText("   Management");
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 100, 20));
 
-        crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-appointment-64.png")); // NOI18N
+        crmLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-appointment-64.png"))); // NOI18N
         crmLabel2.setText("  ");
         jPanel3.add(crmLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 70, -1));
 

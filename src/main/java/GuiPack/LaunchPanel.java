@@ -42,7 +42,7 @@ public class LaunchPanel extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Rage Italic", 1, 36)); // NOI18N
         jLabel4.setText("SlymGym");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -81,7 +81,7 @@ public class LaunchPanel extends javax.swing.JFrame {
         jPanel3.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 120, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-exit-24.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-exit-24.png"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
