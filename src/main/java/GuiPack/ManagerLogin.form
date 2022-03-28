@@ -113,7 +113,7 @@
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/IconPack/external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png"/>
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\Resources\external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -123,7 +123,7 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/IconPack/icons8-back-24.png"/>
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\Resources\icons8-back-24.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -230,7 +230,7 @@
             <Component class="javax.swing.JLabel" name="lockIcon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/IconPack/icons8-lock-24.png"/>
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\Resources\icons8-lock-24.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -242,7 +242,7 @@
             <Component class="javax.swing.JLabel" name="userIcon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/IconPack/icons8-user-24.png"/>
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\Resources\icons8-user-24.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -274,7 +274,7 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/IconPack/icons8-exit-24.png"/>
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\Resources\icons8-exit-24.png"/>
                 </Property>
               </Properties>
               <Events>
