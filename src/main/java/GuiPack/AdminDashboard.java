@@ -6,12 +6,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /* @author Nikhil */
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
 public class AdminDashboard extends javax.swing.JFrame {
+=======
+public class ManagerDashboard extends javax.swing.JFrame {
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+public class AdminDashboard extends javax.swing.JFrame {
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 
     /**
      * Creates new form FirstGui
      */
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
     public AdminDashboard() {
+=======
+    public ManagerDashboard() {
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+    public AdminDashboard() {
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         initComponents();
     }
 
@@ -51,8 +67,18 @@ public class AdminDashboard extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
         jLabel1.setText("Admin Dashboard");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 210, -1));
+=======
+        jLabel1.setText("Manager Dashboard");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 240, -1));
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+        jLabel1.setText("Admin Dashboard");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 210, -1));
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-exit-24.png")); // NOI18N
@@ -72,6 +98,8 @@ public class AdminDashboard extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
 <<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
 <<<<<<< HEAD
@@ -97,6 +125,20 @@ public class AdminDashboard extends javax.swing.JFrame {
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 
         instructorLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-trainer-64.png")); // NOI18N
+=======
+        crmLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-report-64.png"))); // NOI18N
+        crmLabel.setText("  ");
+        jPanel3.add(crmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 70, 70));
+
+        instructorLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-trainer-64.png"))); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+        crmLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-report-64.png")); // NOI18N
+        crmLabel.setText("  ");
+        jPanel3.add(crmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 70, 70));
+
+        instructorLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-trainer-64.png")); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         jPanel3.add(instructorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -105,6 +147,8 @@ public class AdminDashboard extends javax.swing.JFrame {
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 100, 20));
 
 <<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
 =======
@@ -112,6 +156,12 @@ public class AdminDashboard extends javax.swing.JFrame {
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         crmLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-customer-60.png")); // NOI18N
+=======
+        crmLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-customer-60.png"))); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+        crmLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-customer-60.png")); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         jPanel3.add(crmLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -121,6 +171,12 @@ public class AdminDashboard extends javax.swing.JFrame {
 
 <<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -138,6 +194,8 @@ public class AdminDashboard extends javax.swing.JFrame {
         jLabel9.setText(" Instructor");
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 80, 20));
 <<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -148,6 +206,10 @@ public class AdminDashboard extends javax.swing.JFrame {
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/InstructorDashboard.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 
@@ -161,7 +223,15 @@ public class AdminDashboard extends javax.swing.JFrame {
         jLabel11.setText("   Management");
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 100, 20));
 
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
         crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-appointment-64.png")); // NOI18N
+=======
+        crmLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-appointment-64.png"))); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+        crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-appointment-64.png")); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         crmLabel2.setText("  ");
         jPanel3.add(crmLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 70, -1));
 
@@ -180,12 +250,27 @@ public class AdminDashboard extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
+=======
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -194,7 +279,15 @@ public class AdminDashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,8 +308,18 @@ public class AdminDashboard extends javax.swing.JFrame {
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
 
         dispose();
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
         AdminLogin AD = new AdminLogin();
         AD.show();
+=======
+        ManagerLogin ML = new ManagerLogin();
+        ML.show();
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+        AdminLogin AD = new AdminLogin();
+        AD.show();
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 
     }//GEN-LAST:event_backLabelMouseClicked
 
@@ -238,6 +341,10 @@ public class AdminDashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
             java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -245,16 +352,46 @@ public class AdminDashboard extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+<<<<<<< HEAD
+=======
+            java.util.logging.Logger.getLogger(ManagerDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ManagerDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ManagerDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ManagerDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         }
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
+=======
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminDashboard.java
                 new AdminDashboard().setVisible(true);
+=======
+                new ManagerDashboard().setVisible(true);
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerDashboard.java
+=======
+                new AdminDashboard().setVisible(true);
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
             }
         });
        
