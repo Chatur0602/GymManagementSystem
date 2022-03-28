@@ -85,13 +85,19 @@ public class CustomerManagement extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
 <<<<<<< HEAD:src/main/java/GuiPack/CustomerManagement.java
+<<<<<<< HEAD:src/main/java/GuiPack/CustomerManagement.java
         jLabel9.setText("  Add");
 =======
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Customer/CustomerManagement.java
 <<<<<<< HEAD
         jLabel9.setText("  Add");
 =======
         jLabel9.setText("FF80");
 >>>>>>> parent of 9b45374 (Revert "New Changes")
+<<<<<<< HEAD:src/main/java/GuiPack/CustomerManagement.java
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Customer/CustomerManagement.java
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Customer/CustomerManagement.java
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 40, 20));
 
