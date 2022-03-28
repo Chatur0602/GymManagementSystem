@@ -166,18 +166,14 @@ public class LaunchPanel extends javax.swing.JFrame {
 
     private void managerPath(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managerPath
             dispose();
-<<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
-<<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
             ManagerLogin ML = new ManagerLogin();
             ML.show();
     }//GEN-LAST:event_managerPath
-=======
-=======
->>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
+
+            dispose();
             AdminLogin AL = new AdminLogin();
             AL.show();
-    }//GEN-LAST:event_adminPath
->>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
+    }                          
 
     private void instructorPath(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instructorPath
             dispose();
