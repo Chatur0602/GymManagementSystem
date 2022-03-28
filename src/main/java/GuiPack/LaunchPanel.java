@@ -42,7 +42,11 @@ public class LaunchPanel extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Rage Italic", 1, 36)); // NOI18N
         jLabel4.setText("SlymGym");
 
+<<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png"))); // NOI18N
+=======
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png")); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -81,7 +85,11 @@ public class LaunchPanel extends javax.swing.JFrame {
         jPanel3.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 120, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+<<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-exit-24.png"))); // NOI18N
+=======
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-exit-24.png")); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -96,10 +104,14 @@ public class LaunchPanel extends javax.swing.JFrame {
 
         loginButton1.setBackground(new java.awt.Color(204, 102, 0));
         loginButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        loginButton1.setText("Manager Login");
+        loginButton1.setText("Admin Login");
         loginButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+<<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
                 managerPath(evt);
+=======
+                adminPath(evt);
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
             }
         });
         jPanel3.add(loginButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 120, 40));
@@ -143,9 +155,15 @@ public class LaunchPanel extends javax.swing.JFrame {
 
     private void managerPath(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managerPath
             dispose();
+<<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
             ManagerLogin ML = new ManagerLogin();
             ML.show();
     }//GEN-LAST:event_managerPath
+=======
+            AdminLogin AL = new AdminLogin();
+            AL.show();
+    }//GEN-LAST:event_adminPath
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
 
     private void instructorPath(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instructorPath
             dispose();

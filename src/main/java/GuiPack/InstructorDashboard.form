@@ -91,7 +91,11 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
                   <Image iconType="3" name="/IconPack/icons8-lock-24.png"/>
+=======
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-exit-24.png"/>
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form
                 </Property>
               </Properties>
               <Events>
@@ -109,7 +113,11 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
                   <Image iconType="3" name="/IconPack/icons8-back-24.png"/>
+=======
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-back-24.png"/>
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form
                 </Property>
               </Properties>
               <Events>
@@ -124,7 +132,11 @@
             <Component class="javax.swing.JLabel" name="instructorLabel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
                   <Image iconType="3" name="/IconPack/icons8-update-user-64.png"/>
+=======
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-update-user-64.png"/>
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form
                 </Property>
               </Properties>
               <Constraints>
@@ -168,7 +180,11 @@
             <Component class="javax.swing.JLabel" name="crmLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
                   <Image iconType="3" name="/IconPack/icons8-appointment-64.png"/>
+=======
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-appointment-64.png"/>
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form
                 </Property>
                 <Property name="text" type="java.lang.String" value="  "/>
               </Properties>
