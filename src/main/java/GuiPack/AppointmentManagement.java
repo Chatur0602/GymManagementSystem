@@ -71,6 +71,7 @@ public class AppointmentManagement extends javax.swing.JFrame {
 <<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
 <<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
 <<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
+<<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
         crmLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-view-64.png"))); // NOI18N
         crmLabel.setText("  ");
         jPanel3.add(crmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 70, 70));
@@ -80,6 +81,8 @@ public class AppointmentManagement extends javax.swing.JFrame {
 
         crmLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-delete-64.png"))); // NOI18N
 =======
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Appointment/AppointmentManagement.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Appointment/AppointmentManagement.java
 =======
@@ -97,6 +100,9 @@ public class AppointmentManagement extends javax.swing.JFrame {
 <<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
 <<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
 <<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
+<<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Appointment/AppointmentManagement.java
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Appointment/AppointmentManagement.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Appointment/AppointmentManagement.java
@@ -125,7 +131,11 @@ public class AppointmentManagement extends javax.swing.JFrame {
 <<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
 <<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
 <<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
+<<<<<<< HEAD:src/main/java/GuiPack/AppointmentManagement.java
         crmLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-edit-file-64.png"))); // NOI18N
+=======
+        crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Appointment/AppointmentManagement.java
 =======
         crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Appointment/AppointmentManagement.java
