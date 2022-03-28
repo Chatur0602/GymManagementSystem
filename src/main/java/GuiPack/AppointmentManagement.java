@@ -1,7 +1,5 @@
-package Appointment;
+package GuiPack;
 
-import Manager.ManagerDashboard;
-import Manager.ManagerLogin;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -52,7 +50,7 @@ public class AppointmentManagement extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 310, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-exit-24.png"))); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
@@ -61,7 +59,7 @@ public class AppointmentManagement extends javax.swing.JFrame {
         jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 30, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-back-24.png"))); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -69,14 +67,14 @@ public class AppointmentManagement extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        crmLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-view-64.png")); // NOI18N
+        crmLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-view-64.png"))); // NOI18N
         crmLabel.setText("  ");
         jPanel3.add(crmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 70, 70));
 
-        instructorLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
+        instructorLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-add-64.png"))); // NOI18N
         jPanel3.add(instructorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
-        crmLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
+        crmLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-delete-64.png"))); // NOI18N
         jPanel3.add(crmLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -94,7 +92,7 @@ public class AppointmentManagement extends javax.swing.JFrame {
         jLabel10.setText("Edit");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 30, 20));
 
-        crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
+        crmLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-edit-file-64.png"))); // NOI18N
         crmLabel2.setText("  ");
         jPanel3.add(crmLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 60, -1));
 
@@ -143,9 +141,8 @@ public class AppointmentManagement extends javax.swing.JFrame {
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
 
         dispose();
-        ManagerDashboard MD = new ManagerDashboard();
-        MD.show();
-
+        ManagerLogin ML = new ManagerLogin();
+        ML.show();
 
     }//GEN-LAST:event_backLabelMouseClicked
 
