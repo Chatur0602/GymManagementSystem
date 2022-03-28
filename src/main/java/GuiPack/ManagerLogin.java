@@ -8,9 +8,16 @@ import java.awt.event.ActionListener;
 /* @author Nikhil */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class ManagerLogin extends javax.swing.JFrame {
 =======
 =======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
 <<<<<<< HEAD
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
@@ -20,7 +27,9 @@ public class AdminLogin extends javax.swing.JFrame {
 public class ManagerLogin extends javax.swing.JFrame {
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 =======
 =======
 public class AdminLogin extends javax.swing.JFrame {
@@ -28,6 +37,16 @@ public class AdminLogin extends javax.swing.JFrame {
 =======
 public class ManagerLogin extends javax.swing.JFrame {
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+public class AdminLogin extends javax.swing.JFrame {
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+public class ManagerLogin extends javax.swing.JFrame {
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 
     /**
@@ -35,9 +54,16 @@ public class ManagerLogin extends javax.swing.JFrame {
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public ManagerLogin() {
 =======
 =======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
 <<<<<<< HEAD
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
@@ -47,7 +73,9 @@ public class ManagerLogin extends javax.swing.JFrame {
     public ManagerLogin() {
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 =======
 =======
     public AdminLogin() {
@@ -55,6 +83,16 @@ public class ManagerLogin extends javax.swing.JFrame {
 =======
     public ManagerLogin() {
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+    public AdminLogin() {
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+    public ManagerLogin() {
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         initComponents();
     }
@@ -94,6 +132,7 @@ public class ManagerLogin extends javax.swing.JFrame {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
@@ -112,9 +151,17 @@ public class ManagerLogin extends javax.swing.JFrame {
 =======
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
 =======
+=======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
 <<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
@@ -123,10 +170,18 @@ public class ManagerLogin extends javax.swing.JFrame {
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-back-24.png")); // NOI18N
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 <<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
@@ -137,6 +192,7 @@ public class ManagerLogin extends javax.swing.JFrame {
         backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
@@ -152,11 +208,22 @@ public class ManagerLogin extends javax.swing.JFrame {
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+=======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -201,6 +268,7 @@ public class ManagerLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         jLabel1.setText("Manager Login");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 170, -1));
 =======
@@ -208,6 +276,10 @@ public class ManagerLogin extends javax.swing.JFrame {
         jLabel1.setText("Admin Login");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 140, -1));
 =======
+=======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
 <<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
@@ -221,14 +293,28 @@ public class ManagerLogin extends javax.swing.JFrame {
         jLabel1.setText("Admin Login");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 140, -1));
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
         jLabel1.setText("Manager Login");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 170, -1));
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+=======
+        jLabel1.setText("Admin Login");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 140, -1));
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+        jLabel1.setText("Manager Login");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 170, -1));
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 
         usernameField.setBackground(new java.awt.Color(0, 51, 102));
@@ -260,6 +346,7 @@ public class ManagerLogin extends javax.swing.JFrame {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
@@ -278,9 +365,17 @@ public class ManagerLogin extends javax.swing.JFrame {
 =======
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
 =======
+=======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
 <<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
@@ -289,10 +384,18 @@ public class ManagerLogin extends javax.swing.JFrame {
 
         userIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-user-24.png")); // NOI18N
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 <<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
@@ -303,6 +406,7 @@ public class ManagerLogin extends javax.swing.JFrame {
         userIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-user-24.png")); // NOI18N
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
@@ -318,11 +422,22 @@ public class ManagerLogin extends javax.swing.JFrame {
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+=======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         jPanel3.add(userIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 30, 30));
 
@@ -343,6 +458,7 @@ public class ManagerLogin extends javax.swing.JFrame {
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/ManagerLogin.java
@@ -361,11 +477,18 @@ public class ManagerLogin extends javax.swing.JFrame {
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Manager/ManagerLogin.java
 =======
+=======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-exit-24.png")); // NOI18N
 =======
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
@@ -373,6 +496,11 @@ public class ManagerLogin extends javax.swing.JFrame {
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-exit-24.png")); // NOI18N
 =======
+=======
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-exit-24.png")); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
 =======
@@ -381,6 +509,9 @@ public class ManagerLogin extends javax.swing.JFrame {
 =======
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -461,9 +592,16 @@ public class ManagerLogin extends javax.swing.JFrame {
             dispose();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ManagerDashboard AD = new ManagerDashboard();
 =======
 =======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
 <<<<<<< HEAD
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
@@ -473,7 +611,9 @@ public class ManagerLogin extends javax.swing.JFrame {
             ManagerDashboard AD = new ManagerDashboard();
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 =======
 =======
             AdminDashboard AD = new AdminDashboard();
@@ -481,6 +621,16 @@ public class ManagerLogin extends javax.swing.JFrame {
 =======
             ManagerDashboard AD = new ManagerDashboard();
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+            AdminDashboard AD = new AdminDashboard();
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+            ManagerDashboard AD = new ManagerDashboard();
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
             AD.show();
         }
@@ -509,12 +659,21 @@ public class ManagerLogin extends javax.swing.JFrame {
         } catch (ClassNotFoundException ex) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+=======
 =======
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
 <<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
@@ -529,10 +688,18 @@ public class ManagerLogin extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 <<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
@@ -551,16 +718,28 @@ public class ManagerLogin extends javax.swing.JFrame {
         //</editor-fold>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+=======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
 
         /* Create and display the form */
@@ -568,9 +747,16 @@ public class ManagerLogin extends javax.swing.JFrame {
             public void run() {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 new ManagerLogin().setVisible(true);
 =======
 =======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+<<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/AdminLogin.java
 <<<<<<< HEAD
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
@@ -580,7 +766,9 @@ public class ManagerLogin extends javax.swing.JFrame {
                 new ManagerLogin().setVisible(true);
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 =======
 =======
                 new AdminLogin().setVisible(true);
@@ -588,6 +776,16 @@ public class ManagerLogin extends javax.swing.JFrame {
 =======
                 new ManagerLogin().setVisible(true);
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+                new AdminLogin().setVisible(true);
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+                new ManagerLogin().setVisible(true);
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/GuiPack/ManagerLogin.java
+<<<<<<< HEAD
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
             }
         });

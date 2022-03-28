@@ -48,7 +48,11 @@ public class LaunchPanel extends javax.swing.JFrame {
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
+<<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png"))); // NOI18N
+=======
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png")); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
 =======
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png")); // NOI18N
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
@@ -111,7 +115,11 @@ public class LaunchPanel extends javax.swing.JFrame {
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
+<<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-exit-24.png"))); // NOI18N
+=======
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-exit-24.png")); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
 =======
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-exit-24.png")); // NOI18N
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
@@ -156,6 +164,9 @@ public class LaunchPanel extends javax.swing.JFrame {
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
+<<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
@@ -214,6 +225,7 @@ public class LaunchPanel extends javax.swing.JFrame {
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
 <<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
+<<<<<<< HEAD:src/main/java/GuiPack/LaunchPanel.java
             ManagerLogin ML = new ManagerLogin();
             ML.show();
     }//GEN-LAST:event_managerPath
@@ -223,6 +235,8 @@ public class LaunchPanel extends javax.swing.JFrame {
             AL.show();
     }                          
 =======
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Main/LaunchPanel.java
 =======

@@ -68,6 +68,7 @@ public class AdminLogin extends javax.swing.JFrame {
         jLabel4.setText("SlymGym");
 
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
 <<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
@@ -94,14 +95,19 @@ public class AdminLogin extends javax.swing.JFrame {
 =======
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png")); // NOI18N
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-back-24.png")); // NOI18N
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -191,6 +197,7 @@ public class AdminLogin extends javax.swing.JFrame {
         jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 130, 10));
 
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
 <<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
@@ -216,14 +223,19 @@ public class AdminLogin extends javax.swing.JFrame {
 =======
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
         lockIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-lock-24.png")); // NOI18N
         jPanel3.add(lockIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, 30));
 
         userIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-user-24.png")); // NOI18N
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
         jPanel3.add(userIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 30, 30));
@@ -263,7 +275,10 @@ public class AdminLogin extends javax.swing.JFrame {
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\IconPack\\icons8-exit-24.png")); // NOI18N
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorLogin.java
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine)
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorLogin.java
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
