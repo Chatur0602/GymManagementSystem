@@ -44,7 +44,11 @@ public class ReportGenerator extends javax.swing.JFrame {
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 <<<<<<< HEAD:src/main/java/GuiPack/ReportGenerator.java
 <<<<<<< HEAD:src/main/java/GuiPack/ReportGenerator.java
+<<<<<<< HEAD:src/main/java/GuiPack/ReportGenerator.java
         exitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-exit-24.png"))); // NOI18N
+=======
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Manager/ReportGenerator.java
 =======
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Manager/ReportGenerator.java
@@ -61,7 +65,11 @@ public class ReportGenerator extends javax.swing.JFrame {
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 <<<<<<< HEAD:src/main/java/GuiPack/ReportGenerator.java
 <<<<<<< HEAD:src/main/java/GuiPack/ReportGenerator.java
+<<<<<<< HEAD:src/main/java/GuiPack/ReportGenerator.java
         backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconPack/icons8-back-24.png"))); // NOI18N
+=======
+        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Manager/ReportGenerator.java
 =======
         backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Manager/ReportGenerator.java
