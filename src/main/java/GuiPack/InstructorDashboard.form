@@ -94,7 +94,11 @@
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
                   <Image iconType="3" name="/IconPack/icons8-lock-24.png"/>
+=======
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-exit-24.png"/>
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form
 =======
                   <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-exit-24.png"/>
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form
@@ -124,7 +128,11 @@
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
                   <Image iconType="3" name="/IconPack/icons8-back-24.png"/>
+=======
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-back-24.png"/>
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form
 =======
                   <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-back-24.png"/>
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form
@@ -151,7 +159,11 @@
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
                   <Image iconType="3" name="/IconPack/icons8-update-user-64.png"/>
+=======
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-update-user-64.png"/>
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form
 =======
                   <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-update-user-64.png"/>
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form
@@ -207,7 +219,11 @@
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
 <<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
+<<<<<<< HEAD:src/main/java/GuiPack/InstructorDashboard.form
                   <Image iconType="3" name="/IconPack/icons8-appointment-64.png"/>
+=======
+                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-appointment-64.png"/>
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form
 =======
                   <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\IconPack\icons8-appointment-64.png"/>
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Instructor/InstructorDashboard.form

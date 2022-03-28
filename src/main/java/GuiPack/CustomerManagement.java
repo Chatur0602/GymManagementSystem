@@ -87,8 +87,11 @@ public class CustomerManagement extends javax.swing.JFrame {
 <<<<<<< HEAD:src/main/java/GuiPack/CustomerManagement.java
 <<<<<<< HEAD:src/main/java/GuiPack/CustomerManagement.java
 <<<<<<< HEAD:src/main/java/GuiPack/CustomerManagement.java
+<<<<<<< HEAD:src/main/java/GuiPack/CustomerManagement.java
         jLabel9.setText("  Add");
 =======
+=======
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Customer/CustomerManagement.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Customer/CustomerManagement.java
 =======
@@ -100,6 +103,9 @@ public class CustomerManagement extends javax.swing.JFrame {
 >>>>>>> parent of 9b45374 (Revert "New Changes")
 <<<<<<< HEAD:src/main/java/GuiPack/CustomerManagement.java
 <<<<<<< HEAD:src/main/java/GuiPack/CustomerManagement.java
+<<<<<<< HEAD:src/main/java/GuiPack/CustomerManagement.java
+>>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Customer/CustomerManagement.java
+=======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Customer/CustomerManagement.java
 =======
 >>>>>>> parent of 7e27438 (Finally fucking done, I made the seperate packages as well, all runs fine):src/main/java/Customer/CustomerManagement.java
