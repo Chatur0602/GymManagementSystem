@@ -6,7 +6,7 @@ import java.util.*;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
-public class IoHandler {
+public class TextFileHandler {
     public static ArrayList<Instructor> allInstructors = new ArrayList<Instructor>();
     
     public static int generateID(String filePath) throws IOException{
