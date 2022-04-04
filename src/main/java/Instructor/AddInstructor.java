@@ -35,7 +35,6 @@ public class AddInstructor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
-        instructorLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         nameField = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
@@ -85,7 +84,6 @@ public class AddInstructor extends javax.swing.JFrame {
             }
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-        jPanel3.add(instructorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 153, 153));
@@ -255,10 +253,31 @@ public class AddInstructor extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameFieldFocusGained
 
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
-        Instructor i = new Instructor(0, nameField.getText(), emailField.getText(), contactField.getText(),dateOfBirthDC.getDate(), usernameField.getText(), validationField.getText());
-        //IoHandler.checkInsturctor(usernameField.getText());
-        TextFileHandler.allInstructors.add(i);
-        TextFileHandler.addInstructor();
+        
+         System.out.println("First: " + emailField.getText() + " " + contactField.getText() + " " + usernameField.getText());
+        
+         
+        
+       if(TextFileHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){ 
+                
+                Instructor i = new Instructor(0, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), usernameField.getText(), passwordField.getText());
+                TextFileHandler.allInstructors.add(i);
+                TextFileHandler.addInstructor();
+        
+                JOptionPane.showMessageDialog(null,
+                "Instructor Successfully Added", "Success",
+                JOptionPane.INFORMATION_MESSAGE);
+                
+                dispose();
+                InstructorManagement IM = new InstructorManagement();
+                IM.show(); 
+       
+        }  else{
+                JOptionPane.showMessageDialog(null,
+                "User Already Exists, Please Try Again with", "Error",
+                JOptionPane.WARNING_MESSAGE);
+                
+        }
     }//GEN-LAST:event_addInstructorButtonActionPerformed
 
     
@@ -561,7 +580,6 @@ public class AddInstructor extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser dateOfBirthDC;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel exitLabel;
-    private javax.swing.JLabel instructorLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;

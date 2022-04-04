@@ -74,6 +74,11 @@ public class InstructorManagement extends javax.swing.JFrame {
         jPanel3.add(crmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 70, 70));
 
         instructorLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
+        instructorLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                instructorLabelMouseClicked(evt);
+            }
+        });
         jPanel3.add(instructorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         crmLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
@@ -148,6 +153,13 @@ public class InstructorManagement extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_backLabelMouseClicked
+
+    private void instructorLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instructorLabelMouseClicked
+        dispose();
+        AddInstructor AI = new AddInstructor();
+        AI.show();
+        
+    }//GEN-LAST:event_instructorLabelMouseClicked
 
     /**
      * @param args the command line arguments

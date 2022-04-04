@@ -2,6 +2,7 @@ package Customer;
 
 import Manager.ManagerDashboard;
 import Manager.ManagerLogin;
+import TextPack.TextFileHandler;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,9 +11,6 @@ import java.awt.event.ActionListener;
 /* @author Nikhil */
 public class AddCustomer extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FirstGui
-     */
     public AddCustomer() {
         initComponents();
     }
@@ -26,13 +24,27 @@ public class AddCustomer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        genderGroup = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
-        instructorLabel = new javax.swing.JLabel();
-        crmLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        nameField = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        emailField = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        dateOfBirthDC = new com.toedter.calendar.JDateChooser();
+        addCustomerButton = new javax.swing.JButton();
+        contactField = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        FemaleRadioButton = new javax.swing.JRadioButton();
+        MaleRadioButton = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -60,8 +72,99 @@ public class AddCustomer extends javax.swing.JFrame {
             }
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-        jPanel3.add(instructorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
-        jPanel3.add(crmLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel3.setText("Name");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 50, 30));
+
+        nameField.setBackground(new java.awt.Color(0, 51, 102));
+        nameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        nameField.setForeground(new java.awt.Color(204, 204, 204));
+        nameField.setToolTipText("Password");
+        nameField.setBorder(null);
+        nameField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                nameFieldFocusGained(evt);
+            }
+        });
+        jPanel3.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 129, 20));
+        jPanel3.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 130, 10));
+
+        jLabel4.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel4.setText("Phone No.");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 80, 30));
+
+        emailField.setBackground(new java.awt.Color(0, 51, 102));
+        emailField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        emailField.setForeground(new java.awt.Color(204, 204, 204));
+        emailField.setToolTipText("Password");
+        emailField.setBorder(null);
+        emailField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailFieldFocusGained(evt);
+            }
+        });
+        emailField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailFieldActionPerformed(evt);
+            }
+        });
+        jPanel3.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 129, 20));
+        jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 130, 10));
+
+        jLabel5.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setText("Email ID");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 80, 30));
+        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 130, 10));
+
+        jLabel6.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel6.setText("D.O.B");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 60, 40));
+        jPanel3.add(dateOfBirthDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 130, 20));
+
+        addCustomerButton.setText("Add Customer");
+        addCustomerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCustomerButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(addCustomerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, -1, -1));
+
+        contactField.setBackground(new java.awt.Color(0, 51, 102));
+        contactField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        contactField.setForeground(new java.awt.Color(204, 204, 204));
+        contactField.setToolTipText("Password");
+        contactField.setBorder(null);
+        jPanel3.add(contactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 129, 20));
+
+        jLabel16.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel16.setText("Gender");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 80, 20));
+
+        genderGroup.add(FemaleRadioButton);
+        FemaleRadioButton.setText("Female");
+        FemaleRadioButton.setActionCommand("F");
+        FemaleRadioButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FemaleRadioButtonMouseClicked(evt);
+            }
+        });
+        jPanel3.add(FemaleRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, -1));
+
+        genderGroup.add(MaleRadioButton);
+        MaleRadioButton.setText("Male");
+        MaleRadioButton.setActionCommand("M");
+        MaleRadioButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MaleRadioButtonMouseClicked(evt);
+            }
+        });
+        jPanel3.add(MaleRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 60, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -73,9 +176,7 @@ public class AddCustomer extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -86,7 +187,7 @@ public class AddCustomer extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jPanel1.requestFocusInWindow();
@@ -107,6 +208,53 @@ public class AddCustomer extends javax.swing.JFrame {
         MD.show();
 
     }//GEN-LAST:event_backLabelMouseClicked
+
+    private void nameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameFieldFocusGained
+
+    private void emailFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailFieldFocusGained
+
+    private void addCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCustomerButtonActionPerformed
+
+        //if(TextFileHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
+
+            String selection = genderGroup.getSelection().getActionCommand().toString();
+            char gender = selection.charAt(0);
+            
+            Customer c = new Customer(0, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), gender);
+            TextFileHandler.allCustomers.add(c);
+            TextFileHandler.addCustomer();
+
+            JOptionPane.showMessageDialog(null,
+                "Customer Successfully Added", "Success",
+                JOptionPane.INFORMATION_MESSAGE);
+
+            dispose();
+            CustomerManagement CM = new CustomerManagement();
+            CM.show();
+
+        /*} else{
+            JOptionPane.showMessageDialog(null,
+                "User Already Exists, Please Try Again with", "Error",
+                JOptionPane.WARNING_MESSAGE);
+
+        }*/
+    }//GEN-LAST:event_addCustomerButtonActionPerformed
+
+    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailFieldActionPerformed
+
+    private void MaleRadioButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MaleRadioButtonMouseClicked
+        
+    }//GEN-LAST:event_MaleRadioButtonMouseClicked
+
+    private void FemaleRadioButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FemaleRadioButtonMouseClicked
+        
+    }//GEN-LAST:event_FemaleRadioButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -209,12 +357,26 @@ public class AddCustomer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton FemaleRadioButton;
+    private javax.swing.JRadioButton MaleRadioButton;
+    private javax.swing.JButton addCustomerButton;
     private javax.swing.JLabel backLabel;
-    private javax.swing.JLabel crmLabel1;
+    private javax.swing.JTextField contactField;
+    private com.toedter.calendar.JDateChooser dateOfBirthDC;
+    private javax.swing.JTextField emailField;
     private javax.swing.JLabel exitLabel;
-    private javax.swing.JLabel instructorLabel;
+    private javax.swing.ButtonGroup genderGroup;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextField nameField;
     // End of variables declaration//GEN-END:variables
 }
