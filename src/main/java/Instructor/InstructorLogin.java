@@ -215,19 +215,19 @@ public class InstructorLogin extends javax.swing.JFrame {
             boolean loginStatus = false ;
             
             try {
-            Scanner in = new Scanner(new File("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\TextPack\\Instructor Credentials.txt"));
+            Scanner in = new Scanner(new File("src/main/java/TextPack/Instructors.txt"));
             while (in.hasNextLine())
             {
             s = in.nextLine();
             sArray = s.split(",");
             
-            System.out.println(sArray[0]+" "+sArray[1]);
+            System.out.println(sArray[5]+" "+sArray[6]);
             System.out.println(usernameInput +" "+passwordInput);
             
-            if (sArray[0].equals(usernameInput) && sArray[1].equals(passwordInput))
+            if (sArray[5].equals(usernameInput) && sArray[6].equals(passwordInput))
                 {
                 JOptionPane.showMessageDialog(null,
-                "Login Successful, Welcome " + sArray[0], "Success",
+                "Login Successful, Welcome " + sArray[1], "Success",
                 JOptionPane.INFORMATION_MESSAGE);
 
                 dispose();

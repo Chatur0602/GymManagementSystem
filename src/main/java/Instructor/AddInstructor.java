@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import TextPack.IOHandler;
+import TextPack.IoHandler;
 
 /* @author Nikhil */
 public class AddInstructor extends javax.swing.JFrame {
@@ -256,8 +256,9 @@ public class AddInstructor extends javax.swing.JFrame {
 
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
         Instructor i = new Instructor(0, nameField.getText(), emailField.getText(), contactField.getText(),dateOfBirthDC.getDate(), usernameField.getText(), validationField.getText());
-        IOHandler.allInstructors.add(i);
-        IOHandler.addInstructor();
+        //IoHandler.checkInsturctor(usernameField.getText());
+        IoHandler.allInstructors.add(i);
+        IoHandler.addInstructor();
     }//GEN-LAST:event_addInstructorButtonActionPerformed
 
     
