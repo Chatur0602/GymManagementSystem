@@ -87,7 +87,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="100" y="10" width="130" height="-1"/>
+                  <AbsoluteConstraints x="100" y="10" width="170" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -382,7 +382,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="addInstructorButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Add Instructor"/>
+                <Property name="text" type="java.lang.String" value="Add Manager"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addInstructorButtonActionPerformed"/>

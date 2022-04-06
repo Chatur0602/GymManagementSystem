@@ -68,7 +68,7 @@ public class AddManager extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("Add  Manager");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 130, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 170, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -170,7 +170,7 @@ public class AddManager extends javax.swing.JFrame {
         jLabel10.setText(" Confirm Pass");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 110, 30));
 
-        addInstructorButton.setText("Add Instructor");
+        addInstructorButton.setText("Add Manager");
         addInstructorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addInstructorButtonActionPerformed(evt);
@@ -256,7 +256,7 @@ public class AddManager extends javax.swing.JFrame {
 
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
 
-        System.out.println("First: " + emailField.getText() + " " + contactField.getText() + " " + usernameField.getText());
+        /*System.out.println("First: " + emailField.getText() + " " + contactField.getText() + " " + usernameField.getText());
 
         if(InstructorIoHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
 
@@ -277,7 +277,7 @@ public class AddManager extends javax.swing.JFrame {
                 "Instructor Already Exists, Please Try Again with", "Error",
                 JOptionPane.WARNING_MESSAGE);
 
-        }
+        }*/
     }//GEN-LAST:event_addInstructorButtonActionPerformed
 
     /**

@@ -256,10 +256,7 @@ public class AddInstructor extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameFieldFocusGained
 
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
-        
-         System.out.println("First: " + emailField.getText() + " " + contactField.getText() + " " + usernameField.getText());
-        
-         
+     
          if(InstructorIoHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
              
              Instructor i = new Instructor(InstructorIoHandler.allInstructors.size()+1, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), usernameField.getText(), passwordField.getText());
