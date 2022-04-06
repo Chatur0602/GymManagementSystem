@@ -4,7 +4,5 @@
 4,Jojo,jojo@gmail.com,01231093,22-04-2022,Jotaro,naisu
 5,Anshu,anac2112@gmail.com,0173483757,09-04-2022,Anac,niks0602
 6,Manish,Manish1911@gmail.com,0172454585,09-04-2022,Manu,Manu1911
-7,Manish,Manish1911@gmail.com,asdasd,09-04-2022,asdas,asdasd
-8,Shweta,Shweta@gmail.com,9129389289,23-04-2022,ShwetaC,Sauri
-9,Shweta,Shweta@gmail.com,9129389289,23-04-2022,ShwetaC,Sauri
-9,Nishant,Nishant@gmail.com,912398987349,16-04-2022,sausuq,uaiuasd
+7,Anshu,anac2112@gmail.comu,21099090,09-04-2022,adadasdas,asdsadasd
+8,Jojo,Jojo1@gmail.com,01757745856,09-04-2022,Manu1,adadas

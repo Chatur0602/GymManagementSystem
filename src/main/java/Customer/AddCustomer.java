@@ -7,11 +7,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /* @author Nikhil */
 public class AddCustomer extends javax.swing.JFrame {
 
+    TextFileHandler TFH; 
     public AddCustomer() {
+        TFH = new TextFileHandler();
         initComponents();
     }
 
@@ -39,12 +45,12 @@ public class AddCustomer extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        dateOfBirthDC = new com.toedter.calendar.JDateChooser();
         addCustomerButton = new javax.swing.JButton();
         contactField = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         FemaleRadioButton = new javax.swing.JRadioButton();
         MaleRadioButton = new javax.swing.JRadioButton();
+        dateOfBirthDC = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -124,7 +130,6 @@ public class AddCustomer extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("D.O.B");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 60, 40));
-        jPanel3.add(dateOfBirthDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 130, 20));
 
         addCustomerButton.setText("Add Customer");
         addCustomerButton.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +170,7 @@ public class AddCustomer extends javax.swing.JFrame {
             }
         });
         jPanel3.add(MaleRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 60, -1));
+        jPanel3.add(dateOfBirthDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 130, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -219,29 +225,34 @@ public class AddCustomer extends javax.swing.JFrame {
 
     private void addCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCustomerButtonActionPerformed
 
-        //if(TextFileHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
-
-            String selection = genderGroup.getSelection().getActionCommand().toString();
-            char gender = selection.charAt(0);
-            
-            Customer c = new Customer(0, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), gender);
-            TextFileHandler.allCustomers.add(c);
-            TextFileHandler.addCustomer();
-
-            JOptionPane.showMessageDialog(null,
-                "Customer Successfully Added", "Success",
-                JOptionPane.INFORMATION_MESSAGE);
-
-            dispose();
-            CustomerManagement CM = new CustomerManagement();
-            CM.show();
-
-        /*} else{
-            JOptionPane.showMessageDialog(null,
-                "User Already Exists, Please Try Again with", "Error",
-                JOptionPane.WARNING_MESSAGE);
-
-        }*/
+        try {
+            if(TextFileHandler.checkCustomer(emailField.getText(), contactField.getText()) == null){
+                String selection = genderGroup.getSelection().getActionCommand().toString();
+                char gender = selection.charAt(0);
+                
+                Customer c = new Customer(TextFileHandler.allCustomers.size()+1, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), gender);
+                TextFileHandler.allCustomers.add(c);
+                TextFileHandler.addCustomer();
+                
+                JOptionPane.showMessageDialog(null,
+                        "Customer Successfully Added", "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
+                
+                dispose();
+                CustomerManagement CM = new CustomerManagement();
+                CM.show();
+            }
+            else{
+                JOptionPane.showMessageDialog(null,
+                        "Customer Already Exists, Please Try Again with", "Error",
+                        JOptionPane.WARNING_MESSAGE);
+                
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(AddCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(AddCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_addCustomerButtonActionPerformed
 
     private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
@@ -350,7 +361,7 @@ public class AddCustomer extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddCustomer().setVisible(true);
+                new AddCustomer().setVisible(true);   
             }
         });
        

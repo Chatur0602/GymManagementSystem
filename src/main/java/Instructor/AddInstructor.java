@@ -1,6 +1,7 @@
 package Instructor;
 
 
+import Customer.AddCustomer;
 import Manager.ManagerDashboard;
 import Manager.ManagerLogin;
 import javax.swing.*;
@@ -10,14 +11,17 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import TextPack.TextFileHandler;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /* @author Nikhil */
 public class AddInstructor extends javax.swing.JFrame {
-
-    /**
-     * Creates new form FirstGui
-     */
+    
+    TextFileHandler TFH ;
     public AddInstructor() {
+        TFH = new TextFileHandler();
         initComponents();
     }
 
@@ -257,27 +261,26 @@ public class AddInstructor extends javax.swing.JFrame {
          System.out.println("First: " + emailField.getText() + " " + contactField.getText() + " " + usernameField.getText());
         
          
-        
-       if(TextFileHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){ 
-                
-                Instructor i = new Instructor(0, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), usernameField.getText(), passwordField.getText());
-                TextFileHandler.allInstructors.add(i);
-                TextFileHandler.addInstructor();
-        
-                JOptionPane.showMessageDialog(null,
-                "Instructor Successfully Added", "Success",
-                JOptionPane.INFORMATION_MESSAGE);
-                
-                dispose();
-                InstructorManagement IM = new InstructorManagement();
-                IM.show(); 
-       
-        }  else{
-                JOptionPane.showMessageDialog(null,
-                "User Already Exists, Please Try Again with", "Error",
-                JOptionPane.WARNING_MESSAGE);
-                
-        }
+         if(TextFileHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
+             
+             Instructor i = new Instructor(TextFileHandler.allInstructors.size()+1, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), usernameField.getText(), passwordField.getText());
+             TextFileHandler.allInstructors.add(i);
+             TextFileHandler.addInstructor();
+             
+             JOptionPane.showMessageDialog(null,
+                     "Instructor Successfully Added", "Success",
+                     JOptionPane.INFORMATION_MESSAGE);
+             
+             dispose();
+             InstructorManagement IM = new InstructorManagement();
+             IM.show();
+             
+         }  else{
+             JOptionPane.showMessageDialog(null,
+                     "Instructor Already Exists, Please Try Again with", "Error",
+                     JOptionPane.WARNING_MESSAGE);
+             
+         }  
     }//GEN-LAST:event_addInstructorButtonActionPerformed
 
     
