@@ -5,3 +5,6 @@
 5,nik,nik,123,16-04-2022,M
 6,asdas,asdasd,asdasd,09-04-2022,M
 7,asddasd,sadasdasd,sdasdasd,09-04-2022,F
+8,Hello,irule,asdad,09-04-2022,M
+9,Hi,XDxd,123013,09-04-2022,M
+10,Wagwan,XDxdssd,1234567890,02-04-2022,F

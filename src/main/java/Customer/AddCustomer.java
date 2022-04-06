@@ -1,12 +1,8 @@
 package Customer;
 
 import Manager.ManagerDashboard;
-import Manager.ManagerLogin;
-import TextPack.TextFileHandler;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.logging.Level;
@@ -15,9 +11,9 @@ import java.util.logging.Logger;
 /* @author Nikhil */
 public class AddCustomer extends javax.swing.JFrame {
 
-    TextFileHandler TFH; 
+    CustomerIoHandler CIH; 
     public AddCustomer() {
-        TFH = new TextFileHandler();
+        CIH = new CustomerIoHandler();
         initComponents();
     }
 
@@ -226,13 +222,13 @@ public class AddCustomer extends javax.swing.JFrame {
     private void addCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCustomerButtonActionPerformed
 
         try {
-            if(TextFileHandler.checkCustomer(emailField.getText(), contactField.getText()) == null){
+            if(CustomerIoHandler.checkCustomer(emailField.getText(), contactField.getText()) == null){
                 String selection = genderGroup.getSelection().getActionCommand().toString();
                 char gender = selection.charAt(0);
                 
-                Customer c = new Customer(TextFileHandler.allCustomers.size()+1, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), gender);
-                TextFileHandler.allCustomers.add(c);
-                TextFileHandler.addCustomer();
+                Customer c = new Customer(CustomerIoHandler.allCustomers.size()+1, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), gender);
+                CustomerIoHandler.allCustomers.add(c);
+                CustomerIoHandler.addCustomer();
                 
                 JOptionPane.showMessageDialog(null,
                         "Customer Successfully Added", "Success",
