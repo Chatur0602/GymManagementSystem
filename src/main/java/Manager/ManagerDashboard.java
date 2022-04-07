@@ -1,5 +1,6 @@
 package Manager;
 
+import Admin.ManagerManagement;
 import Appointment.AppointmentManagement;
 import Customer.CustomerManagement;
 import Instructor.InstructorManagement;
@@ -31,7 +32,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        managerLabel = new javax.swing.JLabel();
         instructorLabel = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         crmLabel1 = new javax.swing.JLabel();
@@ -46,8 +46,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         backLabel1 = new javax.swing.JLabel();
         exitLabel1 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         crmLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,15 +58,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("Manager Dashboard");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 240, -1));
-
-        managerLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-manager-64.png")); // NOI18N
-        managerLabel.setText("  ");
-        managerLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                managerLabelMouseClicked(evt);
-            }
-        });
-        jPanel3.add(managerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 70, 70));
 
         instructorLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-trainer-64.png")); // NOI18N
         instructorLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -114,12 +103,12 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Appointment");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 90, 20));
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 90, 20));
 
         jLabel11.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("   Management");
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 100, 20));
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 100, 20));
 
         crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-appointment-64.png")); // NOI18N
         crmLabel2.setText("  ");
@@ -128,17 +117,17 @@ public class ManagerDashboard extends javax.swing.JFrame {
                 crmLabel2MouseClicked(evt);
             }
         });
-        jPanel3.add(crmLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 70, -1));
+        jPanel3.add(crmLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 70, -1));
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("Report");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 50, 20));
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 50, 20));
 
         jLabel13.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
         jLabel13.setText("Generator");
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 70, 20));
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 70, 20));
 
         backLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
@@ -158,16 +147,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
         });
         jPanel3.add(exitLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 20));
 
-        jLabel14.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel14.setText("Manager");
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 60, 20));
-
-        jLabel15.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel15.setText(" Management");
-        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 90, 20));
-
         crmLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-report-64.png")); // NOI18N
         crmLabel3.setText("  ");
         crmLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -175,7 +154,7 @@ public class ManagerDashboard extends javax.swing.JFrame {
                 crmLabel3MouseClicked(evt);
             }
         });
-        jPanel3.add(crmLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 70, 70));
+        jPanel3.add(crmLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 70, 70));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -188,7 +167,7 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -200,7 +179,7 @@ public class ManagerDashboard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jPanel1.requestFocusInWindow();
@@ -239,12 +218,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
         AppointmentManagement AM = new AppointmentManagement();
         AM.show() ;
     }//GEN-LAST:event_crmLabel2MouseClicked
-
-    private void managerLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managerLabelMouseClicked
-        dispose();
-        ManagerManagement MM = new ManagerManagement() ;
-        MM.show();
-    }//GEN-LAST:event_managerLabelMouseClicked
 
     private void crmLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crmLabel3MouseClicked
         // TODO add your handling code here:
@@ -306,8 +279,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -315,6 +286,5 @@ public class ManagerDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel managerLabel;
     // End of variables declaration//GEN-END:variables
 }

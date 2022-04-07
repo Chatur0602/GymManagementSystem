@@ -1,5 +1,6 @@
 package Main;
 
+import Admin.AdminLogin;
 import Instructor.InstructorLogin;
 import Manager.ManagerLogin;
 import javax.swing.*;
@@ -31,10 +32,11 @@ public class LaunchPanel extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        loginButton = new javax.swing.JButton();
+        adminButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        loginButton1 = new javax.swing.JButton();
+        managerButton = new javax.swing.JButton();
+        instructorButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -72,15 +74,15 @@ public class LaunchPanel extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(204, 102, 0));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        loginButton.setBackground(new java.awt.Color(204, 102, 0));
-        loginButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        loginButton.setText("Instructor Login");
-        loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                instructorPath(evt);
+        adminButton.setBackground(new java.awt.Color(204, 102, 0));
+        adminButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        adminButton.setText("Admin Login");
+        adminButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminPath(evt);
             }
         });
-        jPanel3.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 120, 40));
+        jPanel3.add(adminButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
@@ -93,23 +95,28 @@ public class LaunchPanel extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Launch Panel");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 190, -1));
+        jLabel1.setText(" Launch Panel");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 190, -1));
 
-        loginButton1.setBackground(new java.awt.Color(204, 102, 0));
-        loginButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        loginButton1.setText("Manager Login");
-        loginButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminPath(evt);
-            }
-        });
-        loginButton1.addActionListener(new java.awt.event.ActionListener() {
+        managerButton.setBackground(new java.awt.Color(204, 102, 0));
+        managerButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        managerButton.setText("Manager Login");
+        managerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginButton1ActionPerformed(evt);
+                managerPath(evt);
             }
         });
-        jPanel3.add(loginButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 120, 40));
+        jPanel3.add(managerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 120, 30));
+
+        instructorButton.setBackground(new java.awt.Color(204, 102, 0));
+        instructorButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        instructorButton.setText("Instructor Login");
+        instructorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                instructorPath(evt);
+            }
+        });
+        jPanel3.add(instructorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 120, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,21 +155,23 @@ public class LaunchPanel extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void adminPath(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminPath
+    private void managerPath(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerPath
             dispose();
             ManagerLogin ML = new ManagerLogin();
             ML.show();
+    }//GEN-LAST:event_managerPath
+
+    private void adminPath(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminPath
+            dispose();
+            AdminLogin AL = new AdminLogin();
+            AL.show();
     }//GEN-LAST:event_adminPath
 
-    private void instructorPath(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instructorPath
+    private void instructorPath(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instructorPath
             dispose();
-            InstructorLogin AL = new InstructorLogin();
-            AL.show();
+            InstructorLogin IL = new InstructorLogin();
+            IL.show();
     }//GEN-LAST:event_instructorPath
-
-    private void loginButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,6 +213,8 @@ public class LaunchPanel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton adminButton;
+    private javax.swing.JButton instructorButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -211,7 +222,6 @@ public class LaunchPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton loginButton;
-    private javax.swing.JButton loginButton1;
+    private javax.swing.JButton managerButton;
     // End of variables declaration//GEN-END:variables
 }

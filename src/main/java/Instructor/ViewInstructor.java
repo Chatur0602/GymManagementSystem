@@ -1,34 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package Customer;
+package Instructor;
 
 import static Customer.CustomerIoHandler.allCustomers;
+import static Instructor.InstructorIoHandler.allInstructors;
 import java.text.Format;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JTable;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Nikhi
  */
-public class ViewCustomer extends javax.swing.JFrame {
+public class ViewInstructor extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ViewCustomer
-     */
-    CustomerIoHandler CIH; 
-    public ViewCustomer() {
-        CIH = new CustomerIoHandler();
+    InstructorIoHandler IIH;
+    public ViewInstructor() {
+        IIH = new InstructorIoHandler();
         initComponents();
     }
 
@@ -57,7 +44,7 @@ public class ViewCustomer extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("View Customer");
+        jLabel1.setText("View Instructor");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -76,7 +63,7 @@ public class ViewCustomer extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        searchCustomerButton.setText("Search Customer");
+        searchCustomerButton.setText("Search Instructor");
         searchCustomerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchCustomerButtonActionPerformed(evt);
@@ -113,7 +100,9 @@ public class ViewCustomer extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,8 +121,8 @@ public class ViewCustomer extends javax.swing.JFrame {
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
 
         dispose();
-        CustomerManagement CM= new CustomerManagement();
-        CM.show();
+        InstructorManagement IM= new InstructorManagement();
+        IM.show();
     }//GEN-LAST:event_backLabelMouseClicked
 
     private void searchCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCustomerButtonActionPerformed
@@ -169,34 +158,34 @@ public class ViewCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_searchCustomerButtonActionPerformed
 
     private void viewCustomerButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewCustomerButton1ActionPerformed
-        
+
         viewCustomerTable.setDefaultEditor(Object.class, null);
-        
+
         DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
-        String [] columnsName = {"Name", "Email ID", "Phone No.", "DOB", "Gender"};
+        String [] columnsName = {"Name", "Email ID", "Phone No.", "DOB", "Username","Password"};
         model.setColumnIdentifiers(columnsName);
         String dataRow [] ;
-        
-        if(model.getRowCount()==allCustomers.size()){
-            
-         }else{
-             for (Customer list : allCustomers) {
+
+        if(model.getRowCount()==allInstructors.size()){
+
+        }else{
+            for (Instructor list : allInstructors) {
                 Format date =new SimpleDateFormat("dd-MM-yyyy");
-                dataRow = new String[] {list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),Character.toString(list.getGender())};
+                dataRow = new String[] {list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),list.getUsername(),list.getPassword()};
                 model.addRow(dataRow);
-                
-         }
+
+            }
         }
-         
+
     }//GEN-LAST:event_viewCustomerButton1ActionPerformed
 
     private void viewCustomerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewCustomerTableMouseClicked
-            JTable source = (JTable)evt.getSource();
-            int row = source.rowAtPoint( evt.getPoint() );
-            int column = source.columnAtPoint( evt.getPoint() );
-            String s=source.getModel().getValueAt(row, column).toString();
-            
-            System.out.println(s+" "+row+" "+column);
+        JTable source = (JTable)evt.getSource();
+        int row = source.rowAtPoint( evt.getPoint() );
+        int column = source.columnAtPoint( evt.getPoint() );
+        String s=source.getModel().getValueAt(row, column).toString();
+
+        System.out.println(s+" "+row+" "+column);
     }//GEN-LAST:event_viewCustomerTableMouseClicked
 
     /**
@@ -216,20 +205,20 @@ public class ViewCustomer extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewInstructor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewInstructor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewInstructor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewInstructor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewCustomer().setVisible(true);
+                new ViewInstructor().setVisible(true);
             }
         });
     }
