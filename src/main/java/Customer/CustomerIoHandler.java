@@ -82,6 +82,7 @@ public class CustomerIoHandler {
                 JOptionPane.showMessageDialog(null,
                 "Customer Not Added, Please Try Again", "Error",
                 JOptionPane.ERROR_MESSAGE);
+                System.exit(0);
         }   
     }
 }

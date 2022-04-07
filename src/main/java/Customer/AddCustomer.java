@@ -1,5 +1,6 @@
 package Customer;
 
+import static Customer.CustomerIoHandler.*;
 import Manager.ManagerDashboard;
 import javax.swing.*;
 import java.awt.*;
@@ -223,10 +224,16 @@ public class AddCustomer extends javax.swing.JFrame {
 
         try {
             if(CustomerIoHandler.checkCustomer(emailField.getText(), contactField.getText()) == null){
+                
                 String selection = genderGroup.getSelection().getActionCommand().toString();
                 char gender = selection.charAt(0);
+                int ID = 0 ;
                 
-                Customer c = new Customer(CustomerIoHandler.allCustomers.size()+1, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), gender);
+                for (Customer list : allCustomers) {
+                    ID = allCustomers.get(allCustomers.size() - 1).getID() + 1;
+            }
+                
+                Customer c = new Customer(ID, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), gender);
                 CustomerIoHandler.allCustomers.add(c);
                 CustomerIoHandler.addCustomer();
                 
@@ -357,7 +364,8 @@ public class AddCustomer extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddCustomer().setVisible(true);   
+                new AddCustomer().setVisible(true); 
+                
             }
         });
        

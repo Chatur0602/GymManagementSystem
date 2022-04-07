@@ -2,6 +2,7 @@ package Instructor;
 
 
 import Customer.AddCustomer;
+import static Instructor.InstructorIoHandler.allInstructors;
 import Manager.ManagerDashboard;
 import Manager.ManagerLogin;
 import javax.swing.*;
@@ -259,7 +260,13 @@ public class AddInstructor extends javax.swing.JFrame {
      
          if(InstructorIoHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
              
-             Instructor i = new Instructor(InstructorIoHandler.allInstructors.size()+1, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), usernameField.getText(), passwordField.getText());
+             int ID = 0 ;
+                
+                for (Instructor list : allInstructors) {
+                    ID = allInstructors.get(allInstructors.size() - 1).getID() + 1;
+            }
+             
+             Instructor i = new Instructor(ID, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), usernameField.getText(), passwordField.getText());
              InstructorIoHandler.allInstructors.add(i);
              InstructorIoHandler.addInstructor();
              

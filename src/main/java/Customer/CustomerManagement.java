@@ -1,5 +1,6 @@
 package Customer;
 
+import static Customer.CustomerIoHandler.allCustomers;
 import Manager.ManagerDashboard;
 import Manager.ManagerLogin;
 import javax.swing.*;
@@ -10,10 +11,9 @@ import java.awt.event.ActionListener;
 /* @author Nikhil */
 public class CustomerManagement extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FirstGui
-     */
+    CustomerIoHandler CIH ;
     public CustomerManagement() {
+        
         initComponents();
     }
 
@@ -71,6 +71,11 @@ public class CustomerManagement extends javax.swing.JFrame {
 
         searchLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-view-64.png")); // NOI18N
         searchLabel.setText("  ");
+        searchLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchLabelMouseClicked(evt);
+            }
+        });
         jPanel3.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 70, 70));
 
         addLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
@@ -82,6 +87,11 @@ public class CustomerManagement extends javax.swing.JFrame {
         jPanel3.add(addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         deleteLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
+        deleteLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteLabelMouseClicked(evt);
+            }
+        });
         jPanel3.add(deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -146,11 +156,9 @@ public class CustomerManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_exitLabelMouseClicked
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
-
         dispose();
         ManagerDashboard MD = new ManagerDashboard();
         MD.show();
-
     }//GEN-LAST:event_backLabelMouseClicked
 
     private void addLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelMouseClicked
@@ -158,6 +166,60 @@ public class CustomerManagement extends javax.swing.JFrame {
         AddCustomer AC = new AddCustomer();
         AC.show();
     }//GEN-LAST:event_addLabelMouseClicked
+
+    private void searchLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchLabelMouseClicked
+        dispose();
+        ViewCustomer VC = new ViewCustomer();
+        VC.show();
+    }//GEN-LAST:event_searchLabelMouseClicked
+
+    private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
+        try{
+        String eMail = JOptionPane.showInputDialog("Enter the Email ID of the Customer you'd like to Delete");
+        
+        CIH = new CustomerIoHandler();
+        boolean userFound = false ;
+        int index = 0 ;
+        String name = null ;
+        System.out.println(eMail);
+        
+            for (Customer list : allCustomers) {
+                  if (eMail.toLowerCase().equals(list.geteMail().toLowerCase())){
+                    index = allCustomers.indexOf(list);
+                    name = list.getName();
+
+                    userFound = true;
+                }
+            }
+            
+            if(userFound == true){
+                System.out.println(index+" "+ name);
+                int confirmation = JOptionPane.showConfirmDialog(null,
+                "Customer '" + name + "' with the corrosponding Email '" + eMail + "' found, would you like to delete?" , "Delete Confirmation", JOptionPane.YES_NO_OPTION);
+                
+                if (confirmation == JOptionPane.YES_OPTION) {
+                    allCustomers.remove(index);
+                    CustomerIoHandler.addCustomer();
+                    JOptionPane.showMessageDialog(null, "Customer " + name + " deleted", "Customer Deleted", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Customer " + name + " not deleted", "Customer Not Deleted", JOptionPane.INFORMATION_MESSAGE);
+                   
+                }
+                
+                /*
+                dispose();
+                CustomerManagement CM= new CustomerManagement();
+                CM.show();*/
+            }
+                    
+            if (userFound == false) {
+                JOptionPane.showMessageDialog(null,"Customer doesn't exist! Please try agiain","Alert",JOptionPane.WARNING_MESSAGE);
+            }
+            allCustomers.clear();
+        } catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_deleteLabelMouseClicked
 
     /**
      * @param args the command line arguments

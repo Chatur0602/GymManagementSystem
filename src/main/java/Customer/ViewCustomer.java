@@ -22,14 +22,13 @@ import javax.swing.table.DefaultTableModel;
  * @author Nikhi
  */
 public class ViewCustomer extends javax.swing.JFrame {
-
-    /**
-     * Creates new form ViewCustomer
-     */
+    public static String [] columnsName = {"ID", "Name", "Email ID", "Phone No.", "DOB", "Gender"};
+    public static String dataRow [] ;
+    
     CustomerIoHandler CIH; 
     public ViewCustomer() {
         CIH = new CustomerIoHandler();
-        initComponents();
+        initComponents(); 
     }
 
     /**
@@ -49,6 +48,8 @@ public class ViewCustomer extends javax.swing.JFrame {
         viewCustomerButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         viewCustomerTable = new javax.swing.JTable();
+        emailField = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,7 +59,7 @@ public class ViewCustomer extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("View Customer");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 180, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -82,7 +83,7 @@ public class ViewCustomer extends javax.swing.JFrame {
                 searchCustomerButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(searchCustomerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, -1, -1));
+        jPanel3.add(searchCustomerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
         viewCustomerButton1.setText("View all");
         viewCustomerButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +110,20 @@ public class ViewCustomer extends javax.swing.JFrame {
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 730, 300));
 
+        emailField.setBackground(new java.awt.Color(0, 51, 102));
+        emailField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        emailField.setForeground(new java.awt.Color(204, 204, 204));
+        emailField.setText("            Enter Email ID");
+        emailField.setToolTipText("Password");
+        emailField.setBorder(null);
+        emailField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailFieldFocusGained(evt);
+            }
+        });
+        jPanel3.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 180, 20));
+        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 180, 10));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,64 +145,43 @@ public class ViewCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_exitLabelMouseClicked
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
-
         dispose();
         CustomerManagement CM= new CustomerManagement();
         CM.show();
     }//GEN-LAST:event_backLabelMouseClicked
-
+    
+    
     private void searchCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCustomerButtonActionPerformed
-
-        /*try {
-            if(CustomerIoHandler.checkCustomer(emailField.getText(), contactField.getText()) == null){
-                String selection = genderGroup.getSelection().getActionCommand().toString();
-                char gender = selection.charAt(0);
-
-                Customer c = new Customer(CustomerIoHandler.allCustomers.size()+1, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), gender);
-                CustomerIoHandler.allCustomers.add(c);
-                CustomerIoHandler.addCustomer();
-
-                JOptionPane.showMessageDialog(null,
-                    "Customer Successfully Added", "Success",
-                    JOptionPane.INFORMATION_MESSAGE);
-
-                dispose();
-                CustomerManagement CM = new CustomerManagement();
-                CM.show();
+        
+        viewCustomerTable.setDefaultEditor(Object.class, null);
+        DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
+        model.setRowCount(0);
+        model.setColumnIdentifiers(columnsName);
+        Format date =new SimpleDateFormat("dd-MM-yyyy");  
+        
+        for (Customer list : allCustomers) {
+                  if (list.geteMail().toLowerCase().contains(emailField.getText().toLowerCase())){
+                      
+                      System.out.println(emailField.getText() + " " + list.geteMail());
+                      dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),Character.toString(list.getGender())};
+                      model.addRow(dataRow);
             }
-            else{
-                JOptionPane.showMessageDialog(null,
-                    "Customer Already Exists, Please Try Again with", "Error",
-                    JOptionPane.WARNING_MESSAGE);
-
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(AddCustomer.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ParseException ex) {
-            Logger.getLogger(AddCustomer.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+        }
     }//GEN-LAST:event_searchCustomerButtonActionPerformed
 
     private void viewCustomerButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewCustomerButton1ActionPerformed
         
         viewCustomerTable.setDefaultEditor(Object.class, null);
-        
         DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
-        String [] columnsName = {"Name", "Email ID", "Phone No.", "DOB", "Gender"};
+        model.setRowCount(0);
         model.setColumnIdentifiers(columnsName);
-        String dataRow [] ;
-        
-        if(model.getRowCount()==allCustomers.size()){
-            
-         }else{
+        Format date =new SimpleDateFormat("dd-MM-yyyy");
+       
              for (Customer list : allCustomers) {
-                Format date =new SimpleDateFormat("dd-MM-yyyy");
-                dataRow = new String[] {list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),Character.toString(list.getGender())};
-                model.addRow(dataRow);
                 
-         }
+                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),Character.toString(list.getGender())};
+                model.addRow(dataRow);
         }
-         
     }//GEN-LAST:event_viewCustomerButton1ActionPerformed
 
     private void viewCustomerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewCustomerTableMouseClicked
@@ -198,6 +192,11 @@ public class ViewCustomer extends javax.swing.JFrame {
             
             System.out.println(s+" "+row+" "+column);
     }//GEN-LAST:event_viewCustomerTableMouseClicked
+
+    private void emailFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFieldFocusGained
+        emailField.setText("");
+        emailField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+    }//GEN-LAST:event_emailFieldFocusGained
 
     /**
      * @param args the command line arguments
@@ -236,10 +235,12 @@ public class ViewCustomer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backLabel;
+    private javax.swing.JTextField emailField;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JButton searchCustomerButton;
     private javax.swing.JButton viewCustomerButton1;
     private javax.swing.JTable viewCustomerTable;

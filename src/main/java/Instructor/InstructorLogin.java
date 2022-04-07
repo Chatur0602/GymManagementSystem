@@ -216,9 +216,9 @@ public class InstructorLogin extends javax.swing.JFrame {
             boolean loginStatus = false ;
             String username = null ;
           
-             for (Instructor list : allInstructors) {
+            for (Instructor list : allInstructors) {
                  
-                  if (usernameInput.equals(list.getUsername()) && passwordInput.equals(list.getPassword())){
+                  if (usernameInput.toLowerCase().equals(list.getUsername().toLowerCase()) && passwordInput.equals(list.getPassword())){
               
                 username = list.getUsername();
                 loginStatus = true;
@@ -236,7 +236,7 @@ public class InstructorLogin extends javax.swing.JFrame {
             }
                     
             if (loginStatus == false) {
-                JOptionPane.showMessageDialog(null,"Incorrect Password!","Alert",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Incorrect Username Or Password!","Alert",JOptionPane.WARNING_MESSAGE);
             }
                  
  

@@ -1,5 +1,6 @@
 package Instructor;
 
+import static Instructor.InstructorIoHandler.*;
 import Manager.ManagerDashboard;
 import Manager.ManagerLogin;
 import javax.swing.*;
@@ -10,9 +11,7 @@ import java.awt.event.ActionListener;
 /* @author Nikhil */
 public class InstructorManagement extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FirstGui
-     */
+    InstructorIoHandler IIH ;
     public InstructorManagement() {
         initComponents();
     }
@@ -31,13 +30,13 @@ public class InstructorManagement extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
-        crmLabel = new javax.swing.JLabel();
-        instructorLabel = new javax.swing.JLabel();
-        crmLabel1 = new javax.swing.JLabel();
+        searchLabel = new javax.swing.JLabel();
+        addLabel = new javax.swing.JLabel();
+        deleteLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        crmLabel2 = new javax.swing.JLabel();
+        editLabel = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,20 +68,30 @@ public class InstructorManagement extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        crmLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-view-64.png")); // NOI18N
-        crmLabel.setText("  ");
-        jPanel3.add(crmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 70, 70));
-
-        instructorLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
-        instructorLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+        searchLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-view-64.png")); // NOI18N
+        searchLabel.setText("  ");
+        searchLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                instructorLabelMouseClicked(evt);
+                searchLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(instructorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        jPanel3.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 70, 70));
 
-        crmLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
-        jPanel3.add(crmLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
+        addLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
+        addLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addLabelMouseClicked(evt);
+            }
+        });
+        jPanel3.add(addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+
+        deleteLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
+        deleteLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteLabelMouseClicked(evt);
+            }
+        });
+        jPanel3.add(deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
@@ -99,9 +108,9 @@ public class InstructorManagement extends javax.swing.JFrame {
         jLabel10.setText("Edit");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 30, 20));
 
-        crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
-        crmLabel2.setText("  ");
-        jPanel3.add(crmLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 60, -1));
+        editLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
+        editLabel.setText("  ");
+        jPanel3.add(editLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 60, -1));
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
@@ -146,20 +155,70 @@ public class InstructorManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_exitLabelMouseClicked
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
-
         dispose();
         ManagerDashboard MD = new ManagerDashboard();
         MD.show();
-
-
     }//GEN-LAST:event_backLabelMouseClicked
 
-    private void instructorLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instructorLabelMouseClicked
+    private void addLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelMouseClicked
         dispose();
         AddInstructor AI = new AddInstructor();
         AI.show();
         
-    }//GEN-LAST:event_instructorLabelMouseClicked
+    }//GEN-LAST:event_addLabelMouseClicked
+
+    private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
+        try{
+        String username = JOptionPane.showInputDialog("Enter the Username of the Instructor you'd like to Delete");
+        
+        IIH = new InstructorIoHandler();
+        boolean userFound = false ;
+        int index = 0 ;
+        String name = null ;
+        
+            for (Instructor list : allInstructors) {
+                  if (username.toLowerCase().equals(list.getUsername().toLowerCase())){
+                    index = allInstructors.indexOf(list);
+                    name = list.getName();
+
+                    userFound = true;
+                }
+            }
+            
+            if(userFound == true){
+                System.out.println(index+" "+ name);
+                int confirmation = JOptionPane.showConfirmDialog(null,
+                "Instructor '" + name + "' with the corrosponding Username '" + username + "' found, would you like to delete?" , "Delete Confirmation", JOptionPane.YES_NO_OPTION);
+                
+                if (confirmation == JOptionPane.YES_OPTION) {
+                    allInstructors.remove(index);
+                    InstructorIoHandler.addInstructor();
+                    JOptionPane.showMessageDialog(null, "Intrusctor " + name + " deleted", "Instructor Deleted", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Instructor " + name + " not deleted", "Instructor Not Deleted", JOptionPane.INFORMATION_MESSAGE);
+                   
+                }
+                
+                /*
+                dispose();
+                InstructorManagement CM= new InstructorManagement();
+                CM.show();*/
+            }
+                    
+            if (userFound == false) {
+                JOptionPane.showMessageDialog(null,"Instructor doesn't exist! Please try agiain","Alert",JOptionPane.WARNING_MESSAGE);
+            }
+            allInstructors.clear();
+        } catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_deleteLabelMouseClicked
+
+    private void searchLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchLabelMouseClicked
+        dispose();
+        ViewInstructor VI = new ViewInstructor();
+        VI.show();
+    }//GEN-LAST:event_searchLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -214,12 +273,11 @@ public class InstructorManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel addLabel;
     private javax.swing.JLabel backLabel;
-    private javax.swing.JLabel crmLabel;
-    private javax.swing.JLabel crmLabel1;
-    private javax.swing.JLabel crmLabel2;
+    private javax.swing.JLabel deleteLabel;
+    private javax.swing.JLabel editLabel;
     private javax.swing.JLabel exitLabel;
-    private javax.swing.JLabel instructorLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -227,5 +285,6 @@ public class InstructorManagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel searchLabel;
     // End of variables declaration//GEN-END:variables
 }
