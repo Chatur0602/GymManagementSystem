@@ -1,5 +1,8 @@
 package Instructor;
 
+import Customer.Customer;
+import static Customer.CustomerIoHandler.allCustomers;
+import static Instructor.InstructorIoHandler.allInstructors;
 import Main.LaunchPanel;
 import javax.swing.*;
 import java.awt.*;
@@ -17,11 +20,10 @@ import java.util.logging.Logger;
 
 /* @author Nikhil */
 public class InstructorLogin extends javax.swing.JFrame {
-
-    /**
-     * Creates new form FirstGui
-     */
+    
+    InstructorIoHandler IIH ;
     public InstructorLogin() {
+        IIH = new InstructorIoHandler();
         initComponents();
     }
 
@@ -210,53 +212,33 @@ public class InstructorLogin extends javax.swing.JFrame {
             
             String usernameInput = usernameField.getText();
             String passwordInput = passwordField.getText();
-            String[] sArray = null ;
-            String s ;
+      
             boolean loginStatus = false ;
+            String username = null ;
+          
+             for (Instructor list : allInstructors) {
+                 
+                  if (usernameInput.equals(list.getUsername()) && passwordInput.equals(list.getPassword())){
+              
+                username = list.getUsername();
+                loginStatus = true;
+             }
+            }
             
-            try {
-            Scanner in = new Scanner(new File("src/main/java/TextPack/Instructors.txt"));
-            while (in.hasNextLine())
-            {
-            s = in.nextLine();
-            sArray = s.split(",");
-            
-            System.out.println(sArray[5]+" "+sArray[6]);
-            System.out.println(usernameInput +" "+passwordInput);
-            
-            if (sArray[5].equals(usernameInput) && sArray[6].equals(passwordInput))
-                {
+            if(loginStatus == true){
                 JOptionPane.showMessageDialog(null,
-                "Login Successful, Welcome " + sArray[1], "Success",
+                "Login Successful, Welcome " + username, "Success",
                 JOptionPane.INFORMATION_MESSAGE);
-
+                
                 dispose();
                 InstructorDashboard ID = new InstructorDashboard();
                 ID.show();
-                loginStatus = true;
-                break;
-                }           
             }
-            
+                    
             if (loginStatus == false) {
                 JOptionPane.showMessageDialog(null,"Incorrect Password!","Alert",JOptionPane.WARNING_MESSAGE);
             }
-            
-            in.close();
-        }   catch (FileNotFoundException e) {
-                JOptionPane.showMessageDialog(null,
-                "User Not Found", "Error",
-                JOptionPane.ERROR_MESSAGE);
-                }
-      
-        
-         
-            
-           
-     
-     
-     
-            
+                 
  
     }//GEN-LAST:event_loginButtonMouseClicked
 

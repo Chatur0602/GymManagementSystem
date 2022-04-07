@@ -176,7 +176,6 @@ public class ViewInstructor extends javax.swing.JFrame {
 
             }
         }
-
     }//GEN-LAST:event_viewCustomerButton1ActionPerformed
 
     private void viewCustomerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewCustomerTableMouseClicked
