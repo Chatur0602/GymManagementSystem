@@ -1,34 +1,44 @@
-package Instructor;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package Customer;
 
 import static Customer.CustomerIoHandler.allCustomers;
-import static Instructor.InstructorIoHandler.allInstructors;
 import java.text.Format;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTable;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Nikhi
  */
-public class ViewInstructor extends javax.swing.JFrame {
+public class EditCustomer extends javax.swing.JFrame {
+    public static String [] columnsName = {"Customer ID", "Name", "Email ID", "Phone No.", "DOB", "Gender"};
     public static String dataRow [] ;
-    public static String [] columnsName = {"Instructor ID", "Name", "Email ID", "Phone No.", "DOB", "Username","Password"};
     
-    InstructorIoHandler IIH;
-    public ViewInstructor() {
-        IIH = new InstructorIoHandler();
-        initComponents();
+    
+    CustomerIoHandler CIH; 
+    public EditCustomer() {
+        CIH = new CustomerIoHandler();
+        initComponents(); 
         
-        viewCustomerTable.setDefaultEditor(Object.class, null);
         DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(columnsName);
         Format date =new SimpleDateFormat("dd-MM-yyyy");
- 
-            for (Instructor list : allInstructors) {
-                
-                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),list.getUsername(),list.getPassword()};
+       
+             for (Customer list : allCustomers) {
+                 
+                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),Character.toString(list.getGender())};
                 model.addRow(dataRow);
         }
     }
@@ -47,9 +57,10 @@ public class ViewInstructor extends javax.swing.JFrame {
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
         searchCustomerButton = new javax.swing.JButton();
+        editCustomerButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         viewCustomerTable = new javax.swing.JTable();
-        usernameField = new javax.swing.JTextField();
+        emailField = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,7 +71,7 @@ public class ViewInstructor extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("View Instructor");
+        jLabel1.setText("View Customer");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -79,13 +90,21 @@ public class ViewInstructor extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        searchCustomerButton.setText("Search Instructor");
+        searchCustomerButton.setText("Search Customer");
         searchCustomerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchCustomerButtonActionPerformed(evt);
             }
         });
         jPanel3.add(searchCustomerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+
+        editCustomerButton.setText("Edit");
+        editCustomerButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editCustomerButtonMouseClicked(evt);
+            }
+        });
+        jPanel3.add(editCustomerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 370, 110, -1));
 
         viewCustomerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -104,27 +123,25 @@ public class ViewInstructor extends javax.swing.JFrame {
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 730, 300));
 
-        usernameField.setBackground(new java.awt.Color(0, 51, 102));
-        usernameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        usernameField.setForeground(new java.awt.Color(204, 204, 204));
-        usernameField.setText("            Enter Username");
-        usernameField.setToolTipText("Password");
-        usernameField.setBorder(null);
-        usernameField.addFocusListener(new java.awt.event.FocusAdapter() {
+        emailField.setBackground(new java.awt.Color(0, 51, 102));
+        emailField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        emailField.setForeground(new java.awt.Color(204, 204, 204));
+        emailField.setText("            Enter Email ID");
+        emailField.setToolTipText("Password");
+        emailField.setBorder(null);
+        emailField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                usernameFieldFocusGained(evt);
+                emailFieldFocusGained(evt);
             }
         });
-        jPanel3.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 180, 20));
+        jPanel3.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 180, 20));
         jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 180, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 769, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,40 +159,64 @@ public class ViewInstructor extends javax.swing.JFrame {
     }//GEN-LAST:event_exitLabelMouseClicked
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
-
         dispose();
-        InstructorManagement IM= new InstructorManagement();
-        IM.show();
+        CustomerManagement CM= new CustomerManagement();
+        CM.show();
     }//GEN-LAST:event_backLabelMouseClicked
-
+    
+    
     private void searchCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCustomerButtonActionPerformed
-        viewCustomerTable.setDefaultEditor(Object.class, null);
+        
         DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(columnsName);
         Format date =new SimpleDateFormat("dd-MM-yyyy");  
         
-        for (Instructor list : allInstructors) {
-                  if (list.getUsername().toLowerCase().contains(usernameField.getText().toLowerCase())){
+        for (Customer list : allCustomers) {
+                  if (list.geteMail().toLowerCase().contains(emailField.getText().toLowerCase())){
                       
-                      dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),list.getUsername(),list.getPassword()};
-                      model.addRow(dataRow);      
+                      System.out.println(emailField.getText() + " " + list.geteMail());
+                      dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),Character.toString(list.getGender())};
+                      model.addRow(dataRow);
             }
-        }  
+        }
     }//GEN-LAST:event_searchCustomerButtonActionPerformed
 
     private void viewCustomerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewCustomerTableMouseClicked
-        JTable source = (JTable)evt.getSource();
-        int row = source.rowAtPoint( evt.getPoint() );
-        int column = source.columnAtPoint( evt.getPoint() );
-        String s=source.getModel().getValueAt(row, column).toString();
-        
+
     }//GEN-LAST:event_viewCustomerTableMouseClicked
 
-    private void usernameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFieldFocusGained
-        usernameField.setText("");
-        usernameField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-    }//GEN-LAST:event_usernameFieldFocusGained
+    private void emailFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFieldFocusGained
+        emailField.setText("");
+        emailField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+    }//GEN-LAST:event_emailFieldFocusGained
+
+    private void editCustomerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editCustomerButtonMouseClicked
+            /*JTable source = (JTable)evt.getSource();
+            int row = source.rowAtPoint( evt.getPoint() );
+            int column = source.columnAtPoint( evt.getPoint() );
+            String s=source.getModel().getValueAt(row,column).toString();*/
+           
+            ArrayList<String> ID = new ArrayList<String>();
+            ArrayList<String> name = new ArrayList<String>();
+            
+            DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
+            model.setColumnIdentifiers(columnsName);
+ 
+            for (int rowCount = 0; rowCount < model.getRowCount(); rowCount++){
+                //Customer c = new Customer(Integer.parseInt(model.getValueAt(rowCount, 0)), model.getValueAt(rowCount, 1).toString(), model.getValueAt(rowCount, 2).toString(), model.getValueAt(rowCount, 3).toString(), model.getValueAt(rowCount, 4),Character.toString(model.getValueAt(rowCount, 5)));
+                //ID.add(model.getValueAt(rowCount, 0).toString()+ " "+ model.getValueAt(rowCount, 1).toString());
+                
+                //name.add(model.getValueAt(rowCount, 1).toString());
+                //System.out.println(name);
+                
+                /*for (int columnCount = 0; columnCount < model.getColumnCount(); columnCount++){
+                System.out.println(model.getValueAt(rowCount, columnCount));
+                }*/
+            }
+            
+            System.out.println(ID + "\n");
+    }//GEN-LAST:event_editCustomerButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,33 +235,35 @@ public class ViewInstructor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewInstructor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewInstructor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewInstructor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewInstructor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewInstructor().setVisible(true);
+                new EditCustomer().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backLabel;
+    private javax.swing.JButton editCustomerButton;
+    private javax.swing.JTextField emailField;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JButton searchCustomerButton;
-    private javax.swing.JTextField usernameField;
     private javax.swing.JTable viewCustomerTable;
     // End of variables declaration//GEN-END:variables
 }
