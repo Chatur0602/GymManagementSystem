@@ -2,21 +2,27 @@ package Admin;
 
 import Appointment.*;
 import Customer.*;
+import Manager.Manager;
 import Manager.ManagerDashboard;
 import Manager.ManagerDashboard;
+import Manager.ManagerIoHandler;
+import static Manager.ManagerIoHandler.allManagers;
 import Manager.ManagerLogin;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /* @author Nikhil */
 public class AddManager extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FirstGui
-     */
+    ManagerIoHandler MIH;
     public AddManager() {
+        MIH = new ManagerIoHandler();
         initComponents();
     }
 
@@ -59,6 +65,8 @@ public class AddManager extends javax.swing.JFrame {
         validationField = new javax.swing.JPasswordField();
         passwordField = new javax.swing.JPasswordField();
         contactField = new javax.swing.JTextField();
+        addressField = new javax.swing.JTextField();
+        jSeparator9 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -134,12 +142,12 @@ public class AddManager extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("Address");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 60, 40));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 60, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 153, 153));
         jLabel7.setText("Username");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 80, 30));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 80, 30));
 
         usernameField.setBackground(new java.awt.Color(102, 0, 102));
         usernameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -151,25 +159,25 @@ public class AddManager extends javax.swing.JFrame {
                 usernameFieldFocusGained(evt);
             }
         });
-        jPanel3.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 129, 20));
-        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 130, 10));
+        jPanel3.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 129, 20));
+        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 130, 10));
 
         jLabel8.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 153, 153));
         jLabel8.setText("Username");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 80, 30));
-        jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 130, 10));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 80, 30));
+        jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 130, 10));
 
         jLabel9.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(153, 153, 153));
         jLabel9.setText("Password");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 80, 30));
-        jPanel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 130, 10));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 80, 30));
+        jPanel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 130, 10));
 
         jLabel10.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 153, 153));
         jLabel10.setText(" Confirm Pass");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 110, 30));
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 110, 30));
 
         addInstructorButton.setText("Add Manager");
         addInstructorButton.addActionListener(new java.awt.event.ActionListener() {
@@ -183,13 +191,13 @@ public class AddManager extends javax.swing.JFrame {
         validationField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         validationField.setForeground(new java.awt.Color(204, 204, 204));
         validationField.setBorder(null);
-        jPanel3.add(validationField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 129, 20));
+        jPanel3.add(validationField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 129, 20));
 
         passwordField.setBackground(new java.awt.Color(102, 0, 102));
         passwordField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         passwordField.setForeground(new java.awt.Color(204, 204, 204));
         passwordField.setBorder(null);
-        jPanel3.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 129, 20));
+        jPanel3.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 129, 20));
 
         contactField.setBackground(new java.awt.Color(102, 0, 102));
         contactField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -197,6 +205,19 @@ public class AddManager extends javax.swing.JFrame {
         contactField.setToolTipText("Password");
         contactField.setBorder(null);
         jPanel3.add(contactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 129, 20));
+
+        addressField.setBackground(new java.awt.Color(102, 0, 102));
+        addressField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        addressField.setForeground(new java.awt.Color(204, 204, 204));
+        addressField.setToolTipText("Password");
+        addressField.setBorder(null);
+        addressField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                addressFieldFocusGained(evt);
+            }
+        });
+        jPanel3.add(addressField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 129, 20));
+        jPanel3.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 130, 10));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -257,29 +278,43 @@ public class AddManager extends javax.swing.JFrame {
 
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
 
-        /*System.out.println("First: " + emailField.getText() + " " + contactField.getText() + " " + usernameField.getText());
-
-        if(InstructorIoHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
-
-            Instructor i = new Instructor(InstructorIoHandler.allInstructors.size()+1, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), usernameField.getText(), passwordField.getText());
-            InstructorIoHandler.allInstructors.add(i);
-            InstructorIoHandler.addInstructor();
-
-            JOptionPane.showMessageDialog(null,
-                "Instructor Successfully Added", "Success",
-                JOptionPane.INFORMATION_MESSAGE);
-
-            dispose();
-            InstructorManagement IM = new InstructorManagement();
-            IM.show();
-
-        }  else{
-            JOptionPane.showMessageDialog(null,
-                "Instructor Already Exists, Please Try Again with", "Error",
-                JOptionPane.WARNING_MESSAGE);
-
-        }*/
+         try {
+            if(ManagerIoHandler.checkManager(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
+                
+                int ID = 0 ;
+                
+                for (Manager list : allManagers) {
+                    ID = allManagers.get(allManagers.size() - 1).getID() + 1;
+                }
+                
+                Manager m = new Manager(ID, nameField.getText(), emailField.getText(), contactField.getText(), addressField.getText(), usernameField.getText(), passwordField.getText());
+                ManagerIoHandler.allManagers.add(m);
+                ManagerIoHandler.addManager();
+                
+                JOptionPane.showMessageDialog(null,
+                        "Manager Successfully Added", "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
+                
+                dispose();
+                //InstructorManagement IM = new InstructorManagement();
+                //IM.show();
+                
+            }  else{
+                JOptionPane.showMessageDialog(null,
+                        "Manager Already Exists, Please Try Again with", "Error",
+                        JOptionPane.WARNING_MESSAGE);
+                
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(AddManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(AddManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_addInstructorButtonActionPerformed
+
+    private void addressFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addressFieldFocusGained
 
     /**
      * @param args the command line arguments
@@ -575,6 +610,7 @@ public class AddManager extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addInstructorButton;
+    private javax.swing.JTextField addressField;
     private javax.swing.JLabel backLabel;
     private javax.swing.JTextField contactField;
     private javax.swing.JLabel crmLabel1;
@@ -600,6 +636,7 @@ public class AddManager extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField nameField;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField usernameField;

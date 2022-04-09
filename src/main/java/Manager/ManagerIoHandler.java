@@ -67,7 +67,7 @@ public class ManagerIoHandler {
                 new FileWriter(mPath, true));
                        
             for(Manager m : allManagers){
-               p.write(m.getID()+","+m.getName()+","+m.getEmail()+","+m.getContact()+","+m.getAddress()+","+m.getUsername()+m.getPassword());
+               p.write(m.getID()+","+m.getName()+","+m.getEmail()+","+m.getContact()+","+m.getAddress()+","+m.getUsername()+","+m.getPassword()+"\n");
                //System.out.println(ID+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender());
             }
             

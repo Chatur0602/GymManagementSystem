@@ -2,17 +2,19 @@ package Manager;
 import Manager.ManagerIoHandler;
 
 public class Manager {
-    private String Name, Contact, Email, Address, Username, Password;
     private int ID;
+    private String Name, Contact, Email, Address, Username, Password;
+    
 
-    public Manager(int ID,String Name, String Contact, String Email, String Address, String Username, String Password) {
+    public Manager(int ID,String Name,String Email,String Contact, String Address, String Username, String Password) {
+        this.ID = ID;
         this.Name = Name;
-        this.Contact = Contact;
         this.Email = Email;
+        this.Contact = Contact;
         this.Address = Address;
         this.Username = Username;
         this.Password = Password;
-        this.ID = ID;
+        
     }
     
     public String getName() {
@@ -23,20 +25,20 @@ public class Manager {
         this.Name = Name;
     }
 
-    public String getContact() {
-        return Contact;
-    }
-
-    public void setContact(String Contact) {
-        this.Contact = Contact;
-    }
-
     public String getEmail() {
         return Email;
     }
 
     public void setEmail(String Email) {
         this.Email = Email;
+    }
+    
+     public String getContact() {
+        return Contact;
+    }
+
+    public void setContact(String Contact) {
+        this.Contact = Contact;
     }
 
     public String getAddress() {
