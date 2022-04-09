@@ -183,10 +183,10 @@ public class ViewCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_searchCustomerButtonActionPerformed
 
     private void viewCustomerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewCustomerTableMouseClicked
-            JTable source = (JTable)evt.getSource();
+            /*JTable source = (JTable)evt.getSource();
             int row = source.rowAtPoint( evt.getPoint() );
             int column = source.columnAtPoint( evt.getPoint() );
-            String s=source.getModel().getValueAt(row, column).toString();
+            String s=source.getModel().getValueAt(row, column).toString();*/
             
     }//GEN-LAST:event_viewCustomerTableMouseClicked
 

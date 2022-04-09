@@ -227,7 +227,7 @@ public class AddCustomer extends javax.swing.JFrame {
                 
                 String selection = genderGroup.getSelection().getActionCommand().toString();
                 char gender = selection.charAt(0);
-                int ID = 0 ;
+                int ID = 1 ;
                 
                 for (Customer list : allCustomers) {
                     ID = allCustomers.get(allCustomers.size() - 1).getID() + 1;

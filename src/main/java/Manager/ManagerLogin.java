@@ -217,11 +217,11 @@ public class ManagerLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_backLabelMouseClicked
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-         String userValue = usernameField.getText();        //get user entered username from the textField1  
+        String userValue = usernameField.getText();        //get user entered username from the textField1  
         String passValue = passwordField.getText();        //get user entered pasword from the textField2  
           
         //check whether the credentials are authentic or not  
-        if (userValue.equals("admin") && passValue.equals("nimda")) {
+        if (userValue.toLowerCase().equals("admin") && passValue.equals("nimda")) {
             dispose();
             ManagerDashboard AD = new ManagerDashboard();
             AD.show();

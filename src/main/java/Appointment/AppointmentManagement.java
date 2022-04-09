@@ -31,13 +31,13 @@ public class AppointmentManagement extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
-        crmLabel = new javax.swing.JLabel();
-        instructorLabel = new javax.swing.JLabel();
-        crmLabel1 = new javax.swing.JLabel();
+        searchLabel = new javax.swing.JLabel();
+        addLabel = new javax.swing.JLabel();
+        deleteLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        crmLabel2 = new javax.swing.JLabel();
+        editLabel = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,15 +69,15 @@ public class AppointmentManagement extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        crmLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-view-64.png")); // NOI18N
-        crmLabel.setText("  ");
-        jPanel3.add(crmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 70, 70));
+        searchLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-view-64.png")); // NOI18N
+        searchLabel.setText("  ");
+        jPanel3.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 70, 70));
 
-        instructorLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
-        jPanel3.add(instructorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+        addLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
+        jPanel3.add(addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
-        crmLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
-        jPanel3.add(crmLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
+        deleteLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
+        jPanel3.add(deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
@@ -94,9 +94,9 @@ public class AppointmentManagement extends javax.swing.JFrame {
         jLabel10.setText("Edit");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 30, 20));
 
-        crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
-        crmLabel2.setText("  ");
-        jPanel3.add(crmLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 60, -1));
+        editLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
+        editLabel.setText("  ");
+        jPanel3.add(editLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 60, -1));
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
@@ -250,12 +250,11 @@ public class AppointmentManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel addLabel;
     private javax.swing.JLabel backLabel;
-    private javax.swing.JLabel crmLabel;
-    private javax.swing.JLabel crmLabel1;
-    private javax.swing.JLabel crmLabel2;
+    private javax.swing.JLabel deleteLabel;
+    private javax.swing.JLabel editLabel;
     private javax.swing.JLabel exitLabel;
-    private javax.swing.JLabel instructorLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -263,5 +262,6 @@ public class AppointmentManagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel searchLabel;
     // End of variables declaration//GEN-END:variables
 }

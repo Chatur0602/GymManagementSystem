@@ -110,6 +110,11 @@ public class InstructorManagement extends javax.swing.JFrame {
 
         editLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
         editLabel.setText("  ");
+        editLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editLabelMouseClicked(evt);
+            }
+        });
         jPanel3.add(editLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 60, -1));
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -219,6 +224,12 @@ public class InstructorManagement extends javax.swing.JFrame {
         ViewInstructor VI = new ViewInstructor();
         VI.show();
     }//GEN-LAST:event_searchLabelMouseClicked
+
+    private void editLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseClicked
+        dispose();
+        EditInstructor EI = new EditInstructor();
+        EI.show();
+    }//GEN-LAST:event_editLabelMouseClicked
 
     /**
      * @param args the command line arguments

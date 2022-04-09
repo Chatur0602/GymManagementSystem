@@ -256,12 +256,13 @@ public class AddInstructor extends javax.swing.JFrame {
      
          if(InstructorIoHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
              
-             int ID = 0 ;
+             int ID = 1 ;
                 
                 for (Instructor list : allInstructors) {
                     ID = allInstructors.get(allInstructors.size() - 1).getID() + 1;
             }
-             
+            
+                
              Instructor i = new Instructor(ID, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), usernameField.getText(), passwordField.getText());
              InstructorIoHandler.allInstructors.add(i);
              InstructorIoHandler.addInstructor();

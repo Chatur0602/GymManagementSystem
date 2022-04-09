@@ -7,10 +7,6 @@ import java.text.SimpleDateFormat;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Nikhi
- */
 public class ViewInstructor extends javax.swing.JFrame {
     public static String dataRow [] ;
     public static String [] columnsName = {"Instructor ID", "Name", "Email ID", "Phone No.", "DOB", "Username","Password"};
@@ -51,6 +47,7 @@ public class ViewInstructor extends javax.swing.JFrame {
         viewCustomerTable = new javax.swing.JTable();
         usernameField = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
+        tempBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -118,6 +115,14 @@ public class ViewInstructor extends javax.swing.JFrame {
         jPanel3.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 180, 20));
         jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 180, 10));
 
+        tempBackButton.setText("Back");
+        tempBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tempBackButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(tempBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -165,10 +170,10 @@ public class ViewInstructor extends javax.swing.JFrame {
     }//GEN-LAST:event_searchCustomerButtonActionPerformed
 
     private void viewCustomerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewCustomerTableMouseClicked
-        JTable source = (JTable)evt.getSource();
+        /*JTable source = (JTable)evt.getSource();
         int row = source.rowAtPoint( evt.getPoint() );
         int column = source.columnAtPoint( evt.getPoint() );
-        String s=source.getModel().getValueAt(row, column).toString();
+        String s=source.getModel().getValueAt(row, column).toString();*/
         
     }//GEN-LAST:event_viewCustomerTableMouseClicked
 
@@ -176,6 +181,13 @@ public class ViewInstructor extends javax.swing.JFrame {
         usernameField.setText("");
         usernameField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
     }//GEN-LAST:event_usernameFieldFocusGained
+
+    private void tempBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempBackButtonActionPerformed
+        dispose();
+        InstructorManagement IM = new InstructorManagement();
+        IM.show();
+        allInstructors.clear();
+    }//GEN-LAST:event_tempBackButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,6 +232,7 @@ public class ViewInstructor extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JButton searchCustomerButton;
+    private javax.swing.JButton tempBackButton;
     private javax.swing.JTextField usernameField;
     private javax.swing.JTable viewCustomerTable;
     // End of variables declaration//GEN-END:variables
