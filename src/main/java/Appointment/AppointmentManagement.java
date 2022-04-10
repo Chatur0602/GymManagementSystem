@@ -74,6 +74,11 @@ public class AppointmentManagement extends javax.swing.JFrame {
         jPanel3.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 70, 70));
 
         addLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
+        addLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addLabelMouseClicked(evt);
+            }
+        });
         jPanel3.add(addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
         deleteLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
@@ -148,6 +153,12 @@ public class AppointmentManagement extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_backLabelMouseClicked
+
+    private void addLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelMouseClicked
+        dispose();
+        AddAppointment AA = new AddAppointment();
+        AA.show();
+    }//GEN-LAST:event_addLabelMouseClicked
 
     /**
      * @param args the command line arguments

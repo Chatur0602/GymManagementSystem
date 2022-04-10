@@ -3,66 +3,18 @@ import Manager.ManagerIoHandler;
 
 public class Manager {
     private int ID;
-    private String Name, Contact, Email, Address, Username, Password;
+    private String name, contact, eMail, address, username, password;
     
 
-    public Manager(int ID,String Name,String Email,String Contact, String Address, String Username, String Password) {
+    public Manager(int ID, String name, String eMail, String contact, String address, String username, String password) {
         this.ID = ID;
-        this.Name = Name;
-        this.Email = Email;
-        this.Contact = Contact;
-        this.Address = Address;
-        this.Username = Username;
-        this.Password = Password;
+        this.name = name;
+        this.eMail = eMail;
+        this.contact = contact;
+        this.address = address;
+        this.username = username;
+        this.password = password;
         
-    }
-    
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
-    
-     public String getContact() {
-        return Contact;
-    }
-
-    public void setContact(String Contact) {
-        this.Contact = Contact;
-    }
-
-    public String getAddress() {
-        return Address;
-    }
-
-    public void setAddress(String Address) {
-        this.Address = Address;
-    }
-
-    public String getUsername() {
-        return Username;
-    }
-
-    public void setUsername(String Username) {
-        this.Username = Username;
-    }
-
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String Password) {
-        this.Password = Password;
     }
 
     public int getID() {
@@ -71,6 +23,54 @@ public class Manager {
 
     public void setID(int ID) {
         this.ID = ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
     
 }

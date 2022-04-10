@@ -296,8 +296,8 @@ public class AddManager extends javax.swing.JFrame {
                         JOptionPane.INFORMATION_MESSAGE);
                 
                 dispose();
-                //InstructorManagement IM = new InstructorManagement();
-                //IM.show();
+                ManagerManagement MM = new ManagerManagement();
+                MM.show();
                 
             }  else{
                 JOptionPane.showMessageDialog(null,
