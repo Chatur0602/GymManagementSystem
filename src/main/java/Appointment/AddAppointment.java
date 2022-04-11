@@ -1,30 +1,45 @@
 package Appointment;
 
-import Appointment.*;
 import static Appointment.AppointmentIoHandler.allAppointments;
+import Customer.Customer;
+import Customer.CustomerIoHandler;
+import static Customer.CustomerIoHandler.allCustomers;
+import Instructor.Instructor;
+import Instructor.InstructorIoHandler;
+import static Instructor.InstructorIoHandler.allInstructors;
 import Manager.ManagerDashboard;
-import com.toedter.components.JSpinField;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.text.DateFormatter;
 
 /* @author Nikhil */
 public class AddAppointment extends javax.swing.JFrame {
 
     AppointmentIoHandler AIH ;
+    CustomerIoHandler CIH ;
+    InstructorIoHandler IIH ;
     public AddAppointment() {
         AIH = new AppointmentIoHandler() ;
+        CIH = new CustomerIoHandler();
+        IIH = new InstructorIoHandler();
         initComponents();
         
     String [] time = {"07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"};
     timeComboBox.setModel(new DefaultComboBoxModel(time));
-
-        
+    
+    for (Customer list : allCustomers) {
+            customerComboBox.addItem(list.geteMail());
+        }
+    
+    for (Instructor list : allInstructors){
+            instructorComboBox.addItem(list.getUsername());
+        }
+    
     }
 
     /**
@@ -55,7 +70,7 @@ public class AddAppointment extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         addAppointmentButton = new javax.swing.JButton();
-        customerComboBox1 = new javax.swing.JComboBox<>();
+        customerComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -123,10 +138,14 @@ public class AddAppointment extends javax.swing.JFrame {
         jPanel3.add(nameField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 129, 20));
         jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 130, 10));
 
-        instructorComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel3.add(instructorComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 130, -1));
+        jPanel3.add(instructorComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 130, -1));
 
         timeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        timeComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timeComboBoxActionPerformed(evt);
+            }
+        });
         jPanel3.add(timeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 90, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
@@ -137,7 +156,7 @@ public class AddAppointment extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 153, 153));
         jLabel8.setText("Instructor ");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 80, 20));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 80, 20));
 
         addAppointmentButton.setText("Add Appointment");
         addAppointmentButton.addActionListener(new java.awt.event.ActionListener() {
@@ -145,10 +164,9 @@ public class AddAppointment extends javax.swing.JFrame {
                 addAppointmentButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(addAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
+        jPanel3.add(addAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
 
-        customerComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel3.add(customerComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 130, -1));
+        jPanel3.add(customerComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 130, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -203,17 +221,22 @@ public class AddAppointment extends javax.swing.JFrame {
 
     
     private void addAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAppointmentButtonActionPerformed
-
-        try {
-            if(AppointmentIoHandler.checkAppointment(timeComboBox.getItemAt(0)) == null){
+    try {
+            SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY");
+            String date = dateForm.format(appointmentDate.getDate());
+            String dateSlot = date + " " + timeComboBox.getSelectedItem().toString();
+            SimpleDateFormat slotFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");  
+            Date slot = slotFormat.parse(dateSlot) ;
+            
+            if(AppointmentIoHandler.checkAppointment(slotFormat.format(slot), instructorComboBox.getSelectedItem().toString(), customerComboBox.getSelectedItem().toString()) == null){
 
                 int ID = 1 ;
 
                 for (Appointment list : allAppointments) {
                     ID = allAppointments.get(allAppointments.size() - 1).getID() + 1;
                 }
-
-                Appointment c = new Appointment(ID, nameField.getText(), appointmentDate.getDate(), timeComboBox.getItemAt(0),instructorComboBox.getItemAt(0),'C');
+                
+                Appointment c = new Appointment(ID, nameField.getText(), slot , customerComboBox.getSelectedItem().toString(), instructorComboBox.getSelectedItem().toString(),'O');
                 AppointmentIoHandler.allAppointments.add(c);
                 AppointmentIoHandler.addAppointment();
 
@@ -221,13 +244,18 @@ public class AddAppointment extends javax.swing.JFrame {
                         "Appointment Successfully Added", "Success",
                         JOptionPane.INFORMATION_MESSAGE);
                 
+                allCustomers.clear();
+                allInstructors.clear();
+                
                 dispose();
-                AppointmentManagement CM = new AppointmentManagement();
-                CM.show();
+                AppointmentManagement AM = new AppointmentManagement();
+                AM.show();
+                
+                
             }
             else{
                 JOptionPane.showMessageDialog(null,
-                        "Appointment Already Exists, Please Try Again with", "Error",
+                        "Appointment Already Exists or Instructor Busy, try a different instructor or slot", "Error",
                         JOptionPane.WARNING_MESSAGE);
                 
             }
@@ -239,9 +267,9 @@ public class AddAppointment extends javax.swing.JFrame {
    
     }//GEN-LAST:event_addAppointmentButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void timeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeComboBoxActionPerformed
+       // System.out.println("Time: " + timeComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_timeComboBoxActionPerformed
     
      public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -408,7 +436,7 @@ public class AddAppointment extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser appointmentDate;
     private javax.swing.JLabel backLabel;
     private javax.swing.JLabel crmLabel1;
-    private javax.swing.JComboBox<String> customerComboBox1;
+    private javax.swing.JComboBox<String> customerComboBox;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JComboBox<String> instructorComboBox;
     private javax.swing.JLabel instructorLabel;

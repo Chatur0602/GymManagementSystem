@@ -247,7 +247,7 @@ public class AddCustomer extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(null,
-                        "Customer Already Exists, Please Try Again with", "Error",
+                        "Customer Already Exists, Please Try Again", "Error",
                         JOptionPane.WARNING_MESSAGE);
                 
             }

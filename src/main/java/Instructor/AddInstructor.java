@@ -277,7 +277,7 @@ public class AddInstructor extends javax.swing.JFrame {
              
          }  else{
              JOptionPane.showMessageDialog(null,
-                     "Instructor Already Exists, Please Try Again with", "Error",
+                     "Instructor Already Exists, Please Try Again", "Error",
                      JOptionPane.WARNING_MESSAGE);
              
          }  

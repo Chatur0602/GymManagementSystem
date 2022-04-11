@@ -41,7 +41,7 @@ public class AppointmentIoHandler {
       String[] values = line.split(",");
       
       for (String lines : value) {
-            Date slot=new SimpleDateFormat("dd-MM-yyyy").parse(values[2]);
+            Date slot=new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(values[2]);
             char status = values[5].charAt(0);
             
             Appointment a = new Appointment(Integer.parseInt(values[0]),values[1],slot,values[3],values[4],status);
@@ -51,11 +51,12 @@ public class AppointmentIoHandler {
     br.close();
 }
     
-    public static Appointment checkAppointment(String slot) throws IOException, ParseException{
+    public static Appointment checkAppointment(String slot, String instructorUsername, String customerEmail) throws IOException, ParseException{
         Appointment found = null;
-    
+        SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY HH:mm");
+        
         for(Appointment a : allAppointments){
-            if(slot.equals(a.getSlot())){
+            if(slot.equals(dateForm.format(a.getSlot())) && instructorUsername.equals(a.getInstructorUsername()) || slot.equals(dateForm.format(a.getSlot())) && customerEmail.equals(a.getCustomerEmail())){
                 found = a;
                 break;  
             }
@@ -69,10 +70,10 @@ public class AppointmentIoHandler {
             BufferedWriter p = new BufferedWriter(
                 new FileWriter(aPath, true));
            
-            SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY");
+            SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY HH:mm");
             
             for(Appointment a : allAppointments){
-               p.write(a.getID()+","+a.getName()+","+dateForm.format(a.getSlot())+","+a.getStatus()+","+a.getCustomerEmail()+","+a.getInstructorUsername()+"\n");
+               p.write(a.getID()+","+a.getName()+","+dateForm.format(a.getSlot())+","+a.getCustomerEmail()+","+a.getInstructorUsername()+","+a.getStatus()+"\n");
                //System.out.println(ID+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender());
             }
             
