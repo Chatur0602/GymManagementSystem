@@ -1,5 +1,4 @@
 package Manager;
-import Manager.ManagerIoHandler;
 
 public class Manager {
     private int ID;

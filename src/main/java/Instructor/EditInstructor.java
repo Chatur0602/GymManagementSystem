@@ -50,12 +50,9 @@ public class EditInstructor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
-        searchInstructorButton = new javax.swing.JButton();
         saveChangesButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         viewInstructorTable = new javax.swing.JTable();
-        emailField = new javax.swing.JTextField();
-        jSeparator5 = new javax.swing.JSeparator();
         tempBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,7 +63,7 @@ public class EditInstructor extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Edit Customer");
+        jLabel1.setText("Edit Instructor");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -84,14 +81,6 @@ public class EditInstructor extends javax.swing.JFrame {
             }
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        searchInstructorButton.setText("Search Instructor");
-        searchInstructorButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchInstructorButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(searchInstructorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
         saveChangesButton.setText("Save Changes");
         saveChangesButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -117,20 +106,6 @@ public class EditInstructor extends javax.swing.JFrame {
         jScrollPane1.setViewportView(viewInstructorTable);
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 730, 300));
-
-        emailField.setBackground(new java.awt.Color(0, 51, 102));
-        emailField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        emailField.setForeground(new java.awt.Color(204, 204, 204));
-        emailField.setText("            Enter Username");
-        emailField.setToolTipText("Password");
-        emailField.setBorder(null);
-        emailField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                emailFieldFocusGained(evt);
-            }
-        });
-        jPanel3.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 180, 20));
-        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 180, 10));
 
         tempBackButton.setText("Back");
         tempBackButton.addActionListener(new java.awt.event.ActionListener() {
@@ -168,30 +143,9 @@ public class EditInstructor extends javax.swing.JFrame {
     }//GEN-LAST:event_backLabelMouseClicked
     
     
-    private void searchInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchInstructorButtonActionPerformed
-
-        DefaultTableModel model = (DefaultTableModel)viewInstructorTable.getModel();
-        model.setRowCount(0);
-        model.setColumnIdentifiers(columnsName);
-        Format date =new SimpleDateFormat("dd-MM-yyyy");  
-        
-        for (Instructor list : allInstructors) {
-                  if (list.geteMail().toLowerCase().contains(emailField.getText().toLowerCase())){
-                 
-                      dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),list.getUsername(),list.getPassword()};
-                      model.addRow(dataRow);
-            }
-        }
-    }//GEN-LAST:event_searchInstructorButtonActionPerformed
-
     private void viewInstructorTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewInstructorTableMouseClicked
 
     }//GEN-LAST:event_viewInstructorTableMouseClicked
-
-    private void emailFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFieldFocusGained
-        emailField.setText("");
-        emailField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-    }//GEN-LAST:event_emailFieldFocusGained
 
     private void saveChangesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveChangesButtonMouseClicked
             DefaultTableModel model = (DefaultTableModel)viewInstructorTable.getModel();
@@ -281,14 +235,11 @@ public class EditInstructor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backLabel;
-    private javax.swing.JTextField emailField;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JButton saveChangesButton;
-    private javax.swing.JButton searchInstructorButton;
     private javax.swing.JButton tempBackButton;
     private javax.swing.JTable viewInstructorTable;
     // End of variables declaration//GEN-END:variables

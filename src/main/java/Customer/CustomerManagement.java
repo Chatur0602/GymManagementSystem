@@ -13,7 +13,6 @@ public class CustomerManagement extends javax.swing.JFrame {
 
     CustomerIoHandler CIH ;
     public CustomerManagement() {
-        
         initComponents();
     }
 
@@ -186,7 +185,6 @@ public class CustomerManagement extends javax.swing.JFrame {
         boolean userFound = false ;
         int index = 0 ;
         String name = null ;
-        System.out.println(eMail);
         
             for (Customer list : allCustomers) {
                   if (eMail.toLowerCase().equals(list.geteMail().toLowerCase())){
@@ -198,7 +196,7 @@ public class CustomerManagement extends javax.swing.JFrame {
             }
             
             if(userFound == true){
-                System.out.println(index+" "+ name);
+                
                 int confirmation = JOptionPane.showConfirmDialog(null,
                 "Customer '" + name + "' with the corrosponding Email '" + eMail + "' found, would you like to delete?" , "Delete Confirmation", JOptionPane.YES_NO_OPTION);
                 
@@ -210,15 +208,10 @@ public class CustomerManagement extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Customer " + name + " not deleted", "Customer Not Deleted", JOptionPane.INFORMATION_MESSAGE);
                    
                 }
-                
-                /*
-                dispose();
-                CustomerManagement CM= new CustomerManagement();
-                CM.show();*/
             }
                     
             if (userFound == false) {
-                JOptionPane.showMessageDialog(null,"Customer doesn't exist! Please try agiain","Alert",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Customer doesn't exist! Please try again","Alert",JOptionPane.WARNING_MESSAGE);
             }
             allCustomers.clear();
         } catch(Exception e){

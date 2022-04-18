@@ -1,6 +1,7 @@
 package Appointment;
 
 import static Appointment.AppointmentIoHandler.allAppointments;
+import Appointment.AppointmentIoHandler.*;
 import Customer.Customer;
 import Customer.CustomerIoHandler;
 import static Customer.CustomerIoHandler.allCustomers;
@@ -23,7 +24,8 @@ public class AddAppointment extends javax.swing.JFrame {
     AppointmentIoHandler AIH ;
     CustomerIoHandler CIH ;
     InstructorIoHandler IIH ;
-    public AddAppointment() {
+
+    public AddAppointment(){
         AIH = new AppointmentIoHandler() ;
         CIH = new CustomerIoHandler();
         IIH = new InstructorIoHandler();

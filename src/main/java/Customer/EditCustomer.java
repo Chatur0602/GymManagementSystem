@@ -27,7 +27,7 @@ public class EditCustomer extends javax.swing.JFrame {
         CIH = new CustomerIoHandler();
         initComponents(); 
         
-        DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
+        DefaultTableModel model = (DefaultTableModel)editCustomerTable.getModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(columnsName);
         Format date =new SimpleDateFormat("dd-MM-yyyy");
@@ -52,12 +52,9 @@ public class EditCustomer extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
-        searchCustomerButton = new javax.swing.JButton();
         saveChangesButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        viewCustomerTable = new javax.swing.JTable();
-        emailField = new javax.swing.JTextField();
-        jSeparator5 = new javax.swing.JSeparator();
+        editCustomerTable = new javax.swing.JTable();
         tempBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,14 +84,6 @@ public class EditCustomer extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        searchCustomerButton.setText("Search Customer");
-        searchCustomerButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchCustomerButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(searchCustomerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
-
         saveChangesButton.setText("Save Changes");
         saveChangesButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -103,7 +92,7 @@ public class EditCustomer extends javax.swing.JFrame {
         });
         jPanel3.add(saveChangesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 370, 110, -1));
 
-        viewCustomerTable.setModel(new javax.swing.table.DefaultTableModel(
+        editCustomerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -111,28 +100,14 @@ public class EditCustomer extends javax.swing.JFrame {
 
             }
         ));
-        viewCustomerTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        editCustomerTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewCustomerTableMouseClicked(evt);
+                editCustomerTableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(viewCustomerTable);
+        jScrollPane1.setViewportView(editCustomerTable);
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 730, 300));
-
-        emailField.setBackground(new java.awt.Color(0, 51, 102));
-        emailField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        emailField.setForeground(new java.awt.Color(204, 204, 204));
-        emailField.setText("            Enter Email ID");
-        emailField.setToolTipText("Password");
-        emailField.setBorder(null);
-        emailField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                emailFieldFocusGained(evt);
-            }
-        });
-        jPanel3.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 180, 20));
-        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 180, 10));
 
         tempBackButton.setText("Back");
         tempBackButton.addActionListener(new java.awt.event.ActionListener() {
@@ -170,35 +145,12 @@ public class EditCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_backLabelMouseClicked
     
     
-    private void searchCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCustomerButtonActionPerformed
-        CIH = new CustomerIoHandler();
-        
-        DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
-        model.setRowCount(0);
-        model.setColumnIdentifiers(columnsName);
-        Format date =new SimpleDateFormat("dd-MM-yyyy");  
-        
-        for (Customer list : allCustomers) {
-                  if (list.geteMail().toLowerCase().contains(emailField.getText().toLowerCase())){
-                    
-                      dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),Character.toString(list.getGender())};
-                      model.addRow(dataRow);
-            }
-        }
-        allCustomers.clear();
-    }//GEN-LAST:event_searchCustomerButtonActionPerformed
+    private void editCustomerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editCustomerTableMouseClicked
 
-    private void viewCustomerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewCustomerTableMouseClicked
-
-    }//GEN-LAST:event_viewCustomerTableMouseClicked
-
-    private void emailFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFieldFocusGained
-        emailField.setText("");
-        emailField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-    }//GEN-LAST:event_emailFieldFocusGained
+    }//GEN-LAST:event_editCustomerTableMouseClicked
 
     private void saveChangesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveChangesButtonMouseClicked
-            DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
+            DefaultTableModel model = (DefaultTableModel)editCustomerTable.getModel();
             model.setColumnIdentifiers(columnsName);
             
             int Id = 0;
@@ -283,15 +235,12 @@ public class EditCustomer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backLabel;
-    private javax.swing.JTextField emailField;
+    private javax.swing.JTable editCustomerTable;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JButton saveChangesButton;
-    private javax.swing.JButton searchCustomerButton;
     private javax.swing.JButton tempBackButton;
-    private javax.swing.JTable viewCustomerTable;
     // End of variables declaration//GEN-END:variables
 }

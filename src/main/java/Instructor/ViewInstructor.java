@@ -42,7 +42,7 @@ public class ViewInstructor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
-        searchCustomerButton = new javax.swing.JButton();
+        searchInstructorButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         viewCustomerTable = new javax.swing.JTable();
         usernameField = new javax.swing.JTextField();
@@ -76,13 +76,13 @@ public class ViewInstructor extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        searchCustomerButton.setText("Search Instructor");
-        searchCustomerButton.addActionListener(new java.awt.event.ActionListener() {
+        searchInstructorButton.setText("Search Instructor");
+        searchInstructorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchCustomerButtonActionPerformed(evt);
+                searchInstructorButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(searchCustomerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+        jPanel3.add(searchInstructorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
         viewCustomerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -153,7 +153,7 @@ public class ViewInstructor extends javax.swing.JFrame {
         IM.show();
     }//GEN-LAST:event_backLabelMouseClicked
 
-    private void searchCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCustomerButtonActionPerformed
+    private void searchInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchInstructorButtonActionPerformed
         viewCustomerTable.setDefaultEditor(Object.class, null);
         DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
         model.setRowCount(0);
@@ -167,7 +167,7 @@ public class ViewInstructor extends javax.swing.JFrame {
                       model.addRow(dataRow);      
             }
         }  
-    }//GEN-LAST:event_searchCustomerButtonActionPerformed
+    }//GEN-LAST:event_searchInstructorButtonActionPerformed
 
     private void viewCustomerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewCustomerTableMouseClicked
         /*JTable source = (JTable)evt.getSource();
@@ -231,7 +231,7 @@ public class ViewInstructor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JButton searchCustomerButton;
+    private javax.swing.JButton searchInstructorButton;
     private javax.swing.JButton tempBackButton;
     private javax.swing.JTextField usernameField;
     private javax.swing.JTable viewCustomerTable;
