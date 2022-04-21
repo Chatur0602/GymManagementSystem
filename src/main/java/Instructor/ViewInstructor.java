@@ -2,6 +2,7 @@ package Instructor;
 
 import static Customer.CustomerIoHandler.allCustomers;
 import static Instructor.InstructorIoHandler.allInstructors;
+import java.awt.List;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import javax.swing.JTable;
@@ -13,9 +14,12 @@ public class ViewInstructor extends javax.swing.JFrame {
     
     InstructorIoHandler IIH;
     public ViewInstructor() {
+        
+        System.out.println("Step 1");
+        
         IIH = new InstructorIoHandler();
         initComponents();
-        
+       
         viewCustomerTable.setDefaultEditor(Object.class, null);
         DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
         model.setRowCount(0);
@@ -23,10 +27,9 @@ public class ViewInstructor extends javax.swing.JFrame {
         Format date =new SimpleDateFormat("dd-MM-yyyy");
  
             for (Instructor list : allInstructors) {
-                
-                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),list.getUsername(),list.getPassword()};
+                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),list.getUsername()};
                 model.addRow(dataRow);
-        }
+            }
     }
 
     /**

@@ -40,6 +40,7 @@ public class InstructorIoHandler {
       String[] values = line.split(",");
       
       for (String lines : value) {
+            System.out.println(values[0]);
             Date date=new SimpleDateFormat("dd-MM-yyyy").parse(values[4]);
             Instructor i = new Instructor(Integer.parseInt(values[0]),values[1],values[2],values[3],date,values[5],values[6]);
             allInstructors.add(i);

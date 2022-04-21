@@ -172,11 +172,11 @@ public class EditInstructor extends javax.swing.JFrame {
                     d = model.getValueAt(rowCount, 4).toString() ;
                     username = model.getValueAt(rowCount, 5).toString();
                     password = model.getValueAt(rowCount, 6).toString();
-                   
+                    
+                    
                     Date date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
-                  
                    
-                    //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + username + " | " + password);
+                    System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + username + " | " + password);
                     
                     i = new Instructor(Id, name, eMail, contact, date, username, password);
                     InstructorIoHandler.allInstructors.add(i);

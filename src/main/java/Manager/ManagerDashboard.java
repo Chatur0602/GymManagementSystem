@@ -192,8 +192,8 @@ public class ManagerDashboard extends javax.swing.JFrame {
     private void backLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabel1MouseClicked
 
         dispose();
-        LaunchPanel LP = new LaunchPanel();
-        LP.show();
+        ManagerLogin ML = new ManagerLogin();
+        ML.show();
 
     }//GEN-LAST:event_backLabel1MouseClicked
 
