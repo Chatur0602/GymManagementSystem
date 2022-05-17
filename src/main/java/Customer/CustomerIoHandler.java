@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
 import Customer.Customer;
 
 public class CustomerIoHandler {
-    
     public CustomerIoHandler(){
         try{
         readCustomer();

@@ -229,6 +229,7 @@ public class AddCustomer extends javax.swing.JFrame {
                 char gender = selection.charAt(0);
                 int ID = 1 ;
                 
+                
                 for (Customer list : allCustomers) {
                     ID = allCustomers.get(allCustomers.size() - 1).getID() + 1;
             }
