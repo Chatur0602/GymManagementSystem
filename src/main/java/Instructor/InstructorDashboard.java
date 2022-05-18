@@ -1,5 +1,6 @@
 package Instructor;
 
+import Payment.AddPaymentFeedback;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -38,9 +39,10 @@ public class InstructorDashboard extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        test2Button = new javax.swing.JButton();
+        PaymentFeedbackButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         testButton1 = new javax.swing.JButton();
+        test2Button1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -103,13 +105,13 @@ public class InstructorDashboard extends javax.swing.JFrame {
         jLabel8.setText("Feedback");
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 70, 20));
 
-        test2Button.setText("UP");
-        test2Button.addActionListener(new java.awt.event.ActionListener() {
+        PaymentFeedbackButton.setText("PF");
+        PaymentFeedbackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                test2ButtonActionPerformed(evt);
+                PaymentFeedbackButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(test2Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
+        jPanel3.add(PaymentFeedbackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
 
         jLabel2.setText("Welcome " + user);
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
@@ -121,6 +123,14 @@ public class InstructorDashboard extends javax.swing.JFrame {
             }
         });
         jPanel3.add(testButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
+
+        test2Button1.setText("UP");
+        test2Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                test2Button1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(test2Button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -167,17 +177,23 @@ public class InstructorDashboard extends javax.swing.JFrame {
 
     }//GEN-LAST:event_backLabelMouseClicked
 
-    private void test2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_test2ButtonActionPerformed
+    private void PaymentFeedbackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaymentFeedbackButtonActionPerformed
         dispose();
-        UpdateProfile UP = new UpdateProfile(user);
-        UP.show();
-    }//GEN-LAST:event_test2ButtonActionPerformed
+        AddPaymentFeedback AP = new AddPaymentFeedback(user); 
+        AP.show();
+    }//GEN-LAST:event_PaymentFeedbackButtonActionPerformed
 
     private void testButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButton1ActionPerformed
         dispose();
         ManageAppointments MA = new ManageAppointments(user);
         MA.show();
     }//GEN-LAST:event_testButton1ActionPerformed
+
+    private void test2Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_test2Button1ActionPerformed
+        dispose();
+        UpdateProfile UP = new UpdateProfile(user);
+        UP.show();
+    }//GEN-LAST:event_test2Button1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,6 +239,7 @@ public class InstructorDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton PaymentFeedbackButton;
     private javax.swing.JLabel backLabel;
     private javax.swing.JLabel crmLabel2;
     private javax.swing.JLabel exitLabel;
@@ -237,7 +254,7 @@ public class InstructorDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton test2Button;
+    private javax.swing.JButton test2Button1;
     private javax.swing.JButton testButton1;
     // End of variables declaration//GEN-END:variables
 }

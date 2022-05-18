@@ -2,7 +2,9 @@ package Instructor;
 
 import Appointment.*;
 import Appointment.*;
+import static Appointment.AppointmentIoHandler.addAppointment;
 import static Appointment.AppointmentIoHandler.allAppointments;
+import static Appointment.EditAppointment.columnsName;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -26,8 +28,7 @@ public class ManageAppointments extends javax.swing.JFrame {
         initComponents(); 
         this.user = user ;
         
-        viewAppointmentTable.setDefaultEditor(Object.class, null);
-        DefaultTableModel model = (DefaultTableModel)viewAppointmentTable.getModel();
+        DefaultTableModel model = (DefaultTableModel)editAppointmentTable.getModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(columnsName);
         Format date =new SimpleDateFormat("dd-MM-yyyy HH:mm");
@@ -54,8 +55,9 @@ public class ManageAppointments extends javax.swing.JFrame {
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        viewAppointmentTable = new javax.swing.JTable();
+        editAppointmentTable = new javax.swing.JTable();
         tempBackButton = new javax.swing.JButton();
+        saveChangesButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -84,7 +86,7 @@ public class ManageAppointments extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        viewAppointmentTable.setModel(new javax.swing.table.DefaultTableModel(
+        editAppointmentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -92,12 +94,12 @@ public class ManageAppointments extends javax.swing.JFrame {
 
             }
         ));
-        viewAppointmentTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        editAppointmentTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewAppointmentTableMouseClicked(evt);
+                editAppointmentTableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(viewAppointmentTable);
+        jScrollPane1.setViewportView(editAppointmentTable);
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 730, 300));
 
@@ -109,6 +111,14 @@ public class ManageAppointments extends javax.swing.JFrame {
         });
         jPanel3.add(tempBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
+        saveChangesButton.setText("Save Changes");
+        saveChangesButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveChangesButtonMouseClicked(evt);
+            }
+        });
+        jPanel3.add(saveChangesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 370, 110, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,7 +127,7 @@ public class ManageAppointments extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -135,13 +145,15 @@ public class ManageAppointments extends javax.swing.JFrame {
     }//GEN-LAST:event_backLabelMouseClicked
     
     
-    private void viewAppointmentTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAppointmentTableMouseClicked
-            /*JTable source = (JTable)evt.getSource();
+    private void editAppointmentTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editAppointmentTableMouseClicked
+            JTable source = (JTable)evt.getSource();
             int row = source.rowAtPoint( evt.getPoint() );
             int column = source.columnAtPoint( evt.getPoint() );
-            String s=source.getModel().getValueAt(row, column).toString();*/
+            String s=source.getModel().getValueAt(row, column).toString();
             
-    }//GEN-LAST:event_viewAppointmentTableMouseClicked
+            
+            
+    }//GEN-LAST:event_editAppointmentTableMouseClicked
 
     private void tempBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempBackButtonActionPerformed
         dispose();
@@ -149,6 +161,49 @@ public class ManageAppointments extends javax.swing.JFrame {
         ID.show();
         allAppointments.clear();
     }//GEN-LAST:event_tempBackButtonActionPerformed
+
+    private void saveChangesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveChangesButtonMouseClicked
+            DefaultTableModel model = (DefaultTableModel)editAppointmentTable.getModel();
+            model.setColumnIdentifiers(columnsName);
+            
+            int Id = 0;
+            String name = null;
+            String d = null ;
+            String cEmail = null;
+            String iUsername = null ;
+            String status ;
+            
+            Appointment a = null ; 
+            
+            allAppointments.clear();
+            
+            for (int rowCount = 0; rowCount < model.getRowCount(); rowCount++){
+                try {
+                    Id = Integer.parseInt(model.getValueAt(rowCount, 0).toString());
+                    name = model.getValueAt(rowCount, 1).toString();
+                    d = model.getValueAt(rowCount, 2).toString() ;
+                    cEmail = model.getValueAt(rowCount, 3).toString();
+                    iUsername = model.getValueAt(rowCount, 4).toString();
+ 
+                    status = model.getValueAt(rowCount, 5).toString();
+                    char s = status.charAt(0);
+                    
+                    Date date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
+                    
+                    
+                   
+                    //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + g);
+                    
+                    a = new Appointment(Id, name, date, cEmail, iUsername, s);
+                    AppointmentIoHandler.allAppointments.add(a);
+                }
+                //System.out.println(ID + "\n");
+                catch (ParseException ex) {
+                    Logger.getLogger(EditAppointment.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            AppointmentIoHandler.addAppointment();
+    }//GEN-LAST:event_saveChangesButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,11 +249,12 @@ public class ManageAppointments extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backLabel;
+    private javax.swing.JTable editAppointmentTable;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton saveChangesButton;
     private javax.swing.JButton tempBackButton;
-    private javax.swing.JTable viewAppointmentTable;
     // End of variables declaration//GEN-END:variables
 }
