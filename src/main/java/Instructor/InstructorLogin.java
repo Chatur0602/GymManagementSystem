@@ -231,7 +231,7 @@ public class InstructorLogin extends javax.swing.JFrame {
                 JOptionPane.INFORMATION_MESSAGE);
                 
                 dispose();
-                InstructorDashboard ID = new InstructorDashboard();
+                InstructorDashboard ID = new InstructorDashboard(username);
                 ID.show();
             }
                     

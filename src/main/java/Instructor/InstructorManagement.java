@@ -169,9 +169,9 @@ public class InstructorManagement extends javax.swing.JFrame {
 
     private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
         try{
-        String username = JOptionPane.showInputDialog("Enter the Username of the Instructor you'd like to Delete");
-        
         IIH = new InstructorIoHandler();
+        
+        String username = JOptionPane.showInputDialog("Enter the Username of the Instructor you'd like to Delete");
         boolean userFound = false ;
         int index = 0 ;
         String name = null ;
@@ -186,7 +186,7 @@ public class InstructorManagement extends javax.swing.JFrame {
             }
             
             if(userFound == true){
-                System.out.println(index+" "+ name);
+                //System.out.println(index+" "+ name);
                 int confirmation = JOptionPane.showConfirmDialog(null,
                 "Instructor '" + name + "' with the corrosponding Username '" + username + "' found, would you like to delete?" , "Delete Confirmation", JOptionPane.YES_NO_OPTION);
                 
