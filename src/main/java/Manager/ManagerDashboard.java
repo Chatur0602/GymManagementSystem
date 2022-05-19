@@ -47,6 +47,9 @@ public class ManagerDashboard extends javax.swing.JFrame {
         backLabel1 = new javax.swing.JLabel();
         exitLabel1 = new javax.swing.JLabel();
         crmLabel3 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -59,7 +62,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jLabel1.setText("Manager Dashboard");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 240, -1));
 
-        instructorLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-trainer-64.png")); // NOI18N
         instructorLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 instructorLabelMouseClicked(evt);
@@ -72,7 +74,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jLabel5.setText("  Management");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 100, 20));
 
-        crmLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-customer-60.png")); // NOI18N
         crmLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 crmLabel1MouseClicked(evt);
@@ -110,7 +111,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jLabel11.setText("   Management");
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 100, 20));
 
-        crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-appointment-64.png")); // NOI18N
         crmLabel2.setText("  ");
         crmLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -130,7 +130,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 70, 20));
 
         backLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
         backLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabel1MouseClicked(evt);
@@ -139,7 +138,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jPanel3.add(backLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         exitLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
         exitLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabel1MouseClicked(evt);
@@ -147,7 +145,6 @@ public class ManagerDashboard extends javax.swing.JFrame {
         });
         jPanel3.add(exitLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 20));
 
-        crmLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-report-64.png")); // NOI18N
         crmLabel3.setText("  ");
         crmLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -155,6 +152,21 @@ public class ManagerDashboard extends javax.swing.JFrame {
             }
         });
         jPanel3.add(crmLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 70, 70));
+
+        jLabel14.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel14.setText("Payment & Feedback ");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 140, 20));
+
+        jLabel15.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel15.setText("Analysis");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 70, 20));
+
+        jLabel16.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel16.setText("Payment & Feedback ");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 140, 20));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -167,7 +179,7 @@ public class ManagerDashboard extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -279,6 +291,9 @@ public class ManagerDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

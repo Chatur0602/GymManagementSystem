@@ -3,39 +3,29 @@ package Payment;
 
 import Appointment.Appointment;
 import Appointment.AppointmentIoHandler;
+import static Appointment.AppointmentIoHandler.addAppointment;
 import static Appointment.AppointmentIoHandler.allAppointments;
-import Customer.AddCustomer;
-import Customer.Customer;
-import Instructor.Instructor;
-import Instructor.InstructorIoHandler;
-import Instructor.InstructorManagement;
-import static Customer.CustomerIoHandler.allCustomers;
 import Instructor.InstructorDashboard;
-import static Instructor.InstructorIoHandler.allInstructors;
 import Manager.ManagerDashboard;
-import Manager.ManagerLogin;
 import static Payment.PaymentIoHandler.allPayments;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.io.IOException;
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /* @author Nikhil */
 public class AddPaymentFeedback extends javax.swing.JFrame {
-    
-    InstructorIoHandler IIH ;
+ 
     AppointmentIoHandler AIH; 
+    PaymentIoHandler PIH ;
     public static String user ;
     private static String cMail = null ;
+    private int index = 0 ;
+    
     public AddPaymentFeedback(String user) {
-        IIH = new InstructorIoHandler();
         AIH = new AppointmentIoHandler();
+        PIH = new PaymentIoHandler();
         initComponents();
         this.user = user;
          
@@ -68,7 +58,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         amountField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
-        addInstructorButton = new javax.swing.JButton();
+        addPaymentButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         feedbackTextBox = new javax.swing.JTextArea();
         appointmentComboBox = new javax.swing.JComboBox<>();
@@ -124,13 +114,13 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 70, 30));
         jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 130, 10));
 
-        addInstructorButton.setText("Add Payment");
-        addInstructorButton.addActionListener(new java.awt.event.ActionListener() {
+        addPaymentButton.setText("Add Payment");
+        addPaymentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addInstructorButtonActionPerformed(evt);
+                addPaymentButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(addInstructorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
+        jPanel3.add(addPaymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
 
         feedbackTextBox.setColumns(20);
         feedbackTextBox.setRows(5);
@@ -192,13 +182,12 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_amountFieldFocusGained
 
-    private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
+    private void addPaymentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPaymentButtonActionPerformed
         String appointment = appointmentComboBox.getSelectedItem().toString();
-        int appointmentID = appointment.charAt(0);
-        System.out.println(appointment);
-        System.out.println(appointmentID);
+        char appointmentID = appointment.charAt(0);
+        int aID = Character.getNumericValue(appointmentID);
         
-         if(PaymentIoHandler.checkPayment(appointmentID) == null){
+         if(PaymentIoHandler.checkPayment(aID) == null){
              
              int ID = 1 ;
                 
@@ -207,11 +196,35 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
             }
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");  
             Date date = new Date();  
-            System.out.println(date);
             
-             Payment p = new Payment(ID, Integer.parseInt(amountField.getText()), appointmentID, cMail, feedbackTextBox.getText(), date);
+             Payment p = new Payment(ID, Integer.parseInt(amountField.getText()), aID, cMail, feedbackTextBox.getText(), date);
              PaymentIoHandler.allPayments.add(p);
              PaymentIoHandler.addPayment();
+             
+             
+             int appID = 0 ;
+             String appName = null ;
+             Date appSlot = null ;
+             String custEmail = null;
+             String instUser = null ;
+             char status = ' ' ;
+             
+             for (Appointment list : allAppointments) {
+                     if (aID == list.getID()){
+                         appID = list.getID();
+                         appName = list.getName();
+                         appSlot = list.getSlot();
+                         custEmail = list.getCustomerEmail();
+                         instUser = list.getInstructorUsername();
+                         status = list.getStatus();
+                         index = allAppointments.indexOf(list);
+                     }
+                }
+             
+             Appointment a = new Appointment(appID, appName, appSlot, custEmail, instUser, 'C');
+             allAppointments.set(index, a);
+             addAppointment();
+             
              
              JOptionPane.showMessageDialog(null,
                      "Payment Successfully Added", "Success",
@@ -228,7 +241,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
              
          }  
         allAppointments.clear();
-    }//GEN-LAST:event_addInstructorButtonActionPerformed
+    }//GEN-LAST:event_addPaymentButtonActionPerformed
 
     
     /**
@@ -1291,7 +1304,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addInstructorButton;
+    private javax.swing.JButton addPaymentButton;
     private javax.swing.JTextField amountField;
     private javax.swing.JComboBox<String> appointmentComboBox;
     private javax.swing.JLabel backLabel;

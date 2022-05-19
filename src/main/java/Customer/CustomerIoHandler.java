@@ -6,6 +6,8 @@ import java.util.*;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import Customer.Customer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CustomerIoHandler {
     public CustomerIoHandler(){
@@ -69,10 +71,24 @@ public class CustomerIoHandler {
            
             SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY");
             
+            Pattern pat = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
+            boolean characterFound = false;
+            
             for(Customer c : allCustomers){
-               p.write(c.getID()+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender()+"\n");
-               //System.out.println(ID+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender());
-            }
+                Matcher m = pat.matcher(c.getName());
+                characterFound = m.find();
+                if(characterFound == true || c.getName().length()<4){
+                    JOptionPane.showMessageDialog(null,
+                "Incorrect Name format, Minimum 4 letters & no special characters allowed", "Error",
+                JOptionPane.WARNING_MESSAGE);
+                break;
+                    
+            } else{
+                    p.write(c.getID()+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender()+"\n");
+                    System.out.println(c.getID()+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender());
+                }
+               
+        }
             
             p.close();
             allCustomers.clear();

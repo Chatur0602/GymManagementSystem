@@ -29,7 +29,7 @@ public class EditAppointment extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)editAppointmentTable.getModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(columnsName);
-        Format date =new SimpleDateFormat("dd-MM-yyyy");
+        Format date =new SimpleDateFormat("dd-MM-yyyy HH:mm");
        
              for (Appointment list : allAppointments) {
                
@@ -174,7 +174,7 @@ public class EditAppointment extends javax.swing.JFrame {
                     status = model.getValueAt(rowCount, 5).toString();
                     char s = status.charAt(0);
                     
-                    Date date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
+                    Date date = new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(d);
                     
                     
                    
