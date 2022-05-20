@@ -33,7 +33,7 @@ public class LaunchPanel extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         adminButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        exitLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         managerButton = new javax.swing.JButton();
         instructorButton = new javax.swing.JButton();
@@ -46,7 +46,7 @@ public class LaunchPanel extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Rage Italic", 1, 36)); // NOI18N
         jLabel4.setText("SlymGym");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -84,19 +84,19 @@ public class LaunchPanel extends javax.swing.JFrame {
         });
         jPanel3.add(adminButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 30));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nikhi\\OneDrive\\Documents\\NetBeansProjects\\FirstProject\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
+        exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText(" Launch Panel");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 190, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 200, -1));
 
         managerButton.setBackground(new java.awt.Color(204, 102, 0));
         managerButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -151,9 +151,9 @@ public class LaunchPanel extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
         System.exit(0);
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_exitLabelMouseClicked
 
     private void managerPath(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerPath
             dispose();
@@ -214,9 +214,9 @@ public class LaunchPanel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adminButton;
+    private javax.swing.JLabel exitLabel;
     private javax.swing.JButton instructorButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

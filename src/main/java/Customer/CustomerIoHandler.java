@@ -70,34 +70,21 @@ public class CustomerIoHandler {
                 new FileWriter(cPath, true));
            
             SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY");
-            
-            Pattern pat = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
-            boolean characterFound = false;
-            
+           
             for(Customer c : allCustomers){
-                Matcher m = pat.matcher(c.getName());
-                characterFound = m.find();
-                if(characterFound == true || c.getName().length()<4){
-                    JOptionPane.showMessageDialog(null,
-                "Incorrect Name format, Minimum 4 letters & no special characters allowed", "Error",
-                JOptionPane.WARNING_MESSAGE);
-                break;
-                    
-            } else{
-                    p.write(c.getID()+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender()+"\n");
-                    System.out.println(c.getID()+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender());
-                }
-               
-        }
+                p.write(c.getID()+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender()+"\n");
+                    //System.out.println(c.getID()+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender())
+            } 
             
-            p.close();
-            allCustomers.clear();
+              p.close();
+            allCustomers.clear(); 
             
         }catch(Exception e){
                 JOptionPane.showMessageDialog(null,
                 "Customer Not Added, Please Try Again", "Error",
                 JOptionPane.ERROR_MESSAGE);
                 System.exit(0);
+     
         }   
     }
 }

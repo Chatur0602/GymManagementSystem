@@ -1,6 +1,6 @@
 1,WagwanO,09-04-2022 00:00,irule0602@gmail,Chatur1313,C
 2,Pilate69,17-04-2022 00:00,manish1911,Chatur,C
-4,asdsad,17-04-2022 00:00,anac1234,Chatur,O
+4,asdsad,17-04-2022 00:00,anac1234,Chatur,C
 5,HelloThere,17-04-2022 08:00,irule0602@gmail,Chatur1313,C
 6,Pilatte,17-04-2022 00:00,10931093109420,NaisuNaisu,O
 8,Hello,17-04-2022 00:00,irule0602@gmail,Chatur1313,C

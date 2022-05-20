@@ -12,3 +12,9 @@
 40,3211d,13123,213313,13-05-2022,M
 41,Malu,malu@gmail.com,01238923983,04-08-2001,F
 42,Chatur,qqioeq123,ioqiwe131,20-05-2022,M
+43,Chatur,Irule@gmail.com,asdasdasdd,06-05-2022,M
+44,Chatur,irule0602@gmail.com,asdasdasda,12-05-2022,M
+45,Chaturisnais,irule06@gmail.com,0123991306,07-05-2022,M
+46,asdwerwdad,anac22@yahoo.com,siwsiwsiwi,12-05-2022,M
+47,asdada,chatur@gmail.com,iuiuiuiuiu,03-05-2022,M
+48,adad,hi2@gmail.com,iawiawiawi,12-05-2022,M
