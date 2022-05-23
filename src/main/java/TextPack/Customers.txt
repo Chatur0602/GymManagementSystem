@@ -1,9 +1,9 @@
-2,anac211202022323,anac1234asdad,0175774585,02-04-2022,F
+2,anac211202022323,irule0602@gmail.com,0175774585,02-04-2002,F
 19,Asssran21233232,9123901093,90123901093,08-04-2022,F
 25,1983891,Jojo@gmail.com,989889,09-04-1945,M
 29,sdfsdfsdf,Manish1911@gmail.com,0172454585,21-12-1971,M
 31,19831289,8989,894,09-04-2022,M
-33,131301290,HiThere@gmail.com,0990099,08-04-2022,F
+33,131301290,waduhek@gmail.com,0990099,08-04-1975,F
 34,Wagwan,niks062002@yahssssoo.com,Wagwan,16-04-2022,M
 36,HiThereXD,iuwequie,1312313,23-04-2022,M
 37,asdad,asdasdadad,adad,09-04-2022,M
@@ -13,8 +13,9 @@
 41,Malu,malu@gmail.com,01238923983,04-08-2001,F
 42,Chatur,qqioeq123,ioqiwe131,20-05-2022,M
 43,Chatur,Irule@gmail.com,asdasdasdd,06-05-2022,M
-44,Chatur,irule0602@gmail.com,asdasdasda,12-05-2022,M
+44,Chatur,anac1234@gmail.com,asdasdasda,12-05-1968,M
 45,Chaturisnais,irule06@gmail.com,0123991306,07-05-2022,M
 46,asdwerwdad,anac22@yahoo.com,siwsiwsiwi,12-05-2022,M
-47,asdada,chatur@gmail.com,iuiuiuiuiu,03-05-2022,M
+47,asdada,wagwan@gmail.com,iuiuiuiuiu,03-05-1988,M
 48,adad,hi2@gmail.com,iawiawiawi,12-05-2022,M
+49,Chatur,adasi@yahoo.com,0129323323,12-05-2004,M

@@ -19,16 +19,14 @@ public class PaymentFeedbackAnalysis extends javax.swing.JFrame {
  
     AppointmentIoHandler AIH; 
     PaymentIoHandler PIH ;
-    public static String user ;
     private static String cMail = null ;
     private int index = 0 ;
     private int ID = 0;
     
-    public PaymentFeedbackAnalysis(String user) {
+    public PaymentFeedbackAnalysis() {
         AIH = new AppointmentIoHandler();
         PIH = new PaymentIoHandler();
         initComponents();
-        this.user = user;
          
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss"); 
         
@@ -71,18 +69,20 @@ public class PaymentFeedbackAnalysis extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Payment & Feedback");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 240, -1));
+        jLabel1.setText("Analyse Payment & Feedback");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 340, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -2280,7 +2280,7 @@ public class PaymentFeedbackAnalysis extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PaymentFeedbackAnalysis(user).setVisible(true);
+                new PaymentFeedbackAnalysis().setVisible(true);
             }
         });
     }

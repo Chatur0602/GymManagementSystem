@@ -10,7 +10,6 @@ public class ManagerIoHandler {
     public ManagerIoHandler(){
         try {
         readManager();
-        System.out.println("inconstructor");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Can't Read In Constructor");
         }

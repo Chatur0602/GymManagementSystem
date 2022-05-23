@@ -55,7 +55,6 @@ public class EditCustomer extends javax.swing.JFrame {
         saveChangesButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         editCustomerTable = new javax.swing.JTable();
-        tempBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -66,17 +65,19 @@ public class EditCustomer extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("Edit Customer");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 180, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -109,14 +110,6 @@ public class EditCustomer extends javax.swing.JFrame {
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 730, 300));
 
-        tempBackButton.setText("Back");
-        tempBackButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tempBackButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(tempBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,8 +133,9 @@ public class EditCustomer extends javax.swing.JFrame {
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         dispose();
-        CustomerManagement CM= new CustomerManagement();
+        CustomerManagement CM = new CustomerManagement();
         CM.show();
+        allCustomers.clear();
     }//GEN-LAST:event_backLabelMouseClicked
     
     
@@ -190,13 +184,6 @@ public class EditCustomer extends javax.swing.JFrame {
             CustomerIoHandler.addCustomer();
     }//GEN-LAST:event_saveChangesButtonMouseClicked
 
-    private void tempBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempBackButtonActionPerformed
-        dispose();
-        CustomerManagement CM = new CustomerManagement();
-        CM.show();
-        allCustomers.clear();
-    }//GEN-LAST:event_tempBackButtonActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -241,6 +228,5 @@ public class EditCustomer extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton saveChangesButton;
-    private javax.swing.JButton tempBackButton;
     // End of variables declaration//GEN-END:variables
 }

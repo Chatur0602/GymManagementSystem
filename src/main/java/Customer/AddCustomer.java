@@ -6,6 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -58,6 +62,7 @@ public class AddCustomer extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 170, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
@@ -66,6 +71,7 @@ public class AddCustomer extends javax.swing.JFrame {
         jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -202,10 +208,9 @@ public class AddCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_exitLabelMouseClicked
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
-
         dispose();
-        ManagerDashboard MD = new ManagerDashboard();
-        MD.show();
+        CustomerManagement CM = new CustomerManagement();
+        CM.show();
 
     }//GEN-LAST:event_backLabelMouseClicked
 
@@ -224,10 +229,15 @@ public class AddCustomer extends javax.swing.JFrame {
                 Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
                 Matcher name = namePattern.matcher(nameField.getText());
                 characterFound = name.find();
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                String dateString ;
+                LocalDate DOB ;
+                int Age;
                 
                 if(characterFound == true || nameField.getText().length()<4){
                     JOptionPane.showMessageDialog(null,
-                    "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Error",
+                    "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
                     JOptionPane.WARNING_MESSAGE);
                 } else{
                     Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
@@ -239,7 +249,7 @@ public class AddCustomer extends javax.swing.JFrame {
 
                     if(characterFound == false || emailField.getText().length()<8){
                         JOptionPane.showMessageDialog(null,
-                        "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Error",
+                        "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
                         JOptionPane.WARNING_MESSAGE);
                         
                     } else{
@@ -249,11 +259,18 @@ public class AddCustomer extends javax.swing.JFrame {
                         
                         if(characterFound = false || contactField.getText().length() != 10){
                             JOptionPane.showMessageDialog(null,
-                        "Incorrect contact format, Must be 10 numeric digits long", "Error",
+                        "Incorrect contact format, Must be 10 numeric digits long", "Warning",
                         JOptionPane.WARNING_MESSAGE);
                         }else{
-                           
-                            System.out.println(dateOfBirthDC.getDate());
+                            dateString = format.format(dateOfBirthDC.getDate());
+                            DOB = LocalDate.parse(dateString, formatter);
+                            Age = Period.between(DOB, LocalDate.now()).getYears();
+                            
+                            if(Age<18){
+                                JOptionPane.showMessageDialog(null,
+                            "Incorrect Age, Customer must be at least 18 years old", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                            }else{
                             
                             if(CustomerIoHandler.checkCustomer(emailField.getText(), contactField.getText()) == null){
                 
@@ -287,6 +304,7 @@ public class AddCustomer extends javax.swing.JFrame {
                         }                 
                     }
                 }
+            }
                 
             
             

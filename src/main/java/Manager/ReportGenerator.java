@@ -1,19 +1,51 @@
 package Manager;
 
+
+import Customer.Customer;
+import Customer.CustomerIoHandler;
+import static Customer.CustomerIoHandler.allCustomers;
 import Manager.ManagerLogin;
+import Payment.Payment;
+import Payment.PaymentIoHandler;
+import static Payment.PaymentIoHandler.allPayments;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /* @author Nikhil */
 public class ReportGenerator extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FirstGui
-     */
+    PaymentIoHandler PIH ;
+    CustomerIoHandler CIH ;
+    private static int fCount ;
+    private static int mCount ;
+    private static int fAmount ;
+    private static int mAmount ;
+    private static int firstCount ;
+    private static int firstAmount ;
+    private static int secondCount ;
+    private static int secondAmount ;
+    private static int thirdCount ;
+    private static int thirdAmount ;
+    private static int fourthCount ;
+    private static int fourthAmount ;
+    
     public ReportGenerator() {
         initComponents();
+
     }
 
     /**
@@ -33,6 +65,7 @@ public class ReportGenerator extends javax.swing.JFrame {
         firstDateDC = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
         lastDateDC = new com.toedter.calendar.JDateChooser();
+        reportGeneratorButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -46,6 +79,7 @@ public class ReportGenerator extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 210, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
@@ -54,44 +88,49 @@ public class ReportGenerator extends javax.swing.JFrame {
         jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
             }
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-        jPanel3.add(firstDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 120, -1));
+        jPanel3.add(firstDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 120, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("To");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
-        jPanel3.add(lastDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 110, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
+        jPanel3.add(lastDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 110, -1));
+
+        reportGeneratorButton.setText("Generate Report");
+        reportGeneratorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reportGeneratorButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(reportGeneratorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jPanel1.requestFocusInWindow();
@@ -105,15 +144,97 @@ public class ReportGenerator extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitLabelMouseClicked
 
-    private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
+    private void reportGeneratorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportGeneratorButtonActionPerformed
+        PIH = new PaymentIoHandler();
+        CIH = new CustomerIoHandler();
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String dateString ;
+        LocalDate DOB ;
+        int Age;
+        
+         for (Payment list : allPayments) {   
+                if (list.getDOP().after(firstDateDC.getDate()) && list.getDOP().before(lastDateDC.getDate())){
+                    for(Customer c : allCustomers){
+                        if(list.getName().toLowerCase() == null ? c.geteMail().toLowerCase() == null : list.getName().toLowerCase().equals(c.geteMail().toLowerCase())){
+                            
+                            dateString = format.format(c.getDOB());
+                            DOB = LocalDate.parse(dateString, formatter);
+                            Age = Period.between(DOB, LocalDate.now()).getYears();
 
+                            if(Age >= 18 && Age< 25){
+                                firstCount ++ ;
+                                firstAmount = firstAmount + list.getAmount();
+                            }
+                            
+                            else if(Age >= 25 && Age< 35){
+                                secondCount ++ ;
+                                secondAmount = firstAmount + list.getAmount();
+                            }
+                            
+                            else if(Age >= 35 && Age< 50){
+                                thirdCount ++ ;
+                                thirdAmount = firstAmount + list.getAmount();
+                            }
+                            else if(Age >= 50){
+                                fourthCount ++ ;
+                                fourthAmount = firstAmount + list.getAmount();
+                            }
+                            
+                            if(c.getGender() == 'F'){
+                                fCount ++ ;
+                                fAmount = fAmount + list.getAmount() ;
+                            }
+                            else{
+                                mCount++ ;
+                                mAmount = mAmount + list.getAmount();
+                            }
+                        }
+                    }
+                
+                }
+            }
+ 
+         GenderReport GR = new GenderReport(fCount, mCount, fAmount, mAmount);
+         GR.show();
+         
+         AgeReport AR = new AgeReport(firstCount, secondCount, thirdCount, fourthCount, firstAmount, secondAmount, thirdAmount, fourthAmount);
+         AR.show();
+        
+         allPayments.clear();
+         allCustomers.clear();
+         fAmount = 0;
+         mAmount = 0;
+         fCount = 0;
+         mCount = 0 ;
+         firstCount = 0;
+         secondCount = 0;
+         thirdCount = 0;
+         fourthCount = 0;
+         firstAmount = 0;
+         secondAmount = 0;
+         thirdAmount = 0;
+         fourthAmount = 0 ;
+    }//GEN-LAST:event_reportGeneratorButtonActionPerformed
+
+    private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         dispose();
         ManagerDashboard MD = new ManagerDashboard();
         MD.show();
-
-
     }//GEN-LAST:event_backLabelMouseClicked
 
+    private DefaultCategoryDataset createDataset(int fAmount, int mAmount) {
+        
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset.addValue(fAmount, "Revenue", "F");
+        dataset.addValue(mAmount, "Revenue", "M");
+
+
+        return dataset;
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -172,6 +293,102 @@ public class ReportGenerator extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -191,5 +408,6 @@ public class ReportGenerator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private com.toedter.calendar.JDateChooser lastDateDC;
+    private javax.swing.JButton reportGeneratorButton;
     // End of variables declaration//GEN-END:variables
 }

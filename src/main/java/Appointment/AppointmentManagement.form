@@ -91,7 +91,7 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\Resources\icons8-exit-24.png"/>
+                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-exit-24.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -109,7 +109,7 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\Resources\icons8-back-24.png"/>
+                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-back-24.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -124,7 +124,7 @@
             <Component class="javax.swing.JLabel" name="searchLabel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\Resources\icons8-view-64.png"/>
+                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-view-64.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="  "/>
               </Properties>
@@ -140,7 +140,7 @@
             <Component class="javax.swing.JLabel" name="addLabel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\Resources\icons8-add-64.png"/>
+                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-add-64.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -155,7 +155,7 @@
             <Component class="javax.swing.JLabel" name="deleteLabel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\Resources\icons8-delete-64.png"/>
+                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-delete-64.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -218,7 +218,7 @@
             <Component class="javax.swing.JLabel" name="editLabel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nikhi\OneDrive\Documents\NetBeansProjects\FirstProject\src\main\java\Resources\icons8-edit-file-64.png"/>
+                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-edit-file-64.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="  "/>
               </Properties>

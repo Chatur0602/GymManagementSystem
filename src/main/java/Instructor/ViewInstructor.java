@@ -50,7 +50,6 @@ public class ViewInstructor extends javax.swing.JFrame {
         viewCustomerTable = new javax.swing.JTable();
         usernameField = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
-        tempBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -64,14 +63,16 @@ public class ViewInstructor extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -118,14 +119,6 @@ public class ViewInstructor extends javax.swing.JFrame {
         jPanel3.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 180, 20));
         jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 180, 10));
 
-        tempBackButton.setText("Back");
-        tempBackButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tempBackButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(tempBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -150,10 +143,10 @@ public class ViewInstructor extends javax.swing.JFrame {
     }//GEN-LAST:event_exitLabelMouseClicked
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
-
         dispose();
         InstructorManagement IM= new InstructorManagement();
         IM.show();
+        allInstructors.clear();
     }//GEN-LAST:event_backLabelMouseClicked
 
     private void searchInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchInstructorButtonActionPerformed
@@ -184,13 +177,6 @@ public class ViewInstructor extends javax.swing.JFrame {
         usernameField.setText("");
         usernameField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
     }//GEN-LAST:event_usernameFieldFocusGained
-
-    private void tempBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempBackButtonActionPerformed
-        dispose();
-        InstructorManagement IM = new InstructorManagement();
-        IM.show();
-        allInstructors.clear();
-    }//GEN-LAST:event_tempBackButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,7 +221,6 @@ public class ViewInstructor extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JButton searchInstructorButton;
-    private javax.swing.JButton tempBackButton;
     private javax.swing.JTextField usernameField;
     private javax.swing.JTable viewCustomerTable;
     // End of variables declaration//GEN-END:variables
