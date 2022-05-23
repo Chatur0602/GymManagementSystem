@@ -3,6 +3,7 @@ package Admin;
 import Instructor.*;
 import Manager.ManagerDashboard;
 import Manager.ManagerDashboard;
+import Manager.ManagerIoHandler;
 import Manager.ManagerLogin;
 import javax.swing.*;
 import java.awt.*;
@@ -17,6 +18,7 @@ public class ManagerManagement extends javax.swing.JFrame {
      */
     public ManagerManagement() {
         initComponents();
+        ManagerIoHandler.allManagers.clear();
     }
 
     /**

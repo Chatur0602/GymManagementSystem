@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -176,6 +177,10 @@ public class EditAppointment extends javax.swing.JFrame {
                     
                     a = new Appointment(Id, name, date, cEmail, iUsername, s);
                     AppointmentIoHandler.allAppointments.add(a);
+                    
+                    JOptionPane.showMessageDialog(null,
+                                        "Appointment Data Successfully Updated", "Success",
+                                        JOptionPane.INFORMATION_MESSAGE);
                 }
                 //System.out.println(ID + "\n");
                 catch (ParseException ex) {

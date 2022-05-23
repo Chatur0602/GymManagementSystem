@@ -14,6 +14,7 @@ public class InstructorManagement extends javax.swing.JFrame {
     InstructorIoHandler IIH ;
     public InstructorManagement() {
         initComponents();
+        InstructorIoHandler.allInstructors.clear();
     }
     
     @SuppressWarnings("unchecked")
@@ -203,10 +204,11 @@ public class InstructorManagement extends javax.swing.JFrame {
             if (userFound == false) {
                 JOptionPane.showMessageDialog(null,"Instructor doesn't exist! Please try agiain","Alert",JOptionPane.WARNING_MESSAGE);
             }
-            allInstructors.clear();
+            
         } catch(Exception e){
             
         }
+    allInstructors.clear();
     }//GEN-LAST:event_deleteLabelMouseClicked
 
     private void searchLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchLabelMouseClicked

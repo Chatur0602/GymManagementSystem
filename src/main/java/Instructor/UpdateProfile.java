@@ -252,8 +252,8 @@ public class UpdateProfile extends javax.swing.JFrame {
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         
         dispose();
-        ManagerDashboard MD = new ManagerDashboard();
-        MD.show();
+        InstructorDashboard ID = new InstructorDashboard(user);
+        ID.show();
 
     }//GEN-LAST:event_backLabelMouseClicked
 

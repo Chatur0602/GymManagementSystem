@@ -1,6 +1,7 @@
 package Manager;
 
 import Admin.ManagerManagement;
+import Appointment.AppointmentIoHandler;
 import Appointment.AppointmentManagement;
 import Customer.CustomerManagement;
 import Instructor.InstructorManagement;
@@ -14,11 +15,14 @@ import java.awt.event.ActionListener;
 /* @author Nikhil */
 public class ManagerDashboard extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FirstGui
-     */
+ 
     public ManagerDashboard() {
         initComponents();
+        Payment.PaymentIoHandler.allPayments.clear();
+        Customer.CustomerIoHandler.allCustomers.clear();
+        Instructor.InstructorIoHandler.allInstructors.clear();
+        ManagerIoHandler.allManagers.clear();
+        AppointmentIoHandler.allAppointments.clear();
     }
 
     /**

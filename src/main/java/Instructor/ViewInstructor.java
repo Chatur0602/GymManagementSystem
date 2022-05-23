@@ -15,8 +15,6 @@ public class ViewInstructor extends javax.swing.JFrame {
     InstructorIoHandler IIH;
     public ViewInstructor() {
         
-        System.out.println("Step 1");
-        
         IIH = new InstructorIoHandler();
         initComponents();
        

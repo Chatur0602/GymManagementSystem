@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -174,6 +175,10 @@ public class EditInstructor extends javax.swing.JFrame {
                     
                     i = new Instructor(Id, name, eMail, contact, date, username, password);
                     InstructorIoHandler.allInstructors.add(i);
+                    
+                    JOptionPane.showMessageDialog(null,
+                        "Instructor Data Successfully Updated", "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
                 }
                 catch (ParseException ex) {
                     Logger.getLogger(EditInstructor.class.getName()).log(Level.SEVERE, null, ex);

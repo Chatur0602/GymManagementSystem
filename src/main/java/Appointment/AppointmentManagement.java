@@ -15,6 +15,7 @@ public class AppointmentManagement extends javax.swing.JFrame {
     AppointmentIoHandler AIH;
     public AppointmentManagement() {
         initComponents();
+        allAppointments.clear();
     }
 
     @SuppressWarnings("unchecked")
@@ -226,11 +227,11 @@ public class AppointmentManagement extends javax.swing.JFrame {
             if (userFound == false) {
                 JOptionPane.showMessageDialog(null,"Appointment doesn't exist! Please try again","Alert",JOptionPane.WARNING_MESSAGE);
             }
-            allAppointments.clear();
+            
         } catch(Exception e){
             
         }
-        
+    allAppointments.clear();    
     }//GEN-LAST:event_deleteLabelMouseClicked
 
     private void searchLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchLabelMouseClicked

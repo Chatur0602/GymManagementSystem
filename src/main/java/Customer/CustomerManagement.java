@@ -14,6 +14,7 @@ public class CustomerManagement extends javax.swing.JFrame {
     CustomerIoHandler CIH ;
     public CustomerManagement() {
         initComponents();
+        allCustomers.clear();
     }
 
     /**
@@ -213,10 +214,11 @@ public class CustomerManagement extends javax.swing.JFrame {
             if (userFound == false) {
                 JOptionPane.showMessageDialog(null,"Customer doesn't exist! Please try again","Alert",JOptionPane.WARNING_MESSAGE);
             }
-            allCustomers.clear();
+            
         } catch(Exception e){
             
         }
+    allCustomers.clear();
     }//GEN-LAST:event_deleteLabelMouseClicked
 
     private void editLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseClicked

@@ -4,10 +4,16 @@ import static Customer.CustomerIoHandler.allCustomers;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -149,41 +155,93 @@ public class EditCustomer extends javax.swing.JFrame {
             
             int Id = 0;
             String name = null;
-            String eMail = null;
+            String email = null;
             String contact = null;
             String d = null ;
             String gender ;
-            
+            Date date ;
             Customer c = null ; 
             
             allCustomers.clear();
             
             for (int rowCount = 0; rowCount < model.getRowCount(); rowCount++){
+                Id = Integer.parseInt(model.getValueAt(rowCount, 0).toString());
+                name = model.getValueAt(rowCount, 1).toString();
+                email = model.getValueAt(rowCount, 2).toString();
+                contact = model.getValueAt(rowCount, 3).toString();
+                d = model.getValueAt(rowCount, 4).toString() ;
+                date = null;
                 try {
-                    Id = Integer.parseInt(model.getValueAt(rowCount, 0).toString());
-                    name = model.getValueAt(rowCount, 1).toString();
-                    eMail = model.getValueAt(rowCount, 2).toString();
-                    contact = model.getValueAt(rowCount, 3).toString();
-                    d = model.getValueAt(rowCount, 4).toString() ;
+                    date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
+                
+                gender = model.getValueAt(rowCount, 5).toString();
+                char g = gender.charAt(0);
+                boolean characterFound = false;
+                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                Matcher cName = namePattern.matcher(name);
+                characterFound = cName.find();
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                String dateString ;
+                LocalDate DOB ;
+                int Age;
+                if(characterFound == true || name.length()<4){
+                    JOptionPane.showMessageDialog(null,
+                            "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                } else{
+                    Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
+                            "[a-zA-Z0-9_+&*-]+)*@" +
+                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                            "A-Z]{2,7}$");
+                    Matcher eMail = eMailPattern.matcher(email);
+                    characterFound = eMail.find();
                     
-                    Date date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
-                    
-                    gender = model.getValueAt(rowCount, 5).toString();
-                    char g = gender.charAt(0);
-                   
-                    //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + g);
-                    
-                    c = new Customer(Id, name, eMail, contact, date, g);
-                    CustomerIoHandler.allCustomers.add(c);
+                    if(characterFound == false || email.length()<8){
+                        JOptionPane.showMessageDialog(null,
+                                "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                                JOptionPane.WARNING_MESSAGE);
+                        
+                    } else{
+                        Pattern contactPattern = Pattern.compile("^[0-9]");
+                        Matcher cContact = contactPattern.matcher(contact);
+                        characterFound = cContact.find();
+                        
+                        if(characterFound = false || contact.length() != 10){
+                            JOptionPane.showMessageDialog(null,
+                                    "Incorrect contact format, Must be 10 numeric digits long", "Warning",
+                                    JOptionPane.WARNING_MESSAGE);
+                        }else{
+                            dateString = format.format(date);
+                            DOB = LocalDate.parse(dateString, formatter);
+                            Age = Period.between(DOB, LocalDate.now()).getYears();
+                            
+                            if(Age<18){
+                                JOptionPane.showMessageDialog(null,
+                                        "Incorrect Age, Customer must be at least 18 years old", "Warning",
+                                        JOptionPane.WARNING_MESSAGE);
+                            }else{
+                                
+                                //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + g);
+                                
+                                c = new Customer(Id, name, email, contact, date, g);
+                                CustomerIoHandler.allCustomers.add(c);
+                                
+                                JOptionPane.showMessageDialog(null,
+                                        "Customer Data Successfully Updated", "Success",
+                                        JOptionPane.INFORMATION_MESSAGE);
+                            } 
+                        }
+                        
+                    }
                 }
-                //System.out.println(ID + "\n");
-                catch (ParseException ex) {
+            } catch (ParseException ex) {
                     Logger.getLogger(EditCustomer.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            CustomerIoHandler.addCustomer();
+    CustomerIoHandler.addCustomer();
     }//GEN-LAST:event_saveChangesButtonMouseClicked
-
+                    
     /**
      * @param args the command line arguments
      */
