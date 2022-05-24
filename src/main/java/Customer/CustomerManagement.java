@@ -222,6 +222,7 @@ public class CustomerManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_deleteLabelMouseClicked
 
     private void editLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseClicked
+        dispose();
         EditCustomer EC = new EditCustomer();
         EC.show();
     }//GEN-LAST:event_editLabelMouseClicked

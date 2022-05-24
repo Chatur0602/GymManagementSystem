@@ -253,11 +253,11 @@ public class AddCustomer extends javax.swing.JFrame {
                         JOptionPane.WARNING_MESSAGE);
                         
                     } else{
-                        Pattern contactPattern = Pattern.compile("^[0-9]");
+                        Pattern contactPattern = Pattern.compile("[^0-9]");
                         Matcher contact = contactPattern.matcher(contactField.getText());
                         characterFound = contact.find();
                         
-                        if(characterFound = false || contactField.getText().length() != 10){
+                        if(characterFound == true || contactField.getText().length() != 10){
                             JOptionPane.showMessageDialog(null,
                         "Incorrect contact format, Must be 10 numeric digits long", "Warning",
                         JOptionPane.WARNING_MESSAGE);
@@ -284,8 +284,8 @@ public class AddCustomer extends javax.swing.JFrame {
                             }
 
                                 Customer c = new Customer(ID, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), gender);
-                                CustomerIoHandler.allCustomers.add(c);
-                                CustomerIoHandler.addCustomer();
+                                allCustomers.add(c);
+                                addCustomer();
 
                                 JOptionPane.showMessageDialog(null,
                                         "Customer Successfully Added", "Success",

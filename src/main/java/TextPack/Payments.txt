@@ -2,4 +2,7 @@
 4,750,5,Jojo12@gmail.com,aadada,19-05-2022 14:34:21
 5,500,8,Irule0602@gmail.com,Nice one,19-05-2022 14:36:08
 6,1000,1,Manish1911@gmail.com,asadada,19-05-2022 14:36:57
-7,1500,4,Rahul@yahoo.com,Great class,20-05-2022 22:50:52
+7,1500,6,Rahul@yahoo.com,Great class,20-05-2022 22:50:52
+8,500,4,Jojo12@gmail.com,NaisuNaisu,24-05-2022 21:56:55
+9,500,17,Jojo12@gmail.com,Naisu Naisu,24-05-2022 22:15:53
+10,250,18,Jojo12@gmail.com,NICE WORKOUT!!,24-05-2022 22:16:14

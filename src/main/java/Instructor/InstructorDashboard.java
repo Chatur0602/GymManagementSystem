@@ -1,6 +1,8 @@
 package Instructor;
 
+import static Appointment.AppointmentIoHandler.allAppointments;
 import Payment.AddPaymentFeedback;
+import static Payment.PaymentIoHandler.allPayments;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,8 +15,11 @@ public class InstructorDashboard extends javax.swing.JFrame {
     
      public InstructorDashboard(String user) {
         initComponents();
-        this.user = user ;
+        InstructorDashboard.user = user ;
         jLabel2.setText(user);
+        
+        allPayments.clear();
+        allAppointments.clear();
     }
 
     /**
@@ -181,13 +186,15 @@ public class InstructorDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_updateLabelMouseClicked
 
     private void appointmentLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appointmentLabelMouseClicked
-        
+        dispose();
+        ManageAppointments MA = new ManageAppointments(user);
+        MA.show();
     }//GEN-LAST:event_appointmentLabelMouseClicked
 
     private void paymentLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paymentLabelMouseClicked
         dispose();
-        ManageAppointments MA = new ManageAppointments(user);
-        MA.show();
+        AddPaymentFeedback AP = new AddPaymentFeedback(user);
+        AP.show();
     }//GEN-LAST:event_paymentLabelMouseClicked
 
     /**

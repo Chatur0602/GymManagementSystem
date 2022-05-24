@@ -153,93 +153,124 @@ public class EditCustomer extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel)editCustomerTable.getModel();
             model.setColumnIdentifiers(columnsName);
             
-            int Id = 0;
+            String ID = null;
             String name = null;
             String email = null;
             String contact = null;
             String d = null ;
-            String gender ;
-            Date date ;
+            String gender = null;
+            Date date = null;
+            char g ;
             Customer c = null ; 
+            boolean validated = false ;
+            boolean characterFound = false;
             
             allCustomers.clear();
             
             for (int rowCount = 0; rowCount < model.getRowCount(); rowCount++){
-                Id = Integer.parseInt(model.getValueAt(rowCount, 0).toString());
+                ID = model.getValueAt(rowCount, 0).toString();
                 name = model.getValueAt(rowCount, 1).toString();
                 email = model.getValueAt(rowCount, 2).toString();
                 contact = model.getValueAt(rowCount, 3).toString();
                 d = model.getValueAt(rowCount, 4).toString() ;
-                date = null;
-                try {
-                    date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
-                
                 gender = model.getValueAt(rowCount, 5).toString();
-                char g = gender.charAt(0);
-                boolean characterFound = false;
-                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
-                Matcher cName = namePattern.matcher(name);
-                characterFound = cName.find();
+                g = gender.charAt(0);
+                
+                try {
+                date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
                 SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
                 String dateString ;
                 LocalDate DOB ;
                 int Age;
-                if(characterFound == true || name.length()<4){
+                
+                System.out.println(ID);
+                Pattern idPattern = Pattern.compile("[^0-9]");
+                Matcher id = idPattern.matcher(ID);
+                characterFound = id.find();
+                System.out.println(characterFound);
+
+                if(characterFound == true || Integer.parseInt(ID) == 0){
                     JOptionPane.showMessageDialog(null,
-                            "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                            "Incorrect Customer ID, Use numeric characters only", "Warning",
                             JOptionPane.WARNING_MESSAGE);
-                } else{
-                    Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
-                            "[a-zA-Z0-9_+&*-]+)*@" +
-                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
-                            "A-Z]{2,7}$");
-                    Matcher eMail = eMailPattern.matcher(email);
-                    characterFound = eMail.find();
-                    
-                    if(characterFound == false || email.length()<8){
+                    validated = false ;
+                    break;
+                }else{
+
+                    Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                    Matcher cName = namePattern.matcher(name);
+                    characterFound = cName.find();
+
+                    if(characterFound == true || name.length()<4){
                         JOptionPane.showMessageDialog(null,
-                                "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                                "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
                                 JOptionPane.WARNING_MESSAGE);
-                        
+                        validated = false ;
+                        break;
                     } else{
-                        Pattern contactPattern = Pattern.compile("^[0-9]");
-                        Matcher cContact = contactPattern.matcher(contact);
-                        characterFound = cContact.find();
                         
-                        if(characterFound = false || contact.length() != 10){
+                        Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
+                                "[a-zA-Z0-9_+&*-]+)*@" +
+                                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                                "A-Z]{2,7}$");
+                        Matcher eMail = eMailPattern.matcher(email);
+                        characterFound = eMail.find();
+
+                        if(characterFound == false || email.length()<8){
                             JOptionPane.showMessageDialog(null,
-                                    "Incorrect contact format, Must be 10 numeric digits long", "Warning",
+                                    "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
                                     JOptionPane.WARNING_MESSAGE);
-                        }else{
-                            dateString = format.format(date);
-                            DOB = LocalDate.parse(dateString, formatter);
-                            Age = Period.between(DOB, LocalDate.now()).getYears();
+                            validated = false ;
+                            break;
+                        } else{
                             
-                            if(Age<18){
+                            Pattern contactPattern = Pattern.compile("[^0-9]");
+                            Matcher cContact = contactPattern.matcher(contact);
+                            characterFound = cContact.find();
+                            System.out.println(characterFound);
+                            
+                            if(characterFound == true || contact.length() != 10){
                                 JOptionPane.showMessageDialog(null,
-                                        "Incorrect Age, Customer must be at least 18 years old", "Warning",
+                                        "Incorrect contact format, Must be 10 numeric digits long", "Warning",
                                         JOptionPane.WARNING_MESSAGE);
+                                validated = false ;
+                                break;
                             }else{
                                 
-                                //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + g);
-                                
-                                c = new Customer(Id, name, email, contact, date, g);
-                                CustomerIoHandler.allCustomers.add(c);
-                                
-                                JOptionPane.showMessageDialog(null,
-                                        "Customer Data Successfully Updated", "Success",
-                                        JOptionPane.INFORMATION_MESSAGE);
+                                dateString = format.format(date);
+                                DOB = LocalDate.parse(dateString, formatter);
+                                Age = Period.between(DOB, LocalDate.now()).getYears();
+
+                                if(Age<18){
+                                    JOptionPane.showMessageDialog(null,
+                                            "Incorrect Age, Customer must be at least 18 years old", "Warning",
+                                            JOptionPane.WARNING_MESSAGE);
+                                    validated = false ;
+                                    break;
+                                }else{
+
+                                    //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + g);
+                                    c = new Customer(Integer.parseInt(ID), name, email, contact, date, g);
+                                    CustomerIoHandler.allCustomers.add(c);
+                                    validated = true;
+
+                                } 
                             } 
                         }
-                        
                     }
-                }
-            } catch (ParseException ex) {
-                    Logger.getLogger(EditCustomer.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                } 
+            }catch (ParseException ex) {
+                Logger.getLogger(EditCustomer.class.getName()).log(Level.SEVERE, null, ex);
             }
-    CustomerIoHandler.addCustomer();
+        }
+            
+            if(validated == true){
+                JOptionPane.showMessageDialog(null,
+                    "Customer Data Successfully Updated", "Success",
+                    JOptionPane.INFORMATION_MESSAGE);
+            CustomerIoHandler.addCustomer();
+            }
     }//GEN-LAST:event_saveChangesButtonMouseClicked
                     
     /**
