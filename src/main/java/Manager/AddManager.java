@@ -15,8 +15,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /* @author Nikhil */
 public class AddManager extends javax.swing.JFrame {
@@ -278,6 +284,65 @@ public class AddManager extends javax.swing.JFrame {
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
 
          try {
+                boolean characterFound = false;
+                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                Matcher name = namePattern.matcher(nameField.getText());
+                characterFound = name.find();
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                String dateString ;
+                LocalDate DOB ;
+                int Age;
+                
+                if(characterFound == true || nameField.getText().length()<4){
+                    JOptionPane.showMessageDialog(null,
+                    "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                    JOptionPane.WARNING_MESSAGE);
+                } else{
+                    Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
+                            "[a-zA-Z0-9_+&*-]+)*@" +
+                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                            "A-Z]{2,7}$");
+                    Matcher eMail = eMailPattern.matcher(emailField.getText());
+                    characterFound = eMail.find();
+
+                    if(characterFound == false || emailField.getText().length()<8){
+                        JOptionPane.showMessageDialog(null,
+                        "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                        JOptionPane.WARNING_MESSAGE);
+                        
+                    } else{
+                        Pattern contactPattern = Pattern.compile("^[0-9]");
+                        Matcher contact = contactPattern.matcher(contactField.getText());
+                        characterFound = contact.find();
+                        
+                        if(characterFound = false || contactField.getText().length() != 10){
+                            JOptionPane.showMessageDialog(null,
+                        "Incorrect contact format, Must be 10 numeric digits long", "Warning",
+                        JOptionPane.WARNING_MESSAGE);
+                        }else{
+                           
+                            
+                            if(addressField.getText().length()<16 || addressField.getText().contains(",")){
+                                JOptionPane.showMessageDialog(null,
+                            "Incorrect address format(use '|' instead of ','), Address is to short", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                            }else{
+                                Pattern usernamePattern = Pattern.compile("[^a-z-0-9]", Pattern.CASE_INSENSITIVE);
+                                Matcher username = usernamePattern.matcher(usernameField.getText());
+                                characterFound = username.find();
+                                
+                                if(characterFound == true || usernameField.getText().length()<8){
+                                JOptionPane.showMessageDialog(null,
+                                "Incorrect Username format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
+                                JOptionPane.WARNING_MESSAGE);
+                                }else{
+            
+                                    if(!passwordField.getText().equals(validationField.getText())|| passwordField.getText().length()<8){
+                                        JOptionPane.showMessageDialog(null,
+                                        "Passwords don't match, less than 8 characters","Warning",
+                                        JOptionPane.WARNING_MESSAGE);
+                                    }else{ 
             if(ManagerIoHandler.checkManager(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
                 
                 int ID = 0 ;
@@ -303,8 +368,8 @@ public class AddManager extends javax.swing.JFrame {
                         "Manager Already Exists, Please Try Again with", "Error",
                         JOptionPane.WARNING_MESSAGE);
                 
-            }
-        } catch (IOException ex) {
+            }}}}}
+        }}} catch (IOException ex) {
             Logger.getLogger(AddManager.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
             Logger.getLogger(AddManager.class.getName()).log(Level.SEVERE, null, ex);

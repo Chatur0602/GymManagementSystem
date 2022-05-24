@@ -3,3 +3,6 @@
 3,Saamirr,Sammirr@gmail.com,012389189,Ampang,MrGill,Sammy
 4,Wagwan KIlla,Jojo@gmail.com,219319023,902903190,9090090,90909009
 5,asdasda,sadasdas,asdasd,asdasdasd,asada,sadad
+6,Hamid,hamidreza@gmail.com,0104316375,Mont Kiara Bayu Condominium,operatingsystem,123456789
+7,Hirbod,Hirbod@gmail.com,0104316380,Mont Kiara|Jalan Kiara 2|Kuala Lumpur,Hirbod123,Hirbod12345
+8,Johnie,Johnie@gmail.com,0104316381,Pines-Mont Kiara-Jalan Kiara 1,Johniedies,12345678
