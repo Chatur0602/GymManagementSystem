@@ -219,7 +219,7 @@ public class InstructorManagement extends javax.swing.JFrame {
 
     private void editLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseClicked
         dispose();
-        editInstructor EI = new editInstructor();
+        EditInstructor EI = new EditInstructor();
         EI.show();
     }//GEN-LAST:event_editLabelMouseClicked
 
