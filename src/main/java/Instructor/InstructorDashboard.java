@@ -186,7 +186,7 @@ public class InstructorDashboard extends javax.swing.JFrame {
 
     private void paymentLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paymentLabelMouseClicked
         dispose();
-        ManageAppointments MA = new ManageAppointments(user);
+        manageAppointments MA = new manageAppointments(user);
         MA.show();
     }//GEN-LAST:event_paymentLabelMouseClicked
 

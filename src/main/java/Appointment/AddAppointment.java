@@ -14,9 +14,13 @@ import java.awt.*;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /* @author Nikhil */
 public class AddAppointment extends javax.swing.JFrame {
@@ -231,6 +235,23 @@ public class AddAppointment extends javax.swing.JFrame {
             SimpleDateFormat slotFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");  
             Date slot = slotFormat.parse(dateSlot) ;
             
+            boolean characterFound = false;
+                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                Matcher name = namePattern.matcher(nameField.getText());
+                characterFound = name.find();
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                String dateString ;
+                LocalDate DOB ;
+                int Age;
+                
+                if(characterFound == true || nameField.getText().length()<4){
+                    JOptionPane.showMessageDialog(null,
+                    "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                    JOptionPane.WARNING_MESSAGE);
+                } else{
+                    
+                
             if(AppointmentIoHandler.checkAppointment(slotFormat.format(slot), instructorComboBox.getSelectedItem().toString(), customerComboBox.getSelectedItem().toString()) == null){
 
                 int ID = 1 ;
@@ -262,7 +283,7 @@ public class AddAppointment extends javax.swing.JFrame {
                         JOptionPane.WARNING_MESSAGE);
                 
             }
-        } catch (IOException ex) {
+                }} catch (IOException ex) {
             Logger.getLogger(AddAppointment.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
             Logger.getLogger(AddAppointment.class.getName()).log(Level.SEVERE, null, ex);
