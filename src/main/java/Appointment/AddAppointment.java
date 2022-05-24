@@ -12,6 +12,7 @@ import Manager.ManagerDashboard;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import static java.lang.String.format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -228,28 +229,37 @@ public class AddAppointment extends javax.swing.JFrame {
 
     
     private void addAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAppointmentButtonActionPerformed
-    try {
-            SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY");
-            String date = dateForm.format(appointmentDate.getDate());
-            String dateSlot = date + " " + timeComboBox.getSelectedItem().toString();
-            SimpleDateFormat slotFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");  
-            Date slot = slotFormat.parse(dateSlot) ;
-           
-            boolean characterFound = false;
+    
+        try {     
+                boolean characterFound = false;
                 Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
                 Matcher name = namePattern.matcher(nameField.getText());
                 characterFound = name.find();
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
                 String dateString;
-                
+                LocalDate DOA ; 
               
                 if(characterFound == true || nameField.getText().length()<4){
                     JOptionPane.showMessageDialog(null,
                     "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
                     JOptionPane.WARNING_MESSAGE);
                 } else{
+                    dateString = format.format(appointmentDate.getDate());
+                    DOA = LocalDate.parse(dateString, formatter);
                     
+                    if(DOA.isBefore(LocalDate.now())){
+                        JOptionPane.showMessageDialog(null,
+                        "Incorrect Date, Can't book an appointment for the past", "Warning",
+                        JOptionPane.WARNING_MESSAGE);
+                    }else{
                 
+        SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY");
+        String date = dateForm.format(appointmentDate.getDate());
+        String dateSlot = date + " " + timeComboBox.getSelectedItem().toString();
+        SimpleDateFormat slotFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");  
+        Date slot = slotFormat.parse(dateSlot) ;
+        
             if(AppointmentIoHandler.checkAppointment(slotFormat.format(slot), instructorComboBox.getSelectedItem().toString(), customerComboBox.getSelectedItem().toString()) == null){
 
                 int ID = 1 ;
@@ -280,8 +290,10 @@ public class AddAppointment extends javax.swing.JFrame {
                         "Appointment Already Exists or Instructor Busy, try a different instructor or slot", "Error",
                         JOptionPane.WARNING_MESSAGE);
                 
+                    }
+                }
             }
-                }} catch (IOException ex) {
+        } catch (IOException ex) {
             Logger.getLogger(AddAppointment.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
             Logger.getLogger(AddAppointment.class.getName()).log(Level.SEVERE, null, ex);
