@@ -234,17 +234,15 @@ public class AddAppointment extends javax.swing.JFrame {
             String dateSlot = date + " " + timeComboBox.getSelectedItem().toString();
             SimpleDateFormat slotFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");  
             Date slot = slotFormat.parse(dateSlot) ;
-            
+           
             boolean characterFound = false;
                 Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
                 Matcher name = namePattern.matcher(nameField.getText());
                 characterFound = name.find();
-                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-                String dateString ;
-                LocalDate DOB ;
-                int Age;
+                String dateString;
                 
+              
                 if(characterFound == true || nameField.getText().length()<4){
                     JOptionPane.showMessageDialog(null,
                     "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
