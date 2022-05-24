@@ -13,8 +13,13 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.io.IOException;
 import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /* @author Nikhil */
 public class AddInstructor extends javax.swing.JFrame {
@@ -74,16 +79,14 @@ public class AddInstructor extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -104,6 +107,11 @@ public class AddInstructor extends javax.swing.JFrame {
         nameField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 nameFieldFocusGained(evt);
+            }
+        });
+        nameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameFieldActionPerformed(evt);
             }
         });
         jPanel3.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 129, 20));
@@ -254,8 +262,73 @@ public class AddInstructor extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameFieldFocusGained
 
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
-     
-         if(InstructorIoHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
+                        boolean characterFound = false;
+                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                Matcher name = namePattern.matcher(nameField.getText());
+                characterFound = name.find();
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                String dateString ;
+                LocalDate DOB ;
+                int Age;
+                
+                if(characterFound == true || nameField.getText().length()<4){
+                    JOptionPane.showMessageDialog(null,
+                    "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                    JOptionPane.WARNING_MESSAGE);
+                } else{
+                    Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
+                            "[a-zA-Z0-9_+&*-]+)*@" +
+                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                            "A-Z]{2,7}$");
+                    Matcher eMail = eMailPattern.matcher(emailField.getText());
+                    characterFound = eMail.find();
+
+                    if(characterFound == false || emailField.getText().length()<8){
+                        JOptionPane.showMessageDialog(null,
+                        "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                        JOptionPane.WARNING_MESSAGE);
+                        
+                    } else{
+                        Pattern contactPattern = Pattern.compile("^[0-9]");
+                        Matcher contact = contactPattern.matcher(contactField.getText());
+                        characterFound = contact.find();
+                        
+                        if(characterFound = false || contactField.getText().length() != 10){
+                            JOptionPane.showMessageDialog(null,
+                        "Incorrect contact format, Must be 10 numeric digits long", "Warning",
+                        JOptionPane.WARNING_MESSAGE);
+                        }else{
+                            dateString = format.format(dateOfBirthDC.getDate());
+                            DOB = LocalDate.parse(dateString, formatter);
+                            Age = Period.between(DOB, LocalDate.now()).getYears();
+                            
+                            if(Age<18){
+                                JOptionPane.showMessageDialog(null,
+                            "Incorrect Age, Instructor must be at least 18 years old", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                            }else{
+                                Pattern usernamePattern = Pattern.compile("[^a-z-0-9]", Pattern.CASE_INSENSITIVE);
+                                Matcher username = usernamePattern.matcher(usernameField.getText());
+                                characterFound = username.find();
+                                
+                                if(characterFound == true || usernameField.getText().length()<8){
+                                JOptionPane.showMessageDialog(null,
+                                "Incorrect Username format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
+                                JOptionPane.WARNING_MESSAGE);
+                                }else{
+                                   System.out.println(passwordField.getText() + validationField.getText() + passwordField.getText().length());
+                                    if(!passwordField.getText().equals(validationField.getText())|| passwordField.getText().length()<8){
+                                        JOptionPane.showMessageDialog(null,
+                                        "Passwords don't match, less than 8 characters","Warning",
+                                        JOptionPane.WARNING_MESSAGE);
+                                    }else{
+                                        
+               
+                                
+                                
+       
+        if(InstructorIoHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
              
              int ID = 1 ;
                 
@@ -281,8 +354,13 @@ public class AddInstructor extends javax.swing.JFrame {
                      "Instructor Already Exists, Please Try Again", "Error",
                      JOptionPane.WARNING_MESSAGE);
              
-         }  
+         }
+                                    }                                }}}}}    
     }//GEN-LAST:event_addInstructorButtonActionPerformed
+
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameFieldActionPerformed
 
     
     /**

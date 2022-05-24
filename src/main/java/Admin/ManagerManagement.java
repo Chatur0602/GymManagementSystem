@@ -1,5 +1,6 @@
 package Admin;
 
+import Manager.AddManager;
 import Instructor.*;
 import Manager.ManagerDashboard;
 import Manager.ManagerDashboard;
