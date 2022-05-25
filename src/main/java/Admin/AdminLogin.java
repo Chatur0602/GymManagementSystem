@@ -222,9 +222,14 @@ public class AdminLogin extends javax.swing.JFrame {
           
         //check whether the credentials are authentic or not  
         if (userValue.equals("admin") && passValue.equals("nimda")) {
+            JOptionPane.showMessageDialog(null,
+                "Login Successful, Welcome Master", "Success",
+                JOptionPane.INFORMATION_MESSAGE);
+            
             dispose();
             ManagerManagement MM = new ManagerManagement() ;
             MM.show();
+            
         }
         
         else{

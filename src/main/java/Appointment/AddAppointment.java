@@ -31,6 +31,9 @@ public class AddAppointment extends javax.swing.JFrame {
     InstructorIoHandler IIH ;
 
     public AddAppointment(){
+        allAppointments.clear();
+        allCustomers.clear();
+        allInstructors.clear();
         AIH = new AppointmentIoHandler() ;
         CIH = new CustomerIoHandler();
         IIH = new InstructorIoHandler();

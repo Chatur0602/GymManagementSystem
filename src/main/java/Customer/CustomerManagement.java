@@ -76,7 +76,7 @@ public class CustomerManagement extends javax.swing.JFrame {
                 searchLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 70, 70));
+        jPanel3.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 70, 70));
 
         addLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
         addLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -84,7 +84,7 @@ public class CustomerManagement extends javax.swing.JFrame {
                 addLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        jPanel3.add(addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         deleteLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
         deleteLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -92,22 +92,22 @@ public class CustomerManagement extends javax.swing.JFrame {
                 deleteLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
+        jPanel3.add(deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("  Delete");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 60, 20));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 60, 20));
 
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("  Add");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 40, 20));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 40, 20));
 
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Edit");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 30, 20));
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 30, 20));
 
         editLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
         editLabel.setText("  ");
@@ -116,12 +116,12 @@ public class CustomerManagement extends javax.swing.JFrame {
                 editLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(editLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 60, -1));
+        jPanel3.add(editLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 60, -1));
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("Search & View");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 100, 20));
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 100, 20));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -179,7 +179,7 @@ public class CustomerManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_searchLabelMouseClicked
 
     private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
-        try{
+
         String eMail = JOptionPane.showInputDialog("Enter the Email ID of the Customer you'd like to Delete");
         
         CIH = new CustomerIoHandler();
@@ -207,17 +207,14 @@ public class CustomerManagement extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Customer " + name + " deleted", "Customer Deleted", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(null, "Customer " + name + " not deleted", "Customer Not Deleted", JOptionPane.INFORMATION_MESSAGE);
-                   
+                    
                 }
             }
                     
             if (userFound == false) {
                 JOptionPane.showMessageDialog(null,"Customer doesn't exist! Please try again","Alert",JOptionPane.WARNING_MESSAGE);
             }
-            
-        } catch(Exception e){
-            
-        }
+          
     allCustomers.clear();
     }//GEN-LAST:event_deleteLabelMouseClicked
 

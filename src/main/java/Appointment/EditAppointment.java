@@ -25,6 +25,7 @@ public class EditAppointment extends javax.swing.JFrame {
     
     AppointmentIoHandler CIH; 
     public EditAppointment() {
+        allAppointments.clear();
         CIH = new AppointmentIoHandler();
         initComponents(); 
         

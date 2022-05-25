@@ -3,6 +3,4 @@
 5,500,8,Irule0602@gmail.com,Nice one,19-05-2022 14:36:08
 6,1000,1,Manish1911@gmail.com,asadada,19-05-2022 14:36:57
 7,1500,6,Rahul@yahoo.com,Great class,20-05-2022 22:50:52
-8,250,14,malu@gmail.com,grape class,25-05-2022 17:30:42
-9,250,18,Jojo12@gmail.com,Nice,25-05-2022 17:32:26
-10,500,4,anac1234,Nice,25-05-2022 17:32:33
+8,500,4,anac1234,asdasd,25-05-2022 17:50:23

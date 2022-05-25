@@ -16,7 +16,7 @@ public class InstructorDashboard extends javax.swing.JFrame {
      public InstructorDashboard(String user) {
         initComponents();
         InstructorDashboard.user = user ;
-        jLabel2.setText(user);
+        jLabel2.setText("Welcome, " + user);
         
         allPayments.clear();
         allAppointments.clear();
@@ -123,8 +123,8 @@ public class InstructorDashboard extends javax.swing.JFrame {
         jLabel8.setText("Feedback");
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 70, 20));
 
-        jLabel2.setText("Welcome, " + user);
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
+        jLabel2.setText("Welcome, ");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 130, -1));
 
         appointmentLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-appointment-64.png")); // NOI18N
         appointmentLabel.setText("  ");

@@ -1,5 +1,8 @@
 package Manager;
 
+import Manager.Manager;
+import Manager.ManagerDashboard;
+import static Manager.ManagerIoHandler.allManagers;
 import Main.LaunchPanel;
 import javax.swing.*;
 import java.awt.*;
@@ -12,8 +15,10 @@ public class ManagerLogin extends javax.swing.JFrame {
     /**
      * Creates new form FirstGui
      */
+    ManagerIoHandler MIH;
     public ManagerLogin() {
         initComponents();
+        MIH = new ManagerIoHandler();
     }
 
     /**
@@ -217,19 +222,34 @@ public class ManagerLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_backLabelMouseClicked
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        String userValue = usernameField.getText();        //get user entered username from the textField1  
-        String passValue = passwordField.getText();        //get user entered pasword from the textField2  
+            String usernameInput = usernameField.getText();
+            String passwordInput = passwordField.getText();
+      
+            boolean loginStatus = false ;
+            String username = null ;
           
-        //check whether the credentials are authentic or not  
-        if (userValue.toLowerCase().equals("admin") && passValue.equals("nimda")) {
-            dispose();
-            ManagerDashboard AD = new ManagerDashboard();
-            AD.show();
-        }
-        
-        else{
-             JOptionPane.showMessageDialog(null,"Incorrect Password!","Alert",JOptionPane.WARNING_MESSAGE);
-        }
+            for (Manager list : allManagers) {
+                 
+                  if (usernameInput.toLowerCase().equals(list.getUsername().toLowerCase()) && passwordInput.equals(list.getPassword())){
+              
+                username = list.getUsername();
+                loginStatus = true;
+             }
+            }
+            
+            if(loginStatus == true){
+                JOptionPane.showMessageDialog(null,
+                "Login Successful, Welcome " + username, "Success",
+                JOptionPane.INFORMATION_MESSAGE);
+                
+                dispose();
+                ManagerDashboard MD = new ManagerDashboard();
+                MD.show();
+            }
+                    
+            if (loginStatus == false) {
+                JOptionPane.showMessageDialog(null,"Incorrect Username Or Password!","Alert",JOptionPane.WARNING_MESSAGE);
+            }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**

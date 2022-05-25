@@ -23,6 +23,7 @@ public class EditInstructor extends javax.swing.JFrame {
     
     InstructorIoHandler IIH; 
     public EditInstructor() {
+        allInstructors.clear();
         IIH = new InstructorIoHandler();
         initComponents(); 
         

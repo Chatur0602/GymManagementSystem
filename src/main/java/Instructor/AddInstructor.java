@@ -26,6 +26,7 @@ public class AddInstructor extends javax.swing.JFrame {
     
     InstructorIoHandler IIH ;
     public AddInstructor() {
+        allInstructors.clear();
         IIH = new InstructorIoHandler();
         initComponents();
     }

@@ -15,7 +15,8 @@ import java.awt.event.ActionListener;
 /* @author Nikhil */
 public class ManagerDashboard extends javax.swing.JFrame {
 
- 
+    public static String user ;
+    
     public ManagerDashboard() {
         initComponents();
         Payment.PaymentIoHandler.allPayments.clear();
@@ -155,12 +156,12 @@ public class ManagerDashboard extends javax.swing.JFrame {
                 crmLabel3MouseClicked(evt);
             }
         });
-        jPanel3.add(crmLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 70, 70));
+        jPanel3.add(crmLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 70, 70));
 
         jLabel14.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(204, 204, 204));
         jLabel14.setText("Payment & Feedback Analysis");
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 190, 20));
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 190, 20));
 
         crmLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-report-64.png")); // NOI18N
         crmLabel4.setText("  ");

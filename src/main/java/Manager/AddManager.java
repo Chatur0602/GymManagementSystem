@@ -29,6 +29,7 @@ public class AddManager extends javax.swing.JFrame {
 
     ManagerIoHandler MIH;
     public AddManager() {
+        allManagers.clear();
         MIH = new ManagerIoHandler();
         initComponents();
     }

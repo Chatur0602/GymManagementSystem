@@ -1,12 +1,17 @@
 package Admin;
 
+import Manager.Manager;
+import Manager.ManagerIoHandler;
+import static Manager.ManagerIoHandler.allManagers;
 import Manager.AddManager;
 import Instructor.*;
+import Manager.EditManager;
 import Manager.ManagerDashboard;
 import Manager.ManagerDashboard;
 import Manager.ManagerIoHandler;
 import static Manager.ManagerIoHandler.allManagers;
 import Manager.ManagerLogin;
+import Manager.ViewManager;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,9 +20,7 @@ import java.awt.event.ActionListener;
 /* @author Nikhil */
 public class ManagerManagement extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FirstGui
-     */
+    ManagerIoHandler MIH; 
     public ManagerManagement() {
         initComponents();
         allManagers.clear();
@@ -37,13 +40,13 @@ public class ManagerManagement extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
-        crmLabel = new javax.swing.JLabel();
-        instructorLabel = new javax.swing.JLabel();
-        crmLabel1 = new javax.swing.JLabel();
+        viewLabel = new javax.swing.JLabel();
+        addLabel = new javax.swing.JLabel();
+        deleteLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        crmLabel2 = new javax.swing.JLabel();
+        editLabel = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,44 +78,59 @@ public class ManagerManagement extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        crmLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-view-64.png")); // NOI18N
-        crmLabel.setText("  ");
-        jPanel3.add(crmLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 70, 70));
-
-        instructorLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
-        instructorLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+        viewLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-view-64.png")); // NOI18N
+        viewLabel.setText("  ");
+        viewLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                instructorLabelMouseClicked(evt);
+                viewLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(instructorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        jPanel3.add(viewLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 70, 70));
 
-        crmLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
-        jPanel3.add(crmLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
+        addLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
+        addLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addLabelMouseClicked(evt);
+            }
+        });
+        jPanel3.add(addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 60, -1));
+
+        deleteLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
+        deleteLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteLabelMouseClicked(evt);
+            }
+        });
+        jPanel3.add(deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("  Delete");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 60, 20));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 60, 20));
 
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("  Add");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 40, 20));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 40, 20));
 
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Edit");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 30, 20));
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 30, 20));
 
-        crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
-        crmLabel2.setText("  ");
-        jPanel3.add(crmLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 60, -1));
+        editLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
+        editLabel.setText("  ");
+        editLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editLabelMouseClicked(evt);
+            }
+        });
+        jPanel3.add(editLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 60, -1));
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("Search & View");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 100, 20));
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 100, 20));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -160,12 +178,65 @@ public class ManagerManagement extends javax.swing.JFrame {
 
     }//GEN-LAST:event_backLabelMouseClicked
 
-    private void instructorLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instructorLabelMouseClicked
+    private void addLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelMouseClicked
         dispose();
         AddManager AM = new AddManager();
         AM.show();
         
-    }//GEN-LAST:event_instructorLabelMouseClicked
+    }//GEN-LAST:event_addLabelMouseClicked
+
+    private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
+      
+        String eMail = JOptionPane.showInputDialog("Enter the Email ID of the Manager you'd like to Delete");
+        
+        MIH = new ManagerIoHandler();
+        boolean userFound = false ;
+        int index = 0 ;
+        String name = null ;
+        
+            for (Manager list : allManagers) {
+                  if (eMail.toLowerCase().equals(list.geteMail().toLowerCase())){
+                    index = allManagers.indexOf(list);
+                    name = list.getName();
+
+                    userFound = true;
+                }
+            }
+            
+            if(userFound == true){
+                
+                int confirmation = JOptionPane.showConfirmDialog(null,
+                "Manager '" + name + "' with the corrosponding Email '" + eMail + "' found, would you like to delete?" , "Delete Confirmation", JOptionPane.YES_NO_OPTION);
+                
+                if (confirmation == JOptionPane.YES_OPTION) {
+                    allManagers.remove(index);
+                    ManagerIoHandler.addManager();
+                    JOptionPane.showMessageDialog(null, "Manager " + name + " deleted", "Manager Deleted", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Manager " + name + " not deleted", "Manager Not Deleted", JOptionPane.INFORMATION_MESSAGE);
+                   
+                }
+            }
+                    
+            if (userFound == false) {
+                JOptionPane.showMessageDialog(null,"Manager doesn't exist! Please try again","Alert",JOptionPane.WARNING_MESSAGE);
+            }
+            
+      
+    allManagers.clear();
+    }//GEN-LAST:event_deleteLabelMouseClicked
+
+    private void viewLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewLabelMouseClicked
+        dispose();
+        ViewManager VM = new ViewManager();
+        VM.show();
+    }//GEN-LAST:event_viewLabelMouseClicked
+
+    private void editLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseClicked
+        dispose();
+        EditManager EM = new EditManager();
+        EM.show();
+    }//GEN-LAST:event_editLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -236,12 +307,11 @@ public class ManagerManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel addLabel;
     private javax.swing.JLabel backLabel;
-    private javax.swing.JLabel crmLabel;
-    private javax.swing.JLabel crmLabel1;
-    private javax.swing.JLabel crmLabel2;
+    private javax.swing.JLabel deleteLabel;
+    private javax.swing.JLabel editLabel;
     private javax.swing.JLabel exitLabel;
-    private javax.swing.JLabel instructorLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -249,5 +319,6 @@ public class ManagerManagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel viewLabel;
     // End of variables declaration//GEN-END:variables
 }

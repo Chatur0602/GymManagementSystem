@@ -14,7 +14,7 @@ public class ViewInstructor extends javax.swing.JFrame {
     
     InstructorIoHandler IIH;
     public ViewInstructor() {
-        
+        allInstructors.clear();
         IIH = new InstructorIoHandler();
         initComponents();
        

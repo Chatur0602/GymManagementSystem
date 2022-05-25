@@ -14,7 +14,7 @@ public class InstructorManagement extends javax.swing.JFrame {
     InstructorIoHandler IIH ;
     public InstructorManagement() {
         initComponents();
-        InstructorIoHandler.allInstructors.clear();
+        allInstructors.clear();
     }
     
     @SuppressWarnings("unchecked")
@@ -36,6 +36,7 @@ public class InstructorManagement extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setUndecorated(true);
 
         jPanel3.setBackground(new java.awt.Color(0, 51, 102));
@@ -169,7 +170,7 @@ public class InstructorManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_addLabelMouseClicked
 
     private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
-        try{
+       
         IIH = new InstructorIoHandler();
         
         String username = JOptionPane.showInputDialog("Enter the Username of the Instructor you'd like to Delete");
@@ -204,10 +205,6 @@ public class InstructorManagement extends javax.swing.JFrame {
             if (userFound == false) {
                 JOptionPane.showMessageDialog(null,"Instructor doesn't exist! Please try agiain","Alert",JOptionPane.WARNING_MESSAGE);
             }
-            
-        } catch(Exception e){
-            
-        }
     allInstructors.clear();
     }//GEN-LAST:event_deleteLabelMouseClicked
 

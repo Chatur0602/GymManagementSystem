@@ -20,6 +20,7 @@ public class ViewAppointment extends javax.swing.JFrame {
     
     AppointmentIoHandler CIH; 
     public ViewAppointment() {
+        allAppointments.clear();
         CIH = new AppointmentIoHandler();
         initComponents(); 
         

@@ -30,6 +30,7 @@ public class EditCustomer extends javax.swing.JFrame {
     
     CustomerIoHandler CIH; 
     public EditCustomer() {
+        allCustomers.clear();
         CIH = new CustomerIoHandler();
         initComponents(); 
         

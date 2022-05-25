@@ -1,3 +1,2 @@
 1,Hamidreza,hamidreza@gmail.com,0104316375,Mont Kiara Bayu Condominium,operatingsystem,123456789
-2,Hirbod,Hirbod@gmail.com,0104316380,Mont Kiara|Jalan Kiara 2|Kuala Lumpur,Hirbod1234,Hirbod12345
 3,Johnie,Johnie@gmail.com,0104316381,Pines-Mont Kiara-Jalan Kiara 1,Johniedies,123456789

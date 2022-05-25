@@ -72,7 +72,7 @@ public class AppointmentManagement extends javax.swing.JFrame {
                 searchLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 70, 70));
+        jPanel3.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 70, 70));
 
         addLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
         addLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -80,7 +80,7 @@ public class AppointmentManagement extends javax.swing.JFrame {
                 addLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+        jPanel3.add(addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
 
         deleteLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
         deleteLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -88,22 +88,22 @@ public class AppointmentManagement extends javax.swing.JFrame {
                 deleteLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
+        jPanel3.add(deleteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("  Delete");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 60, 20));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 60, 20));
 
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("  Add");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 40, 20));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 40, 20));
 
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Edit");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 30, 20));
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 30, 20));
 
         editLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
         editLabel.setText("  ");
@@ -112,12 +112,12 @@ public class AppointmentManagement extends javax.swing.JFrame {
                 editLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(editLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 60, -1));
+        jPanel3.add(editLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 60, -1));
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("Search & View");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 100, 20));
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 100, 20));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -172,7 +172,7 @@ public class AppointmentManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_addLabelMouseClicked
 
     private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
-        try{
+     
         String Id = JOptionPane.showInputDialog("Enter the ID of the Appointment you'd like to Delete");
         int ID = Integer.parseInt(Id);
         
@@ -227,10 +227,6 @@ public class AppointmentManagement extends javax.swing.JFrame {
             if (userFound == false) {
                 JOptionPane.showMessageDialog(null,"Appointment doesn't exist! Please try again","Alert",JOptionPane.WARNING_MESSAGE);
             }
-            
-        } catch(Exception e){
-            
-        }
     allAppointments.clear();    
     }//GEN-LAST:event_deleteLabelMouseClicked
 

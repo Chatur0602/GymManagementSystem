@@ -20,6 +20,7 @@ public class AddCustomer extends javax.swing.JFrame {
 
     CustomerIoHandler CIH; 
     public AddCustomer() {
+        allCustomers.clear();
         CIH = new CustomerIoHandler();
         initComponents();
     }

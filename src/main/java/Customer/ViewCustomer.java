@@ -27,6 +27,7 @@ public class ViewCustomer extends javax.swing.JFrame {
     
     CustomerIoHandler CIH; 
     public ViewCustomer() {
+        allCustomers.clear();
         CIH = new CustomerIoHandler();
         initComponents(); 
         
