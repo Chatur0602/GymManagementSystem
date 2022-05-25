@@ -3,13 +3,19 @@ package Instructor;
 import Instructor.*;
 import static Instructor.InstructorIoHandler.addInstructor;
 import static Instructor.InstructorIoHandler.allInstructors;
+import java.time.format.DateTimeFormatter;
+import static java.lang.String.format;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
@@ -147,45 +153,123 @@ public class EditInstructor extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel)viewInstructorTable.getModel();
             model.setColumnIdentifiers(columnsName);
             
-            int Id = 0;
+            String Id = null;
             String name = null;
-            String eMail = null;
+            String email = null;
             String contact = null;
             String d = null ;
             String username = null ;
             String password = null ;
-            
+            boolean characterFound = false;
+            boolean validated = false;
             Instructor i = null ; 
             
             allInstructors.clear();
             
             for (int rowCount = 0; rowCount < model.getRowCount(); rowCount++){
-                try {
-                    Id = Integer.parseInt(model.getValueAt(rowCount, 0).toString());
+                    Id = model.getValueAt(rowCount, 0).toString();
                     name = model.getValueAt(rowCount, 1).toString();
-                    eMail = model.getValueAt(rowCount, 2).toString();
+                    email = model.getValueAt(rowCount, 2).toString();
                     contact = model.getValueAt(rowCount, 3).toString();
                     d = model.getValueAt(rowCount, 4).toString() ;
                     username = model.getValueAt(rowCount, 5).toString();
                     password = model.getValueAt(rowCount, 6).toString();
-                  
-                    Date date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
-                    
-                    i = new Instructor(Id, name, eMail, contact, date, username, password);
-                    InstructorIoHandler.allInstructors.add(i);
-                    
-                    
-                }
-                catch (ParseException ex) {
+                    Date date = null;
+                    LocalDate DOB ;
+                    String dateString;
+                    int Age;
+                    SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                try {
+                    date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
+                } catch (ParseException ex) {
                     Logger.getLogger(EditInstructor.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                    
+                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                Matcher cName = namePattern.matcher(name);
+                characterFound = cName.find();
+                Pattern idPattern = Pattern.compile("[^0-9]");
+                Matcher id = idPattern.matcher(Id);
+                characterFound = id.find();
+                if(characterFound == true || Integer.parseInt(Id) == 0){
+                    JOptionPane.showMessageDialog(null,
+                            "Incorrect Instructor ID, Use numeric characters only", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                    validated = false;
+                    break;
+                }else{
+                       if(characterFound == true || name.length()<4){
+                        JOptionPane.showMessageDialog(null,
+                            "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                        validated = false;
+                        break;
+                       }else{
+                            Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
+                                "[a-zA-Z0-9_+&*-]+)*@" +
+                                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                                "A-Z]{2,7}$");
+                            Matcher eMail = eMailPattern.matcher(email);
+                            characterFound = eMail.find();
+                            if(characterFound == false || email.length()<8){
+                            JOptionPane.showMessageDialog(null,
+                                "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                                JOptionPane.WARNING_MESSAGE);
+                            validated = false;
+                            break;
+                            }else{
+                                    Pattern contactPattern = Pattern.compile("[^0-9]");
+                                    Matcher cContact = contactPattern.matcher(contact);
+                                    characterFound = cContact.find();
+                                    if(characterFound == true || contact.length() != 10){
+                                        JOptionPane.showMessageDialog(null,
+                                            "Incorrect contact format, Must be 10 numeric digits long", "Warning",
+                                            JOptionPane.WARNING_MESSAGE);
+                                    validated = false;
+                                    break;
+                                    }else{
+                                            dateString = format.format(date);
+                                            DOB = LocalDate.parse(dateString, formatter);
+                                            Age = Period.between(DOB, LocalDate.now()).getYears();
+
+                                            if(Age<18){
+                                                JOptionPane.showMessageDialog(null,
+                                                    "Incorrect Age, Instructor must be at least 18 years old", "Warning",
+                                                    JOptionPane.WARNING_MESSAGE);
+                                            validated = false ;
+                                            break;
+                                            }else{
+                                                    Pattern usernamePattern = Pattern.compile("[^a-z-0-9]", Pattern.CASE_INSENSITIVE);
+                                                    Matcher userName = usernamePattern.matcher(username);
+                                                    characterFound = userName.find();
+                                                    if(characterFound == true || username.length()<8){
+                                                        JOptionPane.showMessageDialog(null,
+                                                            "Incorrect Username format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
+                                                            JOptionPane.WARNING_MESSAGE);
+                                                    validated = false;
+                                                    break;
+                                                    }else{
+                                                            if(password.length()<8){
+                                                                JOptionPane.showMessageDialog(null,
+                                                                    "less than 8 characters","Warning",
+                                                                    JOptionPane.WARNING_MESSAGE);
+                                                            validated = false;
+                                                            break;
+                                                            }else{
+                                                                    i = new Instructor(Integer.parseInt(Id), name, email, contact, date, username, password);
+                                                                    InstructorIoHandler.allInstructors.add(i);
+                                                                    validated = true;
+                                                            }}}}}}}
+                
             }
-            
-            JOptionPane.showMessageDialog(null,
-                        "Instructor Data Successfully Updated", "Success",
-                        JOptionPane.INFORMATION_MESSAGE);
-        addInstructor();
-    }//GEN-LAST:event_saveChangesButtonMouseClicked
+            if (validated == true){
+                JOptionPane.showMessageDialog(null,
+                    "Instructor Data Successfully Updated", "Success",
+                    JOptionPane.INFORMATION_MESSAGE);
+                InstructorIoHandler.addInstructor();
+            }}
+//GEN-LAST:event_saveChangesButtonMouseClicked//GEN-LAST:event_saveChangesButtonMouseClicked
 
     /**
      * @param args the command line arguments
