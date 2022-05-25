@@ -1,10 +1,3 @@
-1,WagwanO113,09-04-2022 00:00,irule0602@gmail,Chatur1313,C
-2,PilateYaes,17-04-2022 00:00,manish1911,Chatur,O
-4,asdsad23,17-04-2022 00:00,anac1234,Chatur,O
-6,Pilatteasdad,17-04-2022 07:00,10931093109420,NaisuNaisu,O
-8,Hello3244,17-04-2022 00:00,irule0602@gmail,Chatur1313,C
-12,Zumba,23-04-2022 00:00,Jojo@gmail.com,manisdf,O
-13,adadas,14-05-2222 09:00,anac1234234,sadasd,O
-14,Zumba23234,18-05-2022 09:30,malu@gmail.com,Chatur1313,O
-16,Pilatte,13-05-2022 10:30,Waduhek@gmail.com,Wagwan3323,O
-19,Pilatte,24-05-2022 08:00,Irule0602@gmail.com,Wagwan3323,O
+1,Training,09-04-2022 00:00,irule0602@gmail.copm,Chatur1313,C
+5,Zumba,18-04-2022 10:00,anac1234@gmail.com,Chatur1313,C
+6,Pilate,21-04-2021 09:00,Hamid@gmail.com,NaisuNaisu,O

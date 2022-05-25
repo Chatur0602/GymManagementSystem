@@ -173,7 +173,7 @@ public class EditCustomer extends javax.swing.JFrame {
                 email = model.getValueAt(rowCount, 2).toString();
                 contact = model.getValueAt(rowCount, 3).toString();
                 d = model.getValueAt(rowCount, 4).toString() ;
-                gender = model.getValueAt(rowCount, 5).toString();
+                gender = model.getValueAt(rowCount, 5).toString().toUpperCase();
                 g = gender.charAt(0);
                 
                 try {
@@ -246,18 +246,19 @@ public class EditCustomer extends javax.swing.JFrame {
                                             JOptionPane.WARNING_MESSAGE);
                                     validated = false ;
                                     break;
-                                }else{
-
-                                    //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + g);
-                                    c = new Customer(Integer.parseInt(ID), name, email, contact, date, g);
-                                    CustomerIoHandler.allCustomers.add(c);
-                                    validated = true;
+                                }
+                                 else{
+                                        //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + g);
+                                        c = new Customer(Integer.parseInt(ID), name, email, contact, date, g);
+                                        CustomerIoHandler.allCustomers.add(c);
+                                        validated = true;
 
                                 } 
                             } 
                         }
                     }
                 } 
+            
             }catch (ParseException ex) {
                 Logger.getLogger(EditCustomer.class.getName()).log(Level.SEVERE, null, ex);
             }

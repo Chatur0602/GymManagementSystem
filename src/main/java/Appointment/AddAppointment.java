@@ -300,8 +300,11 @@ public class AddAppointment extends javax.swing.JFrame {
             Logger.getLogger(AddAppointment.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
             Logger.getLogger(AddAppointment.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NullPointerException ex) {
+            JOptionPane.showMessageDialog(null,
+                                        "Please make sure all the fields are filled", "Error",
+                                        JOptionPane.WARNING_MESSAGE);
         }
-   
     }//GEN-LAST:event_addAppointmentButtonActionPerformed
 
     private void timeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeComboBoxActionPerformed

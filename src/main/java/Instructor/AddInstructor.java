@@ -265,6 +265,7 @@ public class AddInstructor extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameFieldFocusGained
 
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
+               try{
                 boolean characterFound = false;
                 Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
                 Matcher name = namePattern.matcher(nameField.getText());
@@ -327,10 +328,7 @@ public class AddInstructor extends javax.swing.JFrame {
                                         JOptionPane.WARNING_MESSAGE);
                                     }else{
                                         
-               
-                                
-                                
-       
+                                        
         if(InstructorIoHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
              
              int ID = 1 ;
@@ -358,7 +356,13 @@ public class AddInstructor extends javax.swing.JFrame {
                      JOptionPane.WARNING_MESSAGE);
              
          }
-                                    }                                }}}}}    
+        }                                }}}}}    
+                
+               }catch (NullPointerException ex) {
+            JOptionPane.showMessageDialog(null,
+                                        "Please make sure all the fields are filled", "Error",
+                                        JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_addInstructorButtonActionPerformed
 
     private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed

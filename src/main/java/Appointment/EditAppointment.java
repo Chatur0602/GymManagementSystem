@@ -7,10 +7,15 @@ import static Appointment.ViewAppointment.dataRow;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
@@ -151,51 +156,125 @@ public class EditAppointment extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel)editAppointmentTable.getModel();
             model.setColumnIdentifiers(columnsName);
             
-            int Id = 0;
+            String ID = null;
             String name = null;
             String d = null ;
             String cEmail = null;
             String iUsername = null ;
             String status ;
-            
             Appointment a = null ; 
-            
-            
+            boolean validated = false ;
+            boolean characterFound = false;
+            Date date = null;
             
             for (int rowCount = 0; rowCount < model.getRowCount(); rowCount++){
-                try {
-                    Id = Integer.parseInt(model.getValueAt(rowCount, 0).toString());
+        
+                    ID = model.getValueAt(rowCount, 0).toString();
                     name = model.getValueAt(rowCount, 1).toString();
                     d = model.getValueAt(rowCount, 2).toString() ;
                     cEmail = model.getValueAt(rowCount, 3).toString();
                     iUsername = model.getValueAt(rowCount, 4).toString();
- 
-                    status = model.getValueAt(rowCount, 5).toString();
+                    status = model.getValueAt(rowCount, 5).toString().toUpperCase();
                     char s = status.charAt(0);
                     
-                    Date date = new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(d);
-                    
-                    
-                   
+
+                try {
                     //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + g);
                     
-                    a = new Appointment(Id, name, date, cEmail, iUsername, s);
-                    AppointmentIoHandler.allAppointments.add(a);
+                    date = new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(d);
+                } catch (ParseException ex) {
+                    
+                            JOptionPane.showMessageDialog(null,
+                            "Incorrect Appointment Date", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                            validated = false ;
+                            break;
+                
+                }
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                String dateString ;
+                LocalDate DOA ;
+              
+                Pattern idPattern = Pattern.compile("[^0-9]");
+                Matcher id = idPattern.matcher(ID);
+                characterFound = id.find();
+
+                if(characterFound == true || Integer.parseInt(ID) == 0){
+                    JOptionPane.showMessageDialog(null,
+                            "Incorrect Customer ID, Use numeric characters only", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                    validated = false;
+                    break;
+                }else{
+
+                    Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                    Matcher cName = namePattern.matcher(name);
+                    characterFound = cName.find();
+
+                    if(characterFound == true || name.length()<4){
+                        JOptionPane.showMessageDialog(null,
+                                "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                                JOptionPane.WARNING_MESSAGE);
+                        validated = false ;
+                        break;
+                    } else{
+                        
+                        /*dateString = format.format(date);
+                        DOA = LocalDate.parse(dateString, formatter);
+                        System.out.println(DOA);
+
+                        if(DOA.isBefore(LocalDate.now())){
+                            JOptionPane.showMessageDialog(null,
+                                    "Incorrect Appointment Date", "Warning",
+                                    JOptionPane.WARNING_MESSAGE);
+                            validated = false ;
+                            break;
+                            }else{*/
+                            
+                                Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
+                                        "[a-zA-Z0-9_+&*-]+)*@" +
+                                        "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                                        "A-Z]{2,7}$");
+                                Matcher eMail = eMailPattern.matcher(cEmail);
+                                characterFound = eMail.find();
+
+                                if(characterFound == false || cEmail.length()<8){
+                                    JOptionPane.showMessageDialog(null,
+                                            "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                                            JOptionPane.WARNING_MESSAGE);
+                                    validated = false ;
+                                    break;
+                                } else{
+                                            Pattern usernamePattern = Pattern.compile("[^a-z-0-9]", Pattern.CASE_INSENSITIVE);
+                                            Matcher userName = usernamePattern.matcher(iUsername);
+                                            characterFound = userName.find();
+                                            if(characterFound == true || iUsername.length()<8){
+                                                        JOptionPane.showMessageDialog(null,
+                                                            "Incorrect Username format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
+                                                            JOptionPane.WARNING_MESSAGE);
+                                                    validated = false;
+                                                    break;
+                                                    }
+                                                        else{
+           
+                                                        a = new Appointment(Integer.parseInt(ID), name, date, cEmail, iUsername, s);
+                                                        AppointmentIoHandler.allAppointments.add(a);
+                                                        validated = true ;
                    
                     
                     
-                }
+                }}}}
                 //System.out.println(ID + "\n");
-                catch (ParseException ex) {
-                    Logger.getLogger(EditAppointment.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+            
+                if(validated == true){
+                    JOptionPane.showMessageDialog(null,
+                        "Appointment Data Successfully Updated", "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
+
+                   addAppointment();
                 }
-            }
-            
-            JOptionPane.showMessageDialog(null,
-                "Appointment Data Successfully Updated", "Success",
-                JOptionPane.INFORMATION_MESSAGE);
-            
-       addAppointment();
     }//GEN-LAST:event_saveChangesButtonMouseClicked
 
     /**

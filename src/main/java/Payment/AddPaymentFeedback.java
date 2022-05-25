@@ -252,7 +252,11 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,
             "Please Enter A Valid Numeric Amount", "Error",
             JOptionPane.WARNING_MESSAGE);
-    }
+    } catch (NullPointerException ex) {
+            JOptionPane.showMessageDialog(null,
+            "Please make sure all the fields are filled", "Error",
+            JOptionPane.WARNING_MESSAGE);
+        }
         
     }//GEN-LAST:event_addPaymentButtonActionPerformed
 
