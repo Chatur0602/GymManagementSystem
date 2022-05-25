@@ -80,4 +80,12 @@ public class ManagerIoHandler {
                 System.exit(0);
         }   
     }
+
+    //ManagerIoHandler() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
+
+    //ManagerIoHandler() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
 }

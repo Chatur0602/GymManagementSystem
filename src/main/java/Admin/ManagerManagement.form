@@ -90,9 +90,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-exit-24.png"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="exitLabelMouseClicked"/>
@@ -108,9 +105,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-back-24.png"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="backLabelMouseClicked"/>
@@ -123,9 +117,6 @@
             </Component>
             <Component class="javax.swing.JLabel" name="crmLabel">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-view-64.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="  "/>
               </Properties>
               <Constraints>
@@ -135,11 +126,6 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="instructorLabel">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-add-64.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="instructorLabelMouseClicked"/>
               </Events>
@@ -150,11 +136,6 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="crmLabel1">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-delete-64.png"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="240" y="70" width="-1" height="-1"/>
@@ -211,9 +192,6 @@
             </Component>
             <Component class="javax.swing.JLabel" name="crmLabel2">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\pc\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-edit-file-64.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="  "/>
               </Properties>
               <Constraints>
