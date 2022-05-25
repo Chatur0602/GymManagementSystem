@@ -152,7 +152,6 @@ public class EditCustomer extends javax.swing.JFrame {
     private void saveChangesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveChangesButtonMouseClicked
             DefaultTableModel model = (DefaultTableModel)editCustomerTable.getModel();
             model.setColumnIdentifiers(columnsName);
-            
             String ID = null;
             String name = null;
             String email = null;
@@ -160,8 +159,8 @@ public class EditCustomer extends javax.swing.JFrame {
             String d = null ;
             String gender = null;
             Date date = null;
-            char g ;
-            Customer c = null ; 
+            char g;
+            Customer c = null; 
             boolean validated = false ;
             boolean characterFound = false;
             
@@ -192,7 +191,7 @@ public class EditCustomer extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null,
                             "Incorrect Customer ID, Use numeric characters only", "Warning",
                             JOptionPane.WARNING_MESSAGE);
-                    validated = false ;
+                    validated = false;
                     break;
                 }else{
 

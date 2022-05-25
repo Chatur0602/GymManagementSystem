@@ -148,21 +148,23 @@ public class EditManager extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel)editManagerTable.getModel();
             model.setColumnIdentifiers(columnsName);
             
-            int Id = 0;
+            String ID = null;
+            //String ID = null;
             String name = null;
             String email = null;
             String contact = null;
-            String address = null ;
-            String username = null ;
-            String password = null ;
-            
+            String address = null;
+            String username = null;
+            String password = null;
+            boolean characterFound = false;
+            boolean validated = false;
             Manager m = null ; 
             
             allManagers.clear();
             
             for (int rowCount = 0; rowCount < model.getRowCount(); rowCount++){
     
-                    Id = Integer.parseInt(model.getValueAt(rowCount, 0).toString());
+                    ID = model.getValueAt(rowCount, 0).toString();
                     name = model.getValueAt(rowCount, 1).toString();
                     email = model.getValueAt(rowCount, 2).toString();
                     contact = model.getValueAt(rowCount, 3).toString();
@@ -173,52 +175,103 @@ public class EditManager extends javax.swing.JFrame {
                     
                 //Date date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
                 //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + address + " | " + username + " | " + password);
-                boolean characterFound = false;
+        
                 Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
                 Matcher cName = namePattern.matcher(name);
                 characterFound = cName.find();
-                int Age;
+              
+                
+                Pattern idPattern = Pattern.compile("[^0-9]");
+                Matcher id = idPattern.matcher(ID);
+                characterFound = id.find();
+                
+                if(characterFound == true || Integer.parseInt(ID) == 0){
+                    JOptionPane.showMessageDialog(null,
+                            "Incorrect Manager ID, Use numeric characters only", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                    validated = false;
+                    break;
+                }else{
+                    
                 if(characterFound == true || name.length()<4){
                     JOptionPane.showMessageDialog(null,
                             "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
                             JOptionPane.WARNING_MESSAGE);
+                    validated = false;
+                    break;
                 } else{
-                    Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
+                        Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
                             "[a-zA-Z0-9_+&*-]+)*@" +
                             "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
                             "A-Z]{2,7}$");
-                    Matcher eMail = eMailPattern.matcher(email);
-                    characterFound = eMail.find();
+                        Matcher eMail = eMailPattern.matcher(email);
+                        characterFound = eMail.find();
                     
-                    if(characterFound == false || email.length()<8){
-                        JOptionPane.showMessageDialog(null,
+                        if(characterFound == false || email.length()<8){
+                            JOptionPane.showMessageDialog(null,
                                 "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
                                 JOptionPane.WARNING_MESSAGE);
+                            validated = false;
+                            break;
                         
-                    } else{
-                        Pattern contactPattern = Pattern.compile("^[0-9]");
-                        Matcher cContact = contactPattern.matcher(contact);
-                        characterFound = cContact.find();
-                        
-                        if(characterFound == false || contact.length() != 10){
-                            JOptionPane.showMessageDialog(null,
-                                    "Incorrect contact format, Must be 10 numeric digits long", "Warning",
-                                    JOptionPane.WARNING_MESSAGE);
                         }else{
-                            m = new Manager(Id, name, email, contact, address, username, password);
-                            ManagerIoHandler.allManagers.add(m);
-                            
-                        }}}
+                                Pattern contactPattern = Pattern.compile("[^0-9]");
+                                Matcher cContact = contactPattern.matcher(contact);
+                                characterFound = cContact.find();
+                        
+                                if(characterFound == true || contact.length() != 10){
+                                    JOptionPane.showMessageDialog(null,
+                                        "Incorrect contact format, Must be 10 numeric digits long", "Warning",
+                                        JOptionPane.WARNING_MESSAGE);
+                                validated = false;
+                                break;
+                        
+                                }else{
+                                        if(address.length()<16){
+                                                JOptionPane.showMessageDialog(null,
+                                                    "Incorrect address format, less than 16", "Warning",
+                                                     JOptionPane.WARNING_MESSAGE);
+                                        validated = false;
+                                        break;
+                                        
+                                        }else{
+                                                Pattern usernamePattern = Pattern.compile("[^a-z-0-9]", Pattern.CASE_INSENSITIVE);
+                                                Matcher userName = usernamePattern.matcher(username);
+                                                characterFound = userName.find();
+                                
+                                                if(characterFound == true || username.length()<8){
+                                                    JOptionPane.showMessageDialog(null,
+                                                        "Incorrect Username format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
+                                                        JOptionPane.WARNING_MESSAGE);
+                                                validated = false;
+                                                break;
+                                    
+                                                }else{
+                                                        if(password.length()<8){
+                                                            JOptionPane.showMessageDialog(null,
+                                                                "less than 8 characters","Warning",
+                                                                JOptionPane.WARNING_MESSAGE);
+                                                        validated = false;
+                                                        break;
+                                                }else{
+                                                m = new Manager(Integer.parseInt(ID), name, email, contact, address, username, password);
+                                                ManagerIoHandler.allManagers.add(m);
+                                                validated = true;
+                                               
+                    }}}}}}}
                 
                 
-                //m = new Manager(Id, name, eMail, contact, address, username, password);
-                //ManagerIoHandler.allManagers.add(m);
-        addManager();
-         JOptionPane.showMessageDialog(null,
+              
+        
+    }//GEN-LAST:event_saveChangesButtonMouseClicked
+     if (validated == true){
+            JOptionPane.showMessageDialog(null,
                         "Manager Data Successfully Updated", "Success",
                         JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_saveChangesButtonMouseClicked
-    }                
+            ManagerIoHandler.addManager();
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
