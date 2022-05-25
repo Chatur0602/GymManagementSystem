@@ -314,17 +314,15 @@ public class AddManager extends javax.swing.JFrame {
                         JOptionPane.WARNING_MESSAGE);
                         
                     } else{
-                        Pattern contactPattern = Pattern.compile("^[0-9]");
+                        Pattern contactPattern = Pattern.compile("[^0-9]");
                         Matcher contact = contactPattern.matcher(contactField.getText());
                         characterFound = contact.find();
                         
-                        if(characterFound = false || contactField.getText().length() != 10){
+                        if(characterFound == true || contactField.getText().length() != 10){
                             JOptionPane.showMessageDialog(null,
                         "Incorrect contact format, Must be 10 numeric digits long", "Warning",
                         JOptionPane.WARNING_MESSAGE);
                         }else{
-                           
-                            
                             if(addressField.getText().length()<16 || addressField.getText().contains(",")){
                                 JOptionPane.showMessageDialog(null,
                             "Incorrect address format(use '|' instead of ','), Address is to short", "Warning",

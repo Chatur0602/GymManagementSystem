@@ -29,7 +29,7 @@ public class UpdateProfile extends javax.swing.JFrame {
         allInstructors.clear();
         IIH = new InstructorIoHandler();
         initComponents();
-        this.user = user ;
+        UpdateProfile.user = user ;
         
                 for (Instructor list : allInstructors) {
                      if (user.toLowerCase().equals(list.getUsername().toLowerCase())){

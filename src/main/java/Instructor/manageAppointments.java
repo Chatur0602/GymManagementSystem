@@ -26,7 +26,7 @@ public class ManageAppointments extends javax.swing.JFrame {
     public ManageAppointments(String user) {
         CIH = new AppointmentIoHandler();
         initComponents(); 
-        this.user = user ;
+        ManageAppointments.user = user ;
         
         DefaultTableModel model = (DefaultTableModel)editAppointmentTable.getModel();
         model.setRowCount(0);

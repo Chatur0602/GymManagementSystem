@@ -264,7 +264,7 @@ public class AddInstructor extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameFieldFocusGained
 
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
-                        boolean characterFound = false;
+                boolean characterFound = false;
                 Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
                 Matcher name = namePattern.matcher(nameField.getText());
                 characterFound = name.find();
@@ -292,11 +292,11 @@ public class AddInstructor extends javax.swing.JFrame {
                         JOptionPane.WARNING_MESSAGE);
                         
                     } else{
-                        Pattern contactPattern = Pattern.compile("^[0-9]");
+                        Pattern contactPattern = Pattern.compile("[^0-9]");
                         Matcher contact = contactPattern.matcher(contactField.getText());
                         characterFound = contact.find();
                         
-                        if(characterFound = false || contactField.getText().length() != 10){
+                        if(characterFound == true || contactField.getText().length() != 10){
                             JOptionPane.showMessageDialog(null,
                         "Incorrect contact format, Must be 10 numeric digits long", "Warning",
                         JOptionPane.WARNING_MESSAGE);

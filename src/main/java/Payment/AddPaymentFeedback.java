@@ -27,7 +27,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         AIH = new AppointmentIoHandler();
         PIH = new PaymentIoHandler();
         initComponents();
-        this.user = user;
+        AddPaymentFeedback.user = user;
          
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm"); 
         
@@ -73,7 +73,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("Payment & Feedback");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 240, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 240, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
@@ -82,7 +82,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
@@ -96,7 +96,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 153, 153));
         jLabel4.setText("Feedback ");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 80, 30));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 80, 30));
 
         amountField.setBackground(new java.awt.Color(0, 153, 51));
         amountField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -108,13 +108,13 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
                 amountFieldFocusGained(evt);
             }
         });
-        jPanel3.add(amountField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 129, 20));
+        jPanel3.add(amountField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 129, 20));
 
         jLabel5.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 153, 153));
         jLabel5.setText("Amount");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 70, 30));
-        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 130, 10));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 70, 30));
+        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 130, 10));
 
         addPaymentButton.setText("Add Payment");
         addPaymentButton.addActionListener(new java.awt.event.ActionListener() {
@@ -122,26 +122,28 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
                 addPaymentButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(addPaymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
+        jPanel3.add(addPaymentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, -1, -1));
 
         feedbackTextBox.setColumns(20);
         feedbackTextBox.setRows(5);
         jScrollPane1.setViewportView(feedbackTextBox);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 290, 100));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 390, 100));
 
-        jPanel3.add(appointmentComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 280, -1));
+        jPanel3.add(appointmentComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 390, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(153, 153, 153));
         jLabel11.setText("Appointment");
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 100, 30));
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 100, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,10 +187,11 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
 
     private void addPaymentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPaymentButtonActionPerformed
         String appointment = appointmentComboBox.getSelectedItem().toString();
-        char appointmentID = appointment.charAt(0);
-        int aID = Character.getNumericValue(appointmentID);
+        String appointmentID = appointment.substring(0, appointment.indexOf("|")-1);
+        System.out.println(appointmentID + " " + appointmentID.trim());
+        int aID = Integer.parseInt(appointmentID);
         
-         if(PaymentIoHandler.checkPayment(aID) == null){
+        if(PaymentIoHandler.checkPayment(aID) == null){
              
              int ID = 1 ;
                 
