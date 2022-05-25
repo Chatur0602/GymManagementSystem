@@ -12,6 +12,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /* @author Nikhil */
@@ -20,7 +22,6 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
     AppointmentIoHandler AIH; 
     PaymentIoHandler PIH ;
     public static String user ;
-    private static String cMail = null ;
     private int index = 0 ;
     
     public AddPaymentFeedback(String user) {
@@ -34,7 +35,6 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
          for (Appointment list : allAppointments) {
              if(user.equals(list.getInstructorUsername()) && list.getStatus() == 'O'){
             appointmentComboBox.addItem(list.getID() +" | "+ list.getName() +" | "+ formatter.format(list.getSlot()) +" | "+  list.getCustomerEmail());
-            cMail = list.getCustomerEmail();
             }
         }
     }
@@ -186,6 +186,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
     }//GEN-LAST:event_amountFieldFocusGained
 
     private void addPaymentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPaymentButtonActionPerformed
+    try{
         String appointment = appointmentComboBox.getSelectedItem().toString();
         String appointmentID = appointment.substring(0, appointment.indexOf("|")-1);
         System.out.println(appointmentID + " " + appointmentID.trim());
@@ -201,9 +202,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");  
             Date date = new Date();  
             
-             Payment p = new Payment(ID, Integer.parseInt(amountField.getText()), aID, cMail, feedbackTextBox.getText(), date);
-             PaymentIoHandler.allPayments.add(p);
-             PaymentIoHandler.addPayment();
+             
              
              
              int appID = 0 ;
@@ -225,6 +224,10 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
                      }
                 }
              
+             Payment p = new Payment(ID, Integer.parseInt(amountField.getText()), aID, custEmail, feedbackTextBox.getText(), date);
+             PaymentIoHandler.allPayments.add(p);
+             PaymentIoHandler.addPayment();
+             
              Appointment a = new Appointment(appID, appName, appSlot, custEmail, instUser, 'C');
              allAppointments.set(index, a);
              addAppointment();
@@ -245,6 +248,12 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
              
          }  
         allAppointments.clear();
+    }catch(NumberFormatException e){
+        JOptionPane.showMessageDialog(null,
+            "Please Enter A Valid Numeric Amount", "Error",
+            JOptionPane.WARNING_MESSAGE);
+    }
+        
     }//GEN-LAST:event_addPaymentButtonActionPerformed
 
     
