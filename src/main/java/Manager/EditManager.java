@@ -4,13 +4,18 @@ import Manager.*;
 import Manager.*;
 import static Manager.ManagerIoHandler.addManager;
 import static Manager.ManagerIoHandler.allManagers;
+import java.io.IOException;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
@@ -145,7 +150,7 @@ public class EditManager extends javax.swing.JFrame {
             
             int Id = 0;
             String name = null;
-            String eMail = null;
+            String email = null;
             String contact = null;
             String address = null ;
             String username = null ;
@@ -159,30 +164,61 @@ public class EditManager extends javax.swing.JFrame {
     
                     Id = Integer.parseInt(model.getValueAt(rowCount, 0).toString());
                     name = model.getValueAt(rowCount, 1).toString();
-                    eMail = model.getValueAt(rowCount, 2).toString();
+                    email = model.getValueAt(rowCount, 2).toString();
                     contact = model.getValueAt(rowCount, 3).toString();
                     address = model.getValueAt(rowCount, 4).toString() ;
                     username = model.getValueAt(rowCount, 5).toString();
                     password = model.getValueAt(rowCount, 6).toString();
                     
                     
-                    //Date date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
-                   
-                    //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + address + " | " + username + " | " + password);
+                //Date date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
+                //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + address + " | " + username + " | " + password);
+                boolean characterFound = false;
+                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                Matcher cName = namePattern.matcher(name);
+                characterFound = cName.find();
+                int Age;
+                if(characterFound == true || name.length()<4){
+                    JOptionPane.showMessageDialog(null,
+                            "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                } else{
+                    Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
+                            "[a-zA-Z0-9_+&*-]+)*@" +
+                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                            "A-Z]{2,7}$");
+                    Matcher eMail = eMailPattern.matcher(email);
+                    characterFound = eMail.find();
                     
-                    m = new Manager(Id, name, eMail, contact, address, username, password);
-                    ManagerIoHandler.allManagers.add(m);
-                    
-                   
-                    
-            
-            }
+                    if(characterFound == false || email.length()<8){
+                        JOptionPane.showMessageDialog(null,
+                                "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                                JOptionPane.WARNING_MESSAGE);
+                        
+                    } else{
+                        Pattern contactPattern = Pattern.compile("^[0-9]");
+                        Matcher cContact = contactPattern.matcher(contact);
+                        characterFound = cContact.find();
+                        
+                        if(characterFound == false || contact.length() != 10){
+                            JOptionPane.showMessageDialog(null,
+                                    "Incorrect contact format, Must be 10 numeric digits long", "Warning",
+                                    JOptionPane.WARNING_MESSAGE);
+                        }else{
+                            m = new Manager(Id, name, email, contact, address, username, password);
+                            ManagerIoHandler.allManagers.add(m);
+                            
+                        }}}
+                
+                
+                //m = new Manager(Id, name, eMail, contact, address, username, password);
+                //ManagerIoHandler.allManagers.add(m);
         addManager();
          JOptionPane.showMessageDialog(null,
                         "Manager Data Successfully Updated", "Success",
                         JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_saveChangesButtonMouseClicked
-
+    }                
     /**
      * @param args the command line arguments
      */
