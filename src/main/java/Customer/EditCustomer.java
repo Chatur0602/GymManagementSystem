@@ -184,11 +184,9 @@ public class EditCustomer extends javax.swing.JFrame {
                 LocalDate DOB ;
                 int Age;
                 
-                System.out.println(ID);
                 Pattern idPattern = Pattern.compile("[^0-9]");
                 Matcher id = idPattern.matcher(ID);
                 characterFound = id.find();
-                System.out.println(characterFound);
 
                 if(characterFound == true || Integer.parseInt(ID) == 0){
                     JOptionPane.showMessageDialog(null,
