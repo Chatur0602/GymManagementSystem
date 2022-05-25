@@ -1,6 +1,1 @@
-3,400,12,Anac2112@gmail.com,Great class,17-05-2022 22:50:52
-4,750,5,Jojo12@gmail.com,aadada,19-05-2022 14:34:21
-5,500,8,Irule0602@gmail.com,Nice one,19-05-2022 14:36:08
-6,1000,1,Manish1911@gmail.com,asadada,19-05-2022 14:36:57
-7,1500,6,Rahul@yahoo.com,Great class,20-05-2022 22:50:52
-8,500,4,anac1234,asdasd,25-05-2022 17:50:23
+1,400,12,Anac2112@gmail.com,Great class,17-05-2022 22:50:52

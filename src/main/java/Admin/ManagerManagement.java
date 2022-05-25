@@ -186,7 +186,7 @@ public class ManagerManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_addLabelMouseClicked
 
     private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
-      
+      try{
         String eMail = JOptionPane.showInputDialog("Enter the Email ID of the Manager you'd like to Delete");
         
         MIH = new ManagerIoHandler();
@@ -224,6 +224,9 @@ public class ManagerManagement extends javax.swing.JFrame {
             
       
     allManagers.clear();
+      }catch(NullPointerException e){
+          
+      }
     }//GEN-LAST:event_deleteLabelMouseClicked
 
     private void viewLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewLabelMouseClicked

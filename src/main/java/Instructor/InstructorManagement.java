@@ -170,7 +170,7 @@ public class InstructorManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_addLabelMouseClicked
 
     private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
-       
+       try{
         IIH = new InstructorIoHandler();
         
         String username = JOptionPane.showInputDialog("Enter the Username of the Instructor you'd like to Delete");
@@ -206,6 +206,9 @@ public class InstructorManagement extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Instructor doesn't exist! Please try agiain","Alert",JOptionPane.WARNING_MESSAGE);
             }
     allInstructors.clear();
+       }catch(NullPointerException e){
+           
+       }
     }//GEN-LAST:event_deleteLabelMouseClicked
 
     private void searchLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchLabelMouseClicked

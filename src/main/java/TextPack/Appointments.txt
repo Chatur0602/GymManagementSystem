@@ -1,3 +1,1 @@
-1,Training,09-04-2022 00:00,irule0602@gmail.copm,Chatur1313,C
-5,Zumba,18-04-2022 10:00,anac1234@gmail.com,Chatur1313,C
-6,Pilate,21-04-2021 09:00,Hamid@gmail.com,NaisuNaisu,O
+1,Strength Training,09-04-2022 16:00,irule0602@gmail.com,Chatur1313,C

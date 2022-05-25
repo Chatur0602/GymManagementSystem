@@ -172,7 +172,7 @@ public class AppointmentManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_addLabelMouseClicked
 
     private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
-     
+     try{
         String Id = JOptionPane.showInputDialog("Enter the ID of the Appointment you'd like to Delete");
         int ID = Integer.parseInt(Id);
         
@@ -227,7 +227,10 @@ public class AppointmentManagement extends javax.swing.JFrame {
             if (userFound == false) {
                 JOptionPane.showMessageDialog(null,"Appointment doesn't exist! Please try again","Alert",JOptionPane.WARNING_MESSAGE);
             }
-    allAppointments.clear();    
+    allAppointments.clear();  
+     }catch(NullPointerException e){
+         
+     }
     }//GEN-LAST:event_deleteLabelMouseClicked
 
     private void searchLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchLabelMouseClicked

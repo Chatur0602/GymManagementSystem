@@ -1,8 +1,1 @@
-2,Chatur,Irule0602@gmail.com,0123991306,02-04-2002,M
-18,Ashran,Anac2112@gmail.com,0173483745,08-04-1955,F
-19,Rakesh,Jojo12@gmail.com,0175774585,09-04-1989,M
-29,Manish,Manish1911@gmail.com,0173233231,21-12-1971,M
-49,Rahul,Rahul@yahoo.com,0129323334,12-05-2003,F
-50,Hamid,hamidrezaosq@gmail.com,0123912311,05-05-2000,F
-53,Jojo,gov@yahoo.com,0182374234,09-05-2002,M
-54,John,John@gmail.com,0129334356,01-05-2002,M
+1,Chatur,Irule0602@gmail.com,0175774585,02-04-2002,M

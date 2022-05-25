@@ -179,7 +179,7 @@ public class CustomerManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_searchLabelMouseClicked
 
     private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
-
+        try{
         String eMail = JOptionPane.showInputDialog("Enter the Email ID of the Customer you'd like to Delete");
         
         CIH = new CustomerIoHandler();
@@ -216,6 +216,9 @@ public class CustomerManagement extends javax.swing.JFrame {
             }
           
     allCustomers.clear();
+        }catch(NullPointerException e){
+            
+        }
     }//GEN-LAST:event_deleteLabelMouseClicked
 
     private void editLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseClicked
