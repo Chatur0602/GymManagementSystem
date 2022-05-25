@@ -191,10 +191,6 @@ public class EditAppointment extends javax.swing.JFrame {
                             break;
                 
                 }
-                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-                String dateString ;
-                LocalDate DOA ;
               
                 Pattern idPattern = Pattern.compile("[^0-9]");
                 Matcher id = idPattern.matcher(ID);
