@@ -269,7 +269,7 @@ public class EditCustomer extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,
                     "Customer Data Successfully Updated", "Success",
                     JOptionPane.INFORMATION_MESSAGE);
-            CustomerIoHandler.addCustomer();
+             CustomerIoHandler.addCustomer();
             }
     }//GEN-LAST:event_saveChangesButtonMouseClicked
                     

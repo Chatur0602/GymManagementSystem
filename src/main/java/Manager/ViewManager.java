@@ -53,7 +53,7 @@ public class ViewManager extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel3.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel3.setBackground(new java.awt.Color(102, 0, 102));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
@@ -102,7 +102,7 @@ public class ViewManager extends javax.swing.JFrame {
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 730, 300));
 
-        usernameField.setBackground(new java.awt.Color(0, 51, 102));
+        usernameField.setBackground(new java.awt.Color(102, 0, 102));
         usernameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         usernameField.setForeground(new java.awt.Color(204, 204, 204));
         usernameField.setText("            Enter Username");
