@@ -177,20 +177,11 @@ public class EditAppointment extends javax.swing.JFrame {
                     status = model.getValueAt(rowCount, 5).toString().toUpperCase();
                     char s = status.charAt(0);
                     
-
-                try {
+                try{
                     //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + g);
                     
                     date = new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(d);
-                } catch (ParseException ex) {
-                    
-                            JOptionPane.showMessageDialog(null,
-                            "Incorrect Appointment Date", "Warning",
-                            JOptionPane.WARNING_MESSAGE);
-                            validated = false ;
-                            break;
                 
-                }
               
                 Pattern idPattern = Pattern.compile("[^0-9]");
                 Matcher id = idPattern.matcher(ID);
@@ -210,23 +201,12 @@ public class EditAppointment extends javax.swing.JFrame {
 
                     if(characterFound == true || name.length()<4){
                         JOptionPane.showMessageDialog(null,
-                                "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                                "Incorrect Name Format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
                                 JOptionPane.WARNING_MESSAGE);
                         validated = false ;
                         break;
                     } else{
-                        
-                        /*dateString = format.format(date);
-                        DOA = LocalDate.parse(dateString, formatter);
-                        System.out.println(DOA);
-
-                        if(DOA.isBefore(LocalDate.now())){
-                            JOptionPane.showMessageDialog(null,
-                                    "Incorrect Appointment Date", "Warning",
-                                    JOptionPane.WARNING_MESSAGE);
-                            validated = false ;
-                            break;
-                            }else{*/
+                   
                             
                                 Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
                                         "[a-zA-Z0-9_+&*-]+)*@" +
@@ -237,7 +217,7 @@ public class EditAppointment extends javax.swing.JFrame {
 
                                 if(characterFound == false || cEmail.length()<8){
                                     JOptionPane.showMessageDialog(null,
-                                            "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                                            "Incorrect E-Mail Format, Minimum 8 letters & must contain '@'", "Warning",
                                             JOptionPane.WARNING_MESSAGE);
                                     validated = false ;
                                     break;
@@ -247,7 +227,7 @@ public class EditAppointment extends javax.swing.JFrame {
                                             characterFound = userName.find();
                                             if(characterFound == true || iUsername.length()<8){
                                                         JOptionPane.showMessageDialog(null,
-                                                            "Incorrect Username format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
+                                                            "Incorrect Username Format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
                                                             JOptionPane.WARNING_MESSAGE);
                                                     validated = false;
                                                     break;
@@ -262,9 +242,27 @@ public class EditAppointment extends javax.swing.JFrame {
                     
                 }}}}
                 //System.out.println(ID + "\n");
-                            }
+                            
             
-                if(validated == true){
+                
+                
+                } catch (NumberFormatException e){
+                        JOptionPane.showMessageDialog(null,
+                            "Please enter a valid Appointment ID", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                            validated = false ;
+                            break;
+                            
+                } catch (ParseException e) {
+                            JOptionPane.showMessageDialog(null,
+                            "Incorrect Appointment Date Format", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                            validated = false ;
+                            break;
+                } 
+            } 
+            
+            if(validated == true){
                     JOptionPane.showMessageDialog(null,
                         "Appointment Data Successfully Updated", "Success",
                         JOptionPane.INFORMATION_MESSAGE);

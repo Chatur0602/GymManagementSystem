@@ -1,5 +1,6 @@
 package Customer;
 
+import static Customer.CustomerIoHandler.addCustomer;
 import static Customer.CustomerIoHandler.allCustomers;
 import java.text.Format;
 import java.text.ParseException;
@@ -202,7 +203,7 @@ public class EditCustomer extends javax.swing.JFrame {
 
                     if(characterFound == true || name.length()<4){
                         JOptionPane.showMessageDialog(null,
-                                "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                                "Incorrect Name Format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
                                 JOptionPane.WARNING_MESSAGE);
                         validated = false ;
                         break;
@@ -217,7 +218,7 @@ public class EditCustomer extends javax.swing.JFrame {
 
                         if(characterFound == false || email.length()<8){
                             JOptionPane.showMessageDialog(null,
-                                    "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                                    "Incorrect E-Mail Format, Minimum 8 letters & must contain '@'", "Warning",
                                     JOptionPane.WARNING_MESSAGE);
                             validated = false ;
                             break;
@@ -226,11 +227,10 @@ public class EditCustomer extends javax.swing.JFrame {
                             Pattern contactPattern = Pattern.compile("[^0-9]");
                             Matcher cContact = contactPattern.matcher(contact);
                             characterFound = cContact.find();
-                            System.out.println(characterFound);
                             
                             if(characterFound == true || contact.length() != 10){
                                 JOptionPane.showMessageDialog(null,
-                                        "Incorrect contact format, Must be 10 numeric digits long", "Warning",
+                                        "Incorrect Contact Format, Must be 10 numeric digits long", "Warning",
                                         JOptionPane.WARNING_MESSAGE);
                                 validated = false ;
                                 break;
@@ -260,15 +260,28 @@ public class EditCustomer extends javax.swing.JFrame {
                 } 
             
             }catch (ParseException ex) {
-                Logger.getLogger(EditCustomer.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                JOptionPane.showMessageDialog(null,
+                            "Incorrect Customer DOB Format", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                            validated = false ;
+                            break;
+      
+                            
+                } catch (NumberFormatException e){
+                        JOptionPane.showMessageDialog(null,
+                            "Please enter a valid Customer ID", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                            validated = false ;
+                            break;
+                            
+                }
         }
             
             if(validated == true){
                 JOptionPane.showMessageDialog(null,
                     "Customer Data Successfully Updated", "Success",
                     JOptionPane.INFORMATION_MESSAGE);
-             CustomerIoHandler.addCustomer();
+             addCustomer();
             }
     }//GEN-LAST:event_saveChangesButtonMouseClicked
                     

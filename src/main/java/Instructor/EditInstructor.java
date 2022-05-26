@@ -149,7 +149,7 @@ public class EditInstructor extends javax.swing.JFrame {
 
     }//GEN-LAST:event_viewInstructorTableMouseClicked
 
-    private void saveChangesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveChangesButtonMouseClicked
+    private void saveChangesButtonMouseClicked(java.awt.event.MouseEvent evt) {                                               
             DefaultTableModel model = (DefaultTableModel)viewInstructorTable.getModel();
             model.setColumnIdentifiers(columnsName);
             
@@ -182,13 +182,9 @@ public class EditInstructor extends javax.swing.JFrame {
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
                 try {
                     date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
-                } catch (ParseException ex) {
-                    Logger.getLogger(EditInstructor.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                
                     
-                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
-                Matcher cName = namePattern.matcher(name);
-                characterFound = cName.find();
+                
                 Pattern idPattern = Pattern.compile("[^0-9]");
                 Matcher id = idPattern.matcher(Id);
                 characterFound = id.find();
@@ -199,9 +195,12 @@ public class EditInstructor extends javax.swing.JFrame {
                     validated = false;
                     break;
                 }else{
+                        Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                        Matcher cName = namePattern.matcher(name);
+                        characterFound = cName.find();
                        if(characterFound == true || name.length()<4){
                         JOptionPane.showMessageDialog(null,
-                            "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                            "Incorrect Name f=Format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
                             JOptionPane.WARNING_MESSAGE);
                         validated = false;
                         break;
@@ -214,7 +213,7 @@ public class EditInstructor extends javax.swing.JFrame {
                             characterFound = eMail.find();
                             if(characterFound == false || email.length()<8){
                             JOptionPane.showMessageDialog(null,
-                                "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                                "Incorrect E-Mail Format, Minimum 8 letters & must contain '@'", "Warning",
                                 JOptionPane.WARNING_MESSAGE);
                             validated = false;
                             break;
@@ -224,7 +223,7 @@ public class EditInstructor extends javax.swing.JFrame {
                                     characterFound = cContact.find();
                                     if(characterFound == true || contact.length() != 10){
                                         JOptionPane.showMessageDialog(null,
-                                            "Incorrect contact format, Must be 10 numeric digits long", "Warning",
+                                            "Incorrect Contact Format, Must be 10 numeric digits long", "Warning",
                                             JOptionPane.WARNING_MESSAGE);
                                     validated = false;
                                     break;
@@ -245,14 +244,14 @@ public class EditInstructor extends javax.swing.JFrame {
                                                     characterFound = userName.find();
                                                     if(characterFound == true || username.length()<8){
                                                         JOptionPane.showMessageDialog(null,
-                                                            "Incorrect Username format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
+                                                            "Incorrect Username Format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
                                                             JOptionPane.WARNING_MESSAGE);
                                                     validated = false;
                                                     break;
                                                     }else{
                                                             if(password.length()<8){
                                                                 JOptionPane.showMessageDialog(null,
-                                                                    "less than 8 characters","Warning",
+                                                                    "Incorrect Password Format, Minimum 8 letters","Warning",
                                                                     JOptionPane.WARNING_MESSAGE);
                                                             validated = false;
                                                             break;
@@ -262,14 +261,30 @@ public class EditInstructor extends javax.swing.JFrame {
                                                                     validated = true;
                                                             }}}}}}}
                 
-            }
-            if (validated == true){
-                JOptionPane.showMessageDialog(null,
-                    "Instructor Data Successfully Updated", "Success",
-                    JOptionPane.INFORMATION_MESSAGE);
-                InstructorIoHandler.addInstructor();
-            }}
-//GEN-LAST:event_saveChangesButtonMouseClicked//GEN-LAST:event_saveChangesButtonMouseClicked
+            } catch (ParseException ex) {
+                    JOptionPane.showMessageDialog(null,
+                            "Incorrect Instructor DOB Format", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                            validated = false ;
+                            break;
+                } catch (NumberFormatException e){
+                        JOptionPane.showMessageDialog(null,
+                            "Please enter a valid Instructor ID", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                            validated = false ;
+                            break;
+                }
+        }
+            
+        if (validated == true){
+            JOptionPane.showMessageDialog(null,
+                "Instructor Data Successfully Updated", "Success",
+                JOptionPane.INFORMATION_MESSAGE);
+            addInstructor();
+        }
+        
+    }
+                                                                                            
 
     /**
      * @param args the command line arguments

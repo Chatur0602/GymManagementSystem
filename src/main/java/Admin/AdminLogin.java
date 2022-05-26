@@ -194,13 +194,13 @@ public class AdminLogin extends javax.swing.JFrame {
     private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusGained
         passwordField.setText("");
         passwordField.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        passwordField.setForeground(new java.awt.Color(0, 0, 0));
+        passwordField.setForeground(new java.awt.Color(204,204,204));
     }//GEN-LAST:event_passwordFieldFocusGained
 
     private void usernameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFieldFocusGained
        usernameField.setText("");
        usernameField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-       usernameField.setForeground(new java.awt.Color(0, 0, 0));
+       usernameField.setForeground(new java.awt.Color(204,204,204));
     }//GEN-LAST:event_usernameFieldFocusGained
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked

@@ -175,7 +175,7 @@ public class EditManager extends javax.swing.JFrame {
                     username = model.getValueAt(rowCount, 5).toString();
                     password = model.getValueAt(rowCount, 6).toString();
                     
-                    
+                try{
                 //Date date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
                 //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + address + " | " + username + " | " + password);
         
@@ -198,7 +198,7 @@ public class EditManager extends javax.swing.JFrame {
                     
                 if(characterFound == true || name.length()<4){
                     JOptionPane.showMessageDialog(null,
-                            "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                            "Incorrect Name Format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
                             JOptionPane.WARNING_MESSAGE);
                     validated = false;
                     break;
@@ -212,7 +212,7 @@ public class EditManager extends javax.swing.JFrame {
                     
                         if(characterFound == false || email.length()<8){
                             JOptionPane.showMessageDialog(null,
-                                "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                                "Incorrect E-Mail Format, Minimum 8 letters & must contain '@'", "Warning",
                                 JOptionPane.WARNING_MESSAGE);
                             validated = false;
                             break;
@@ -224,15 +224,15 @@ public class EditManager extends javax.swing.JFrame {
                         
                                 if(characterFound == true || contact.length() != 10){
                                     JOptionPane.showMessageDialog(null,
-                                        "Incorrect contact format, Must be 10 numeric digits long", "Warning",
+                                        "Incorrect Contact Format, Must be 10 numeric digits long", "Warning",
                                         JOptionPane.WARNING_MESSAGE);
                                 validated = false;
                                 break;
                         
                                 }else{
-                                        if(address.length()<16){
+                                        if(address.length()<16 || address.contains(",")){
                                                 JOptionPane.showMessageDialog(null,
-                                                    "Incorrect address format, less than 16", "Warning",
+                                                    "Incorrect Address Format(use '|' instead of ','), Address is to short", "Warning",
                                                      JOptionPane.WARNING_MESSAGE);
                                         validated = false;
                                         break;
@@ -252,7 +252,7 @@ public class EditManager extends javax.swing.JFrame {
                                                 }else{
                                                         if(password.length()<8){
                                                             JOptionPane.showMessageDialog(null,
-                                                                "less than 8 characters","Warning",
+                                                                "Incorrect Password Format, Minimum 8 letters","Warning",
                                                                 JOptionPane.WARNING_MESSAGE);
                                                         validated = false;
                                                         break;
@@ -264,16 +264,25 @@ public class EditManager extends javax.swing.JFrame {
                     }}}}}}}
                 
                 
-              
-        
-    }//GEN-LAST:event_saveChangesButtonMouseClicked
-     if (validated == true){
+                } catch (NumberFormatException e){
+                        JOptionPane.showMessageDialog(null,
+                            "Please enter a valid Appointment ID", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                            validated = false ;
+                            break;
+                            
+                } 
+            }
+            if (validated == true){
             JOptionPane.showMessageDialog(null,
                         "Manager Data Successfully Updated", "Success",
                         JOptionPane.INFORMATION_MESSAGE);
             ManagerIoHandler.addManager();
         }
-    }
+            
+    }//GEN-LAST:event_saveChangesButtonMouseClicked
+     
+    
     
     /**
      * @param args the command line arguments

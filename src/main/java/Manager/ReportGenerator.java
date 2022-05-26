@@ -169,16 +169,16 @@ public class ReportGenerator extends javax.swing.JFrame {
                             
                             else if(Age >= 25 && Age< 35){
                                 secondCount ++ ;
-                                secondAmount = firstAmount + list.getAmount();
+                                secondAmount = secondAmount + list.getAmount();
                             }
                             
                             else if(Age >= 35 && Age< 50){
                                 thirdCount ++ ;
-                                thirdAmount = firstAmount + list.getAmount();
+                                thirdAmount = thirdAmount + list.getAmount();
                             }
                             else if(Age >= 50){
                                 fourthCount ++ ;
-                                fourthAmount = firstAmount + list.getAmount();
+                                fourthAmount = fourthAmount + list.getAmount();
                             }
                             
                             if(c.getGender() == 'F'){
