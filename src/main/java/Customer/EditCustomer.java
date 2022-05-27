@@ -73,7 +73,7 @@ public class EditCustomer extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("Edit Customer");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 180, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
@@ -82,7 +82,7 @@ public class EditCustomer extends javax.swing.JFrame {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
@@ -99,7 +99,7 @@ public class EditCustomer extends javax.swing.JFrame {
                 saveChangesButtonMouseClicked(evt);
             }
         });
-        jPanel3.add(saveChangesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 370, 110, -1));
+        jPanel3.add(saveChangesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 520, 110, -1));
 
         editCustomerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,18 +116,18 @@ public class EditCustomer extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(editCustomerTable);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 730, 300));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 920, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 961, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -197,7 +197,7 @@ public class EditCustomer extends javax.swing.JFrame {
                     break;
                 }else{
 
-                    Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                    Pattern namePattern = Pattern.compile("[^a-z ]", Pattern.CASE_INSENSITIVE);
                     Matcher cName = namePattern.matcher(name);
                     characterFound = cName.find();
 

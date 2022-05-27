@@ -3,8 +3,8 @@
 3,Aerobics,18-05-2022 14:00,Nick@gmail.com,EsmailTheTank,C
 4,Yoga,22-05-2022 18:30,Rheanna28@yahoo.com,AlferovTheGreat,C
 5,Dance,26-05-2022 13:30,Manish1911@gmail.com,SammySpeed,C
-6,PowerLifting,28-05-2022 13:00,Assran@gmail.com,BestProgrammer,O
+6,Power Lifting,28-05-2022 13:00,Assran@gmail.com,BestProgrammer,O
 7,Crossfit,30-05-2022 10:30,Alexandria@hotmail.com,FastFingers,O
-8,GeneralTraining,02-06-2022 08:00,Natalie@yahoo.com,BestProgrammer,O
-9,SprintPractice,06-06-2022 11:00,Manish1911@gmail.com,AlferovTheGreat,O
+8,General Training,02-06-2022 08:00,Natalie@yahoo.com,BestProgrammer,O
+9,Sprint Practice,06-06-2022 11:00,Manish1911@gmail.com,AlferovTheGreat,O
 10,Pilatte,10-06-2022 17:30,Ahmed@hotmail.com,FastFingers,O

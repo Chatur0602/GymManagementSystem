@@ -227,14 +227,16 @@ public class AddCustomer extends javax.swing.JFrame {
 
         try {
                 boolean characterFound = false;
-                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
-                Matcher name = namePattern.matcher(nameField.getText());
-                characterFound = name.find();
+                
                 SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
                 String dateString ;
                 LocalDate DOB ;
                 int Age;
+                
+                Pattern namePattern = Pattern.compile("[^a-z ]", Pattern.CASE_INSENSITIVE);
+                Matcher name = namePattern.matcher(nameField.getText());
+                characterFound = name.find();
                 
                 if(characterFound == true || nameField.getText().length()<4){
                     JOptionPane.showMessageDialog(null,

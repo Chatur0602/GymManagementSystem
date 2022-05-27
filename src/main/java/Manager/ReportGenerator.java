@@ -95,13 +95,13 @@ public class ReportGenerator extends javax.swing.JFrame {
             }
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-        jPanel3.add(firstDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 120, -1));
+        jPanel3.add(firstDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 130, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText("To");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
-        jPanel3.add(lastDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 110, -1));
+        jLabel2.setText("  To");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
+        jPanel3.add(lastDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 130, -1));
 
         reportGeneratorButton.setText("Generate Report");
         reportGeneratorButton.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +156,9 @@ public class ReportGenerator extends javax.swing.JFrame {
          for (Payment list : allPayments) {   
                 if (list.getDOP().after(firstDateDC.getDate()) && list.getDOP().before(lastDateDC.getDate())){
                     for(Customer c : allCustomers){
-                        if(list.getName().toLowerCase() == null ? c.geteMail().toLowerCase() == null : list.getName().toLowerCase().equals(c.geteMail().toLowerCase())){
+                        if(list.getName().toLowerCase() == null ? 
+                                c.geteMail().toLowerCase() == null : list.getName().
+                                        toLowerCase().equals(c.geteMail().toLowerCase())){
                             
                             dateString = format.format(c.getDOB());
                             DOB = LocalDate.parse(dateString, formatter);

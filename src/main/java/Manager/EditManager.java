@@ -186,9 +186,7 @@ public class EditManager extends javax.swing.JFrame {
                 //Date date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
                 //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + address + " | " + username + " | " + password);
         
-                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
-                Matcher cName = namePattern.matcher(name);
-                characterFound = cName.find();
+                
               
                 
                 Pattern idPattern = Pattern.compile("[^0-9]");
@@ -202,7 +200,9 @@ public class EditManager extends javax.swing.JFrame {
                     validated = false;
                     break;
                 }else{
-                    
+                    Pattern namePattern = Pattern.compile("[^a-z ]", Pattern.CASE_INSENSITIVE);
+                    Matcher cName = namePattern.matcher(name);
+                    characterFound = cName.find();
                 if(characterFound == true || name.length()<4){
                     JOptionPane.showMessageDialog(null,
                             "Incorrect Name Format, Minimum 4 letters & no special characters or numbers allowed", "Warning",

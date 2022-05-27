@@ -148,7 +148,7 @@ public class AddInstructor extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("D.O.B");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 60, 40));
-        jPanel3.add(dateOfBirthDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 130, 20));
+        jPanel3.add(dateOfBirthDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 130, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 153, 153));
@@ -267,7 +267,7 @@ public class AddInstructor extends javax.swing.JFrame {
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
                try{
                 boolean characterFound = false;
-                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                Pattern namePattern = Pattern.compile("[^a-z ]", Pattern.CASE_INSENSITIVE);
                 Matcher name = namePattern.matcher(nameField.getText());
                 characterFound = name.find();
                 SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");

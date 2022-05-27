@@ -66,7 +66,7 @@ public class ViewAppointment extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("View Appointment");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 230, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 230, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
@@ -75,7 +75,7 @@ public class ViewAppointment extends javax.swing.JFrame {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
@@ -92,7 +92,7 @@ public class ViewAppointment extends javax.swing.JFrame {
                 searchAppointmentButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(searchAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+        jPanel3.add(searchAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
 
         viewAppointmentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,24 +109,24 @@ public class ViewAppointment extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(viewAppointmentTable);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 730, 300));
-        jPanel3.add(lastDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, 110, -1));
-        jPanel3.add(firstDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 120, -1));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 920, 450));
+        jPanel3.add(lastDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, 110, -1));
+        jPanel3.add(firstDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 120, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("To");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 961, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

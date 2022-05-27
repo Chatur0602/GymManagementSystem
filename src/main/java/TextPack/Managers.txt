@@ -1,3 +1,3 @@
 1,Hamidreza,hamidreza@gmail.com,0104316375,Bayu Condominium | Mont Kiara,OperatingSystem,bestManager
-2,Nikhil,Irule0602@gmail.com,0175774585,Robson Condo | Persiaren Syed Putra 2,TheFlash,Zoom0602
+2,Nikhil Chaturvedi,Irule0602@gmail.com,0175774585,Robson Condo | Persiaren Syed Putra 2,TheFlash,Zoom0602
 3,James,Bond007@yahoo.com,0173293842,Pines Condo | Brickfields | 50460,LicenseToKill,GoldenEye

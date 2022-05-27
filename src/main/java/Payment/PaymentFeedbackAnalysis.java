@@ -17,14 +17,13 @@ import java.util.*;
 /* @author Nikhil */
 public class PaymentFeedbackAnalysis extends javax.swing.JFrame {
  
-    AppointmentIoHandler AIH; 
     PaymentIoHandler PIH ;
     private static String cMail = null ;
     private int index = 0 ;
     private int ID = 0;
     
     public PaymentFeedbackAnalysis() {
-        AIH = new AppointmentIoHandler();
+    
         PIH = new PaymentIoHandler();
         initComponents();
          
@@ -70,7 +69,7 @@ public class PaymentFeedbackAnalysis extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("Analyse Payment & Feedback");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 340, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 340, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
@@ -79,7 +78,7 @@ public class PaymentFeedbackAnalysis extends javax.swing.JFrame {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
@@ -118,7 +117,7 @@ public class PaymentFeedbackAnalysis extends javax.swing.JFrame {
         feedbackTextBox.setRows(5);
         jScrollPane1.setViewportView(feedbackTextBox);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 290, 100));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 320, 100));
 
         paymentComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -130,7 +129,7 @@ public class PaymentFeedbackAnalysis extends javax.swing.JFrame {
                 paymentComboBoxMouseClicked(evt);
             }
         });
-        jPanel3.add(paymentComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 74, 280, 30));
+        jPanel3.add(paymentComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 74, 320, 30));
 
         jLabel11.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(153, 153, 153));
@@ -141,7 +140,9 @@ public class PaymentFeedbackAnalysis extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

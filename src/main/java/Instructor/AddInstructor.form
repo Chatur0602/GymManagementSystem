@@ -254,7 +254,7 @@
             <Component class="com.toedter.calendar.JDateChooser" name="dateOfBirthDC">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="160" y="190" width="130" height="20"/>
+                  <AbsoluteConstraints x="160" y="190" width="130" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>

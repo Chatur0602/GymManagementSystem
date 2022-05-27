@@ -1,5 +1,5 @@
-1,350,1,Jojo12@gmail.com,Good improvement compared to last time.,09-05-2022 16:05:24
-2,250,2,Anshu@gmail.com,Great class,14-05-2022 09:32:24
-3,500,3,Nick@gmail.com,Need to work on HIIT exercises.,18-05-2022 14:03:36
-4,200,4,Rheanna28@yahoo.com,Stretching is getting better.,22-05-2022 18:07:40
+1,750,1,Jojo12@gmail.com,Good improvement compared to last time.,09-05-2022 16:05:24
+2,200,2,Anshu@gmail.com,Great class,14-05-2022 09:32:24
+3,250,3,Nick@gmail.com,Need to work on HIIT exercises.,18-05-2022 14:03:36
+4,600,4,Rheanna28@yahoo.com,Stretching is getting better.,22-05-2022 18:07:40
 5,1000,5,Manish1911@gmail.com,Must practice steps 4 to 8 before next class,25-05-2022 13:33:52

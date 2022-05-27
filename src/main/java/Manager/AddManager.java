@@ -69,7 +69,7 @@ public class AddManager extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
-        addInstructorButton = new javax.swing.JButton();
+        addManagerButton = new javax.swing.JButton();
         validationField = new javax.swing.JPasswordField();
         passwordField = new javax.swing.JPasswordField();
         contactField = new javax.swing.JTextField();
@@ -189,13 +189,13 @@ public class AddManager extends javax.swing.JFrame {
         jLabel10.setText(" Confirm Pass");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 110, 30));
 
-        addInstructorButton.setText("Add Manager");
-        addInstructorButton.addActionListener(new java.awt.event.ActionListener() {
+        addManagerButton.setText("Add Manager");
+        addManagerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addInstructorButtonActionPerformed(evt);
+                addManagerButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(addInstructorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
+        jPanel3.add(addManagerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
 
         validationField.setBackground(new java.awt.Color(102, 0, 102));
         validationField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -284,11 +284,11 @@ public class AddManager extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameFieldFocusGained
 
-    private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
+    private void addManagerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addManagerButtonActionPerformed
 
          try {
                 boolean characterFound = false;
-                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                Pattern namePattern = Pattern.compile("[^a-z ]", Pattern.CASE_INSENSITIVE);
                 Matcher name = namePattern.matcher(nameField.getText());
                 characterFound = name.find();
                 
@@ -374,7 +374,7 @@ public class AddManager extends javax.swing.JFrame {
                                         "Please make sure all the fields are filled", "Error",
                                         JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_addInstructorButtonActionPerformed
+    }//GEN-LAST:event_addManagerButtonActionPerformed
 
     private void addressFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressFieldFocusGained
         // TODO add your handling code here:
@@ -673,7 +673,7 @@ public class AddManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addInstructorButton;
+    private javax.swing.JButton addManagerButton;
     private javax.swing.JTextField addressField;
     private javax.swing.JLabel backLabel;
     private javax.swing.JTextField contactField;

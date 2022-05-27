@@ -221,7 +221,7 @@ public class AdminLogin extends javax.swing.JFrame {
         String passValue = passwordField.getText();        //get user entered pasword from the textField2  
           
         //check whether the credentials are authentic or not  
-        if (userValue.equals("admin") && passValue.equals("nimda")) {
+        if (userValue.toLowerCase().equals("admin") && passValue.equals("nimda")) {
             JOptionPane.showMessageDialog(null,
                 "Login Successful, Welcome Master", "Success",
                 JOptionPane.INFORMATION_MESSAGE);

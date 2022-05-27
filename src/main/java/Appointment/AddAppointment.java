@@ -91,7 +91,7 @@ public class AddAppointment extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("Add  Appointment");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 220, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 220, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
@@ -100,7 +100,7 @@ public class AddAppointment extends javax.swing.JFrame {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
@@ -128,14 +128,14 @@ public class AddAppointment extends javax.swing.JFrame {
                 nameFieldFocusGained(evt);
             }
         });
-        jPanel3.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 129, 20));
-        jPanel3.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 130, 10));
+        jPanel3.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 190, 20));
+        jPanel3.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 190, 10));
 
         jLabel6.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("Customer");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 80, 20));
-        jPanel3.add(appointmentDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 120, 30));
+        jPanel3.add(appointmentDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 140, 30));
 
         nameField1.setBackground(new java.awt.Color(0, 51, 102));
         nameField1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -150,7 +150,7 @@ public class AddAppointment extends javax.swing.JFrame {
         jPanel3.add(nameField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 129, 20));
         jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 130, 10));
 
-        jPanel3.add(instructorComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 130, -1));
+        jPanel3.add(instructorComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 160, -1));
 
         timeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         timeComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +158,7 @@ public class AddAppointment extends javax.swing.JFrame {
                 timeComboBoxActionPerformed(evt);
             }
         });
-        jPanel3.add(timeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 90, -1));
+        jPanel3.add(timeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 90, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 153, 153));
@@ -178,7 +178,7 @@ public class AddAppointment extends javax.swing.JFrame {
         });
         jPanel3.add(addAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
 
-        jPanel3.add(customerComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 130, -1));
+        jPanel3.add(customerComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 160, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -235,7 +235,7 @@ public class AddAppointment extends javax.swing.JFrame {
     
         try {     
                 boolean characterFound = false;
-                Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
+                Pattern namePattern = Pattern.compile("[^a-z ]", Pattern.CASE_INSENSITIVE);
                 Matcher name = namePattern.matcher(nameField.getText());
                 characterFound = name.find();
                 SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
