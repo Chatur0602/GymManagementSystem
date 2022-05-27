@@ -291,11 +291,6 @@ public class AddManager extends javax.swing.JFrame {
                 Pattern namePattern = Pattern.compile("[^a-z]", Pattern.CASE_INSENSITIVE);
                 Matcher name = namePattern.matcher(nameField.getText());
                 characterFound = name.find();
-                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-                String dateString ;
-                LocalDate DOB ;
-                int Age;
                 
                 if(characterFound == true || nameField.getText().length()<4){
                     JOptionPane.showMessageDialog(null,

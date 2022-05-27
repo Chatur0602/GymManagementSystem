@@ -26,7 +26,8 @@ public class ViewManager extends javax.swing.JFrame {
         //Format date =new SimpleDateFormat("dd-MM-yyyy");
  
             for (Manager list : allManagers) {
-                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),list.getAddress(),list.getUsername()};
+                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),
+                    list.getContact(),list.getAddress(),list.getUsername(),list.getPassword()};
                 model.addRow(dataRow);
             }
     }
@@ -44,7 +45,7 @@ public class ViewManager extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
-        searchInstructorButton = new javax.swing.JButton();
+        searchManagerButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         viewManagerTable = new javax.swing.JTable();
         usernameField = new javax.swing.JTextField();
@@ -54,12 +55,13 @@ public class ViewManager extends javax.swing.JFrame {
         setUndecorated(true);
 
         jPanel3.setBackground(new java.awt.Color(102, 0, 102));
+        jPanel3.setMinimumSize(new java.awt.Dimension(954, 545));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("View Manager");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 190, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 190, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
@@ -68,7 +70,7 @@ public class ViewManager extends javax.swing.JFrame {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
@@ -79,13 +81,13 @@ public class ViewManager extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        searchInstructorButton.setText("Search Manager");
-        searchInstructorButton.addActionListener(new java.awt.event.ActionListener() {
+        searchManagerButton.setText("Search Manager");
+        searchManagerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchInstructorButtonActionPerformed(evt);
+                searchManagerButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(searchInstructorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+        jPanel3.add(searchManagerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
 
         viewManagerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -102,7 +104,7 @@ public class ViewManager extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(viewManagerTable);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 730, 300));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 920, 450));
 
         usernameField.setBackground(new java.awt.Color(102, 0, 102));
         usernameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -115,21 +117,21 @@ public class ViewManager extends javax.swing.JFrame {
                 usernameFieldFocusGained(evt);
             }
         });
-        jPanel3.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 180, 20));
-        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 180, 10));
+        jPanel3.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, 180, 20));
+        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, 180, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 769, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 961, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -148,7 +150,7 @@ public class ViewManager extends javax.swing.JFrame {
         allManagers.clear();
     }//GEN-LAST:event_backLabelMouseClicked
 
-    private void searchInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchInstructorButtonActionPerformed
+    private void searchManagerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchManagerButtonActionPerformed
         viewManagerTable.setDefaultEditor(Object.class, null);
         DefaultTableModel model = (DefaultTableModel)viewManagerTable.getModel();
         model.setRowCount(0);
@@ -158,11 +160,12 @@ public class ViewManager extends javax.swing.JFrame {
         for (Manager list : allManagers) {
                   if (list.getUsername().toLowerCase().contains(usernameField.getText().toLowerCase())){
                       
-                      dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),list.getAddress(),list.getUsername(),list.getPassword()};
+                      dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),
+                          list.getContact(),list.getAddress(),list.getUsername(),list.getPassword()};
                       model.addRow(dataRow);      
             }
         }  
-    }//GEN-LAST:event_searchInstructorButtonActionPerformed
+    }//GEN-LAST:event_searchManagerButtonActionPerformed
 
     private void viewManagerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewManagerTableMouseClicked
         /*JTable source = (JTable)evt.getSource();
@@ -220,7 +223,7 @@ public class ViewManager extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JButton searchInstructorButton;
+    private javax.swing.JButton searchManagerButton;
     private javax.swing.JTextField usernameField;
     private javax.swing.JTable viewManagerTable;
     // End of variables declaration//GEN-END:variables

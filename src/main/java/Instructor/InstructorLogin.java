@@ -19,8 +19,7 @@ import java.util.logging.Logger;
 
 
 /* @author Nikhil */
-public class InstructorLogin extends javax.swing.JFrame {
-    
+public class InstructorLogin extends javax.swing.JFrame { 
     InstructorIoHandler IIH ;
     public InstructorLogin() {
         IIH = new InstructorIoHandler();

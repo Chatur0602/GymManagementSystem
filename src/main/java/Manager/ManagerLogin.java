@@ -11,10 +11,6 @@ import java.awt.event.ActionListener;
 
 /* @author Nikhil */
 public class ManagerLogin extends javax.swing.JFrame {
-
-    /**
-     * Creates new form FirstGui
-     */
     ManagerIoHandler MIH;
     public ManagerLogin() {
         initComponents();
