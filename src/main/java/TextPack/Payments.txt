@@ -3,3 +3,4 @@
 3,250,3,Nick@gmail.com,Need to work on HIIT exercises.,18-05-2022 14:03:36
 4,600,4,Rheanna28@yahoo.com,Stretching is getting better.,22-05-2022 18:07:40
 5,1000,5,Manish1911@gmail.com,Must practice steps 4 to 8 before next class,25-05-2022 13:33:52
+6,250,12,Natalie@yahoo.com,Great Class.,08-06-2022 16:46:22
