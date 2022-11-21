@@ -1,6 +1,6 @@
-package Appointment;
+package Booking;
 
-import static Appointment.AppointmentIoHandler.allAppointments;
+import static Booking.BookingIoHandler.allBookings;
 import Manager.ManagerDashboard;
 import javax.swing.*;
 import java.awt.*;
@@ -10,12 +10,12 @@ import java.util.Date;
 
 
 /* @author Nikhil */
-public class AppointmentManagement extends javax.swing.JFrame {
+public class BookingManagement extends javax.swing.JFrame {
 
-    AppointmentIoHandler AIH;
-    public AppointmentManagement() {
+    BookingIoHandler AIH;
+    public BookingManagement() {
         initComponents();
-        allAppointments.clear();
+        allBookings.clear();
     }
 
     @SuppressWarnings("unchecked")
@@ -48,7 +48,6 @@ public class AppointmentManagement extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 310, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
@@ -57,7 +56,6 @@ public class AppointmentManagement extends javax.swing.JFrame {
         jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 30, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -65,7 +63,6 @@ public class AppointmentManagement extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        searchLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-view-64.png")); // NOI18N
         searchLabel.setText("  ");
         searchLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -74,7 +71,6 @@ public class AppointmentManagement extends javax.swing.JFrame {
         });
         jPanel3.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 70, 70));
 
-        addLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-add-64.png")); // NOI18N
         addLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addLabelMouseClicked(evt);
@@ -82,7 +78,6 @@ public class AppointmentManagement extends javax.swing.JFrame {
         });
         jPanel3.add(addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
 
-        deleteLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-delete-64.png")); // NOI18N
         deleteLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 deleteLabelMouseClicked(evt);
@@ -105,7 +100,6 @@ public class AppointmentManagement extends javax.swing.JFrame {
         jLabel10.setText("Edit");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 30, 20));
 
-        editLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-edit-file-64.png")); // NOI18N
         editLabel.setText("  ");
         editLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -167,30 +161,30 @@ public class AppointmentManagement extends javax.swing.JFrame {
 
     private void addLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelMouseClicked
         dispose();
-        AddAppointment AA = new AddAppointment();
+        AddBooking AA = new AddBooking();
         AA.show();
     }//GEN-LAST:event_addLabelMouseClicked
 
     private void deleteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteLabelMouseClicked
      try{
-        String Id = JOptionPane.showInputDialog("Enter the ID of the Appointment you'd like to Delete");
+        String Id = JOptionPane.showInputDialog("Enter the ID of the Booking you'd like to Delete");
         int ID = Integer.parseInt(Id);
         
-        AIH = new AppointmentIoHandler();
+        AIH = new BookingIoHandler();
         boolean userFound = false ;
         int index = 0 ;
-        String name = "", customerEmail = "", instructorUsername = "", status = ""; 
+        String name = "", customerEmail = "", vReg = "", status = ""; 
         Date slot = null ;
         
             System.out.println(Id +" " + ID);
-            for (Appointment list : allAppointments) {
+            for (Booking list : allBookings) {
                   System.out.println(list.getID());
                   if (ID == list.getID()){
-                    index = allAppointments.indexOf(list);
+                    index = allBookings.indexOf(list);
                     name = list.getName();
                     slot = list.getSlot();
                     customerEmail = list.getCustomerEmail();
-                    instructorUsername = list.getInstructorUsername();
+                    vReg = list.getvReg();
                     status = Character.toString(list.getStatus());
                     userFound = true;
                 }
@@ -206,28 +200,28 @@ public class AppointmentManagement extends javax.swing.JFrame {
                 }
                 
                 int confirmation = JOptionPane.showConfirmDialog(null,
-                "Appointment ID: " + ID + "\n"
+                "Booking ID: " + ID + "\n"
                         + "Name: " + name + "\n"
                         + "Time Slot: " + dateForm.format(slot) + "\n"
                         + "Customer Email: " + customerEmail + "\n"
-                        + "Instructor Username: " + instructorUsername + "\n"
+                        + "Instructor Username: " + vReg + "\n"
                         + "Status: " + status + "\n"
                         + "Would you like to delete?" , "Delete Confirmation", JOptionPane.YES_NO_OPTION);
                 
                 if (confirmation == JOptionPane.YES_OPTION) {
-                    allAppointments.remove(index);
-                    AppointmentIoHandler.addAppointment();
-                    JOptionPane.showMessageDialog(null, "Appointment " + name + " deleted", "Appointment Deleted", JOptionPane.INFORMATION_MESSAGE);
+                    allBookings.remove(index);
+                    BookingIoHandler.addBooking();
+                    JOptionPane.showMessageDialog(null, "Booking " + name + " deleted", "Booking Deleted", JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Appointment " + name + " not deleted", "Appointment Not Deleted", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Booking " + name + " not deleted", "Booking Not Deleted", JOptionPane.INFORMATION_MESSAGE);
                    
                 }
             }
                     
             if (userFound == false) {
-                JOptionPane.showMessageDialog(null,"Appointment doesn't exist! Please try again","Alert",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Booking doesn't exist! Please try again","Alert",JOptionPane.WARNING_MESSAGE);
             }
-    allAppointments.clear();  
+    allBookings.clear();  
      }catch(NullPointerException e){
          
      }
@@ -235,13 +229,13 @@ public class AppointmentManagement extends javax.swing.JFrame {
 
     private void searchLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchLabelMouseClicked
         dispose();
-        ViewAppointment VA = new ViewAppointment();
+        ViewBooking VA = new ViewBooking();
         VA.show();
     }//GEN-LAST:event_searchLabelMouseClicked
 
     private void editLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseClicked
         dispose();
-        EditAppointment EA = new EditAppointment() ;
+        EditBooking EA = new EditBooking() ;
         EA.show();
     }//GEN-LAST:event_editLabelMouseClicked
 
@@ -263,13 +257,13 @@ public class AppointmentManagement extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AppointmentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookingManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AppointmentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookingManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AppointmentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookingManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AppointmentManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookingManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -339,7 +333,7 @@ public class AppointmentManagement extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AppointmentManagement().setVisible(true);
+                new BookingManagement().setVisible(true);
             }
         });
        

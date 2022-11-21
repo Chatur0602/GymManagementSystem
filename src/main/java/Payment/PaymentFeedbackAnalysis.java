@@ -1,10 +1,10 @@
 package Payment;
 
 
-import Appointment.Appointment;
-import Appointment.AppointmentIoHandler;
-import static Appointment.AppointmentIoHandler.addAppointment;
-import static Appointment.AppointmentIoHandler.allAppointments;
+import Booking.Booking;
+import Booking.AppointmentIoHandler;
+import static Booking.AppointmentIoHandler.addAppointment;
+import static Booking.AppointmentIoHandler.allAppointments;
 import Instructor.InstructorDashboard;
 import Manager.ManagerDashboard;
 import static Payment.PaymentIoHandler.allPayments;

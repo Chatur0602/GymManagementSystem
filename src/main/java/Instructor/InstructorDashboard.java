@@ -1,6 +1,6 @@
 package Instructor;
 
-import static Appointment.AppointmentIoHandler.allAppointments;
+import static Booking.AppointmentIoHandler.allAppointments;
 import Payment.AddPaymentFeedback;
 import static Payment.PaymentIoHandler.allPayments;
 import javax.swing.*;

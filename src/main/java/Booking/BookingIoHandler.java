@@ -1,18 +1,17 @@
-package Appointment;
+package Booking;
 
-import Appointment.*;
 import java.io.*;
 import java.text.ParseException;
 import java.util.*;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
-import Appointment.Appointment;
+import Booking.Booking;
 
-public class AppointmentIoHandler {
+public class BookingIoHandler {
     
-    public AppointmentIoHandler(){
+    public BookingIoHandler(){
         try{
-        readAppointment();
+        readBooking();
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Can't Read In Constructor");
         }
@@ -28,11 +27,11 @@ public class AppointmentIoHandler {
     }
     
  
-    //Appointment Functions
-    public static ArrayList<Appointment> allAppointments = new ArrayList<Appointment>();
-    public static String aPath = "src/main/java/TextPack/Appointments.txt";
+    //Booking Functions
+    public static ArrayList<Booking> allBookings = new ArrayList<Booking>();
+    public static String aPath = "src/main/java/TextPack/Bookings.txt";
     
-    public static void readAppointment() throws IOException, ParseException{
+    public static void readBooking() throws IOException, ParseException{
     BufferedReader br = new BufferedReader(new FileReader(aPath));
     String line = null;
     
@@ -41,22 +40,22 @@ public class AppointmentIoHandler {
       String[] values = line.split(",");
       
       for (String lines : value) {
-            Date slot=new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(values[2]);
-            char status = values[5].charAt(0);
+            Date slot=new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(values[5]);
+            char status = values[6].charAt(0);
             
-            Appointment a = new Appointment(Integer.parseInt(values[0]),values[1],slot,values[3],values[4],status);
-            allAppointments.add(a);
+            Booking a = new Booking(Integer.parseInt(values[0]),Integer.parseInt(values[1]),values[2],values[3],values[4],slot,status);
+            allBookings.add(a);
         }
     }
     br.close();
 }
     
-    public static Appointment checkAppointment(String slot, String instructorUsername, String customerEmail) throws IOException, ParseException{
-        Appointment found = null;
+    public static Booking checkBooking(String slot, String vReg, String customerEmail) throws IOException, ParseException{
+        Booking found = null;
         SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY HH:mm");
         
-        for(Appointment a : allAppointments){
-            if(slot.equals(dateForm.format(a.getSlot())) && instructorUsername.equals(a.getInstructorUsername()) || slot.equals(dateForm.format(a.getSlot())) && customerEmail.equals(a.getCustomerEmail())){
+        for(Booking a : allBookings){
+            if(slot.equals(dateForm.format(a.getSlot())) && vReg.equals(a.getvReg()) || slot.equals(dateForm.format(a.getSlot())) && customerEmail.equals(a.getCustomerEmail())){
                 found = a;
                 break;  
             }
@@ -64,7 +63,7 @@ public class AppointmentIoHandler {
         return found;
     }
     
-    public static void addAppointment(){
+    public static void addBooking(){
         try{
             clearFile(aPath);
             BufferedWriter p = new BufferedWriter(
@@ -72,17 +71,17 @@ public class AppointmentIoHandler {
            
             SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY HH:mm");
             
-            for(Appointment a : allAppointments){
-               p.write(a.getID()+","+a.getName()+","+dateForm.format(a.getSlot())+","+a.getCustomerEmail()+","+a.getInstructorUsername()+","+a.getStatus()+"\n");
+            for(Booking a : allBookings){
+               p.write(a.getID()+","+a.getName()+","+dateForm.format(a.getSlot())+","+a.getCustomerEmail()+","+a.getvReg()+","+a.getStatus()+"\n");
                //System.out.println(ID+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender());
             }
             
             p.close();
-            allAppointments.clear();
+            allBookings.clear();
             
         }catch(Exception e){
                 JOptionPane.showMessageDialog(null,
-                "Appointment Not Added, Please Try Again", "Error",
+                "Booking Not Added, Please Try Again", "Error",
                 JOptionPane.ERROR_MESSAGE);
                 System.exit(0);
         }   

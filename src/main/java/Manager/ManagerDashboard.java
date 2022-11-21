@@ -1,8 +1,8 @@
 package Manager;
 
 import Admin.ManagerManagement;
-import Appointment.AppointmentIoHandler;
-import Appointment.AppointmentManagement;
+import Booking.AppointmentIoHandler;
+import Booking.AppointmentManagement;
 import Customer.CustomerManagement;
 import Instructor.InstructorManagement;
 import Main.LaunchPanel;

@@ -1,7 +1,6 @@
 package Manager;
 
 import Admin.ManagerManagement;
-import Appointment.*;
 import Customer.*;
 import Manager.Manager;
 import Manager.ManagerDashboard;

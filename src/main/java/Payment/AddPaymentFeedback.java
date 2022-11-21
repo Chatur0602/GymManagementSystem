@@ -1,10 +1,10 @@
 package Payment;
 
 
-import Appointment.Appointment;
-import Appointment.AppointmentIoHandler;
-import static Appointment.AppointmentIoHandler.addAppointment;
-import static Appointment.AppointmentIoHandler.allAppointments;
+import Booking.Booking;
+import Booking.AppointmentIoHandler;
+import static Booking.AppointmentIoHandler.addAppointment;
+import static Booking.AppointmentIoHandler.allAppointments;
 import Instructor.InstructorDashboard;
 import Manager.ManagerDashboard;
 import static Payment.PaymentIoHandler.allPayments;
@@ -32,7 +32,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
          
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm"); 
         
-         for (Appointment list : allAppointments) {
+         for (Booking list : allAppointments) {
              if(user.equals(list.getInstructorUsername()) && list.getStatus() == 'O'){
             appointmentComboBox.addItem(list.getID() +" | "+ list.getName() +" | "+ formatter.format(list.getSlot()) +" | "+  list.getCustomerEmail());
             }
@@ -212,7 +212,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
              String instUser = null ;
              char status = ' ' ;
              
-             for (Appointment list : allAppointments) {
+             for (Booking list : allAppointments) {
                      if (aID == list.getID()){
                          appID = list.getID();
                          appName = list.getName();
@@ -228,7 +228,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
              PaymentIoHandler.allPayments.add(p);
              PaymentIoHandler.addPayment();
              
-             Appointment a = new Appointment(appID, appName, appSlot, custEmail, instUser, 'C');
+             Booking a = new Booking(appID, appName, appSlot, custEmail, instUser, 'C');
              allAppointments.set(index, a);
              addAppointment();
              

@@ -1,9 +1,8 @@
-package Appointment;
+package Booking;
 
-import Appointment.*;
-import static Appointment.AppointmentIoHandler.addAppointment;
-import static Appointment.AppointmentIoHandler.allAppointments;
-import static Appointment.ViewAppointment.dataRow;
+import static Booking.AppointmentIoHandler.addAppointment;
+import static Booking.AppointmentIoHandler.allAppointments;
+import static Booking.ViewAppointment.dataRow;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -39,7 +38,7 @@ public class EditAppointment extends javax.swing.JFrame {
         model.setColumnIdentifiers(columnsName);
         Format date =new SimpleDateFormat("dd-MM-yyyy HH:mm");
        
-             for (Appointment list : allAppointments) {
+             for (Booking list : allAppointments) {
                
                 dataRow = new String[] {Integer.toString(list.getID()),list.getName(),date.format(list.getSlot()),list.getCustomerEmail(),list.getInstructorUsername(),Character.toString(list.getStatus())};
                 model.addRow(dataRow);
@@ -75,7 +74,6 @@ public class EditAppointment extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 200, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
@@ -84,7 +82,6 @@ public class EditAppointment extends javax.swing.JFrame {
         jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -162,7 +159,7 @@ public class EditAppointment extends javax.swing.JFrame {
             String cEmail = null;
             String iUsername = null ;
             String status ;
-            Appointment a = null ; 
+            Booking a = null ; 
             boolean validated = false ;
             boolean characterFound = false;
             Date date = null;
@@ -234,7 +231,7 @@ public class EditAppointment extends javax.swing.JFrame {
                                                     }
                                                         else{
            
-                                                        a = new Appointment(Integer.parseInt(ID), name, date, cEmail, iUsername, s);
+                                                        a = new Booking(Integer.parseInt(ID), name, date, cEmail, iUsername, s);
                                                         AppointmentIoHandler.allAppointments.add(a);
                                                         validated = true ;
                    

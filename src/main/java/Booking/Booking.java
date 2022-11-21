@@ -1,18 +1,19 @@
-package Appointment;
+package Booking;
 
 import java.util.Date;
 
-public class Appointment {
-    private int ID ;
-    private String name, instructorUsername, customerEmail;
+public class Booking {
+    private int ID,days ;
+    private String name, customerEmail, vReg;
     private Date slot ;
     private char status ;
 
-    public Appointment(int ID, String name, Date slot, String customerEmail, String instructorUsername, char status) {
+    public Booking(int ID, int days, String name, String customerEmail, String vReg, Date slot, char status) {
         this.ID = ID;
+        this.days = days;
         this.name = name;
-        this.instructorUsername = instructorUsername;
         this.customerEmail = customerEmail;
+        this.vReg = vReg;
         this.slot = slot;
         this.status = status;
     }
@@ -25,6 +26,14 @@ public class Appointment {
         this.ID = ID;
     }
 
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
+
     public String getName() {
         return name;
     }
@@ -33,20 +42,20 @@ public class Appointment {
         this.name = name;
     }
 
-    public String getInstructorUsername() {
-        return instructorUsername;
-    }
-
-    public void setInstructorUsername(String InstructorUsername) {
-        this.instructorUsername = instructorUsername;
-    }
-
     public String getCustomerEmail() {
         return customerEmail;
     }
 
     public void setCustomerEmail(String customerEmail) {
         this.customerEmail = customerEmail;
+    }
+
+    public String getvReg() {
+        return vReg;
+    }
+
+    public void setvReg(String vReg) {
+        this.vReg = vReg;
     }
 
     public Date getSlot() {
@@ -65,6 +74,5 @@ public class Appointment {
         this.status = status;
     }
 
-    
-    
+
 }
