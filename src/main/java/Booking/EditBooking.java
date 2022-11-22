@@ -40,7 +40,7 @@ public class EditBooking extends javax.swing.JFrame {
        
              for (Booking list : allBookings) {
                
-                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),date.format(list.getSlot()),list.getCustomerEmail(),list.getvReg(),Character.toString(list.getStatus())};
+                dataRow = new String[] {Integer.toString(list.getID()), Integer.toString(list.getDays()),list.getName(),list.getCustomerEmail(),list.getvReg(),date.format(list.getSlot()),Character.toString(list.getStatus())};
                 model.addRow(dataRow);
         }
     }

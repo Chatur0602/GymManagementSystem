@@ -1,6 +1,7 @@
 package Booking;
 
 import static Booking.BookingIoHandler.allBookings;
+import static Booking.EditBooking.dataRow;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,7 +15,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 public class ViewBooking extends javax.swing.JFrame {
-    public static String [] columnsName = {"Booking ID", "Name", "Slot", "Customer Email", "Instructor Email", "Status"};
+     public static String [] columnsName = {"Booking ID", "Days", "Name", "Customer Email", "Vehicle Regitration", "Slot", "Status"};
     public static String dataRow [] ;
     
     BookingIoHandler CIH; 
@@ -31,7 +32,7 @@ public class ViewBooking extends javax.swing.JFrame {
        
              for (Booking list : allBookings) {
                 
-                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),date.format(list.getSlot()),list.getCustomerEmail(),list.getvReg(),Character.toString(list.getStatus())};
+                dataRow = new String[] {Integer.toString(list.getID()), Integer.toString(list.getDays()),list.getName(),list.getCustomerEmail(),list.getvReg(),date.format(list.getSlot()),Character.toString(list.getStatus())};
                 model.addRow(dataRow);
         }
     }

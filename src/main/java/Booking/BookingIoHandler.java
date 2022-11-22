@@ -72,7 +72,7 @@ public class BookingIoHandler {
             SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY HH:mm");
             
             for(Booking a : allBookings){
-               p.write(a.getID()+","+a.getName()+","+dateForm.format(a.getSlot())+","+a.getCustomerEmail()+","+a.getvReg()+","+a.getStatus()+"\n");
+               p.write(a.getID()+","+a.getDays()+","+a.getName()+","+a.getCustomerEmail()+","+a.getvReg()+","+dateForm.format(a.getSlot())+","+a.getStatus()+"\n");
                //System.out.println(ID+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender());
             }
             
