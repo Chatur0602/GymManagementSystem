@@ -226,9 +226,9 @@ public class EditBooking extends javax.swing.JFrame {
                                             Pattern usernamePattern = Pattern.compile("[^a-z-0-9]", Pattern.CASE_INSENSITIVE);
                                             Matcher userName = usernamePattern.matcher(vReg);
                                             characterFound = userName.find();
-                                            if(characterFound == true || vReg.length()<8){
+                                            if(characterFound == true || vReg.length()<7){
                                                         JOptionPane.showMessageDialog(null,
-                                                            "Incorrect Username Format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
+                                                            "Incorrect Registration Number Format, Minimum 7 characters & no special characters allowed", "Warning",
                                                             JOptionPane.WARNING_MESSAGE);
                                                     validated = false;
                                                     break;
