@@ -1,7 +1,7 @@
 package Booking;
 
-import static Booking.AppointmentIoHandler.allAppointments;
-import Booking.AppointmentIoHandler.*;
+import static Booking.BookingIoHandler.allBookings;
+import Booking.BookingIoHandler.*;
 import Customer.Customer;
 import Customer.CustomerIoHandler;
 import static Customer.CustomerIoHandler.allCustomers;
@@ -24,17 +24,17 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /* @author Nikhil */
-public class AddAppointment extends javax.swing.JFrame {
+public class AddBooking extends javax.swing.JFrame {
 
-    AppointmentIoHandler AIH ;
+    BookingIoHandler AIH ;
     CustomerIoHandler CIH ;
     InstructorIoHandler IIH ;
 
-    public AddAppointment(){
-        allAppointments.clear();
+    public AddBooking(){
+        allBookings.clear();
         allCustomers.clear();
         allInstructors.clear();
-        AIH = new AppointmentIoHandler() ;
+        AIH = new BookingIoHandler() ;
         CIH = new CustomerIoHandler();
         IIH = new InstructorIoHandler();
         initComponents();
@@ -94,7 +94,7 @@ public class AddAppointment extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Add  Appointment");
+        jLabel1.setText("Add  Booking");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 220, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -227,7 +227,7 @@ public class AddAppointment extends javax.swing.JFrame {
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         dispose();
-        AppointmentManagement AM = new AppointmentManagement();
+        BookingManagement AM = new BookingManagement();
         AM.show();
 
     }//GEN-LAST:event_backLabelMouseClicked
@@ -273,44 +273,44 @@ public class AddAppointment extends javax.swing.JFrame {
         SimpleDateFormat slotFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");  
         Date slot = slotFormat.parse(dateSlot) ;
         
-            if(AppointmentIoHandler.checkAppointment(slotFormat.format(slot), instructorComboBox.getSelectedItem().toString(), customerComboBox.getSelectedItem().toString()) == null){
+            if(BookingIoHandler.checkBooking(slotFormat.format(slot), instructorComboBox.getSelectedItem().toString(), customerComboBox.getSelectedItem().toString()) == null){
 
                 int ID = 1 ;
 
-                for (Booking list : allAppointments) {
-                    ID = allAppointments.get(allAppointments.size() - 1).getID() + 1;
+                for (Booking list : allBookings) {
+                    ID = allBookings.get(allBookings.size() - 1).getID() + 1;
                 }
             
                 Booking c = new Booking(ID, Integer.parseInt(jSpinner1.getValue().toString()), nameField.getText(), customerComboBox.getSelectedItem().toString(), instructorComboBox.getSelectedItem().toString(),slot,'O');
                 
-                AppointmentIoHandler.allAppointments.add(c);
-                AppointmentIoHandler.addAppointment();
+                BookingIoHandler.allBookings.add(c);
+                BookingIoHandler.addBooking();
 
                 JOptionPane.showMessageDialog(null,
-                        "Appointment Successfully Added", "Success",
+                        "Booking Successfully Added", "Success",
                         JOptionPane.INFORMATION_MESSAGE);
                 
                 allCustomers.clear();
                 allInstructors.clear();
                 
                 dispose();
-                AppointmentManagement AM = new AppointmentManagement();
+                BookingManagement AM = new BookingManagement();
                 AM.show();
                 
                 
             }
             else{
                 JOptionPane.showMessageDialog(null,
-                        "Appointment Already Exists or Instructor Busy, try a different instructor or slot", "Error",
+                        "Booking Already Exists or Instructor Busy, try a different instructor or slot", "Error",
                         JOptionPane.WARNING_MESSAGE);
                 
                     }
                 }
             }
         } catch (IOException ex) {
-            Logger.getLogger(AddAppointment.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AddBooking.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
-            Logger.getLogger(AddAppointment.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AddBooking.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NullPointerException ex) {
             JOptionPane.showMessageDialog(null,
                                         "Please make sure all the fields are filled", "Error",
@@ -336,13 +336,13 @@ public class AddAppointment extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -476,7 +476,7 @@ public class AddAppointment extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddAppointment().setVisible(true);
+                new AddBooking().setVisible(true);
             }
         });
        

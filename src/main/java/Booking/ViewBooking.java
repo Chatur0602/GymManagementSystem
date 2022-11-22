@@ -1,6 +1,6 @@
 package Booking;
 
-import static Booking.AppointmentIoHandler.allAppointments;
+import static Booking.BookingIoHandler.allBookings;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,25 +13,25 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
-public class ViewAppointment extends javax.swing.JFrame {
-    public static String [] columnsName = {"Appointment ID", "Name", "Slot", "Customer Email", "Instructor Email", "Status"};
+public class ViewBooking extends javax.swing.JFrame {
+    public static String [] columnsName = {"Booking ID", "Name", "Slot", "Customer Email", "Instructor Email", "Status"};
     public static String dataRow [] ;
     
-    AppointmentIoHandler CIH; 
-    public ViewAppointment() {
-        allAppointments.clear();
-        CIH = new AppointmentIoHandler();
+    BookingIoHandler CIH; 
+    public ViewBooking() {
+        allBookings.clear();
+        CIH = new BookingIoHandler();
         initComponents(); 
         
-        viewAppointmentTable.setDefaultEditor(Object.class, null);
-        DefaultTableModel model = (DefaultTableModel)viewAppointmentTable.getModel();
+        viewBookingTable.setDefaultEditor(Object.class, null);
+        DefaultTableModel model = (DefaultTableModel)viewBookingTable.getModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(columnsName);
         Format date =new SimpleDateFormat("dd-MM-yyyy HH:mm");
        
-             for (Booking list : allAppointments) {
+             for (Booking list : allBookings) {
                 
-                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),date.format(list.getSlot()),list.getCustomerEmail(),list.getInstructorUsername(),Character.toString(list.getStatus())};
+                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),date.format(list.getSlot()),list.getCustomerEmail(),list.getvReg(),Character.toString(list.getStatus())};
                 model.addRow(dataRow);
         }
     }
@@ -51,7 +51,7 @@ public class ViewAppointment extends javax.swing.JFrame {
         backLabel = new javax.swing.JLabel();
         searchAppointmentButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        viewAppointmentTable = new javax.swing.JTable();
+        viewBookingTable = new javax.swing.JTable();
         lastDateDC = new com.toedter.calendar.JDateChooser();
         firstDateDC = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
@@ -68,14 +68,16 @@ public class ViewAppointment extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 230, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-logout-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 30));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-go-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -91,7 +93,7 @@ public class ViewAppointment extends javax.swing.JFrame {
         });
         jPanel3.add(searchAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
 
-        viewAppointmentTable.setModel(new javax.swing.table.DefaultTableModel(
+        viewBookingTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -99,12 +101,12 @@ public class ViewAppointment extends javax.swing.JFrame {
 
             }
         ));
-        viewAppointmentTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        viewBookingTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewAppointmentTableMouseClicked(evt);
+                viewBookingTableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(viewAppointmentTable);
+        jScrollPane1.setViewportView(viewBookingTable);
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 920, 450));
         jPanel3.add(lastDateDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, 110, -1));
@@ -136,37 +138,37 @@ public class ViewAppointment extends javax.swing.JFrame {
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         dispose();
-        AppointmentManagement CM = new AppointmentManagement();
+        BookingManagement CM = new BookingManagement();
         CM.show();
-        allAppointments.clear();
+        allBookings.clear();
     }//GEN-LAST:event_backLabelMouseClicked
     
     
     private void searchAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchAppointmentButtonActionPerformed
         
-            viewAppointmentTable.setDefaultEditor(Object.class, null);
-            DefaultTableModel model = (DefaultTableModel)viewAppointmentTable.getModel();
+            viewBookingTable.setDefaultEditor(Object.class, null);
+            DefaultTableModel model = (DefaultTableModel)viewBookingTable.getModel();
             model.setRowCount(0);
             model.setColumnIdentifiers(columnsName);
             Format dateForm = new SimpleDateFormat("dd-MM-yyyy HH:mm");          
             
-            for (Booking list : allAppointments) {
+            for (Booking list : allBookings) {
                 
                 if (list.getSlot().after(firstDateDC.getDate()) && list.getSlot().before(lastDateDC.getDate())){
                     
-                    dataRow = new String[] {Integer.toString(list.getID()),list.getName(),dateForm.format(list.getSlot()),list.getCustomerEmail(),list.getInstructorUsername(),Character.toString(list.getStatus())};
+                    dataRow = new String[] {Integer.toString(list.getID()),Integer.toString(list.getDays()),list.getName(),list.getCustomerEmail(),list.getvReg(),dateForm.format(list.getSlot()),Character.toString(list.getStatus())};
                     model.addRow(dataRow);
                 }
             }
     }//GEN-LAST:event_searchAppointmentButtonActionPerformed
 
-    private void viewAppointmentTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewAppointmentTableMouseClicked
+    private void viewBookingTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewBookingTableMouseClicked
             /*JTable source = (JTable)evt.getSource();
             int row = source.rowAtPoint( evt.getPoint() );
             int column = source.columnAtPoint( evt.getPoint() );
             String s=source.getModel().getValueAt(row, column).toString();*/
             
-    }//GEN-LAST:event_viewAppointmentTableMouseClicked
+    }//GEN-LAST:event_viewBookingTableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -185,13 +187,13 @@ public class ViewAppointment extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -199,7 +201,7 @@ public class ViewAppointment extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewAppointment().setVisible(true);
+                new ViewBooking().setVisible(true);
             }
         });
     }
@@ -214,6 +216,6 @@ public class ViewAppointment extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private com.toedter.calendar.JDateChooser lastDateDC;
     private javax.swing.JButton searchAppointmentButton;
-    private javax.swing.JTable viewAppointmentTable;
+    private javax.swing.JTable viewBookingTable;
     // End of variables declaration//GEN-END:variables
 }
