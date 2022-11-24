@@ -29,7 +29,7 @@ public class VehicleIoHandler {
     
     //Instructor Functions
     public static ArrayList<Vehicle> allInstructors = new ArrayList<Vehicle>();
-    public static String iPath = "src/main/java/TextPack/Instructors.txt"; 
+    public static String iPath = "src/main/java/TextPack/Vehicles.txt"; 
     
     public static void readInstructor() throws IOException, ParseException{
     BufferedReader br = new BufferedReader(new FileReader(iPath));
@@ -41,7 +41,7 @@ public class VehicleIoHandler {
       
       for (String lines : value) {
             Date date=new SimpleDateFormat("dd-MM-yyyy").parse(values[4]);
-            Vehicle i = new Vehicle(Integer.parseInt(values[0]),values[1],values[2],values[3],date,values[5],values[6]);
+            Vehicle i = new Vehicle(Integer.parseInt(values[0]),Integer.parseInt(values[1]),values[2],values[3],values[4],values[5]);
             allInstructors.add(i);
         }
     }
@@ -69,7 +69,7 @@ public class VehicleIoHandler {
             for(Vehicle i : allInstructors){
                SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY");
                
-               p.write(i.getID()+","+i.getName()+","+i.geteMail()+","+i.getContact()+","+dateForm.format(i.getDOB())+","+i.getUsername()+","+i.getPassword()+"\n");
+               p.write(i.getID()+","+i.getMfgYear()+","+i.getManufacturer()+","+i.getModel()+","+i.getColor()+","+i.getvReg()+"\n");
             }
             
             p.close();

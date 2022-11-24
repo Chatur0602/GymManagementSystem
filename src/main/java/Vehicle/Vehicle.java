@@ -4,19 +4,16 @@ import Vehicle.VehicleIoHandler;
 import java.util.Date;
 
 public class Vehicle {
-    private int ID;
-    private String name, eMail, username, password, contact;
-    private Date DOB ;
+    private int ID,mfgYear;
+    private String manufacturer, model, vReg, color;
 
-    public Vehicle(int ID, String name, String eMail, String contact, Date DOB, String username, String password) {
+    public Vehicle(int ID, int mfgYear, String manufacturer, String model, String vReg, String color) {
         this.ID = ID;
-        this.name = name;
-        this.eMail = eMail;
-        this.contact = contact;
-        this.DOB = DOB;
-        this.username = username;
-        this.password = password;
-        
+        this.mfgYear = mfgYear;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.vReg = vReg;
+        this.color = color;
     }
 
     public int getID() {
@@ -27,51 +24,47 @@ public class Vehicle {
         this.ID = ID;
     }
 
-    public String getContact() {
-        return contact;
+    public int getMfgYear() {
+        return mfgYear;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setMfgYear(int mfgYear) {
+        this.mfgYear = mfgYear;
     }
 
-    public String getName() {
-        return name;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
-    public String geteMail() {
-        return eMail;
+    public String getModel() {
+        return model;
     }
 
-    public void seteMail(String eMail) {
-        this.eMail = eMail;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public String getUsername() {
-        return username;
+    public String getvReg() {
+        return vReg;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setvReg(String vReg) {
+        this.vReg = vReg;
     }
 
-    public String getPassword() {
-        return password;
+    public String getColor() {
+        return color;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public Date getDOB() {
-        return DOB;
-    }
 
-    public void setDOB(Date DOB) {
-        this.DOB = DOB;
-    }
+
+
 }
