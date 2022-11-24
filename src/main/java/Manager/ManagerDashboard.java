@@ -4,7 +4,7 @@ import Admin.ManagerManagement;
 import Booking.AppointmentIoHandler;
 import Booking.AppointmentManagement;
 import Customer.CustomerManagement;
-import Instructor.InstructorManagement;
+import Vehicle.VehicleManagement;
 import Main.LaunchPanel;
 import Payment.PaymentFeedbackAnalysis;
 import javax.swing.*;
@@ -21,7 +21,7 @@ public class ManagerDashboard extends javax.swing.JFrame {
         initComponents();
         Payment.PaymentIoHandler.allPayments.clear();
         Customer.CustomerIoHandler.allCustomers.clear();
-        Instructor.InstructorIoHandler.allInstructors.clear();
+        Vehicle.VehicleIoHandler.allInstructors.clear();
         ManagerIoHandler.allManagers.clear();
         AppointmentIoHandler.allAppointments.clear();
     }
@@ -218,7 +218,7 @@ public class ManagerDashboard extends javax.swing.JFrame {
 
     private void instructorLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instructorLabelMouseClicked
         dispose();
-        InstructorManagement IM = new InstructorManagement();
+        VehicleManagement IM = new VehicleManagement();
         IM.show();
     }//GEN-LAST:event_instructorLabelMouseClicked
 

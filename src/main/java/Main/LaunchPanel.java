@@ -1,7 +1,7 @@
 package Main;
 
 import Admin.AdminLogin;
-import Instructor.InstructorLogin;
+import Customer.InstructorLogin;
 import Manager.ManagerLogin;
 import javax.swing.*;
 import java.awt.*;

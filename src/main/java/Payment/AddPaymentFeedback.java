@@ -5,7 +5,7 @@ import Booking.Booking;
 import Booking.AppointmentIoHandler;
 import static Booking.AppointmentIoHandler.addAppointment;
 import static Booking.AppointmentIoHandler.allAppointments;
-import Instructor.InstructorDashboard;
+import Vehicle.VehicleDashboard;
 import Manager.ManagerDashboard;
 import static Payment.PaymentIoHandler.allPayments;
 import javax.swing.*;
@@ -176,7 +176,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         dispose();
-        InstructorDashboard ID = new InstructorDashboard(user);
+        VehicleDashboard ID = new VehicleDashboard(user);
         ID.show();
 
     }//GEN-LAST:event_backLabelMouseClicked
@@ -238,7 +238,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
                      JOptionPane.INFORMATION_MESSAGE);
              
              dispose();
-             InstructorDashboard IDA = new InstructorDashboard(user);
+             VehicleDashboard IDA = new VehicleDashboard(user);
              IDA.show();
              
          }  else{

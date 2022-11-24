@@ -4,7 +4,6 @@ import Manager.Manager;
 import Manager.ManagerIoHandler;
 import static Manager.ManagerIoHandler.allManagers;
 import Manager.AddManager;
-import Instructor.*;
 import Manager.EditManager;
 import Manager.ManagerDashboard;
 import Manager.ManagerDashboard;

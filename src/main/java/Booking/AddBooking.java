@@ -5,9 +5,9 @@ import Booking.BookingIoHandler.*;
 import Customer.Customer;
 import Customer.CustomerIoHandler;
 import static Customer.CustomerIoHandler.allCustomers;
-import Instructor.Instructor;
-import Instructor.InstructorIoHandler;
-import static Instructor.InstructorIoHandler.allInstructors;
+import Vehicle.Vehicle;
+import Vehicle.VehicleIoHandler;
+import static Vehicle.VehicleIoHandler.allInstructors;
 import Manager.ManagerDashboard;
 import javax.swing.*;
 import java.awt.*;
@@ -28,7 +28,7 @@ public class AddBooking extends javax.swing.JFrame {
 
     BookingIoHandler AIH ;
     CustomerIoHandler CIH ;
-    InstructorIoHandler IIH ;
+    VehicleIoHandler IIH ;
 
     public AddBooking(){
         allBookings.clear();
@@ -36,7 +36,7 @@ public class AddBooking extends javax.swing.JFrame {
         allInstructors.clear();
         AIH = new BookingIoHandler() ;
         CIH = new CustomerIoHandler();
-        IIH = new InstructorIoHandler();
+        IIH = new VehicleIoHandler();
         initComponents();
         
     String [] time = {"07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"};
@@ -48,7 +48,7 @@ public class AddBooking extends javax.swing.JFrame {
             customerComboBox.addItem(list.geteMail());
         }
     
-    for (Instructor list : allInstructors){
+    for (Vehicle list : allInstructors){
             instructorComboBox.addItem(list.getUsername());
         }
     

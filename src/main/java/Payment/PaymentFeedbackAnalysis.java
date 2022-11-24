@@ -5,7 +5,7 @@ import Booking.Booking;
 import Booking.AppointmentIoHandler;
 import static Booking.AppointmentIoHandler.addAppointment;
 import static Booking.AppointmentIoHandler.allAppointments;
-import Instructor.InstructorDashboard;
+import Vehicle.VehicleDashboard;
 import Manager.ManagerDashboard;
 import static Payment.PaymentIoHandler.allPayments;
 import javax.swing.*;
