@@ -48,11 +48,11 @@ public class VehicleIoHandler {
     br.close();
 }
      
-     public static Vehicle checkInstructor(String eMail, String contact, String username){
+     public static Vehicle checkInstructor(String vReg){
         Vehicle found = null;
         
         for(Vehicle i : allInstructors){
-            if(eMail.equals(i.geteMail()) || contact.equals(i.getContact()) || username.equals(i.getUsername())){
+            if(vReg.equals(i.getvReg())){
                 found = i;
                 break;
             }

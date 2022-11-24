@@ -76,7 +76,7 @@ public class AddVehicle extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Add  Instructor");
+        jLabel1.setText("Add  Vehicle");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -327,7 +327,7 @@ public class AddVehicle extends javax.swing.JFrame {
                                     }else{
                                         
                                         
-        if(VehicleIoHandler.checkInstructor(emailField.getText(), contactField.getText(), usernameField.getText()) == null){
+        if(VehicleIoHandler.checkInstructor(emailField.getText()) == null){
              
              int ID = 1 ;
                 
