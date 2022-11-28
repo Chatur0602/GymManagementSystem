@@ -4,22 +4,11 @@ package Booking;
 import Vehicle.Vehicle;
 import java.util.Date;
 
-public class Booking extends Vehicle{
+public class Booking{
     private int ID,days ;
     private String name, customerEmail, vReg;
     private Date slot ;
     private char status ;
-
-    public Booking(int ID, int days, String name, String customerEmail, String vReg, Date slot, char status, int mfgYear, int dRate, String manufacturer, String model, String color) {
-        super(ID, mfgYear, dRate, manufacturer, model, vReg, color);
-        this.ID = ID;
-        this.days = days;
-        this.name = name;
-        this.customerEmail = customerEmail;
-        this.vReg = vReg;
-        this.slot = slot;
-        this.status = status;
-    }
     
     public Booking(int ID, int days, String name, String customerEmail, String vReg, Date slot, char status) {
         this.ID = ID;

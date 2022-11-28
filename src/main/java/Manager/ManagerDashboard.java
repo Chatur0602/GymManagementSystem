@@ -1,8 +1,8 @@
 package Manager;
 
 import SuperAdmin.AdminManagement;
-import Booking.AppointmentIoHandler;
-import Booking.AppointmentManagement;
+import Booking.BookingIoHandler;
+import Booking.BookingManagement;
 import Customer.CustomerManagement;
 import Vehicle.VehicleManagement;
 import Main.LaunchPanel;
@@ -21,9 +21,9 @@ public class ManagerDashboard extends javax.swing.JFrame {
         initComponents();
         Payment.PaymentIoHandler.allPayments.clear();
         Customer.CustomerIoHandler.allCustomers.clear();
-        Vehicle.VehicleIoHandler.allInstructors.clear();
+        Vehicle.VehicleIoHandler.allVehicles.clear();
         ManagerIoHandler.allManagers.clear();
-        AppointmentIoHandler.allAppointments.clear();
+        BookingIoHandler.allBookings.clear();
     }
 
     /**
@@ -230,7 +230,7 @@ public class ManagerDashboard extends javax.swing.JFrame {
 
     private void crmLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crmLabel2MouseClicked
         dispose();
-        AppointmentManagement AM = new AppointmentManagement();
+        BookingManagement AM = new BookingManagement();
         AM.show() ;
     }//GEN-LAST:event_crmLabel2MouseClicked
 

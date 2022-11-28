@@ -30,8 +30,9 @@ public class AddCustomerBooking extends javax.swing.JFrame {
     BookingIoHandler AIH ;
     CustomerIoHandler CIH ;
     VehicleIoHandler IIH ;
+    public static String user ;
 
-    public AddCustomerBooking(){
+    public AddCustomerBooking(String user){
         allBookings.clear();
         allCustomers.clear();
         allVehicles.clear();
@@ -39,16 +40,11 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         CIH = new CustomerIoHandler();
         IIH = new VehicleIoHandler();
         initComponents();
+        AddCustomerBooking.user = user;
         
     String [] time = {"07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"};
     timeComboBox.setModel(new DefaultComboBoxModel(time));
 
-
-    
-    for (Customer list : allCustomers) {
-            customerComboBox.addItem(list.geteMail());
-        }
-    
     for (Vehicle list : allVehicles){
             vehicleComboBox.addItem(list.getvReg());
         }
@@ -132,8 +128,9 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jPanel3.add(instructorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
         jPanel3.add(crmLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
 
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Name");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 50, 30));
 
@@ -173,13 +170,15 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         });
         jPanel3.add(timeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 90, -1));
 
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Days");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 70, 20));
 
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Car Reg No.");
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 90, 20));
 
@@ -191,8 +190,9 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         });
         jPanel3.add(addAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, -1, -1));
 
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Pick up");
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 70, 20));
         jPanel3.add(appointmentDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 140, 30));
@@ -229,8 +229,9 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jPanel3.add(manufacturerField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 190, 20));
         jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 190, 10));
 
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Manufacturer");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 100, 30));
 
@@ -247,8 +248,9 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jPanel3.add(modelField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 190, 20));
         jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 190, 10));
 
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
         jLabel10.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Model");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 50, 30));
 
@@ -265,8 +267,9 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jPanel3.add(mfgField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 190, 20));
         jPanel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 190, 10));
 
+        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
         jLabel11.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Mfg Year");
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 70, 30));
 
@@ -283,8 +286,9 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jPanel3.add(dRateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 190, 20));
         jPanel3.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 190, 10));
 
+        jLabel12.setBackground(new java.awt.Color(0, 0, 0));
         jLabel12.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Daily Rate");
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 90, 30));
 
@@ -301,8 +305,9 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jPanel3.add(colorField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 190, 20));
         jPanel3.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 190, 10));
 
+        jLabel13.setBackground(new java.awt.Color(0, 0, 0));
         jLabel13.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Color");
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 70, 30));
 
@@ -391,7 +396,7 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         SimpleDateFormat slotFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");  
         Date slot = slotFormat.parse(dateSlot) ;
         
-            if(BookingIoHandler.checkBooking(slotFormat.format(slot), vehicleComboBox.getSelectedItem().toString(), customerComboBox.getSelectedItem().toString()) == null){
+            if(BookingIoHandler.checkBooking(slotFormat.format(slot), vehicleComboBox.getSelectedItem().toString(), user) == null){
 
                 int ID = 1 ;
 
@@ -399,7 +404,7 @@ public class AddCustomerBooking extends javax.swing.JFrame {
                     ID = allBookings.get(allBookings.size() - 1).getID() + 1;
                 }
             
-                Booking c = new Booking(ID, Integer.parseInt(jSpinner1.getValue().toString()), nameField.getText(), customerComboBox.getSelectedItem().toString(), vehicleComboBox.getSelectedItem().toString(),slot,'O');
+                Booking c = new Booking(ID, Integer.parseInt(jSpinner1.getValue().toString()), nameField.getText(), user, vehicleComboBox.getSelectedItem().toString(),slot,'O');
                 
                 BookingIoHandler.allBookings.add(c);
                 BookingIoHandler.addBooking();
@@ -419,7 +424,7 @@ public class AddCustomerBooking extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(null,
-                        "Booking Already Exists or Instructor Busy, try a different instructor or slot", "Error",
+                        "Booking Already Exists or Vehicle is booked, try a different vehicle or slot", "Error",
                         JOptionPane.WARNING_MESSAGE);
                 
                     }
@@ -746,7 +751,7 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddCustomerBooking().setVisible(true);
+                new AddCustomerBooking(user).setVisible(true);
             }
         });
        
