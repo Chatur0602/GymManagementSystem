@@ -46,25 +46,24 @@ public class AddVehicle extends javax.swing.JFrame {
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        nameField = new javax.swing.JTextField();
+        mnfField = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        emailField = new javax.swing.JTextField();
+        modelField = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        usernameField = new javax.swing.JTextField();
+        colorField = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
-        jLabel9 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
         addInstructorButton = new javax.swing.JButton();
-        validationField = new javax.swing.JPasswordField();
-        passwordField = new javax.swing.JPasswordField();
-        contactField = new javax.swing.JTextField();
+        dRateField = new javax.swing.JPasswordField();
+        vRegField = new javax.swing.JPasswordField();
+        mfgField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -98,22 +97,22 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel3.setText("Manufacturer");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 100, 30));
 
-        nameField.setBackground(new java.awt.Color(0, 51, 102));
-        nameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        nameField.setForeground(new java.awt.Color(204, 204, 204));
-        nameField.setToolTipText("Password");
-        nameField.setBorder(null);
-        nameField.addFocusListener(new java.awt.event.FocusAdapter() {
+        mnfField.setBackground(new java.awt.Color(0, 51, 102));
+        mnfField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        mnfField.setForeground(new java.awt.Color(204, 204, 204));
+        mnfField.setToolTipText("Password");
+        mnfField.setBorder(null);
+        mnfField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                nameFieldFocusGained(evt);
+                mnfFieldFocusGained(evt);
             }
         });
-        nameField.addActionListener(new java.awt.event.ActionListener() {
+        mnfField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameFieldActionPerformed(evt);
+                mnfFieldActionPerformed(evt);
             }
         });
-        jPanel3.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 129, 20));
+        jPanel3.add(mnfField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 129, 20));
         jPanel3.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 130, 10));
 
         jLabel4.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
@@ -121,86 +120,81 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel4.setText("Mfg. Year");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 80, 30));
 
-        emailField.setBackground(new java.awt.Color(0, 51, 102));
-        emailField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        emailField.setForeground(new java.awt.Color(204, 204, 204));
-        emailField.setToolTipText("Password");
-        emailField.setBorder(null);
-        emailField.addFocusListener(new java.awt.event.FocusAdapter() {
+        modelField.setBackground(new java.awt.Color(0, 51, 102));
+        modelField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        modelField.setForeground(new java.awt.Color(204, 204, 204));
+        modelField.setToolTipText("Password");
+        modelField.setBorder(null);
+        modelField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                emailFieldFocusGained(evt);
+                modelFieldFocusGained(evt);
             }
         });
-        jPanel3.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 129, 20));
+        jPanel3.add(modelField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 129, 20));
         jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 130, 10));
 
         jLabel5.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 153, 153));
         jLabel5.setText("Model");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 80, 30));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 80, 30));
         jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 130, 10));
 
         jLabel7.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel7.setText("Username");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 80, 30));
+        jLabel7.setText("Color");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 80, 30));
 
-        usernameField.setBackground(new java.awt.Color(0, 51, 102));
-        usernameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        usernameField.setForeground(new java.awt.Color(204, 204, 204));
-        usernameField.setToolTipText("Password");
-        usernameField.setBorder(null);
-        usernameField.addFocusListener(new java.awt.event.FocusAdapter() {
+        colorField.setBackground(new java.awt.Color(0, 51, 102));
+        colorField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        colorField.setForeground(new java.awt.Color(204, 204, 204));
+        colorField.setToolTipText("Password");
+        colorField.setBorder(null);
+        colorField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                usernameFieldFocusGained(evt);
+                colorFieldFocusGained(evt);
             }
         });
-        jPanel3.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 129, 20));
-        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 130, 10));
+        jPanel3.add(colorField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 129, 20));
+        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 130, 10));
 
         jLabel8.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel8.setText("Username");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 80, 30));
-        jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 130, 10));
-
-        jLabel9.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel9.setText("Password");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 80, 30));
-        jPanel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 130, 10));
+        jLabel8.setText("Reg No.");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 80, 30));
+        jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 130, 10));
+        jPanel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 130, 10));
 
         jLabel10.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel10.setText(" Confirm Pass");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 110, 30));
+        jLabel10.setText("Daily Rate");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 100, 30));
 
-        addInstructorButton.setText("Add Instructor");
+        addInstructorButton.setText("Add Vehicle");
         addInstructorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addInstructorButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(addInstructorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
+        jPanel3.add(addInstructorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, -1));
 
-        validationField.setBackground(new java.awt.Color(0, 51, 102));
-        validationField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        validationField.setForeground(new java.awt.Color(204, 204, 204));
-        validationField.setBorder(null);
-        jPanel3.add(validationField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 129, 20));
+        dRateField.setBackground(new java.awt.Color(0, 51, 102));
+        dRateField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        dRateField.setForeground(new java.awt.Color(204, 204, 204));
+        dRateField.setBorder(null);
+        jPanel3.add(dRateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 129, 20));
 
-        passwordField.setBackground(new java.awt.Color(0, 51, 102));
-        passwordField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        passwordField.setForeground(new java.awt.Color(204, 204, 204));
-        passwordField.setBorder(null);
-        jPanel3.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 129, 20));
+        vRegField.setBackground(new java.awt.Color(0, 51, 102));
+        vRegField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        vRegField.setForeground(new java.awt.Color(204, 204, 204));
+        vRegField.setBorder(null);
+        jPanel3.add(vRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 129, 20));
 
-        contactField.setBackground(new java.awt.Color(0, 51, 102));
-        contactField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        contactField.setForeground(new java.awt.Color(204, 204, 204));
-        contactField.setToolTipText("Password");
-        contactField.setBorder(null);
-        jPanel3.add(contactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 129, 20));
+        mfgField.setBackground(new java.awt.Color(0, 51, 102));
+        mfgField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        mfgField.setForeground(new java.awt.Color(204, 204, 204));
+        mfgField.setToolTipText("Password");
+        mfgField.setBorder(null);
+        jPanel3.add(mfgField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 129, 20));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -210,7 +204,9 @@ public class AddVehicle extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,23 +238,23 @@ public class AddVehicle extends javax.swing.JFrame {
 
     }//GEN-LAST:event_backLabelMouseClicked
 
-    private void nameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameFieldFocusGained
+    private void mnfFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_mnfFieldFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameFieldFocusGained
+    }//GEN-LAST:event_mnfFieldFocusGained
 
-    private void emailFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFieldFocusGained
+    private void modelFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_modelFieldFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailFieldFocusGained
+    }//GEN-LAST:event_modelFieldFocusGained
 
-    private void usernameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFieldFocusGained
+    private void colorFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_colorFieldFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameFieldFocusGained
+    }//GEN-LAST:event_colorFieldFocusGained
 
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
                try{
                 boolean characterFound = false;
                 Pattern namePattern = Pattern.compile("[^a-z ]", Pattern.CASE_INSENSITIVE);
-                Matcher name = namePattern.matcher(nameField.getText());
+                Matcher name = namePattern.matcher(mnfField.getText());
                 characterFound = name.find();
                 SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -266,60 +262,44 @@ public class AddVehicle extends javax.swing.JFrame {
                 LocalDate DOB ;
                 int Age;
                 
-                if(characterFound == true || nameField.getText().length()<4){
+                if(characterFound == true || mnfField.getText().length()<2){
                     JOptionPane.showMessageDialog(null,
-                    "Incorrect Name format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
+                    "Incorrect Manufacturer Name, Minimum 2 letters & no special characters or numbers allowed", "Warning",
                     JOptionPane.WARNING_MESSAGE);
                 } else{
-                    Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
-                            "[a-zA-Z0-9_+&*-]+)*@" +
-                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
-                            "A-Z]{2,7}$");
-                    Matcher eMail = eMailPattern.matcher(emailField.getText());
-                    characterFound = eMail.find();
 
-                    if(characterFound == false || emailField.getText().length()<8){
+                    if(characterFound == false || modelField.getText().length()<8){
                         JOptionPane.showMessageDialog(null,
                         "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
                         JOptionPane.WARNING_MESSAGE);
                         
                     } else{
                         Pattern contactPattern = Pattern.compile("[^0-9]");
-                        Matcher contact = contactPattern.matcher(contactField.getText());
+                        Matcher contact = contactPattern.matcher(mfgField.getText());
                         characterFound = contact.find();
                         
-                        if(characterFound == true || contactField.getText().length() != 10){
+                        if(characterFound == true || mfgField.getText().length() != 4){
                             JOptionPane.showMessageDialog(null,
-                        "Incorrect contact format, Must be 10 numeric digits long", "Warning",
+                        "Incorrect Registration Year format, Must be 4 numeric digits long", "Warning",
                         JOptionPane.WARNING_MESSAGE);
                         }else{
-                            dateString = format.format(dateOfBirthDC.getDate());
-                            DOB = LocalDate.parse(dateString, formatter);
-                            Age = Period.between(DOB, LocalDate.now()).getYears();
-                            
-                            if(Age<18){
+                            if(Integer.parseInt(dRateField.getText()) < 50){
                                 JOptionPane.showMessageDialog(null,
-                            "Incorrect Age, Vehicle must be at least 18 years old", "Warning",
+                            "Incorrect daily rate, minimum daily rate is MYR 50", "Warning",
                             JOptionPane.WARNING_MESSAGE);
                             }else{
                                 Pattern usernamePattern = Pattern.compile("[^a-z-0-9]", Pattern.CASE_INSENSITIVE);
-                                Matcher username = usernamePattern.matcher(usernameField.getText());
+                                Matcher username = usernamePattern.matcher(colorField.getText());
                                 characterFound = username.find();
                                 
-                                if(characterFound == true || usernameField.getText().length()<8){
+                                if(characterFound == true || colorField.getText().length()<3){
                                 JOptionPane.showMessageDialog(null,
-                                "Incorrect Username format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
+                                "Incorrect Color format, Minimum 3 letters & no special characters or numbers allowed", "Warning",
                                 JOptionPane.WARNING_MESSAGE);
                                 }else{
-                                   System.out.println(passwordField.getText() + validationField.getText() + passwordField.getText().length());
-                                    if(!passwordField.getText().equals(validationField.getText())|| passwordField.getText().length()<8){
-                                        JOptionPane.showMessageDialog(null,
-                                        "Passwords don't match, less than 8 characters","Warning",
-                                        JOptionPane.WARNING_MESSAGE);
-                                    }else{
+                                   
                                         
-                                        
-        if(VehicleIoHandler.checkVehicle(emailField.getText()) == null){
+        if(VehicleIoHandler.checkVehicle(vRegField.getText()) == null){
              
              int ID = 1 ;
                 
@@ -328,7 +308,7 @@ public class AddVehicle extends javax.swing.JFrame {
             }
             
                 
-             Vehicle i = new Vehicle(ID, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), usernameField.getText(), passwordField.getText());
+             Vehicle i = new Vehicle(ID, Integer.parseInt(mfgField.getText()), Integer.parseInt(dRateField.getText()),mnfField.getText(), modelField.getText(), vRegField.getText(),colorField.getText());
              VehicleIoHandler.allVehicles.add(i);
              VehicleIoHandler.addVehicle();
              
@@ -346,7 +326,7 @@ public class AddVehicle extends javax.swing.JFrame {
                      JOptionPane.WARNING_MESSAGE);
              
          }
-        }                                }}}}}    
+        }                                }}}} 
                 
                }catch (NullPointerException ex) {
             JOptionPane.showMessageDialog(null,
@@ -355,9 +335,9 @@ public class AddVehicle extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addInstructorButtonActionPerformed
 
-    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+    private void mnfFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnfFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameFieldActionPerformed
+    }//GEN-LAST:event_mnfFieldActionPerformed
 
     
     /**
@@ -910,8 +890,8 @@ public class AddVehicle extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addInstructorButton;
     private javax.swing.JLabel backLabel;
-    private javax.swing.JTextField contactField;
-    private javax.swing.JTextField emailField;
+    private javax.swing.JTextField colorField;
+    private javax.swing.JPasswordField dRateField;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -920,7 +900,6 @@ public class AddVehicle extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator3;
@@ -929,9 +908,9 @@ public class AddVehicle extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JTextField nameField;
-    private javax.swing.JPasswordField passwordField;
-    private javax.swing.JTextField usernameField;
-    private javax.swing.JPasswordField validationField;
+    private javax.swing.JTextField mfgField;
+    private javax.swing.JTextField mnfField;
+    private javax.swing.JTextField modelField;
+    private javax.swing.JPasswordField vRegField;
     // End of variables declaration//GEN-END:variables
 }
