@@ -1,7 +1,7 @@
 package Booking;
 
 import static Booking.BookingIoHandler.allBookings;
-import Manager.ManagerDashboard;
+import Admin.AdminDashboard;
 import javax.swing.*;
 import java.awt.*;
 import java.text.Format;
@@ -153,7 +153,7 @@ public class BookingManagement extends javax.swing.JFrame {
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
 
         dispose();
-        ManagerDashboard MD = new ManagerDashboard();
+        AdminDashboard MD = new AdminDashboard();
         MD.show();
 
 

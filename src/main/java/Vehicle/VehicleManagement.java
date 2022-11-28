@@ -1,8 +1,8 @@
 package Vehicle;
 
 import static Vehicle.VehicleIoHandler.*;
-import Manager.ManagerDashboard;
-import Manager.ManagerLogin;
+import Admin.AdminDashboard;
+import Admin.AdminLogin;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -152,7 +152,7 @@ public class VehicleManagement extends javax.swing.JFrame {
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         dispose();
-        ManagerDashboard MD = new ManagerDashboard();
+        AdminDashboard MD = new AdminDashboard();
         MD.show();
     }//GEN-LAST:event_backLabelMouseClicked
 

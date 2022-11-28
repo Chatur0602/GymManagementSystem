@@ -1,7 +1,7 @@
 package Customer;
 
 import static Customer.CustomerIoHandler.*;
-import Manager.ManagerDashboard;
+import Admin.AdminDashboard;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;

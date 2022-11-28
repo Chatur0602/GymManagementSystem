@@ -1,16 +1,16 @@
 package SuperAdmin;
 
-import Manager.Manager;
-import Manager.ManagerIoHandler;
-import static Manager.ManagerIoHandler.allManagers;
-import Manager.AddManager;
-import Manager.EditManager;
-import Manager.ManagerDashboard;
-import Manager.ManagerDashboard;
-import Manager.ManagerIoHandler;
-import static Manager.ManagerIoHandler.allManagers;
-import Manager.ManagerLogin;
-import Manager.ViewManager;
+import Admin.Admin;
+import Admin.AdminIoHandler;
+import static Admin.AdminIoHandler.allManagers;
+import Admin.AddAdmin;
+import Admin.EditAdmin;
+import Admin.AdminDashboard;
+import Admin.AdminDashboard;
+import Admin.AdminIoHandler;
+import static Admin.AdminIoHandler.allManagers;
+import Admin.AdminLogin;
+import Admin.ViewAdmin;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -19,7 +19,7 @@ import java.awt.event.ActionListener;
 /* @author Nikhil */
 public class AdminManagement extends javax.swing.JFrame {
 
-    ManagerIoHandler MIH; 
+    AdminIoHandler MIH; 
     public AdminManagement() {
         initComponents();
         allManagers.clear();
@@ -173,7 +173,7 @@ public class AdminManagement extends javax.swing.JFrame {
 
     private void addLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelMouseClicked
         dispose();
-        AddManager AM = new AddManager();
+        AddAdmin AM = new AddAdmin();
         AM.show();
         
     }//GEN-LAST:event_addLabelMouseClicked
@@ -182,12 +182,12 @@ public class AdminManagement extends javax.swing.JFrame {
       try{
         String eMail = JOptionPane.showInputDialog("Enter the Email ID of the Manager you'd like to Delete");
         
-        MIH = new ManagerIoHandler();
+        MIH = new AdminIoHandler();
         boolean userFound = false ;
         int index = 0 ;
         String name = null ;
         
-            for (Manager list : allManagers) {
+            for (Admin list : allManagers) {
                   if (eMail.toLowerCase().equals(list.geteMail().toLowerCase())){
                     index = allManagers.indexOf(list);
                     name = list.getName();
@@ -203,7 +203,7 @@ public class AdminManagement extends javax.swing.JFrame {
                 
                 if (confirmation == JOptionPane.YES_OPTION) {
                     allManagers.remove(index);
-                    ManagerIoHandler.addManager();
+                    AdminIoHandler.addManager();
                     JOptionPane.showMessageDialog(null, "Manager " + name + " deleted", "Manager Deleted", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(null, "Manager " + name + " not deleted", "Manager Not Deleted", JOptionPane.INFORMATION_MESSAGE);
@@ -224,13 +224,13 @@ public class AdminManagement extends javax.swing.JFrame {
 
     private void viewLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewLabelMouseClicked
         dispose();
-        ViewManager VM = new ViewManager();
+        ViewAdmin VM = new ViewAdmin();
         VM.show();
     }//GEN-LAST:event_viewLabelMouseClicked
 
     private void editLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseClicked
         dispose();
-        EditManager EM = new EditManager();
+        EditAdmin EM = new EditAdmin();
         EM.show();
     }//GEN-LAST:event_editLabelMouseClicked
 

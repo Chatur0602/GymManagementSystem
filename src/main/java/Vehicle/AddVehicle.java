@@ -3,8 +3,8 @@ package Vehicle;
 
 import Customer.AddCustomer;
 import static Vehicle.VehicleIoHandler.allVehicles;
-import Manager.ManagerDashboard;
-import Manager.ManagerLogin;
+import Admin.AdminDashboard;
+import Admin.AdminLogin;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

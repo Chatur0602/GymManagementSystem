@@ -6,7 +6,7 @@ import Booking.BookingIoHandler;
 import static Booking.BookingIoHandler.addBooking;
 import static Booking.BookingIoHandler.allBookings;
 import Customer.CustomerDashboard;
-import Manager.ManagerDashboard;
+import Admin.AdminDashboard;
 import static Payment.PaymentIoHandler.allPayments;
 import javax.swing.*;
 import java.awt.*;

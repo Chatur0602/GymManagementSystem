@@ -1,6 +1,5 @@
 package SuperAdmin;
 
-import Manager.*;
 import Main.LaunchPanel;
 import javax.swing.*;
 import java.awt.*;

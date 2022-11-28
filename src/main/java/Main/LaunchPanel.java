@@ -2,7 +2,7 @@ package Main;
 
 import SuperAdmin.SuperadminLogin;
 import Customer.CustomerLogin;
-import Manager.ManagerLogin;
+import Admin.AdminLogin;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -154,7 +154,7 @@ public class LaunchPanel extends javax.swing.JFrame {
 
     private void managerPath(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerPath
             dispose();
-            ManagerLogin ML = new ManagerLogin();
+            AdminLogin ML = new AdminLogin();
             ML.show();
     }//GEN-LAST:event_managerPath
 

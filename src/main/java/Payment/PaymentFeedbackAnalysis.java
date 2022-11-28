@@ -6,7 +6,7 @@ import Booking.AppointmentIoHandler;
 import static Booking.AppointmentIoHandler.addAppointment;
 import static Booking.AppointmentIoHandler.allAppointments;
 import Customer.CustomerDashboard;
-import Manager.ManagerDashboard;
+import Admin.AdminDashboard;
 import static Payment.PaymentIoHandler.allPayments;
 import javax.swing.*;
 import java.awt.*;
@@ -174,7 +174,7 @@ public class PaymentFeedbackAnalysis extends javax.swing.JFrame {
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
 
         dispose();
-        ManagerDashboard MD = new ManagerDashboard();
+        AdminDashboard MD = new AdminDashboard();
         MD.show();
 
     }//GEN-LAST:event_backLabelMouseClicked

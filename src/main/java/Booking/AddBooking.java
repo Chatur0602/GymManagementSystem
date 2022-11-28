@@ -8,7 +8,7 @@ import static Customer.CustomerIoHandler.allCustomers;
 import Vehicle.Vehicle;
 import Vehicle.VehicleIoHandler;
 import static Vehicle.VehicleIoHandler.allVehicles;
-import Manager.ManagerDashboard;
+import Admin.AdminDashboard;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
