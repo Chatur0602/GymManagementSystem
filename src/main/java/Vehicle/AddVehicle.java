@@ -54,16 +54,16 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        colorField = new javax.swing.JTextField();
+        vRegField = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
         addInstructorButton = new javax.swing.JButton();
-        dRateField = new javax.swing.JPasswordField();
-        vRegField = new javax.swing.JPasswordField();
         mfgField = new javax.swing.JTextField();
+        colorField1 = new javax.swing.JTextField();
+        dRateField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -144,17 +144,17 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel7.setText("Color");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 80, 30));
 
-        colorField.setBackground(new java.awt.Color(0, 51, 102));
-        colorField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        colorField.setForeground(new java.awt.Color(204, 204, 204));
-        colorField.setToolTipText("Password");
-        colorField.setBorder(null);
-        colorField.addFocusListener(new java.awt.event.FocusAdapter() {
+        vRegField.setBackground(new java.awt.Color(0, 51, 102));
+        vRegField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        vRegField.setForeground(new java.awt.Color(204, 204, 204));
+        vRegField.setToolTipText("Password");
+        vRegField.setBorder(null);
+        vRegField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                colorFieldFocusGained(evt);
+                vRegFieldFocusGained(evt);
             }
         });
-        jPanel3.add(colorField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 129, 20));
+        jPanel3.add(vRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 129, 20));
         jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 130, 10));
 
         jLabel8.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
@@ -177,24 +177,36 @@ public class AddVehicle extends javax.swing.JFrame {
         });
         jPanel3.add(addInstructorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, -1));
 
-        dRateField.setBackground(new java.awt.Color(0, 51, 102));
-        dRateField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        dRateField.setForeground(new java.awt.Color(204, 204, 204));
-        dRateField.setBorder(null);
-        jPanel3.add(dRateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 129, 20));
-
-        vRegField.setBackground(new java.awt.Color(0, 51, 102));
-        vRegField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        vRegField.setForeground(new java.awt.Color(204, 204, 204));
-        vRegField.setBorder(null);
-        jPanel3.add(vRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 129, 20));
-
         mfgField.setBackground(new java.awt.Color(0, 51, 102));
         mfgField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         mfgField.setForeground(new java.awt.Color(204, 204, 204));
         mfgField.setToolTipText("Password");
         mfgField.setBorder(null);
         jPanel3.add(mfgField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 129, 20));
+
+        colorField1.setBackground(new java.awt.Color(0, 51, 102));
+        colorField1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        colorField1.setForeground(new java.awt.Color(204, 204, 204));
+        colorField1.setToolTipText("Password");
+        colorField1.setBorder(null);
+        colorField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                colorField1FocusGained(evt);
+            }
+        });
+        jPanel3.add(colorField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 129, 20));
+
+        dRateField.setBackground(new java.awt.Color(0, 51, 102));
+        dRateField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        dRateField.setForeground(new java.awt.Color(204, 204, 204));
+        dRateField.setToolTipText("Password");
+        dRateField.setBorder(null);
+        dRateField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                dRateFieldFocusGained(evt);
+            }
+        });
+        jPanel3.add(dRateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 129, 20));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -246,9 +258,9 @@ public class AddVehicle extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_modelFieldFocusGained
 
-    private void colorFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_colorFieldFocusGained
+    private void vRegFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_vRegFieldFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_colorFieldFocusGained
+    }//GEN-LAST:event_vRegFieldFocusGained
 
     private void addInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInstructorButtonActionPerformed
                try{
@@ -283,20 +295,21 @@ public class AddVehicle extends javax.swing.JFrame {
                         "Incorrect Registration Year format, Must be 4 numeric digits long", "Warning",
                         JOptionPane.WARNING_MESSAGE);
                         }else{
+                            if(vRegField.getText().length()<7){
+                                JOptionPane.showMessageDialog(null,
+                                "Incorrect Registration Number, Minimum 7 letters & no special characters or numbers allowed", "Warning",
+                                JOptionPane.WARNING_MESSAGE);
+                                }else{
                           Matcher rate = contactPattern.matcher(dRateField.getText());
                            characterFound = rate.find();
-                            
-                            if(characterFound == Integer.parseInt(dRateField.getText()) < 50){
+                            try{
+                            if(characterFound == true || Integer.parseInt(dRateField.getText()) < 50){
                                 JOptionPane.showMessageDialog(null,
-                            "Incorrect daily rate, Make sure value is numeric & daily rate is at least MYR 50", "Warning",
+                            "Incorrect daily rate, Make sure daily rate is at least MYR 50", "Warning",
                             JOptionPane.WARNING_MESSAGE);
                             }else{
             
-                                if(colorField.getText().length()<3){
-                                JOptionPane.showMessageDialog(null,
-                                "Incorrect Color format, Minimum 3 letters & no special characters or numbers allowed", "Warning",
-                                JOptionPane.WARNING_MESSAGE);
-                                }else{
+                                
                                    
                                         
         if(VehicleIoHandler.checkVehicle(vRegField.getText()) == null){
@@ -308,7 +321,7 @@ public class AddVehicle extends javax.swing.JFrame {
             }
             
                 
-             Vehicle i = new Vehicle(ID, Integer.parseInt(mfgField.getText()), Integer.parseInt(dRateField.getText()),mnfField.getText(), modelField.getText(), vRegField.getText(),colorField.getText());
+             Vehicle i = new Vehicle(ID, Integer.parseInt(mfgField.getText()), Integer.parseInt(dRateField.getText()),mnfField.getText(), modelField.getText(), vRegField.getText(),vRegField.getText());
              VehicleIoHandler.allVehicles.add(i);
              VehicleIoHandler.addVehicle();
              
@@ -326,18 +339,30 @@ public class AddVehicle extends javax.swing.JFrame {
                      JOptionPane.WARNING_MESSAGE);
              
          }
-        }                                }}}} 
-                
+        }                                }catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null,
+                                        "Please enter a  daily rate", "Error",
+                                        JOptionPane.WARNING_MESSAGE);
+        }}}} 
+                } 
                }catch (NullPointerException ex) {
             JOptionPane.showMessageDialog(null,
                                         "Please make sure all the fields are filled", "Error",
                                         JOptionPane.WARNING_MESSAGE);
-        }
+        } 
     }//GEN-LAST:event_addInstructorButtonActionPerformed
 
     private void mnfFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnfFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mnfFieldActionPerformed
+
+    private void colorField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_colorField1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colorField1FocusGained
+
+    private void dRateFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dRateFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dRateFieldFocusGained
 
     
     /**
@@ -890,8 +915,8 @@ public class AddVehicle extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addInstructorButton;
     private javax.swing.JLabel backLabel;
-    private javax.swing.JTextField colorField;
-    private javax.swing.JPasswordField dRateField;
+    private javax.swing.JTextField colorField1;
+    private javax.swing.JTextField dRateField;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -911,6 +936,6 @@ public class AddVehicle extends javax.swing.JFrame {
     private javax.swing.JTextField mfgField;
     private javax.swing.JTextField mnfField;
     private javax.swing.JTextField modelField;
-    private javax.swing.JPasswordField vRegField;
+    private javax.swing.JTextField vRegField;
     // End of variables declaration//GEN-END:variables
 }
