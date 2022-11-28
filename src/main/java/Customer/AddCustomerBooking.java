@@ -99,7 +99,7 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jSeparator10 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        dRateField1 = new javax.swing.JTextField();
+        totalField = new javax.swing.JTextField();
         jSeparator11 = new javax.swing.JSeparator();
         vRegField = new javax.swing.JTextField();
         jSeparator12 = new javax.swing.JSeparator();
@@ -328,17 +328,17 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jLabel14.setText("TOTAL");
         jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 90, 30));
 
-        dRateField1.setBackground(new java.awt.Color(0, 153, 51));
-        dRateField1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        dRateField1.setForeground(new java.awt.Color(204, 204, 204));
-        dRateField1.setToolTipText("Password");
-        dRateField1.setBorder(null);
-        dRateField1.addFocusListener(new java.awt.event.FocusAdapter() {
+        totalField.setBackground(new java.awt.Color(0, 153, 51));
+        totalField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        totalField.setForeground(new java.awt.Color(204, 204, 204));
+        totalField.setToolTipText("Password");
+        totalField.setBorder(null);
+        totalField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                dRateField1FocusGained(evt);
+                totalFieldFocusGained(evt);
             }
         });
-        jPanel3.add(dRateField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 190, 20));
+        jPanel3.add(totalField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 190, 20));
         jPanel3.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 190, 10));
 
         vRegField.setBackground(new java.awt.Color(0, 153, 51));
@@ -453,7 +453,7 @@ public class AddCustomerBooking extends javax.swing.JFrame {
                 
                 int amount = Integer.parseInt(dRateField.getText()) * Integer.parseInt(jSpinner1.getValue().toString());
             
-                Booking c = new Booking(ID, Integer.parseInt(jSpinner1.getValue().toString()), amount, nameField.getText(), user, vehicleComboBox.getSelectedItem().toString(),slot,'O');
+                Booking c = new Booking(ID, Integer.parseInt(jSpinner1.getValue().toString()), amount, nameField.getText(), user, vRegField.getText(),slot,'O');
                 
                 BookingIoHandler.allBookings.add(c);
                 BookingIoHandler.addBooking();
@@ -557,11 +557,14 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         vRegField.setEditable(false);
         dRateField.setEditable(false);
         
+        int total = dRate * Integer.parseInt(jSpinner1.getValue().toString());
+        totalField.setText(Integer.toString(total));
+        
     }//GEN-LAST:event_vehicleComboBoxItemStateChanged
 
-    private void dRateField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dRateField1FocusGained
+    private void totalFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_totalFieldFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_dRateField1FocusGained
+    }//GEN-LAST:event_totalFieldFocusGained
 
     private void vRegFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_vRegFieldFocusGained
         // TODO add your handling code here:
@@ -862,7 +865,6 @@ public class AddCustomerBooking extends javax.swing.JFrame {
     private javax.swing.JTextField colorField;
     private javax.swing.JLabel crmLabel1;
     private javax.swing.JTextField dRateField;
-    private javax.swing.JTextField dRateField1;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel instructorLabel;
     private javax.swing.JLabel jLabel1;
@@ -898,6 +900,7 @@ public class AddCustomerBooking extends javax.swing.JFrame {
     private javax.swing.JTextField nameField1;
     private javax.swing.JTextField nameField2;
     private javax.swing.JComboBox<String> timeComboBox;
+    private javax.swing.JTextField totalField;
     private javax.swing.JTextField vRegField;
     private javax.swing.JComboBox<String> vehicleComboBox;
     // End of variables declaration//GEN-END:variables
