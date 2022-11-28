@@ -268,9 +268,9 @@ public class AddVehicle extends javax.swing.JFrame {
                     JOptionPane.WARNING_MESSAGE);
                 } else{
 
-                    if(characterFound == false || modelField.getText().length()<8){
+                    if(characterFound == true || modelField.getText().length()<3){
                         JOptionPane.showMessageDialog(null,
-                        "Incorrect E-Mail format, Minimum 8 letters & must contain '@'", "Warning",
+                        "Incorrect Model Name, Minimum 3 letters & no special characters or numbers allowed", "Warning",
                         JOptionPane.WARNING_MESSAGE);
                         
                     } else{
@@ -283,16 +283,16 @@ public class AddVehicle extends javax.swing.JFrame {
                         "Incorrect Registration Year format, Must be 4 numeric digits long", "Warning",
                         JOptionPane.WARNING_MESSAGE);
                         }else{
-                            if(Integer.parseInt(dRateField.getText()) < 50){
+                          Matcher rate = contactPattern.matcher(dRateField.getText());
+                           characterFound = rate.find();
+                            
+                            if(characterFound == Integer.parseInt(dRateField.getText()) < 50){
                                 JOptionPane.showMessageDialog(null,
-                            "Incorrect daily rate, minimum daily rate is MYR 50", "Warning",
+                            "Incorrect daily rate, Make sure value is numeric & daily rate is at least MYR 50", "Warning",
                             JOptionPane.WARNING_MESSAGE);
                             }else{
-                                Pattern usernamePattern = Pattern.compile("[^a-z-0-9]", Pattern.CASE_INSENSITIVE);
-                                Matcher username = usernamePattern.matcher(colorField.getText());
-                                characterFound = username.find();
-                                
-                                if(characterFound == true || colorField.getText().length()<3){
+            
+                                if(colorField.getText().length()<3){
                                 JOptionPane.showMessageDialog(null,
                                 "Incorrect Color format, Minimum 3 letters & no special characters or numbers allowed", "Warning",
                                 JOptionPane.WARNING_MESSAGE);
