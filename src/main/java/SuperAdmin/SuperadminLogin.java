@@ -1,4 +1,4 @@
-package Admin;
+package SuperAdmin;
 
 import Manager.*;
 import Main.LaunchPanel;
@@ -8,12 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /* @author Nikhil */
-public class AdminLogin extends javax.swing.JFrame {
+public class SuperadminLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form FirstGui
      */
-    public AdminLogin() {
+    public SuperadminLogin() {
         initComponents();
     }
 
@@ -93,8 +93,8 @@ public class AdminLogin extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("Admin Login");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 150, -1));
+        jLabel1.setText("SuperAdmin Login");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 230, -1));
 
         usernameField.setBackground(new java.awt.Color(102, 0, 102));
         usernameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -210,7 +210,7 @@ public class AdminLogin extends javax.swing.JFrame {
                 JOptionPane.INFORMATION_MESSAGE);
             
             dispose();
-            ManagerManagement MM = new ManagerManagement() ;
+            AdminManagement MM = new AdminManagement() ;
             MM.show();
             
         }
@@ -237,14 +237,22 @@ public class AdminLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuperadminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuperadminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuperadminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuperadminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -257,7 +265,7 @@ public class AdminLogin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminLogin().setVisible(true);
+                new SuperadminLogin().setVisible(true);
             }
         });
      

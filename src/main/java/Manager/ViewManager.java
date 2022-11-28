@@ -1,5 +1,5 @@
 package Manager;
-import Admin.ManagerManagement;
+import SuperAdmin.AdminManagement;
 import Manager.*;
 import static Manager.ManagerIoHandler.addManager;
 import static Manager.ManagerIoHandler.allManagers;
@@ -145,7 +145,7 @@ public class ViewManager extends javax.swing.JFrame {
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         dispose();
-        ManagerManagement IM= new ManagerManagement();
+        AdminManagement IM= new AdminManagement();
         IM.show();
         allManagers.clear();
     }//GEN-LAST:event_backLabelMouseClicked

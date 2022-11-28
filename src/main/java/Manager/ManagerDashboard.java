@@ -1,6 +1,6 @@
 package Manager;
 
-import Admin.ManagerManagement;
+import SuperAdmin.AdminManagement;
 import Booking.AppointmentIoHandler;
 import Booking.AppointmentManagement;
 import Customer.CustomerManagement;

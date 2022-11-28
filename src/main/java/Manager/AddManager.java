@@ -1,6 +1,6 @@
 package Manager;
 
-import Admin.ManagerManagement;
+import SuperAdmin.AdminManagement;
 import Customer.*;
 import Manager.Manager;
 import Manager.ManagerDashboard;
@@ -267,7 +267,7 @@ public class AddManager extends javax.swing.JFrame {
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         dispose();
-        ManagerManagement MM = new ManagerManagement();
+        AdminManagement MM = new AdminManagement();
         MM.show();
     }//GEN-LAST:event_backLabelMouseClicked
 
@@ -355,7 +355,7 @@ public class AddManager extends javax.swing.JFrame {
                         JOptionPane.INFORMATION_MESSAGE);
                 
                 dispose();
-                ManagerManagement MM = new ManagerManagement();
+                AdminManagement MM = new AdminManagement();
                 MM.show();
                 
             }  else{
