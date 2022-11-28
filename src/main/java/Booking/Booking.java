@@ -5,14 +5,15 @@ import Vehicle.Vehicle;
 import java.util.Date;
 
 public class Booking{
-    private int ID,days ;
+    private int ID,days,amount ;
     private String name, customerEmail, vReg;
     private Date slot ;
     private char status ;
-    
-    public Booking(int ID, int days, String name, String customerEmail, String vReg, Date slot, char status) {
+
+    public Booking(int ID, int days, int amount, String name, String customerEmail, String vReg, Date slot, char status) {
         this.ID = ID;
         this.days = days;
+        this.amount = amount;
         this.name = name;
         this.customerEmail = customerEmail;
         this.vReg = vReg;
@@ -20,7 +21,6 @@ public class Booking{
         this.status = status;
     }
 
-   
     public int getID() {
         return ID;
     }
@@ -35,6 +35,14 @@ public class Booking{
 
     public void setDays(int days) {
         this.days = days;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public String getName() {
@@ -76,6 +84,7 @@ public class Booking{
     public void setStatus(char status) {
         this.status = status;
     }
-
+    
+    
 
 }

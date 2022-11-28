@@ -40,7 +40,7 @@ public class VehicleIoHandler {
       String[] values = line.split(",");
       
       for (String lines : value) {
-            Date date=new SimpleDateFormat("dd-MM-yyyy").parse(values[4]);
+            
             Vehicle i = new Vehicle(Integer.parseInt(values[0]),Integer.parseInt(values[1]),Integer.parseInt(values[2]),values[3],values[4],values[5],values[6]);
             allVehicles.add(i);
         }
@@ -69,7 +69,7 @@ public class VehicleIoHandler {
             for(Vehicle i : allVehicles){
                SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY");
                
-               p.write(i.getID()+","+i.getMfgYear()+","+i.getManufacturer()+","+i.getModel()+","+i.getColor()+","+i.getvReg()+"\n");
+               p.write(i.getID()+","+i.getMfgYear()+","+i.getdRate()+","+i.getManufacturer()+","+i.getModel()+","+i.getvReg()+","+i.getColor()+"\n");
             }
             
             p.close();

@@ -49,7 +49,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         appointmentLabel = new javax.swing.JLabel();
-        appointmentLabel1 = new javax.swing.JLabel();
+        bookingLabel = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
 
@@ -136,13 +136,13 @@ public class CustomerDashboard extends javax.swing.JFrame {
         });
         jPanel3.add(appointmentLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 70, 70));
 
-        appointmentLabel1.setText("  ");
-        appointmentLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        bookingLabel.setText("  ");
+        bookingLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                appointmentLabel1MouseClicked(evt);
+                bookingLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(appointmentLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 70, 70));
+        jPanel3.add(bookingLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 70, 70));
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
@@ -216,9 +216,11 @@ public class CustomerDashboard extends javax.swing.JFrame {
         AP.show();
     }//GEN-LAST:event_paymentLabelMouseClicked
 
-    private void appointmentLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appointmentLabel1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_appointmentLabel1MouseClicked
+    private void bookingLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookingLabelMouseClicked
+        dispose();
+        AddCustomerBooking ACP = new AddCustomerBooking(user);
+        ACP.show();
+    }//GEN-LAST:event_bookingLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -236,8 +238,8 @@ public class CustomerDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel appointmentLabel;
-    private javax.swing.JLabel appointmentLabel1;
     private javax.swing.JLabel backLabel;
+    private javax.swing.JLabel bookingLabel;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

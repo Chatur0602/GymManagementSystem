@@ -22,7 +22,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 public class EditVehicle extends javax.swing.JFrame {
-    public static String [] columnsName = {"Vehicle ID", "Name", "Email ID", "Phone No.", "DOB", "Username", "Password"};
+    public static String [] columnsName = {"Vehicle ID", "Manufacturer", "Model", "Mfg Year", "Color", "Vehicle Registration","Daily Rate"};
     public static String dataRow [] ;
     
     

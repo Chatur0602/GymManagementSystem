@@ -40,10 +40,10 @@ public class BookingIoHandler {
       String[] values = line.split(",");
       
       for (String lines : value) {
-            Date slot=new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(values[5]);
-            char status = values[6].charAt(0);
+            Date slot=new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(values[6]);
+            char status = values[7].charAt(0);
             
-            Booking a = new Booking(Integer.parseInt(values[0]),Integer.parseInt(values[1]),values[2],values[3],values[4],slot,status);
+            Booking a = new Booking(Integer.parseInt(values[0]),Integer.parseInt(values[1]),Integer.parseInt(values[2]),values[3],values[4],values[5],slot,status);
             allBookings.add(a);
         }
     }
@@ -72,7 +72,7 @@ public class BookingIoHandler {
             SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY HH:mm");
             
             for(Booking a : allBookings){
-               p.write(a.getID()+","+a.getDays()+","+a.getName()+","+a.getCustomerEmail()+","+a.getvReg()+","+dateForm.format(a.getSlot())+","+a.getStatus()+"\n");
+               p.write(a.getID()+","+a.getDays()+","+a.getAmount()+","+a.getName()+","+a.getCustomerEmail()+","+a.getvReg()+","+dateForm.format(a.getSlot())+","+a.getStatus()+"\n");
                //System.out.println(ID+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender());
             }
             

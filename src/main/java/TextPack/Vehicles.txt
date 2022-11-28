@@ -1,1 +1,2 @@
-1,2022,sdaaa,asdada,ada4444,ada4444
+1,2020,250,Honda,Civic,VWE2345,Blue
+2,2016,150,Toyota,Camery,WEF2305,White

@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class ViewVehicle extends javax.swing.JFrame {
     public static String dataRow [] ;
-    public static String [] columnsName = {"Vehicle ID", "Manufacturer", "Model", "MfgYear", "Color", "vReg","dRate"};
+    public static String [] columnsName = {"Vehicle ID", "Manufacturer", "Model", "Mfg Year", "Color", "Vehicle Registration","Daily Rate"};
     
     VehicleIoHandler IIH;
     public ViewVehicle() {
@@ -155,7 +155,7 @@ public class ViewVehicle extends javax.swing.JFrame {
         for (Vehicle list : allVehicles) {
                   if (list.getvReg().toLowerCase().contains(usernameField.getText().toLowerCase())){
                       
-                      dataRow = new String[] {Integer.toString(list.getID()),Integer.toString(list.getMfgYear()),list.getManufacturer(),list.getModel(),list.getvReg(),list.getColor()};
+                      dataRow = new String[] {Integer.toString(list.getID()),list.getManufacturer(),list.getModel(),Integer.toString(list.getMfgYear()),list.getColor(),list.getvReg(),Integer.toString(list.getdRate())};
                       model.addRow(dataRow);      
             }
         }  

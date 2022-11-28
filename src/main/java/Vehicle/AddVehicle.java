@@ -62,7 +62,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         addInstructorButton = new javax.swing.JButton();
         mfgField = new javax.swing.JTextField();
-        colorField1 = new javax.swing.JTextField();
+        colorField = new javax.swing.JTextField();
         dRateField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -184,17 +184,17 @@ public class AddVehicle extends javax.swing.JFrame {
         mfgField.setBorder(null);
         jPanel3.add(mfgField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 129, 20));
 
-        colorField1.setBackground(new java.awt.Color(0, 51, 102));
-        colorField1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        colorField1.setForeground(new java.awt.Color(204, 204, 204));
-        colorField1.setToolTipText("Password");
-        colorField1.setBorder(null);
-        colorField1.addFocusListener(new java.awt.event.FocusAdapter() {
+        colorField.setBackground(new java.awt.Color(0, 51, 102));
+        colorField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        colorField.setForeground(new java.awt.Color(204, 204, 204));
+        colorField.setToolTipText("Password");
+        colorField.setBorder(null);
+        colorField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                colorField1FocusGained(evt);
+                colorFieldFocusGained(evt);
             }
         });
-        jPanel3.add(colorField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 129, 20));
+        jPanel3.add(colorField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 129, 20));
 
         dRateField.setBackground(new java.awt.Color(0, 51, 102));
         dRateField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -321,7 +321,7 @@ public class AddVehicle extends javax.swing.JFrame {
             }
             
                 
-             Vehicle i = new Vehicle(ID, Integer.parseInt(mfgField.getText()), Integer.parseInt(dRateField.getText()),mnfField.getText(), modelField.getText(), vRegField.getText(),vRegField.getText());
+             Vehicle i = new Vehicle(ID, Integer.parseInt(mfgField.getText()), Integer.parseInt(dRateField.getText()),mnfField.getText(), modelField.getText(), vRegField.getText(),colorField.getText());
              VehicleIoHandler.allVehicles.add(i);
              VehicleIoHandler.addVehicle();
              
@@ -356,9 +356,9 @@ public class AddVehicle extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mnfFieldActionPerformed
 
-    private void colorField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_colorField1FocusGained
+    private void colorFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_colorFieldFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_colorField1FocusGained
+    }//GEN-LAST:event_colorFieldFocusGained
 
     private void dRateFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dRateFieldFocusGained
         // TODO add your handling code here:
@@ -915,7 +915,7 @@ public class AddVehicle extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addInstructorButton;
     private javax.swing.JLabel backLabel;
-    private javax.swing.JTextField colorField1;
+    private javax.swing.JTextField colorField;
     private javax.swing.JTextField dRateField;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
