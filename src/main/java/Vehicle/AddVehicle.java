@@ -53,8 +53,6 @@ public class AddVehicle extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
-        jLabel6 = new javax.swing.JLabel();
-        dateOfBirthDC = new com.toedter.calendar.JDateChooser();
         jLabel7 = new javax.swing.JLabel();
         usernameField = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
@@ -97,8 +95,8 @@ public class AddVehicle extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel3.setText("Name");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 50, 30));
+        jLabel3.setText("Manufacturer");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 100, 30));
 
         nameField.setBackground(new java.awt.Color(0, 51, 102));
         nameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -120,8 +118,8 @@ public class AddVehicle extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel4.setText("Phone No.");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 80, 30));
+        jLabel4.setText("Mfg. Year");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 80, 30));
 
         emailField.setBackground(new java.awt.Color(0, 51, 102));
         emailField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -138,15 +136,9 @@ public class AddVehicle extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel5.setText("Email ID");
+        jLabel5.setText("Model");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 80, 30));
         jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 130, 10));
-
-        jLabel6.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("D.O.B");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 60, 40));
-        jPanel3.add(dateOfBirthDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 130, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 153, 153));
@@ -919,7 +911,6 @@ public class AddVehicle extends javax.swing.JFrame {
     private javax.swing.JButton addInstructorButton;
     private javax.swing.JLabel backLabel;
     private javax.swing.JTextField contactField;
-    private com.toedter.calendar.JDateChooser dateOfBirthDC;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
@@ -927,7 +918,6 @@ public class AddVehicle extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
