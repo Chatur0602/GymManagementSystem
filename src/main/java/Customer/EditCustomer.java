@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Nikhi
  */
 public class EditCustomer extends javax.swing.JFrame {
-    public static String [] columnsName = {"Customer ID", "Name", "Email ID", "Phone No.", "DOB", "Gender"};
+    public static String [] columnsName = {"Customer ID", "Name", "Email ID", "Phone No.", "DOB", "Gender", "Username", "Password"};
     public static String dataRow [] ;
     
     
@@ -42,7 +42,7 @@ public class EditCustomer extends javax.swing.JFrame {
        
              for (Customer list : allCustomers) {
                
-                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),Character.toString(list.getGender())};
+                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),Character.toString(list.getGender()), list.getUsername(),list.getPassword()};
                 model.addRow(dataRow);
         }
     }
@@ -67,7 +67,7 @@ public class EditCustomer extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 51));
+        jPanel3.setBackground(new java.awt.Color(0, 153, 51));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
@@ -181,6 +181,8 @@ public class EditCustomer extends javax.swing.JFrame {
             String d = null ;
             String gender = null;
             Date date = null;
+            String username;
+            String password;
             char g;
             Customer c = null; 
             boolean validated = false ;
@@ -196,6 +198,9 @@ public class EditCustomer extends javax.swing.JFrame {
                 d = model.getValueAt(rowCount, 4).toString() ;
                 gender = model.getValueAt(rowCount, 5).toString().toUpperCase();
                 g = gender.charAt(0);
+                username = model.getValueAt(rowCount, 6).toString();
+                password = model.getValueAt(rowCount, 7).toString();
+                        
                 
                 try {
                 date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
@@ -266,10 +271,34 @@ public class EditCustomer extends javax.swing.JFrame {
                                             JOptionPane.WARNING_MESSAGE);
                                     validated = false ;
                                     break;
+                                }else{
+                                
+                                dateString = format.format(date);
+                                DOB = LocalDate.parse(dateString, formatter);
+                                Age = Period.between(DOB, LocalDate.now()).getYears();
+
+                                if(username.length()<8){
+                                    JOptionPane.showMessageDialog(null,
+                                            "Incorrect Username, Must be at least 8 characters", "Warning",
+                                            JOptionPane.WARNING_MESSAGE);
+                                    validated = false ;
+                                    break;
+                                }else{
+                                
+                                dateString = format.format(date);
+                                DOB = LocalDate.parse(dateString, formatter);
+                                Age = Period.between(DOB, LocalDate.now()).getYears();
+
+                                if(password.length()<8){
+                                    JOptionPane.showMessageDialog(null,
+                                            "Incorrect Password, Must be at least 8 characters", "Warning",
+                                            JOptionPane.WARNING_MESSAGE);
+                                    validated = false ;
+                                    break;
                                 }
                                  else{
                                         //System.out.println(Id + " | " + name + " | " + eMail + " | " + contact + " | " + date + " | " + g);
-                                        c = new Customer(Integer.parseInt(ID), name, email, contact, date, g);
+                                        c = new Customer(Integer.parseInt(ID), name, email, contact, date, g,username,password);
                                         CustomerIoHandler.allCustomers.add(c);
                                         validated = true;
 
@@ -277,7 +306,7 @@ public class EditCustomer extends javax.swing.JFrame {
                             } 
                         }
                     }
-                } 
+                } }}
             
             }catch (ParseException ex) {
                 JOptionPane.showMessageDialog(null,

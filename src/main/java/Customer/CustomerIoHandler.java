@@ -44,18 +44,18 @@ public class CustomerIoHandler {
             Date date=new SimpleDateFormat("dd-MM-yyyy").parse(values[4]);
             char gender = values[5].charAt(0);
             
-            Customer c = new Customer(Integer.parseInt(values[0]),values[1],values[2],values[3],date,gender);
+            Customer c = new Customer(Integer.parseInt(values[0]),values[1],values[2],values[3],date,gender, values[6], values[7]);
             allCustomers.add(c);
         }
     }
     br.close();
 }
     
-    public static Customer checkCustomer(String email, String contact) throws IOException, ParseException{
+    public static Customer checkCustomer(String email, String contact, String username) throws IOException, ParseException{
         Customer found = null;
     
         for(Customer c : allCustomers){
-            if(email.equals(c.geteMail()) || contact.equals(c.getContact())){
+            if(email.equals(c.geteMail()) || contact.equals(c.getContact()) || username.equals(c.getUsername())){
                 found = c;
                 break;  
             }
@@ -72,7 +72,7 @@ public class CustomerIoHandler {
             SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY");
            
             for(Customer c : allCustomers){
-                p.write(c.getID()+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender()+"\n");
+                p.write(c.getID()+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender()+","+c.getUsername()+","+c.getPassword()+"\n");
                     //System.out.println(c.getID()+","+c.getName()+","+c.geteMail()+","+c.getContact()+","+dateForm.format(c.getDOB())+","+c.getGender())
             } 
             

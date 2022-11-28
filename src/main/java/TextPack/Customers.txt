@@ -1,11 +1,1 @@
-1,Nick,Nick@gmail.com,0123991306,02-04-2002,M
-2,Assran,Assran@gmail.com,0173483757,08-04-1955,M
-3,Rakesh,Jojo12@gmail.com,0176573486,09-04-1989,M
-4,Manish,Manish1911@gmail.com,0172454585,21-12-1971,M
-5,Rahul,Rahul@yahoo.com,0129323323,12-05-2004,M
-6,Anshu,Anshu@gmail.com,0173483756,05-05-2001,F
-7,Ahmed,Ahmed@hotmail.com,0102394345,10-10-1986,M
-8,Rheanna,Rheanna28@yahoo.com,0192493943,18-12-1982,F
-9,Alexandria,Alexandria@hotmail.com,0134309224,24-06-1978,F
-10,Natalie,Natalie@yahoo.com,0171381192,25-02-1997,F
-11,DDDD,DDDD@gmail.com,0123845867,06-06-2001,M
+2,Sanjay,SSMallula@hotmail.com,0134782232,08-11-2002,F,SSmalu56,SSmalu6969

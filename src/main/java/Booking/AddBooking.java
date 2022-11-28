@@ -7,7 +7,7 @@ import Customer.CustomerIoHandler;
 import static Customer.CustomerIoHandler.allCustomers;
 import Vehicle.Vehicle;
 import Vehicle.VehicleIoHandler;
-import static Vehicle.VehicleIoHandler.allInstructors;
+import static Vehicle.VehicleIoHandler.allVehicles;
 import Manager.ManagerDashboard;
 import javax.swing.*;
 import java.awt.*;
@@ -33,7 +33,7 @@ public class AddBooking extends javax.swing.JFrame {
     public AddBooking(){
         allBookings.clear();
         allCustomers.clear();
-        allInstructors.clear();
+        allVehicles.clear();
         AIH = new BookingIoHandler() ;
         CIH = new CustomerIoHandler();
         IIH = new VehicleIoHandler();
@@ -48,8 +48,8 @@ public class AddBooking extends javax.swing.JFrame {
             customerComboBox.addItem(list.geteMail());
         }
     
-    for (Vehicle list : allInstructors){
-            instructorComboBox.addItem(list.getUsername());
+    for (Vehicle list : allVehicles){
+            vehicleComboBox.addItem(list.getvReg());
         }
     
     }
@@ -76,7 +76,7 @@ public class AddBooking extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         nameField1 = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
-        instructorComboBox = new javax.swing.JComboBox<>();
+        vehicleComboBox = new javax.swing.JComboBox<>();
         timeComboBox = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -151,7 +151,7 @@ public class AddBooking extends javax.swing.JFrame {
         jPanel3.add(nameField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 129, 20));
         jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 130, 10));
 
-        jPanel3.add(instructorComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 160, -1));
+        jPanel3.add(vehicleComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 160, -1));
 
         timeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         timeComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -273,7 +273,7 @@ public class AddBooking extends javax.swing.JFrame {
         SimpleDateFormat slotFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");  
         Date slot = slotFormat.parse(dateSlot) ;
         
-            if(BookingIoHandler.checkBooking(slotFormat.format(slot), instructorComboBox.getSelectedItem().toString(), customerComboBox.getSelectedItem().toString()) == null){
+            if(BookingIoHandler.checkBooking(slotFormat.format(slot), vehicleComboBox.getSelectedItem().toString(), customerComboBox.getSelectedItem().toString()) == null){
 
                 int ID = 1 ;
 
@@ -281,7 +281,7 @@ public class AddBooking extends javax.swing.JFrame {
                     ID = allBookings.get(allBookings.size() - 1).getID() + 1;
                 }
             
-                Booking c = new Booking(ID, Integer.parseInt(jSpinner1.getValue().toString()), nameField.getText(), customerComboBox.getSelectedItem().toString(), instructorComboBox.getSelectedItem().toString(),slot,'O');
+                Booking c = new Booking(ID, Integer.parseInt(jSpinner1.getValue().toString()), nameField.getText(), customerComboBox.getSelectedItem().toString(), vehicleComboBox.getSelectedItem().toString(),slot,'O');
                 
                 BookingIoHandler.allBookings.add(c);
                 BookingIoHandler.addBooking();
@@ -291,7 +291,7 @@ public class AddBooking extends javax.swing.JFrame {
                         JOptionPane.INFORMATION_MESSAGE);
                 
                 allCustomers.clear();
-                allInstructors.clear();
+                allVehicles.clear();
                 
                 dispose();
                 BookingManagement AM = new BookingManagement();
@@ -489,7 +489,6 @@ public class AddBooking extends javax.swing.JFrame {
     private javax.swing.JLabel crmLabel1;
     private javax.swing.JComboBox<String> customerComboBox;
     private javax.swing.JLabel exitLabel;
-    private javax.swing.JComboBox<String> instructorComboBox;
     private javax.swing.JLabel instructorLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -505,5 +504,6 @@ public class AddBooking extends javax.swing.JFrame {
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField nameField1;
     private javax.swing.JComboBox<String> timeComboBox;
+    private javax.swing.JComboBox<String> vehicleComboBox;
     // End of variables declaration//GEN-END:variables
 }

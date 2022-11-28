@@ -14,7 +14,7 @@ public class VehicleManagement extends javax.swing.JFrame {
     VehicleIoHandler IIH ;
     public VehicleManagement() {
         initComponents();
-        allInstructors.clear();
+        allVehicles.clear();
     }
     
     @SuppressWarnings("unchecked")
@@ -44,8 +44,8 @@ public class VehicleManagement extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText(" Instructor Management");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 280, -1));
+        jLabel1.setText(" Vehicle Management");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 260, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -167,16 +167,16 @@ public class VehicleManagement extends javax.swing.JFrame {
        try{
         IIH = new VehicleIoHandler();
         
-        String username = JOptionPane.showInputDialog("Enter the Username of the Instructor you'd like to Delete");
+            String vReg = JOptionPane.showInputDialog("Enter the Registration Number of the Vehicle you'd like to Delete");
         boolean userFound = false ;
         int index = 0 ;
-        String name = null ;
+ 
+        String details = null;
         
-            for (Vehicle list : allInstructors) {
-                  if (username.toLowerCase().equals(list.getUsername().toLowerCase())){
-                    index = allInstructors.indexOf(list);
-                    name = list.getName();
-
+            for (Vehicle list : allVehicles) {
+                  if (vReg.toLowerCase().equals(list.getvReg().toLowerCase())){
+                    index = allVehicles.indexOf(list);
+                    details = list.getManufacturer() + " " +list.getModel() ;
                     userFound = true;
                 }
             }
@@ -184,22 +184,22 @@ public class VehicleManagement extends javax.swing.JFrame {
             if(userFound == true){
                 //System.out.println(index+" "+ name);
                 int confirmation = JOptionPane.showConfirmDialog(null,
-                "Instructor '" + name + "' with the corrosponding Username '" + username + "' found, would you like to delete?" , "Delete Confirmation", JOptionPane.YES_NO_OPTION);
+                "Vehicle '" + vReg + "' with the corrosponding Name '" + details + "' found, would you like to delete?" , "Delete Confirmation", JOptionPane.YES_NO_OPTION);
                 
                 if (confirmation == JOptionPane.YES_OPTION) {
-                    allInstructors.remove(index);
-                    VehicleIoHandler.addInstructor();
-                    JOptionPane.showMessageDialog(null, "Intrusctor " + name + " deleted", "Instructor Deleted", JOptionPane.INFORMATION_MESSAGE);
+                    allVehicles.remove(index);
+                    VehicleIoHandler.addVehicle();
+                    JOptionPane.showMessageDialog(null, "Vehicle " + vReg + " deleted", "Vehicle Deleted", JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Instructor " + name + " not deleted", "Instructor Not Deleted", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Vehicle " + vReg + " not deleted", "Vehicle Not Deleted", JOptionPane.INFORMATION_MESSAGE);
                    
                 }
             }
                     
             if (userFound == false) {
-                JOptionPane.showMessageDialog(null,"Instructor doesn't exist! Please try agiain","Alert",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Vehicle doesn't exist! Please try agiain","Alert",JOptionPane.WARNING_MESSAGE);
             }
-    allInstructors.clear();
+            allVehicles.clear();
        }catch(NullPointerException e){
            
        }

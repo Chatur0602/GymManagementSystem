@@ -1,7 +1,7 @@
 package Main;
 
 import Admin.AdminLogin;
-import Customer.InstructorLogin;
+import Customer.CustomerLogin;
 import Manager.ManagerLogin;
 import javax.swing.*;
 import java.awt.*;
@@ -169,7 +169,7 @@ public class LaunchPanel extends javax.swing.JFrame {
 
     private void instructorPath(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instructorPath
             dispose();
-            InstructorLogin IL = new InstructorLogin();
+            CustomerLogin IL = new CustomerLogin();
             IL.show();
     }//GEN-LAST:event_instructorPath
 

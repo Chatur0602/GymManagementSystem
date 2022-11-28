@@ -12,7 +12,7 @@ public class VehicleIoHandler {
     
     public VehicleIoHandler(){
         try{
-        readInstructor();
+        readVehicle();
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Can't Read In Constructor");
         }
@@ -27,11 +27,11 @@ public class VehicleIoHandler {
         fwOb.close();
     }
     
-    //Instructor Functions
-    public static ArrayList<Vehicle> allInstructors = new ArrayList<Vehicle>();
+    //Vehicle Functions
+    public static ArrayList<Vehicle> allVehicles = new ArrayList<Vehicle>();
     public static String iPath = "src/main/java/TextPack/Vehicles.txt"; 
     
-    public static void readInstructor() throws IOException, ParseException{
+    public static void readVehicle() throws IOException, ParseException{
     BufferedReader br = new BufferedReader(new FileReader(iPath));
     String line = null;
     
@@ -42,16 +42,16 @@ public class VehicleIoHandler {
       for (String lines : value) {
             Date date=new SimpleDateFormat("dd-MM-yyyy").parse(values[4]);
             Vehicle i = new Vehicle(Integer.parseInt(values[0]),Integer.parseInt(values[1]),values[2],values[3],values[4],values[5]);
-            allInstructors.add(i);
+            allVehicles.add(i);
         }
     }
     br.close();
 }
      
-     public static Vehicle checkInstructor(String vReg){
+     public static Vehicle checkVehicle(String vReg){
         Vehicle found = null;
         
-        for(Vehicle i : allInstructors){
+        for(Vehicle i : allVehicles){
             if(vReg.equals(i.getvReg())){
                 found = i;
                 break;
@@ -60,24 +60,24 @@ public class VehicleIoHandler {
         return found;
     }
     
-    public static void addInstructor(){
+    public static void addVehicle(){
         try{
             clearFile(iPath);
             BufferedWriter p = new BufferedWriter(
                 new FileWriter(iPath, true));
             
-            for(Vehicle i : allInstructors){
+            for(Vehicle i : allVehicles){
                SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY");
                
                p.write(i.getID()+","+i.getMfgYear()+","+i.getManufacturer()+","+i.getModel()+","+i.getColor()+","+i.getvReg()+"\n");
             }
             
             p.close();
-            allInstructors.clear();
+            allVehicles.clear();
             
         }catch(Exception e){
                 JOptionPane.showMessageDialog(null,
-                "Instructor Not Added, Please Try Again", "Error",
+                "Vehicle Not Added, Please Try Again", "Error",
                 JOptionPane.ERROR_MESSAGE);
         }   
     }

@@ -2,10 +2,10 @@ package Payment;
 
 
 import Booking.Booking;
-import Booking.AppointmentIoHandler;
-import static Booking.AppointmentIoHandler.addAppointment;
-import static Booking.AppointmentIoHandler.allAppointments;
-import Vehicle.VehicleDashboard;
+import Booking.BookingIoHandler;
+import static Booking.BookingIoHandler.addBooking;
+import static Booking.BookingIoHandler.allBookings;
+import Customer.CustomerDashboard;
 import Manager.ManagerDashboard;
 import static Payment.PaymentIoHandler.allPayments;
 import javax.swing.*;
@@ -19,22 +19,22 @@ import java.util.regex.Pattern;
 /* @author Nikhil */
 public class AddPaymentFeedback extends javax.swing.JFrame {
  
-    AppointmentIoHandler AIH; 
+    BookingIoHandler AIH; 
     PaymentIoHandler PIH ;
     public static String user ;
     private int index = 0 ;
     
     public AddPaymentFeedback(String user) {
-        AIH = new AppointmentIoHandler();
+        AIH = new BookingIoHandler();
         PIH = new PaymentIoHandler();
         initComponents();
         AddPaymentFeedback.user = user;
          
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm"); 
         
-         for (Booking list : allAppointments) {
-             if(user.equals(list.getInstructorUsername()) && list.getStatus() == 'O'){
-            appointmentComboBox.addItem(list.getID() +" | "+ list.getName() +" | "+ formatter.format(list.getSlot()) +" | "+  list.getCustomerEmail());
+         for (Booking list : allBookings) {
+             if(user.equals(list.getCustomerEmail()) && list.getStatus() == 'O'){
+            appointmentComboBox.addItem(list.getID() +" | "+ list.getvReg() +" | "+ list.getManufacturer() +" | " + formatter.format(list.getSlot()) +" | "+  list.getCustomerEmail());
             }
         }
     }
@@ -176,7 +176,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         dispose();
-        VehicleDashboard ID = new VehicleDashboard(user);
+        CustomerDashboard ID = new CustomerDashboard(user);
         ID.show();
 
     }//GEN-LAST:event_backLabelMouseClicked
@@ -212,7 +212,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
              String instUser = null ;
              char status = ' ' ;
              
-             for (Booking list : allAppointments) {
+             for (Booking list : allBookings) {
                      if (aID == list.getID()){
                          appID = list.getID();
                          appName = list.getName();
@@ -220,7 +220,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
                          custEmail = list.getCustomerEmail();
                          instUser = list.getInstructorUsername();
                          status = list.getStatus();
-                         index = allAppointments.indexOf(list);
+                         index = allBookings.indexOf(list);
                      }
                 }
              
@@ -229,8 +229,8 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
              PaymentIoHandler.addPayment();
              
              Booking a = new Booking(appID, appName, appSlot, custEmail, instUser, 'C');
-             allAppointments.set(index, a);
-             addAppointment();
+             allBookings.set(index, a);
+             addBooking();
              
              
              JOptionPane.showMessageDialog(null,
@@ -238,7 +238,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
                      JOptionPane.INFORMATION_MESSAGE);
              
              dispose();
-             VehicleDashboard IDA = new VehicleDashboard(user);
+             CustomerDashboard IDA = new CustomerDashboard(user);
              IDA.show();
              
          }  else{
@@ -247,7 +247,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
                      JOptionPane.WARNING_MESSAGE);
              
          }  
-        allAppointments.clear();
+        allBookings.clear();
     }catch(NumberFormatException e){
         JOptionPane.showMessageDialog(null,
             "Please Enter A Valid Numeric Amount", "Error",

@@ -1,7 +1,7 @@
 package Vehicle;
 
-import static Vehicle.VehicleIoHandler.addInstructor;
-import static Vehicle.VehicleIoHandler.allInstructors;
+import static Vehicle.VehicleIoHandler.addVehicle;
+import static Vehicle.VehicleIoHandler.allVehicles;
 import java.time.format.DateTimeFormatter;
 import static java.lang.String.format;
 import java.text.Format;
@@ -22,24 +22,24 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 public class EditVehicle extends javax.swing.JFrame {
-    public static String [] columnsName = {"Instructor ID", "Name", "Email ID", "Phone No.", "DOB", "Username", "Password"};
+    public static String [] columnsName = {"Vehicle ID", "Name", "Email ID", "Phone No.", "DOB", "Username", "Password"};
     public static String dataRow [] ;
     
     
     VehicleIoHandler IIH; 
     public EditVehicle() {
-        allInstructors.clear();
+        allVehicles.clear();
         IIH = new VehicleIoHandler();
         initComponents(); 
         
-        DefaultTableModel model = (DefaultTableModel)viewInstructorTable.getModel();
+        DefaultTableModel model = (DefaultTableModel)viewVehicleTable.getModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(columnsName);
         Format date =new SimpleDateFormat("dd-MM-yyyy");
        
-             for (Vehicle list : allInstructors) {
+             for (Vehicle list : allVehicles) {
 
-                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()), list.getUsername(), list.getPassword()};
+                dataRow = new String[] {Integer.toString(list.getID()),Integer.toString(list.getMfgYear()),list.getManufacturer(),list.getModel(),list.getvReg(),list.getColor()};
                 model.addRow(dataRow);
         }
     }
@@ -59,7 +59,7 @@ public class EditVehicle extends javax.swing.JFrame {
         backLabel = new javax.swing.JLabel();
         saveChangesButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        viewInstructorTable = new javax.swing.JTable();
+        viewVehicleTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -96,7 +96,7 @@ public class EditVehicle extends javax.swing.JFrame {
         });
         jPanel3.add(saveChangesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 520, 110, -1));
 
-        viewInstructorTable.setModel(new javax.swing.table.DefaultTableModel(
+        viewVehicleTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -104,12 +104,12 @@ public class EditVehicle extends javax.swing.JFrame {
 
             }
         ));
-        viewInstructorTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        viewVehicleTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewInstructorTableMouseClicked(evt);
+                viewVehicleTableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(viewInstructorTable);
+        jScrollPane1.setViewportView(viewVehicleTable);
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 920, 450));
 
@@ -138,16 +138,16 @@ public class EditVehicle extends javax.swing.JFrame {
         dispose();
         VehicleManagement IM = new VehicleManagement();
         IM.show();
-        allInstructors.clear();
+        allVehicles.clear();
     }//GEN-LAST:event_backLabelMouseClicked
     
     
-    private void viewInstructorTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewInstructorTableMouseClicked
+    private void viewVehicleTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewVehicleTableMouseClicked
 
-    }//GEN-LAST:event_viewInstructorTableMouseClicked
+    }//GEN-LAST:event_viewVehicleTableMouseClicked
 
     private void saveChangesButtonMouseClicked(java.awt.event.MouseEvent evt) {                                               
-            DefaultTableModel model = (DefaultTableModel)viewInstructorTable.getModel();
+            DefaultTableModel model = (DefaultTableModel)viewVehicleTable.getModel();
             model.setColumnIdentifiers(columnsName);
             
             String Id = null;
@@ -161,7 +161,7 @@ public class EditVehicle extends javax.swing.JFrame {
             boolean validated = false;
             Vehicle i = null ; 
             
-            allInstructors.clear();
+            allVehicles.clear();
             
             for (int rowCount = 0; rowCount < model.getRowCount(); rowCount++){
                     Id = model.getValueAt(rowCount, 0).toString();
@@ -187,7 +187,7 @@ public class EditVehicle extends javax.swing.JFrame {
                 characterFound = id.find();
                 if(characterFound == true || Integer.parseInt(Id) == 0){
                     JOptionPane.showMessageDialog(null,
-                            "Incorrect Instructor ID, Use numeric characters only", "Warning",
+                            "Incorrect Vehicle ID, Use numeric characters only", "Warning",
                             JOptionPane.WARNING_MESSAGE);
                     validated = false;
                     break;
@@ -231,7 +231,7 @@ public class EditVehicle extends javax.swing.JFrame {
 
                                             if(Age<18){
                                                 JOptionPane.showMessageDialog(null,
-                                                    "Incorrect Age, Instructor must be at least 18 years old", "Warning",
+                                                    "Incorrect Age, Vehicle must be at least 18 years old", "Warning",
                                                     JOptionPane.WARNING_MESSAGE);
                                             validated = false ;
                                             break;
@@ -254,19 +254,19 @@ public class EditVehicle extends javax.swing.JFrame {
                                                             break;
                                                             }else{
                                                                     i = new Vehicle(Integer.parseInt(Id), name, email, contact, date, username, password);
-                                                                    VehicleIoHandler.allInstructors.add(i);
+                                                                    VehicleIoHandler.allVehicles.add(i);
                                                                     validated = true;
                                                             }}}}}}}
                 
             } catch (ParseException ex) {
                     JOptionPane.showMessageDialog(null,
-                            "Incorrect Instructor DOB Format", "Warning",
+                            "Incorrect Vehicle DOB Format", "Warning",
                             JOptionPane.WARNING_MESSAGE);
                             validated = false ;
                             break;
                 } catch (NumberFormatException e){
                         JOptionPane.showMessageDialog(null,
-                            "Please enter a valid Instructor ID", "Warning",
+                            "Please enter a valid Vehicle ID", "Warning",
                             JOptionPane.WARNING_MESSAGE);
                             validated = false ;
                             break;
@@ -275,9 +275,9 @@ public class EditVehicle extends javax.swing.JFrame {
             
         if (validated == true){
             JOptionPane.showMessageDialog(null,
-                "Instructor Data Successfully Updated", "Success",
+                "Vehicle Data Successfully Updated", "Success",
                 JOptionPane.INFORMATION_MESSAGE);
-            addInstructor();
+            addVehicle();
         }
         
     }
@@ -303,6 +303,6 @@ public class EditVehicle extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton saveChangesButton;
-    private javax.swing.JTable viewInstructorTable;
+    private javax.swing.JTable viewVehicleTable;
     // End of variables declaration//GEN-END:variables
 }

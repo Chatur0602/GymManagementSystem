@@ -1,7 +1,7 @@
 package Vehicle;
 
 import static Customer.CustomerIoHandler.allCustomers;
-import static Vehicle.VehicleIoHandler.allInstructors;
+import static Vehicle.VehicleIoHandler.allVehicles;
 import java.awt.List;
 import java.text.Format;
 import java.text.SimpleDateFormat;
@@ -10,11 +10,11 @@ import javax.swing.table.DefaultTableModel;
 
 public class ViewVehicle extends javax.swing.JFrame {
     public static String dataRow [] ;
-    public static String [] columnsName = {"Instructor ID", "Name", "Email ID", "Phone No.", "DOB", "Username","Password"};
+    public static String [] columnsName = {"Vehicle ID", "Name", "Email ID", "Phone No.", "DOB", "Username","Password"};
     
     VehicleIoHandler IIH;
     public ViewVehicle() {
-        allInstructors.clear();
+        allVehicles.clear();
         IIH = new VehicleIoHandler();
         initComponents();
        
@@ -24,8 +24,8 @@ public class ViewVehicle extends javax.swing.JFrame {
         model.setColumnIdentifiers(columnsName);
         Format date =new SimpleDateFormat("dd-MM-yyyy");
  
-            for (Vehicle list : allInstructors) {
-                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),list.getUsername()};
+            for (Vehicle list : allVehicles) {
+                dataRow = new String[] {Integer.toString(list.getID()),Integer.toString(list.getMfgYear()),list.getManufacturer(),list.getModel(),list.getvReg(),list.getColor()};
                 model.addRow(dataRow);
             }
     }
@@ -142,7 +142,7 @@ public class ViewVehicle extends javax.swing.JFrame {
         dispose();
         VehicleManagement IM= new VehicleManagement();
         IM.show();
-        allInstructors.clear();
+        allVehicles.clear();
     }//GEN-LAST:event_backLabelMouseClicked
 
     private void searchInstructorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchInstructorButtonActionPerformed
@@ -152,10 +152,10 @@ public class ViewVehicle extends javax.swing.JFrame {
         model.setColumnIdentifiers(columnsName);
         Format date =new SimpleDateFormat("dd-MM-yyyy");  
         
-        for (Vehicle list : allInstructors) {
-                  if (list.getUsername().toLowerCase().contains(usernameField.getText().toLowerCase())){
+        for (Vehicle list : allVehicles) {
+                  if (list.getvReg().toLowerCase().contains(usernameField.getText().toLowerCase())){
                       
-                      dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.geteMail(),list.getContact(),date.format(list.getDOB()),list.getUsername(),list.getPassword()};
+                      dataRow = new String[] {Integer.toString(list.getID()),Integer.toString(list.getMfgYear()),list.getManufacturer(),list.getModel(),list.getvReg(),list.getColor()};
                       model.addRow(dataRow);      
             }
         }  

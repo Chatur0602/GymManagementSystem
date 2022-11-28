@@ -2,7 +2,7 @@ package Vehicle;
 
 
 import Customer.AddCustomer;
-import static Vehicle.VehicleIoHandler.allInstructors;
+import static Vehicle.VehicleIoHandler.allVehicles;
 import Manager.ManagerDashboard;
 import Manager.ManagerLogin;
 import javax.swing.*;
@@ -26,7 +26,7 @@ public class AddVehicle extends javax.swing.JFrame {
     
     VehicleIoHandler IIH ;
     public AddVehicle() {
-        allInstructors.clear();
+        allVehicles.clear();
         IIH = new VehicleIoHandler();
         initComponents();
     }
@@ -307,7 +307,7 @@ public class AddVehicle extends javax.swing.JFrame {
                             
                             if(Age<18){
                                 JOptionPane.showMessageDialog(null,
-                            "Incorrect Age, Instructor must be at least 18 years old", "Warning",
+                            "Incorrect Age, Vehicle must be at least 18 years old", "Warning",
                             JOptionPane.WARNING_MESSAGE);
                             }else{
                                 Pattern usernamePattern = Pattern.compile("[^a-z-0-9]", Pattern.CASE_INSENSITIVE);
@@ -327,21 +327,21 @@ public class AddVehicle extends javax.swing.JFrame {
                                     }else{
                                         
                                         
-        if(VehicleIoHandler.checkInstructor(emailField.getText()) == null){
+        if(VehicleIoHandler.checkVehicle(emailField.getText()) == null){
              
              int ID = 1 ;
                 
-                for (Vehicle list : allInstructors) {
-                    ID = allInstructors.get(allInstructors.size() - 1).getID() + 1;
+                for (Vehicle list : allVehicles) {
+                    ID = allVehicles.get(allVehicles.size() - 1).getID() + 1;
             }
             
                 
              Vehicle i = new Vehicle(ID, nameField.getText(), emailField.getText(), contactField.getText(), dateOfBirthDC.getDate(), usernameField.getText(), passwordField.getText());
-             VehicleIoHandler.allInstructors.add(i);
-             VehicleIoHandler.addInstructor();
+             VehicleIoHandler.allVehicles.add(i);
+             VehicleIoHandler.addVehicle();
              
              JOptionPane.showMessageDialog(null,
-                     "Instructor Successfully Added", "Success",
+                     "Vehicle Successfully Added", "Success",
                      JOptionPane.INFORMATION_MESSAGE);
              
              dispose();
@@ -350,7 +350,7 @@ public class AddVehicle extends javax.swing.JFrame {
              
          }  else{
              JOptionPane.showMessageDialog(null,
-                     "Instructor Already Exists, Please Try Again", "Error",
+                     "Vehicle Already Exists, Please Try Again", "Error",
                      JOptionPane.WARNING_MESSAGE);
              
          }

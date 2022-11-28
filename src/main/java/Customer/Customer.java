@@ -5,17 +5,19 @@ import java.util.Date;
 
 public class Customer {
     private int ID ;
-    private String name, eMail, contact ;
+    private String name, eMail, contact, username, password;
     private Date DOB ;
     private char gender ; 
 
-    public Customer(int ID, String name, String eMail, String contact, Date DOB, char gender) {
+    public Customer(int ID, String name, String eMail, String contact, Date DOB, char gender, String username, String password) {
         this.ID = ID;
         this.name = name;
         this.eMail = eMail;
         this.contact = contact;
         this.DOB = DOB;
         this.gender = gender;
+        this.username = username;
+        this.password = password;
     }
 
     public int getID() {
@@ -50,6 +52,22 @@ public class Customer {
         this.contact = contact;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Date getDOB() {
         return DOB;
     }
@@ -65,7 +83,8 @@ public class Customer {
     public void setGender(char gender) {
         this.gender = gender;
     }
-    
+
+  
     
     
 }
