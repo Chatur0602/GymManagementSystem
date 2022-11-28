@@ -151,12 +151,12 @@ public class EditVehicle extends javax.swing.JFrame {
             model.setColumnIdentifiers(columnsName);
             
             String Id = null;
-            String name = null;
-            String email = null;
-            String contact = null;
-            String d = null ;
-            String username = null ;
-            String password = null ;
+            String manufacturer = null;
+            String model2 = null;
+            String mfgYear = null;
+            String color = null ;
+            String vReg = null ;
+            String dRate = null ;
             boolean characterFound = false;
             boolean validated = false;
             Vehicle i = null ; 
@@ -165,12 +165,12 @@ public class EditVehicle extends javax.swing.JFrame {
             
             for (int rowCount = 0; rowCount < model.getRowCount(); rowCount++){
                     Id = model.getValueAt(rowCount, 0).toString();
-                    name = model.getValueAt(rowCount, 1).toString();
-                    email = model.getValueAt(rowCount, 2).toString();
-                    contact = model.getValueAt(rowCount, 3).toString();
-                    d = model.getValueAt(rowCount, 4).toString() ;
-                    username = model.getValueAt(rowCount, 5).toString();
-                    password = model.getValueAt(rowCount, 6).toString();
+                    manufacturer = model.getValueAt(rowCount, 1).toString();
+                    model2 = model.getValueAt(rowCount, 2).toString();
+                    mfgYear = model.getValueAt(rowCount, 3).toString();
+                    color = model.getValueAt(rowCount, 4).toString() ;
+                    vReg = model.getValueAt(rowCount, 5).toString();
+                    dRate = model.getValueAt(rowCount, 6).toString();
                     Date date = null;
                     LocalDate DOB ;
                     String dateString;
@@ -253,7 +253,7 @@ public class EditVehicle extends javax.swing.JFrame {
                                                             validated = false;
                                                             break;
                                                             }else{
-                                                                    i = new Vehicle(Integer.parseInt(Id), name, email, contact, date, username, password);
+                                                                    i = new Vehicle(Integer.parseInt(Id), Integer.parseInt(mfgYear), Integer.parseInt(dRate), manufacturer, model2, vReg, color);
                                                                     VehicleIoHandler.allVehicles.add(i);
                                                                     validated = true;
                                                             }}}}}}}

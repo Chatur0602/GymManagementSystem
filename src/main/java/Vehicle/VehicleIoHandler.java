@@ -41,7 +41,7 @@ public class VehicleIoHandler {
       
       for (String lines : value) {
             Date date=new SimpleDateFormat("dd-MM-yyyy").parse(values[4]);
-            Vehicle i = new Vehicle(Integer.parseInt(values[0]),Integer.parseInt(values[1]),values[2],values[3],values[4],values[5]);
+            Vehicle i = new Vehicle(Integer.parseInt(values[0]),Integer.parseInt(values[1]),Integer.parseInt(values[2]),values[3],values[4],values[5],values[6]);
             allVehicles.add(i);
         }
     }
