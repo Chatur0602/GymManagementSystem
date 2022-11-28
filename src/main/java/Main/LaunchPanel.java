@@ -46,8 +46,6 @@ public class LaunchPanel extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Rage Italic", 1, 36)); // NOI18N
         jLabel4.setText("SlymGym");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\external-exercise-sleep-photo3ideastudio-lineal-color-photo3ideastudio.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -76,16 +74,15 @@ public class LaunchPanel extends javax.swing.JFrame {
 
         adminButton.setBackground(new java.awt.Color(204, 102, 0));
         adminButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        adminButton.setText("Admin Login");
+        adminButton.setText("SuperAdmin Login");
         adminButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminPath(evt);
             }
         });
-        jPanel3.add(adminButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 30));
+        jPanel3.add(adminButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 140, 30));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
@@ -100,7 +97,7 @@ public class LaunchPanel extends javax.swing.JFrame {
 
         managerButton.setBackground(new java.awt.Color(204, 102, 0));
         managerButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        managerButton.setText("Manager Login");
+        managerButton.setText("Admin Login");
         managerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 managerPath(evt);
@@ -110,7 +107,7 @@ public class LaunchPanel extends javax.swing.JFrame {
 
         instructorButton.setBackground(new java.awt.Color(204, 102, 0));
         instructorButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        instructorButton.setText("Instructor Login");
+        instructorButton.setText("Customer Login");
         instructorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 instructorPath(evt);

@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class ViewVehicle extends javax.swing.JFrame {
     public static String dataRow [] ;
-    public static String [] columnsName = {"Vehicle ID", "Name", "Email ID", "Phone No.", "DOB", "Username","Password"};
+    public static String [] columnsName = {"Vehicle ID", "Manufacturer", "Model", "MfgYear", "Color", "vReg","dRate"};
     
     VehicleIoHandler IIH;
     public ViewVehicle() {
@@ -25,7 +25,7 @@ public class ViewVehicle extends javax.swing.JFrame {
         Format date =new SimpleDateFormat("dd-MM-yyyy");
  
             for (Vehicle list : allVehicles) {
-                dataRow = new String[] {Integer.toString(list.getID()),Integer.toString(list.getMfgYear()),list.getManufacturer(),list.getModel(),list.getvReg(),list.getColor()};
+                dataRow = new String[] {Integer.toString(list.getID()),list.getManufacturer(),list.getModel(),Integer.toString(list.getMfgYear()),list.getColor(),list.getvReg(),Integer.toString(list.getdRate())};
                 model.addRow(dataRow);
             }
     }
