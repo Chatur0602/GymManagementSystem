@@ -56,7 +56,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="cc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Edit Instructor"/>
+            <Property name="text" type="java.lang.String" value="Edit Vehicle"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -68,6 +68,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="1"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\User\OneDrive - Asia Pacific University\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-logout-24.png"/>
             </Property>
           </Properties>
           <Events>
@@ -83,6 +86,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="1"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\User\OneDrive - Asia Pacific University\Documents\NetBeansProjects\GymManagementSystem\src\main\java\Resources\icons8-go-back-24.png"/>
             </Property>
           </Properties>
           <Events>

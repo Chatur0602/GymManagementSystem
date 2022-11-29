@@ -51,6 +51,7 @@ public class AdminLogin extends javax.swing.JFrame {
         jLabel4.setText("SlymGym");
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-go-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);

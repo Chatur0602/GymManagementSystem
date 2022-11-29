@@ -65,14 +65,16 @@ public class CustomerDashboard extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 250, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-logout-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 30));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-go-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -80,6 +82,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        updateLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-update-user-skin-type-7-64.png")); // NOI18N
         updateLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 updateLabelMouseClicked(evt);
@@ -97,6 +100,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
         jLabel5.setText("  Profile");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 60, 20));
 
+        paymentLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-get-cash-64.png")); // NOI18N
         paymentLabel.setText("  ");
         paymentLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -128,6 +132,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
         jLabel2.setText("Welcome, ");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 180, -1));
 
+        appointmentLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-appointment-64.png")); // NOI18N
         appointmentLabel.setText("  ");
         appointmentLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -136,6 +141,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
         });
         jPanel3.add(appointmentLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 70, 70));
 
+        bookingLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-fiat-500-64.png")); // NOI18N
         bookingLabel.setText("  ");
         bookingLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

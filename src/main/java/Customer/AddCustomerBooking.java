@@ -117,14 +117,16 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 170, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-logout-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, 30));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-go-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -136,7 +138,6 @@ public class AddCustomerBooking extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Name");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 50, 30));
 
@@ -183,13 +184,11 @@ public class AddCustomerBooking extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Days");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 70, 20));
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Car Reg No.");
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 90, 20));
 
@@ -203,7 +202,6 @@ public class AddCustomerBooking extends javax.swing.JFrame {
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Pick up");
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 70, 20));
         jPanel3.add(appointmentDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 140, 30));
@@ -242,7 +240,6 @@ public class AddCustomerBooking extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Manufacturer");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 100, 30));
 
@@ -261,7 +258,6 @@ public class AddCustomerBooking extends javax.swing.JFrame {
 
         jLabel10.setBackground(new java.awt.Color(0, 0, 0));
         jLabel10.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Model");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 50, 30));
 
@@ -280,7 +276,6 @@ public class AddCustomerBooking extends javax.swing.JFrame {
 
         jLabel11.setBackground(new java.awt.Color(0, 0, 0));
         jLabel11.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Mfg Year");
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 70, 30));
 
@@ -299,7 +294,6 @@ public class AddCustomerBooking extends javax.swing.JFrame {
 
         jLabel12.setBackground(new java.awt.Color(0, 0, 0));
         jLabel12.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Daily Rate(MYR)");
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 130, 30));
 
@@ -318,13 +312,11 @@ public class AddCustomerBooking extends javax.swing.JFrame {
 
         jLabel13.setBackground(new java.awt.Color(0, 0, 0));
         jLabel13.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Color");
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 70, 30));
 
         jLabel14.setBackground(new java.awt.Color(0, 0, 0));
         jLabel14.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("TOTAL");
         jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 90, 30));
 
@@ -356,7 +348,6 @@ public class AddCustomerBooking extends javax.swing.JFrame {
 
         jLabel15.setBackground(new java.awt.Color(0, 0, 0));
         jLabel15.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Reg No.");
         jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 130, 30));
 

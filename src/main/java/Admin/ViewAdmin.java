@@ -59,7 +59,7 @@ public class ViewAdmin extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("View Manager");
+        jLabel1.setText("View Admin");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 190, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N

@@ -51,6 +51,7 @@ public class SuperadminLogin extends javax.swing.JFrame {
         jLabel4.setText("SlymGym");
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-go-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -121,7 +122,11 @@ public class SuperadminLogin extends javax.swing.JFrame {
         jPanel3.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 129, 20));
         jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 130, 10));
         jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 130, 10));
+
+        lockIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-lock-24.png")); // NOI18N
         jPanel3.add(lockIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, 30));
+
+        userIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-user-24.png")); // NOI18N
         jPanel3.add(userIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 30, 30));
 
         loginButton.setBackground(new java.awt.Color(204, 102, 0));
@@ -139,12 +144,13 @@ public class SuperadminLogin extends javax.swing.JFrame {
         jPanel3.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 80, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-logout-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
             }
         });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, 20));
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
