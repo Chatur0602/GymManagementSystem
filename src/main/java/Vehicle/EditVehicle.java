@@ -39,8 +39,9 @@ public class EditVehicle extends javax.swing.JFrame {
        
              for (Vehicle list : allVehicles) {
 
-                dataRow = new String[] {Integer.toString(list.getID()),Integer.toString(list.getMfgYear()),list.getManufacturer(),list.getModel(),list.getvReg(),list.getColor()};
+                dataRow = new String[] {Integer.toString(list.getID()),list.getManufacturer(),list.getModel(),Integer.toString(list.getMfgYear()),list.getColor(),list.getvReg(),Integer.toString(list.getdRate())};
                 model.addRow(dataRow);
+                
         }
     }
 
@@ -149,6 +150,7 @@ public class EditVehicle extends javax.swing.JFrame {
     }//GEN-LAST:event_viewVehicleTableMouseClicked
 
     private void saveChangesButtonMouseClicked(java.awt.event.MouseEvent evt) {                                               
+            
             DefaultTableModel model = (DefaultTableModel)viewVehicleTable.getModel();
             model.setColumnIdentifiers(columnsName);
             
@@ -179,11 +181,9 @@ public class EditVehicle extends javax.swing.JFrame {
                     int Age;
                     SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-                try {
-                    date = new SimpleDateFormat("dd-MM-yyyy").parse(d);
-                
                     
-                
+                try {
+  
                 Pattern idPattern = Pattern.compile("[^0-9]");
                 Matcher id = idPattern.matcher(Id);
                 characterFound = id.find();
@@ -194,85 +194,56 @@ public class EditVehicle extends javax.swing.JFrame {
                     validated = false;
                     break;
                 }else{
-                        Pattern namePattern = Pattern.compile("[^a-z ]", Pattern.CASE_INSENSITIVE);
-                        Matcher cName = namePattern.matcher(name);
-                        characterFound = cName.find();
-                       if(characterFound == true || name.length()<4){
-                        JOptionPane.showMessageDialog(null,
-                            "Incorrect Name f=Format, Minimum 4 letters & no special characters or numbers allowed", "Warning",
-                            JOptionPane.WARNING_MESSAGE);
-                        validated = false;
-                        break;
-                       }else{
-                            Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
-                                "[a-zA-Z0-9_+&*-]+)*@" +
-                                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
-                                "A-Z]{2,7}$");
-                            Matcher eMail = eMailPattern.matcher(email);
-                            characterFound = eMail.find();
-                            if(characterFound == false || email.length()<8){
-                            JOptionPane.showMessageDialog(null,
-                                "Incorrect E-Mail Format, Minimum 8 letters & must contain '@'", "Warning",
-                                JOptionPane.WARNING_MESSAGE);
-                            validated = false;
-                            break;
-                            }else{
-                                    Pattern contactPattern = Pattern.compile("[^0-9]");
-                                    Matcher cContact = contactPattern.matcher(contact);
-                                    characterFound = cContact.find();
-                                    if(characterFound == true || contact.length() != 10){
-                                        JOptionPane.showMessageDialog(null,
-                                            "Incorrect Contact Format, Must be 10 numeric digits long", "Warning",
-                                            JOptionPane.WARNING_MESSAGE);
-                                    validated = false;
-                                    break;
-                                    }else{
-                                            dateString = format.format(date);
-                                            DOB = LocalDate.parse(dateString, formatter);
-                                            Age = Period.between(DOB, LocalDate.now()).getYears();
-
-                                            if(Age<18){
-                                                JOptionPane.showMessageDialog(null,
-                                                    "Incorrect Age, Vehicle must be at least 18 years old", "Warning",
-                                                    JOptionPane.WARNING_MESSAGE);
-                                            validated = false ;
-                                            break;
-                                            }else{
-                                                    Pattern usernamePattern = Pattern.compile("[^a-z-0-9]", Pattern.CASE_INSENSITIVE);
-                                                    Matcher userName = usernamePattern.matcher(username);
-                                                    characterFound = userName.find();
-                                                    if(characterFound == true || username.length()<8){
-                                                        JOptionPane.showMessageDialog(null,
-                                                            "Incorrect Username Format, Minimum 8 letters & no special characters or numbers allowed", "Warning",
-                                                            JOptionPane.WARNING_MESSAGE);
-                                                    validated = false;
-                                                    break;
-                                                    }else{
-                                                            if(password.length()<8){
-                                                                JOptionPane.showMessageDialog(null,
-                                                                    "Incorrect Password Format, Minimum 8 letters","Warning",
-                                                                    JOptionPane.WARNING_MESSAGE);
-                                                            validated = false;
-                                                            break;
-                                                            }else{
-                                                                    i = new Vehicle(Integer.parseInt(Id), Integer.parseInt(mfgYear), Integer.parseInt(dRate), manufacturer, model2, vReg, color);
-                                                                    VehicleIoHandler.allVehicles.add(i);
-                                                                    validated = true;
-                                                            }}}}}}}
-                
-            } catch (ParseException ex) {
+                            }if(characterFound == true || manufacturer.length()<2){
                     JOptionPane.showMessageDialog(null,
-                            "Incorrect Vehicle DOB Format", "Warning",
-                            JOptionPane.WARNING_MESSAGE);
-                            validated = false ;
+                    "Incorrect Manufacturer Name, Minimum 2 letters & no special characters or numbers allowed", "Warning",
+                    JOptionPane.WARNING_MESSAGE);
+                    break;
+                } else{
+
+                    if(characterFound == true || model2.length()<3){
+                        JOptionPane.showMessageDialog(null,
+                        "Incorrect Model Name, Minimum 3 letters & no special characters or numbers allowed", "Warning",
+                        JOptionPane.WARNING_MESSAGE);
+                        break;
+                        
+                    } else{
+                        Pattern contactPattern = Pattern.compile("[^0-9]");
+                        Matcher contact = contactPattern.matcher(mfgYear);
+                        characterFound = contact.find();
+                        
+                        if(characterFound == true || mfgYear.length() != 4){
+                            JOptionPane.showMessageDialog(null,
+                        "Incorrect Registration Year format, Must be 4 numeric digits long", "Warning",
+                        JOptionPane.WARNING_MESSAGE);
                             break;
+                        }else{
+                            if(vReg.length()<7){
+                                JOptionPane.showMessageDialog(null,
+                                "Incorrect Registration Number, Minimum 7 letters & no special characters or numbers allowed", "Warning",
+                                JOptionPane.WARNING_MESSAGE);
+                                break;
+                                }else{
+                          Matcher rate = contactPattern.matcher(dRate);
+                           characterFound = rate.find();
+                           if(characterFound == true || Integer.parseInt(dRate) < 50){
+                               JOptionPane.showMessageDialog(null,
+                                       "Incorrect daily rate, Make sure daily rate is at least MYR 50", "Warning",
+                                       JOptionPane.WARNING_MESSAGE);
+                               break;
+                           }else{
+                               i = new Vehicle(Integer.parseInt(Id), Integer.parseInt(mfgYear), Integer.parseInt(dRate), manufacturer, model2, vReg, color);
+                               VehicleIoHandler.allVehicles.add(i);
+                               validated = true;
+                           }
+            }}}} 
                 } catch (NumberFormatException e){
                         JOptionPane.showMessageDialog(null,
                             "Please enter a valid Vehicle ID", "Warning",
                             JOptionPane.WARNING_MESSAGE);
                             validated = false ;
                             break;
-                }
+                } 
         }
             
         if (validated == true){
@@ -281,8 +252,10 @@ public class EditVehicle extends javax.swing.JFrame {
                 JOptionPane.INFORMATION_MESSAGE);
             addVehicle();
         }
+            }
+    
         
-    }
+    
                                                                                             
 
     /**
@@ -308,3 +281,4 @@ public class EditVehicle extends javax.swing.JFrame {
     private javax.swing.JTable viewVehicleTable;
     // End of variables declaration//GEN-END:variables
 }
+

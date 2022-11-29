@@ -117,7 +117,6 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 170, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-logout-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
@@ -126,7 +125,6 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, 30));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-go-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -205,6 +203,12 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         jLabel9.setText("Pick up");
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 70, 20));
         jPanel3.add(appointmentDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 140, 30));
+
+        jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner1StateChanged(evt);
+            }
+        });
         jPanel3.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 140, -1));
 
         nameField2.setBackground(new java.awt.Color(0, 153, 51));
@@ -457,10 +461,8 @@ public class AddCustomerBooking extends javax.swing.JFrame {
                 allVehicles.clear();
                 
                 dispose();
-                BookingManagement AM = new BookingManagement();
-                AM.show();
-                
-                
+                CustomerDashboard CM = new CustomerDashboard(user);
+                CM.show();
             }
             else{
                 JOptionPane.showMessageDialog(null,
@@ -550,6 +552,7 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         
         int total = dRate * Integer.parseInt(jSpinner1.getValue().toString());
         totalField.setText(Integer.toString(total));
+        totalField.setEditable(false);
         
     }//GEN-LAST:event_vehicleComboBoxItemStateChanged
 
@@ -560,6 +563,50 @@ public class AddCustomerBooking extends javax.swing.JFrame {
     private void vRegFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_vRegFieldFocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_vRegFieldFocusGained
+
+    private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
+        String manufacturer = null;
+        String model = null ;
+        String color = null;
+        String vReg = null;
+        int mfgYear = 0;
+        int dRate = 0;
+        
+        
+        String vehicle = vehicleComboBox.getSelectedItem().toString();
+        char vehicleID = vehicle.charAt(0);
+        int vID = Character.getNumericValue(vehicleID);
+        
+        for (Vehicle list : allVehicles) {
+            if(list.getID() == vID){
+               manufacturer = list.getManufacturer();
+               model = list.getModel();
+               color = list.getColor();
+               mfgYear = list.getMfgYear();
+               vReg = list.getvReg();
+               dRate = list.getdRate();
+               
+            }
+        }
+       
+        manufacturerField.setText(manufacturer);
+        modelField.setText(model);
+        colorField.setText(color);
+        mfgField.setText(Integer.toString(mfgYear));
+        vRegField.setText(vReg);
+        dRateField.setText(Integer.toString(dRate));
+        
+        manufacturerField.setEditable(false);
+        modelField.setEditable(false);
+        colorField.setEditable(false);
+        mfgField.setEditable(false);
+        vRegField.setEditable(false);
+        dRateField.setEditable(false);
+        
+        int total = dRate * Integer.parseInt(jSpinner1.getValue().toString());
+        totalField.setText(Integer.toString(total));
+        totalField.setEditable(false);
+    }//GEN-LAST:event_jSpinner1StateChanged
     
      public static void main(String args[]) {
         /* Set the Nimbus look and feel */

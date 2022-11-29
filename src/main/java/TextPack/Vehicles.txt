@@ -1,2 +1,2 @@
-1,2020,250,Honda,Civic,VWE2345,Blue
-2,2016,150,Toyota,Camery,WEF2305,White
+1,2019,500,BMW,530e,VWU2935,White
+2,2018,250,Toyota,Camery,WEF2305,Red

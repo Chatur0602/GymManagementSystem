@@ -15,7 +15,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 public class ViewBooking extends javax.swing.JFrame {
-     public static String [] columnsName = {"Booking ID", "Days", "Name", "Customer Email", "Vehicle Regitration", "Slot", "Status"};
+    public static String [] columnsName = {"Booking ID", "Name", "Customer Username", "Vehicle Registration", "Slot", "Days", "Total", "Status"};
     public static String dataRow [] ;
     
     BookingIoHandler CIH; 
@@ -32,7 +32,7 @@ public class ViewBooking extends javax.swing.JFrame {
        
              for (Booking list : allBookings) {
                 
-                dataRow = new String[] {Integer.toString(list.getID()), Integer.toString(list.getDays()),list.getName(),list.getCustomerEmail(),list.getvReg(),date.format(list.getSlot()),Character.toString(list.getStatus())};
+                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.getCustomerEmail(),list.getvReg(),date.format(list.getSlot()),Integer.toString(list.getDays()), Integer.toString(list.getAmount()) ,Character.toString(list.getStatus())};
                 model.addRow(dataRow);
         }
     }

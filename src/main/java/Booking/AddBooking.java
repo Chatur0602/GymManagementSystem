@@ -29,7 +29,8 @@ public class AddBooking extends javax.swing.JFrame {
     BookingIoHandler AIH ;
     CustomerIoHandler CIH ;
     VehicleIoHandler IIH ;
-
+    private static String vReg = null;
+    
     public AddBooking(){
         allBookings.clear();
         allCustomers.clear();
@@ -41,16 +42,14 @@ public class AddBooking extends javax.swing.JFrame {
         
     String [] time = {"07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"};
     timeComboBox.setModel(new DefaultComboBoxModel(time));
-
-
     
     for (Customer list : allCustomers) {
-            customerComboBox.addItem(list.geteMail());
+            customerComboBox.addItem(list.getUsername());
         }
     
     for (Vehicle list : allVehicles){
-            vehicleComboBox.addItem(list.getvReg());
-        }
+            vehicleComboBox.addItem(list.getID() + " | " + list.getvReg());
+        } 
     
     }
 
@@ -85,6 +84,12 @@ public class AddBooking extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         appointmentDate = new com.toedter.calendar.JDateChooser();
         jSpinner1 = new javax.swing.JSpinner();
+        jLabel14 = new javax.swing.JLabel();
+        totalField = new javax.swing.JTextField();
+        jSeparator11 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        totalField1 = new javax.swing.JTextField();
+        jSeparator12 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -98,7 +103,6 @@ public class AddBooking extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 220, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-logout-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
@@ -107,7 +111,6 @@ public class AddBooking extends javax.swing.JFrame {
         jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, 30));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-go-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -137,7 +140,7 @@ public class AddBooking extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("Customer ID");
+        jLabel6.setText("Customer");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 100, 20));
 
         nameField1.setBackground(new java.awt.Color(0, 51, 102));
@@ -153,6 +156,11 @@ public class AddBooking extends javax.swing.JFrame {
         jPanel3.add(nameField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 129, 20));
         jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 130, 10));
 
+        vehicleComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                vehicleComboBoxItemStateChanged(evt);
+            }
+        });
         jPanel3.add(vehicleComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 160, -1));
 
         timeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -179,7 +187,7 @@ public class AddBooking extends javax.swing.JFrame {
                 addAppointmentButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(addAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, -1, -1));
+        jPanel3.add(addAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, -1, -1));
 
         jPanel3.add(customerComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 160, -1));
 
@@ -188,7 +196,50 @@ public class AddBooking extends javax.swing.JFrame {
         jLabel9.setText("Pick up");
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 70, 20));
         jPanel3.add(appointmentDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 140, 30));
+
+        jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner1StateChanged(evt);
+            }
+        });
         jPanel3.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 140, -1));
+
+        jLabel14.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel14.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        jLabel14.setText("TOTAL");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 90, 30));
+
+        totalField.setBackground(new java.awt.Color(0, 153, 51));
+        totalField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        totalField.setForeground(new java.awt.Color(204, 204, 204));
+        totalField.setToolTipText("Password");
+        totalField.setBorder(null);
+        totalField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                totalFieldFocusGained(evt);
+            }
+        });
+        jPanel3.add(totalField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 190, 20));
+        jPanel3.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 190, 10));
+
+        jLabel15.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel15.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel15.setText("TOTAL");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 90, 20));
+
+        totalField1.setBackground(new java.awt.Color(0, 51, 102));
+        totalField1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        totalField1.setForeground(new java.awt.Color(204, 204, 204));
+        totalField1.setToolTipText("Password");
+        totalField1.setBorder(null);
+        totalField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                totalField1FocusGained(evt);
+            }
+        });
+        jPanel3.add(totalField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 190, 20));
+        jPanel3.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 190, 10));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -201,7 +252,7 @@ public class AddBooking extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -283,7 +334,7 @@ public class AddBooking extends javax.swing.JFrame {
                     ID = allBookings.get(allBookings.size() - 1).getID() + 1;
                 }
             
-                Booking c = new Booking(ID, Integer.parseInt(jSpinner1.getValue().toString()), nameField.getText(), customerComboBox.getSelectedItem().toString(), vehicleComboBox.getSelectedItem().toString(),slot,'O');
+                Booking c = new Booking(ID, Integer.parseInt(jSpinner1.getValue().toString()), Integer.parseInt(totalField1.getText()), nameField.getText(), customerComboBox.getSelectedItem().toString(), vReg ,slot,'O');
                 
                 BookingIoHandler.allBookings.add(c);
                 BookingIoHandler.addBooking();
@@ -303,7 +354,7 @@ public class AddBooking extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(null,
-                        "Booking Already Exists or Instructor Busy, try a different instructor or slot", "Error",
+                        "Booking Already Exists or Vehicle Busy, try a different Vehicle or Slot", "Error",
                         JOptionPane.WARNING_MESSAGE);
                 
                     }
@@ -323,6 +374,60 @@ public class AddBooking extends javax.swing.JFrame {
     private void timeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeComboBoxActionPerformed
        // System.out.println("Time: " + timeComboBox.getSelectedItem().toString());
     }//GEN-LAST:event_timeComboBoxActionPerformed
+
+    private void vehicleComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_vehicleComboBoxItemStateChanged
+ int dRate = 0;
+        
+        
+        String vehicle = vehicleComboBox.getSelectedItem().toString();
+        char vehicleID = vehicle.charAt(0);
+        int vID = Character.getNumericValue(vehicleID);
+        
+        for (Vehicle list : allVehicles) {
+            if(list.getID() == vID){
+               
+               dRate = list.getdRate();
+               vReg = list.getvReg();
+            }
+        }
+       
+        
+        
+        int total = dRate * Integer.parseInt(jSpinner1.getValue().toString());
+        totalField1.setText(Integer.toString(total));
+        
+    }//GEN-LAST:event_vehicleComboBoxItemStateChanged
+
+    private void totalFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_totalFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalFieldFocusGained
+
+    private void totalField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_totalField1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalField1FocusGained
+
+    private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
+        int dRate = 0;
+        
+        
+        String vehicle = vehicleComboBox.getSelectedItem().toString();
+        char vehicleID = vehicle.charAt(0);
+        int vID = Character.getNumericValue(vehicleID);
+        
+        for (Vehicle list : allVehicles) {
+            if(list.getID() == vID){
+               
+               dRate = list.getdRate();
+               vReg = list.getvReg();
+            }
+        }
+       
+        
+        
+        int total = dRate * Integer.parseInt(jSpinner1.getValue().toString());
+        totalField1.setText(Integer.toString(total));
+        
+    }//GEN-LAST:event_jSpinner1StateChanged
     
      public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -493,6 +598,8 @@ public class AddBooking extends javax.swing.JFrame {
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel instructorLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -500,12 +607,16 @@ public class AddBooking extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField nameField1;
     private javax.swing.JComboBox<String> timeComboBox;
+    private javax.swing.JTextField totalField;
+    private javax.swing.JTextField totalField1;
     private javax.swing.JComboBox<String> vehicleComboBox;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class EditBooking extends javax.swing.JFrame {
-    public static String [] columnsName = {"Booking ID", "Days", "Name", "Customer Email", "Vehicle Regitration", "Slot", "Status"};
+    public static String [] columnsName = {"Booking ID", "Name", "Customer Username", "Vehicle Registration", "Slot", "Days", "Total", "Status"};
     public static String dataRow [] ;
     
     
@@ -40,8 +40,9 @@ public class EditBooking extends javax.swing.JFrame {
        
              for (Booking list : allBookings) {
                
-                dataRow = new String[] {Integer.toString(list.getID()), Integer.toString(list.getDays()),list.getName(),list.getCustomerEmail(),list.getvReg(),date.format(list.getSlot()),Character.toString(list.getStatus())};
+                dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.getCustomerEmail(),list.getvReg(),date.format(list.getSlot()),Integer.toString(list.getDays()), Integer.toString(list.getAmount()) ,Character.toString(list.getStatus())};
                 model.addRow(dataRow);
+                
         }
     }
 
@@ -162,6 +163,7 @@ public class EditBooking extends javax.swing.JFrame {
             String cEmail = null;
             String vReg = null ;
             String status ;
+            String total = null;
             Booking a = null ; 
             boolean validated = false ;
             boolean characterFound = false;
@@ -170,12 +172,14 @@ public class EditBooking extends javax.swing.JFrame {
             for (int rowCount = 0; rowCount < model.getRowCount(); rowCount++){
         
                     ID = model.getValueAt(rowCount, 0).toString();
-                    days = model.getValueAt(rowCount, 1).toString();
-                    name = model.getValueAt(rowCount, 2).toString();
-                    cEmail = model.getValueAt(rowCount, 3).toString();
-                    vReg = model.getValueAt(rowCount, 4).toString();
-                    d = model.getValueAt(rowCount, 5).toString() ;
-                    status = model.getValueAt(rowCount, 6).toString().toUpperCase();
+                    
+                    name = model.getValueAt(rowCount, 1).toString();
+                    cEmail = model.getValueAt(rowCount, 2).toString();
+                    vReg = model.getValueAt(rowCount, 3).toString();
+                    d = model.getValueAt(rowCount, 4).toString() ;
+                   days = model.getValueAt(rowCount, 5).toString();
+                   total = model.getValueAt(rowCount, 6).toString().toUpperCase();
+                    status = model.getValueAt(rowCount, 7).toString().toUpperCase();
                     char s = status.charAt(0);
                     
                 try{
@@ -208,17 +212,10 @@ public class EditBooking extends javax.swing.JFrame {
                         break;
                     } else{
                    
-                            
-                                Pattern eMailPattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+
-                                        "[a-zA-Z0-9_+&*-]+)*@" +
-                                        "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
-                                        "A-Z]{2,7}$");
-                                Matcher eMail = eMailPattern.matcher(cEmail);
-                                characterFound = eMail.find();
-
-                                if(characterFound == false || cEmail.length()<8){
+             
+                                if(cEmail.length()<8){
                                     JOptionPane.showMessageDialog(null,
-                                            "Incorrect E-Mail Format, Minimum 8 letters & must contain '@'", "Warning",
+                                            "Incorrect Username Format, Minimum 8 letters required", "Warning",
                                             JOptionPane.WARNING_MESSAGE);
                                     validated = false ;
                                     break;
@@ -235,7 +232,7 @@ public class EditBooking extends javax.swing.JFrame {
                                                     }
                                                         else{
            
-                                                        a = new Booking(Integer.parseInt(ID),Integer.parseInt(days), name,cEmail,vReg,date, s);
+                                                        a = new Booking(Integer.parseInt(ID),Integer.parseInt(days), Integer.parseInt(total), name,cEmail,vReg,date, s);
                                                         BookingIoHandler.allBookings.add(a);
                                                         validated = true ;
                    
