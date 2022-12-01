@@ -2,9 +2,7 @@ package Payment;
 
 
 import Booking.Booking;
-import Booking.AppointmentIoHandler;
-import static Booking.AppointmentIoHandler.addAppointment;
-import static Booking.AppointmentIoHandler.allAppointments;
+
 import Customer.CustomerDashboard;
 import Admin.AdminDashboard;
 import static Payment.PaymentIoHandler.allPayments;

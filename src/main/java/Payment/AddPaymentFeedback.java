@@ -8,6 +8,9 @@ import static Booking.BookingIoHandler.allBookings;
 import Customer.CustomerDashboard;
 import Admin.AdminDashboard;
 import static Payment.PaymentIoHandler.allPayments;
+import Vehicle.Vehicle;
+import Vehicle.VehicleIoHandler;
+import static Vehicle.VehicleIoHandler.allVehicles;
 import javax.swing.*;
 import java.awt.*;
 import java.text.SimpleDateFormat;
@@ -21,22 +24,37 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
  
     BookingIoHandler AIH; 
     PaymentIoHandler PIH ;
+    VehicleIoHandler VIH;
     public static String user ;
     private int index = 0 ;
+    private String mnf;
+    private String model;
     
     public AddPaymentFeedback(String user) {
         AIH = new BookingIoHandler();
         PIH = new PaymentIoHandler();
+        VIH = new VehicleIoHandler();
         initComponents();
         AddPaymentFeedback.user = user;
+        
+       
          
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm"); 
         
+       
+        
          for (Booking list : allBookings) {
              if(user.equals(list.getCustomerEmail()) && list.getStatus() == 'O'){
-            appointmentComboBox.addItem(list.getID() +" | "+ list.getvReg() +" | "+ list.getManufacturer() +" | " + formatter.format(list.getSlot()) +" | "+  list.getCustomerEmail());
-            }
+                  for(Vehicle v : allVehicles){
+                    if(list.getvReg().equals(v.getvReg())){
+                        mnf = v.getManufacturer();
+                        model = v.getModel();
+                    }
+                  }
+            bookingComboBox.addItem(list.getID() +" | "+ list.getvReg() +" | "+ mnf + " "+ model +" | " + formatter.format(list.getSlot()));
+            
         }
+    }
     }
 
 
@@ -61,7 +79,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         addPaymentButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         feedbackTextBox = new javax.swing.JTextArea();
-        appointmentComboBox = new javax.swing.JComboBox<>();
+        bookingComboBox = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,11 +90,10 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText("Payment & Feedback");
+        jLabel1.setText("Payment ");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 240, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-exit-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
@@ -85,7 +102,6 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, 20));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\pc\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -93,9 +109,10 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel4.setText("Feedback ");
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Remarks");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 80, 30));
 
         amountField.setBackground(new java.awt.Color(0, 153, 51));
@@ -110,8 +127,9 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         });
         jPanel3.add(amountField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 129, 20));
 
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Amount");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 70, 30));
         jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 130, 10));
@@ -130,12 +148,18 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 390, 100));
 
-        jPanel3.add(appointmentComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 390, -1));
+        bookingComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                bookingComboBoxItemStateChanged(evt);
+            }
+        });
+        jPanel3.add(bookingComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 390, -1));
 
+        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
         jLabel11.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel11.setText("Appointment");
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 100, 30));
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Booking");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 60, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -187,7 +211,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
 
     private void addPaymentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPaymentButtonActionPerformed
     try{
-        String appointment = appointmentComboBox.getSelectedItem().toString();
+        String appointment = bookingComboBox.getSelectedItem().toString();
         String appointmentID = appointment.substring(0, appointment.indexOf("|")-1);
         System.out.println(appointmentID + " " + appointmentID.trim());
         int aID = Integer.parseInt(appointmentID);
@@ -209,7 +233,10 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
              String appName = null ;
              Date appSlot = null ;
              String custEmail = null;
-             String instUser = null ;
+            
+             String vReg = null;
+             int days = 0;
+             int amount = 0;
              char status = ' ' ;
              
              for (Booking list : allBookings) {
@@ -218,8 +245,11 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
                          appName = list.getName();
                          appSlot = list.getSlot();
                          custEmail = list.getCustomerEmail();
-                         instUser = list.getInstructorUsername();
+                         vReg = list.getvReg();
                          status = list.getStatus();
+                         days = list.getDays();
+                         amount = list.getAmount();
+                         
                          index = allBookings.indexOf(list);
                      }
                 }
@@ -228,7 +258,7 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
              PaymentIoHandler.allPayments.add(p);
              PaymentIoHandler.addPayment();
              
-             Booking a = new Booking(appID, appName, appSlot, custEmail, instUser, 'C');
+             Booking a = new Booking(appID, days, amount, appName, custEmail, vReg, appSlot, 'C');
              allBookings.set(index, a);
              addBooking();
              
@@ -241,13 +271,17 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
              CustomerDashboard IDA = new CustomerDashboard(user);
              IDA.show();
              
+             allBookings.clear();
+        allPayments.clear();
+        allVehicles.clear();
+             
          }  else{
              JOptionPane.showMessageDialog(null,
                      "Payment Already Exists, Please Try Again", "Error",
                      JOptionPane.WARNING_MESSAGE);
              
          }  
-        allBookings.clear();
+        
     }catch(NumberFormatException e){
         JOptionPane.showMessageDialog(null,
             "Please Enter A Valid Numeric Amount", "Error",
@@ -259,6 +293,29 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_addPaymentButtonActionPerformed
+
+    private void bookingComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_bookingComboBoxItemStateChanged
+        try{
+        int amount = 0;
+        String appointment = bookingComboBox.getSelectedItem().toString();
+        String appointmentID = appointment.substring(0, appointment.indexOf("|")-1);
+        System.out.println(appointmentID + " " + appointmentID.trim());
+        int aID = Integer.parseInt(appointmentID);
+        
+        for (Booking list : allBookings) {
+            if(list.getID() == aID){
+               
+               amount = list.getAmount();
+               
+            }
+        }
+       
+        amountField.setText(Integer.toString(amount));
+        amountField.setEditable(false);
+        }catch(NumberFormatException ex){
+            System.out.print(ex);
+        }
+    }//GEN-LAST:event_bookingComboBoxItemStateChanged
 
     
     /**
@@ -1323,8 +1380,8 @@ public class AddPaymentFeedback extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addPaymentButton;
     private javax.swing.JTextField amountField;
-    private javax.swing.JComboBox<String> appointmentComboBox;
     private javax.swing.JLabel backLabel;
+    private javax.swing.JComboBox<String> bookingComboBox;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JTextArea feedbackTextBox;
     private javax.swing.JLabel jLabel1;
