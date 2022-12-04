@@ -66,6 +66,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         jLabel1.setText("Admin Dashboard");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 240, -1));
 
+        instructorLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-fiat-500-64.png")); // NOI18N
         instructorLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 instructorLabelMouseClicked(evt);
@@ -78,6 +79,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         jLabel5.setText(" Management");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 100, 20));
 
+        crmLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-customer-60.png")); // NOI18N
         crmLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 crmLabel1MouseClicked(evt);
@@ -110,6 +112,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         jLabel11.setText("   Management");
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 100, 20));
 
+        crmLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-appointment-64.png")); // NOI18N
         crmLabel2.setText("  ");
         crmLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -129,6 +132,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 70, 20));
 
         backLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        backLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-go-back-24.png")); // NOI18N
         backLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabel1MouseClicked(evt);
@@ -137,6 +141,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         jPanel3.add(backLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         exitLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-logout-24.png")); // NOI18N
         exitLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabel1MouseClicked(evt);
@@ -144,6 +149,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         });
         jPanel3.add(exitLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, 30));
 
+        crmLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-financial-analytics-64.png")); // NOI18N
         crmLabel3.setText("  ");
         crmLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -157,6 +163,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         jLabel14.setText("Payment & Feedback Analysis");
         jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 190, 20));
 
+        crmLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-graph-report-64.png")); // NOI18N
         crmLabel4.setText("  ");
         crmLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

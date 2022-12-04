@@ -78,7 +78,7 @@ public class ViewVehicle extends javax.swing.JFrame {
         });
         jPanel3.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        searchInstructorButton.setText("Search Instructor");
+        searchInstructorButton.setText("Search Vehicle");
         searchInstructorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchInstructorButtonActionPerformed(evt);
