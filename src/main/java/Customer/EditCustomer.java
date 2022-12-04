@@ -67,13 +67,13 @@ public class EditCustomer extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel3.setBackground(new java.awt.Color(0, 51, 102));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText("Edit Customer");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 180, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exitLabel.setIcon(new javax.swing.JLabel() {

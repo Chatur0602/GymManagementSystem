@@ -1,2 +1,3 @@
 2,Sanjay,SSMallula@gmail.com,0134782232,08-11-2002,F,SSmalu56,SSmalu6969
 3,Karmveer,karm1712@ymail.com,0193300876,10-07-2001,M,peepee11,peepee11
+4,Chatur,niks062002@yahoo.com,0174584232,04-12-2002,M,Hello1234,Wagwan0602

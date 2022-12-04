@@ -61,7 +61,6 @@ public class ViewVehicle extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-logout-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
@@ -70,7 +69,6 @@ public class ViewVehicle extends javax.swing.JFrame {
         jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 10, -1, -1));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-go-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -106,7 +104,7 @@ public class ViewVehicle extends javax.swing.JFrame {
         usernameField.setBackground(new java.awt.Color(0, 51, 102));
         usernameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         usernameField.setForeground(new java.awt.Color(204, 204, 204));
-        usernameField.setText("            Enter Username");
+        usernameField.setText("        Enter Vehicle Name");
         usernameField.setToolTipText("Password");
         usernameField.setBorder(null);
         usernameField.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -152,10 +150,9 @@ public class ViewVehicle extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)viewCustomerTable.getModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(columnsName);
-        Format date =new SimpleDateFormat("dd-MM-yyyy");  
         
         for (Vehicle list : allVehicles) {
-                  if (list.getvReg().toLowerCase().contains(usernameField.getText().toLowerCase())){
+                  if (list.getModel().toLowerCase().contains(usernameField.getText().toLowerCase()) || list.getManufacturer().toLowerCase().contains(usernameField.getText().toLowerCase())){
                       
                       dataRow = new String[] {Integer.toString(list.getID()),list.getManufacturer(),list.getModel(),Integer.toString(list.getMfgYear()),list.getColor(),list.getvReg(),Integer.toString(list.getdRate())};
                       model.addRow(dataRow);      

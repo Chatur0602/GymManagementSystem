@@ -49,8 +49,9 @@ public class CustomerLogin extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         lockIcon = new javax.swing.JLabel();
         userIcon = new javax.swing.JLabel();
-        loginButton = new javax.swing.JButton();
+        signUpButton = new javax.swing.JButton();
         exitLabel = new javax.swing.JLabel();
+        loginButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -61,7 +62,6 @@ public class CustomerLogin extends javax.swing.JFrame {
         jLabel4.setText("SlymGym");
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-go-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -132,12 +132,25 @@ public class CustomerLogin extends javax.swing.JFrame {
         jPanel3.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 129, 20));
         jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 130, 10));
         jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 130, 10));
-
-        lockIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-lock-24.png")); // NOI18N
         jPanel3.add(lockIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, 30));
-
-        userIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-user-24.png")); // NOI18N
         jPanel3.add(userIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 30, 30));
+
+        signUpButton.setBackground(new java.awt.Color(51, 51, 255));
+        signUpButton.setText("Sign Up");
+        signUpButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signUpButtonMouseClicked(evt);
+            }
+        });
+        jPanel3.add(signUpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 80, -1));
+
+        exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitLabelMouseClicked(evt);
+            }
+        });
+        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, 20));
 
         loginButton.setBackground(new java.awt.Color(204, 102, 0));
         loginButton.setText("Sign In");
@@ -146,16 +159,7 @@ public class CustomerLogin extends javax.swing.JFrame {
                 loginButtonMouseClicked(evt);
             }
         });
-        jPanel3.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 80, -1));
-
-        exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-logout-24.png")); // NOI18N
-        exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                exitLabelMouseClicked(evt);
-            }
-        });
-        jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, 20));
+        jPanel3.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 80, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -206,8 +210,23 @@ public class CustomerLogin extends javax.swing.JFrame {
        usernameField.setForeground(new java.awt.Color(204,204,204));
     }//GEN-LAST:event_usernameFieldFocusGained
 
-    private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
+    private void signUpButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpButtonMouseClicked
+          dispose();
+          CustomerSignUp CSU = new CustomerSignUp();
+          CSU.show();
+ 
+    }//GEN-LAST:event_signUpButtonMouseClicked
+
+    private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
+        
+        dispose();
+        LaunchPanel LP = new LaunchPanel();
+        LP.show();
             
+    }//GEN-LAST:event_backLabelMouseClicked
+
+    private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
+          
             String usernameInput = usernameField.getText();
             String passwordInput = passwordField.getText();
       
@@ -237,16 +256,7 @@ public class CustomerLogin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Incorrect Username Or Password!","Alert",JOptionPane.WARNING_MESSAGE);
             }
                  
- 
     }//GEN-LAST:event_loginButtonMouseClicked
-
-    private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
-        
-        dispose();
-        LaunchPanel LP = new LaunchPanel();
-        LP.show();
-            
-    }//GEN-LAST:event_backLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -307,6 +317,7 @@ public class CustomerLogin extends javax.swing.JFrame {
     private javax.swing.JLabel lockIcon;
     private javax.swing.JButton loginButton;
     private javax.swing.JPasswordField passwordField;
+    private javax.swing.JButton signUpButton;
     private javax.swing.JLabel userIcon;
     private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables

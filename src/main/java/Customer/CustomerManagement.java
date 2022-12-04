@@ -43,7 +43,7 @@ public class CustomerManagement extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel3.setBackground(new java.awt.Color(0, 51, 102));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N

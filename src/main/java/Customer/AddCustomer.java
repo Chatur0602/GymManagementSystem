@@ -64,7 +64,7 @@ public class AddCustomer extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel3.setBackground(new java.awt.Color(0, 51, 102));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("STCaiyun", 3, 24)); // NOI18N
@@ -73,7 +73,6 @@ public class AddCustomer extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 180, -1));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        exitLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-logout-24.png")); // NOI18N
         exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
@@ -82,7 +81,6 @@ public class AddCustomer extends javax.swing.JFrame {
         jPanel3.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, 30));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\OneDrive - Asia Pacific University\\Documents\\NetBeansProjects\\GymManagementSystem\\src\\main\\java\\Resources\\icons8-go-back-24.png")); // NOI18N
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backLabelMouseClicked(evt);
@@ -95,7 +93,7 @@ public class AddCustomer extends javax.swing.JFrame {
         jLabel3.setText("Name");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 50, 30));
 
-        nameField.setBackground(new java.awt.Color(0, 153, 51));
+        nameField.setBackground(new java.awt.Color(0, 51, 102));
         nameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         nameField.setForeground(new java.awt.Color(204, 204, 204));
         nameField.setToolTipText("Password");
@@ -118,7 +116,7 @@ public class AddCustomer extends javax.swing.JFrame {
         jLabel4.setText("Phone No.");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 80, 30));
 
-        emailField.setBackground(new java.awt.Color(0, 153, 51));
+        emailField.setBackground(new java.awt.Color(0, 51, 102));
         emailField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         emailField.setForeground(new java.awt.Color(204, 204, 204));
         emailField.setToolTipText("Password");
@@ -150,7 +148,7 @@ public class AddCustomer extends javax.swing.JFrame {
         jLabel7.setText("Username");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 80, 30));
 
-        usernameField.setBackground(new java.awt.Color(0, 153, 51));
+        usernameField.setBackground(new java.awt.Color(0, 51, 102));
         usernameField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         usernameField.setForeground(new java.awt.Color(204, 204, 204));
         usernameField.setToolTipText("Password");
@@ -188,32 +186,32 @@ public class AddCustomer extends javax.swing.JFrame {
         });
         jPanel3.add(addCustomerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, -1));
 
-        validationField.setBackground(new java.awt.Color(0, 153, 51));
+        validationField.setBackground(new java.awt.Color(0, 51, 102));
         validationField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         validationField.setForeground(new java.awt.Color(204, 204, 204));
         validationField.setBorder(null);
         jPanel3.add(validationField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 170, 20));
 
-        passwordField.setBackground(new java.awt.Color(0, 153, 51));
+        passwordField.setBackground(new java.awt.Color(0, 51, 102));
         passwordField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         passwordField.setForeground(new java.awt.Color(204, 204, 204));
         passwordField.setBorder(null);
         jPanel3.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 170, 20));
 
-        contactField.setBackground(new java.awt.Color(0, 153, 51));
+        contactField.setBackground(new java.awt.Color(0, 51, 102));
         contactField.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         contactField.setForeground(new java.awt.Color(204, 204, 204));
         contactField.setToolTipText("Password");
         contactField.setBorder(null);
         jPanel3.add(contactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 170, 20));
 
-        MaleRadioButton.setBackground(new java.awt.Color(0, 153, 51));
+        MaleRadioButton.setBackground(new java.awt.Color(0, 51, 102));
         genderGroup.add(MaleRadioButton);
         MaleRadioButton.setText("Male");
         MaleRadioButton.setActionCommand("M");
         jPanel3.add(MaleRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 60, -1));
 
-        FemaleRadioButton.setBackground(new java.awt.Color(0, 153, 51));
+        FemaleRadioButton.setBackground(new java.awt.Color(0, 51, 102));
         genderGroup.add(FemaleRadioButton);
         FemaleRadioButton.setText("Female");
         FemaleRadioButton.setActionCommand("F");

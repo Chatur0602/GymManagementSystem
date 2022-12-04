@@ -157,7 +157,7 @@ public class ViewBooking extends javax.swing.JFrame {
                 
                 if (list.getSlot().after(firstDateDC.getDate()) && list.getSlot().before(lastDateDC.getDate())){
                     
-                    dataRow = new String[] {Integer.toString(list.getID()),Integer.toString(list.getDays()),list.getName(),list.getCustomerEmail(),list.getvReg(),dateForm.format(list.getSlot()),Character.toString(list.getStatus())};
+                    dataRow = new String[] {Integer.toString(list.getID()),list.getName(),list.getCustomerEmail(),list.getvReg(),dateForm.format(list.getSlot()),Integer.toString(list.getDays()), Integer.toString(list.getAmount()) ,Character.toString(list.getStatus())};
                     model.addRow(dataRow);
                 }
             }
