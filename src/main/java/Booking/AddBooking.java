@@ -322,13 +322,13 @@ public class AddBooking extends javax.swing.JFrame {
                         JOptionPane.WARNING_MESSAGE);
                     }else{
                 
-        SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY");
+        SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-yyyy");
         String date = dateForm.format(appointmentDate.getDate());
         String dateSlot = date + " " + timeComboBox.getSelectedItem().toString();
         SimpleDateFormat slotFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");  
         Date slot = slotFormat.parse(dateSlot) ;
         
-            if(BookingIoHandler.checkBooking(slotFormat.format(slot), vehicleComboBox.getSelectedItem().toString(), customerComboBox.getSelectedItem().toString()) == null){
+            if(BookingIoHandler.checkBooking(slotFormat.format(slot), vehicleComboBox.getSelectedItem().toString(), customerComboBox.getSelectedItem().toString(), jSpinner1.getValue().toString()) == null){
 
                 int ID = 1 ;
 

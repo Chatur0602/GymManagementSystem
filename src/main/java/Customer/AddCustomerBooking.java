@@ -440,7 +440,7 @@ public class AddCustomerBooking extends javax.swing.JFrame {
         SimpleDateFormat slotFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");  
         Date slot = slotFormat.parse(dateSlot) ;
         
-            if(BookingIoHandler.checkBooking(slotFormat.format(slot), vehicleComboBox.getSelectedItem().toString(), user) == null){
+            if(BookingIoHandler.checkBooking(slotFormat.format(slot), vehicleComboBox.getSelectedItem().toString(), user, jSpinner1.getValue().toString()) == null){
 
                 int ID = 1 ;
 

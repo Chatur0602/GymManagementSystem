@@ -6,6 +6,8 @@ import java.util.*;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import Booking.Booking;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class BookingIoHandler {
     
@@ -50,12 +52,26 @@ public class BookingIoHandler {
     br.close();
 }
     
-    public static Booking checkBooking(String slot, String vReg, String customerEmail) throws IOException, ParseException{
+    public static Booking checkBooking(String slot, String vReg, String customerEmail, String days) throws IOException, ParseException{
         Booking found = null;
-        SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-YYYY HH:mm");
+        SimpleDateFormat dateForm = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        
+        LocalDate DOA ;
+        LocalDate DOD;
+
+        DOA = LocalDate.parse(slot, formatter);
+        DOD = LocalDate.parse(slot, formatter).plusDays(Integer.parseInt(days));
+        System.out.println("First: " + DOA + " " + DOD);
         
         for(Booking a : allBookings){
-            if(slot.equals(dateForm.format(a.getSlot())) && vReg.equals(a.getvReg()) || slot.equals(dateForm.format(a.getSlot())) && customerEmail.equals(a.getCustomerEmail())){
+     
+            LocalDate DOAC = LocalDate.parse(dateForm.format(a.getSlot()), formatter);
+            LocalDate DODC = LocalDate.parse(dateForm.format(a.getSlot()), formatter).plusDays(a.getDays());
+            System.out.println("Second: " + DOAC + " " + DODC);
+            System.out.println(DOAC.isAfter(DOA));
+            
+            if(DOAC.isBefore(DOA) && DODC.isAfter(DOA) && vReg.equals(a.getvReg()) || DOAC.isBefore(DOD) && DODC.isAfter(DOD) && vReg.equals(a.getvReg()) || DOAC.isBefore(DOA) && DODC.isAfter(DOA) && customerEmail.equals(a.getCustomerEmail()) || DOAC.isBefore(DOD) && DODC.isAfter(DOD) && customerEmail.equals(a.getCustomerEmail()) ){
                 found = a;
                 break;  
             }

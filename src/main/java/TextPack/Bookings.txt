@@ -1,3 +1,0 @@
-1,5,750,AllahHabibi,Nick@gmail.com,MDN82881,24-11-2022 09:00,C
-2,4,2000,Karm,peepee11,VWU2935,25-12-2022 10:00,O
-3,1,250,hehe,peepee11,WEF2305,31-12-2023 08:00,C
