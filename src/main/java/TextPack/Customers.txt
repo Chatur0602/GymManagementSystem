@@ -1,3 +1,4 @@
-2,Sanjay,SSMallula@gmail.com,0134782232,08-11-2002,F,SSmalu56,SSmalu6969
-3,Karmveer,karm1712@ymail.com,0193300876,10-07-2001,M,peepee11,peepee11
-4,Chatur,niks062002@yahoo.com,0174584232,04-12-2002,M,Hello1234,Wagwan0602
+1,Sanjay,SSMallula@gmail.com,0134782232,08-11-1970,F,SSmalu56,SSmalu6969
+2,Karmveer,karm1712@ymail.com,0193300876,10-07-1985,M,peepee11,peepee11
+3,Chatur,niks062002@yahoo.com,0174584232,04-12-2002,M,niks0602,Wagwan0602
+4,Nikhil Chaturvedi,Irule0602@gmail.com,0175748345,08-12-1995,M,Flash0602,flash0602

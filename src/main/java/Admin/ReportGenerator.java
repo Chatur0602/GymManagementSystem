@@ -153,12 +153,12 @@ public class ReportGenerator extends javax.swing.JFrame {
         LocalDate DOB ;
         int Age;
         
-         for (Payment list : allPayments) {   
+         for (Payment list : allPayments) {  
+          
+            
                 if (list.getDOP().after(firstDateDC.getDate()) && list.getDOP().before(lastDateDC.getDate())){
                     for(Customer c : allCustomers){
-                        if(list.getName().toLowerCase() == null ? 
-                                c.geteMail().toLowerCase() == null : list.getName().
-                                        toLowerCase().equals(c.geteMail().toLowerCase())){
+                        if(list.getName().toLowerCase() == null ? c.geteMail().toLowerCase() == null : list.getName().toLowerCase().equals(c.getUsername().toLowerCase())){
                             
                             dateString = format.format(c.getDOB());
                             DOB = LocalDate.parse(dateString, formatter);
@@ -230,8 +230,7 @@ public class ReportGenerator extends javax.swing.JFrame {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         dataset.addValue(fAmount, "Revenue", "F");
         dataset.addValue(mAmount, "Revenue", "M");
-
-
+        
         return dataset;
     }
     

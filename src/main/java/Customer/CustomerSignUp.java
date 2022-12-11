@@ -364,8 +364,8 @@ public class CustomerSignUp extends javax.swing.JFrame {
                                                     JOptionPane.INFORMATION_MESSAGE);
                                             
                                             dispose();
-                                            CustomerManagement IM = new CustomerManagement();
-                                            IM.show();
+                                            CustomerLogin CL = new CustomerLogin();
+                                            CL.show();
                                             
                                         }  else{
                                             JOptionPane.showMessageDialog(null,
